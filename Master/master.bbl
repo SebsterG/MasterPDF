@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{DeBonis2013}
+James DeBonis.
+\newblock {Solutions of the Taylor-Green Vortex Problem Using High-Resolution
+  Explicit Finite Difference Methods}.
+\newblock {\em 51{\$}{\^{}}{\{}st{\}}{\$} AIAA Aerospace Sciences Meeting
+  including the New Horizons Forum and Aerospace Exposition}, (February):1--9,
+  2013.
+
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
+\bibitem{Selin2014}
+Noelle Selin.
+\newblock {Verification and Validation}.
+\newblock (February), 2014.
+
+\end{thebibliography}
