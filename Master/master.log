@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  21 FEB 2017 13:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  22 FEB 2017 17:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -851,6 +851,15 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
 )
 \openout1 = `master.aux'.
 
@@ -964,30 +973,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Kapittel 1.
-(./Verification_Validation/MMS_FSI/MMS_FSI.tex [3]
 
-LaTeX Warning: Citation `Roache' on page 4 undefined on input line 11.
+LaTeX Warning: Citation `Roache' on page 3 undefined on input line 9.
 
-
-Overfull \hbox (48.35121pt too wide) in paragraph at lines 34--43
+[3] (./Verification_Validation/MMS_FSI/MMS_FSI.tex [4]
+Overfull \hbox (32.86969pt too wide) in paragraph at lines 55--69
  [][] 
  []
 
-) [4]) [5] (./Benchmark_hron/Benchmark.tex
+[5]) (./Verification_Validation/Hron_Turek/Hron_Turek.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--13
 
  []
 
-[6]
-Overfull \hbox (49.71388pt too wide) in paragraph at lines 68--78
+[6] [7]
+Overfull \hbox (49.71388pt too wide) in paragraph at lines 83--93
  [][] 
  []
 
-) (./master.bbl [7] [8
-
-])
+)) (./master.bbl [8])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 28.
- [9]
+ [9
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 28.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 28.
@@ -1004,9 +1012,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 28.
  ) 
 Here is how much of TeX's memory you used:
- 12099 strings out of 493089
- 175961 string characters out of 6134842
- 283792 words of memory out of 5000000
+ 12100 strings out of 493089
+ 176044 string characters out of 6134842
+ 283793 words of memory out of 5000000
  15334 multiletter control sequences out of 15000+600000
  21617 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1031,10 +1039,10 @@ f-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (9 pages, 251734 bytes).
+Output written on master.pdf (9 pages, 254410 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 190 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

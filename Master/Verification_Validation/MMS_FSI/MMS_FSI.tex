@@ -1,51 +1,92 @@
 \subsection{MMS on FSI ALE}
 In this section we use the method of manufactured solutions to verify the FSI ALE monolithic solver. We start by prescribing a motion to $ d$ and $w$ and give a solution to $u$ and $p$. We set $u = w$ to start with:
-\begin{align}
-u =w &=  \\
-d &= 
-\end{align}
+\begin{align*}
+d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+u = w=& ( cos(y)cos(t), cos(x)cos(t) )
+\end{align*}
+
 To test the mapping we make the source term $f$ without mappings:
 $$ \rho_f \frac{\partial u}{\partial t}  +  \nabla u (u-\frac{\partial d}{\partial t})  -  \nabla \cdot \sigma_f  = f $$
 Then we use this f and map it to the reference configuration and compute:
 $$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f$$
-After the solution has been computed we perform systematic convergence tests \cite{Roache}. The idea of order of convergence test is based on the behavior of the error between the manufactured exact solution and the computed solution. When we increase the number of spatial points or decrease timestep, we expect the error to get smaller. Its the rate of this error that lets us now wether the solution is converging and hence that we are computing in the right fashion.
-If we assume that the number of spatial points are equal in all directions we know that the error behaves like
-$$ E = C_1 \Delta x^k+ C_2 \Delta t^l $$
-where $ k = m+1 $ and m is the polynomial degree of the spatial elements. This means that when we compute with Taylor-Hood elements (P2-P1) we should expect to get a convergence rate of 2 in space and 1 in time.\
-The convergence rates are computed as:
-\begin{align}
-\frac{E_{n+1}}{E_n} = \big( \frac{\Delta x_n+1}{\Delta x_n} \big)^k \\
-k = \frac{log( \frac{E_{n+1}}{E_n}) }{ log(\frac{\Delta x_n+1}{\Delta x_n})}
-\end{align}
 
-\subsection{Structure MMS}
-We also want to test the coupled solid solver. We make a sourceterm $f_s$:
-$$\rho_s \frac{\partial u}{\partial t} - \nabla \cdot ( P ) = f_s $$
-We want to test the variational formulation:
-\begin{align}
-\big(\rho_s \frac{\partial u}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
-\big( u- \frac{\partial d}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
-\end{align}
-Results:
-\begin{table}[h]
+\begin{table}[h!]
 \centering
-\caption{My caption}
+\caption{MMS ALE FSI u=w}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-N  & $\Delta t$                    & m degree & E\_u              & k\_u          & E\_d              & k\_d          \\ \hline
-4  & 1x10\textasciicircum \{-8\} & 2        & 0.000762421947222 & -             & 0.000762421932529 & -             \\ \hline
-8  & 1x10\textasciicircum \{-8\} & 2        & 9.53027534024e-05 & 2.99999984862 & 9.5302746523e-05  & 2.99999992496 \\ \hline
-16 & 1x10\textasciicircum \{-8\} & 2        & 1.1912850306e-05  & 2.99999925755 & 1.1912885838e-05  & 2.99999485034 \\ \hline
-32 & 1x10\textasciicircum \{-8\} & 2        & 1.48910976236e-06 & 2.99999663417 & 1.48946247368e-06 & 2.99965926019 \\ \hline
-64 & 1x10\textasciicircum \{-8\} & 2        & 1.86142797916e-07 & 2.99996839616 & 1.8900667118e-07  & 2.97828271418 \\ \hline
+N & $\Delta t$ & m & $E_u$ & $k_u$ & $E_p$ & $k_p$ \\ \hline
+64 & 0.1 & 2 & 0.0140496662424 & - & 4.78779559903 & - \\ \hline
+64 & 0.05 & 2 & 0.00697215098985 & 1.01086014072 & 2.38002096658 & 1.00838727906 \\ \hline
+64 & 0.025 & 2 & 0.00341287458821 & 1.03061641184 & 1.18981484439 & 1.00023719999 \\ \hline
+64 & 0.0125 & 2 & 0.00164214907307 & 1.05540230133 & 0.595733372533 & 0.99799839775 \\ \hline
+2 & $10x^{-6}$ & 2 & 0.000520027806571 & - & 0.0194221106771 & - \\ \hline
+4 & $10x^{-6}$ & 2 & 6.60205272446e-05 & 2.97760220293 & 0.00480815191132 & 2.01414560945 \\ \hline
+8 & $10x^{-6}$ & 2 & 8.28184559099e-06 & 2.99489045 & 0.00118568799584 & 2.0197580517 \\ \hline
+16 & $10x^{-6}$ & 2 & 1.0417232845e-06 & 2.99098020306 & 0.000281586546806 & 2.0740741124 \\ \hline
 \end{tabular}
-\end{table}	
-with solution 
-$$u_x = x[0]*x[0]*x[0]+3*t*t$$
-$$u_y = x[1]*x[1]*x[1]+3*t*t$$
-$$d_x = x[0]*x[0]*x[0]+t*t*t$$
-$$d_y = x[1]*x[1]*x[1]+t*t*t$$
+\end{table}
+
+\newpage
+\subsection{Structure MMS}
+We also want to test the coupled solid solver. We make a sourceterm $f_s$:
+$$\rho_s \frac{\partial u}{\partial t} - \nabla \cdot ( P ) = f_s $$
+Solid variational formulation:
+\begin{align}
+\big(\rho_s \frac{\partial u}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
+\big( u- \frac{\partial d}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
+\end{align}
+We should make another sourceterm f for the second equation but the solutions will be made so this line becomes zero.
+Using the solutions 
+\begin{align*}
+d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+u =& ( cos(y)cos(t), cos(x)cos(t) )
+\end{align*}
+
+
+
+and doing the order of convergence test we get, first in space:
+
+\begin{table}[h!]
+\centering
+\caption{Structure MMS}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+N & $\Delta t$ & m degree & $E_u$ & $k_u$ & $E_d$ & $k_d$ \\ \hline
+4 & $1x10^{-6}$ & 1 & 0.00688260782038 &  & 3.7854343057e-08 &  \\ \hline
+8 & $1x10^{-6}$ & 1 & 0.00172039793734 & 2.00021299904 & 9.46218870811e-09 & 2.00021299271 \\ \hline
+16 & $1x10^{-6}$ & 1 & 0.000430084236596 & 2.00005114684 & 2.36546335807e-09 & 2.00005112024 \\ \hline
+32 & $1x10^{-6}$ & 1 & 0.000107520101545 & 2.00001284898 & 5.91360617339e-10 & 2.00001274007 \\ \hline
+64 & $1x10^{-6}$ & 1 & 2.68799509236e-05 & 2.00000399654 & 1.47839789951e-10 & 2.00000355583 \\ \hline
+4 & $1x10^{-6}$ & 2 & 6.60233871884e-05 & - & 3.63128629891e-10 & - \\ \hline
+8 & $1x10^{-6}$ & 2 & 8.28397328621e-06 & 2.9945823485 & 4.55618532822e-11 & 2.99458234332 \\ \hline
+16 & $1x10^{-6}$ & 2 & 1.03646090432e-06 & 2.99865720273 & 5.70053508884e-12 & 2.99865718019 \\ \hline
+32 & $1x10^{-6}$ & 2 & 1.2958771861e-07 & 2.99966479692 & 7.12732513531e-13 & 2.99966470221 \\ \hline
+64 & $1x10^{-6}$ & 2 & 1.61994158345e-08 & 2.99991530218 & 8.90968200767e-14 & 2.99991489187 \\ \hline
+\end{tabular}
+\end{table}
+
+Time:
+\begin{table}[h]
+\centering
+\caption{Structure MMS TIme}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N  & $\Delta t$ & $E_u$             & $k_u$          & $E_u$             & $k_d$         \\ \hline
+64 & 0.0008     & 2.40113737032e-06 & -              & 1.76531251763e-08 & -             \\ \hline
+64 & 0.0004     & 1.20432501777e-06 & 0.995493150627 & 8.68459764556e-09 & 1.02339269394 \\ \hline
+64 & 0.0002     & 5.91307436945e-07 & 1.02624446535  & 4.14332593927e-09 & 1.06766969495 \\ \hline
+64 & 0.0001     & 2.93267031994e-07 & 1.01169352445  & 2.02357953875e-09 & 1.03387975932 \\ \hline
+64 & 0.00005    & 1.46821750169e-07 & 0.998149192911 & 1.00209817454e-09 & 1.01388570182 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\newpage
 
 
 
