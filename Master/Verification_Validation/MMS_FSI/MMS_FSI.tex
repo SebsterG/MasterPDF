@@ -2,14 +2,16 @@
 In this section we use the method of manufactured solutions to verify the FSI ALE monolithic solver. We start by prescribing a motion to $ d$ and $w$ and give a solution to $u$ and $p$. We set $u = w$ to start with:
 \begin{align*}
 d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u = w=& ( cos(y)cos(t), cos(x)cos(t) )
+u = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
+p =& cos(x)cos(t)
 \end{align*}
+We make the solutions to uphold the criterias : $ \nabla \cdot u =0  $ and $ \frac{\partial d}{\partial t} = w  $ \\
 
 To test the mapping we make the source term $f$ without mappings:
 $$ \rho_f \frac{\partial u}{\partial t}  +  \nabla u (u-\frac{\partial d}{\partial t})  -  \nabla \cdot \sigma_f  = f $$
 Then we use this f and map it to the reference configuration and compute:
 $$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f$$
-
+The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
 \begin{table}[h!]
 \centering
 \caption{MMS ALE FSI u=w}
