@@ -1,14 +1,17 @@
 
+\section*{Fluid-Structure Interaction between an elastic object and laminar incompressible flow}
+The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark \" flow around cylinder\" with fluid considered incompressible and in the laminar regime, and the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. 
 
+\subsection*{Problem Defintion}
+\subsubsection*{Domain}
+\begin{center}
+\includegraphics[scale=0.4]{./Verification_Validation/Hron_Turek/Domain_drawing.png}
+\end{center}
+The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, this is done to induce oscillations to an otherwise laminar flow. 
+This gives a force to the elastic bar. The parameters of the domain are:\\
+L = 2.5, H = 0.41, l = 0.35, h = 0.02, A = (0.2,0.6) \\
 
-\newpage
-\section*{Problem Defintion}
-\subsection*{Domain}
-The computational domain resembles the classic cfd benchmark with an added bar, with dimensions: \\
-The box: L = 2.5, H = 0.41 \\
-The bar: l = 0.35, h = 0.02 \\
-The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, this is done to induce oscillations to an otherwise laminar flow.\\
-Boundary conditions:\\
+\subsubsection*{Boundary conditions}
 The fluid velocity has a parabolic profile on the inlet that changes over time:\\
 
 \begin{align*}
@@ -18,15 +21,71 @@ u(0,y,t) &= u(0,y) \text{  for  } t \leq 2.0
 \end{align*}
 
 We set no slip on the "floor" and "ceiling" so to speak.\\
+$$ u(x,y,t) = 0 \text{  on  }  $$
 On the fluid solid interface the boundary conditions are set to:
 $$  \sigma_f n_f = \sigma_s n_s \hspace{4mm} on  \hspace{2mm}\Gamma^0 (interface)   $$
 In our variational form we leave this out and so implying that they are equal.
 
-\subsection*{CSM test}
-Parameters
-\begin{table}[h]
+\subsubsection*{Quantities for comparison}
+When the fluid moves around the circle and bar it exerts a force. These are split into drag and lift and calculated as follows:
+$$ (F_d, F_L) = \int_S \sigma_f n dS $$ 
+where S is the part of the circle and bar in contact with the fluid. \\
+We set a point A on the right side of the bar. This point is used to track the deformation in CSM and FSI tests. \\
+In each test the numbers with ref are the values taken from the benchmark paper \cite{Hron2006a}
+
+\subsection*{CFD test}
+The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
+The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also calculate with the bar and setting $\rho_s$ and $\mu_s$ to a large value. 
+
+\begin{table}[h!]
 \centering
-\caption{My caption}
+\caption{CFD parameters}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Parameters & CFD1 & CFD2 & CFD3 \\ \hline
+$\rho_f [10^3 \frac{kg}{m^3}]$ & 1 & 1 & 1 \\ \hline
+$\nu_f [10^{-3} \frac{m^2}{s}]$ & 1 & 1 & 1 \\ \hline
+$ U [\frac{m}{s}] $ & 0.2 & 1 & 2 \\ \hline
+Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CFD 1}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{elements} & \textbf{dofs} & \textbf{Drag} & \textbf{Lift} \\ \hline
+6616 & 32472 & 14.2439 & 1.0869 \\ \hline
+26464 & 124488 & 14.2646 & 1.11085 \\ \hline
+105856 & 487152 & 14.2755 & 1.11795 \\ \hline
+\textbf{ref} & \textbf{} & \textbf{14.29} & \textbf{1.119} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CFD 2}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{elements} & \textbf{dofs} & \textbf{Drag} & \textbf{Lift} \\ \hline
+6616 & 32472 & 135.465 & 6.27158 \\ \hline
+26464 & 124488 & 136.566 & 9.82166 \\ \hline
+105856 & 487152 & 136.573 & 10.4441 \\ \hline
+\textbf{ref} & \textbf{} & \textbf{136.7} & \textbf{10.53} \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{CSM test}
+The CSM test are calculated using only the bare and adding a gravity term $g$ with the same value but changing the parameters of solid.
+As with the CFD test the first to CSM test cause a steady state solution, and CSM 3 is more slender causing the bar to go up and down in time. Our quantity for comparing there will be the deformation of the point $A$. In CSM 3 the energy is conserved by using a Crank-Nicholson scheme as can be seen in the plots fig7 (hvordan citer man et plot?)
+
+\begin{table}[h!]
+\centering
+\caption{Parameters}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -58,7 +117,7 @@ ref & ref & -7.187 & -66.10 \\ \hline
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
-\begin{table}[]
+\begin{table}[h!]
 \centering
 \caption{CSM 2}
 \label{my-label}
@@ -73,6 +132,20 @@ ref & ref & -0.4690 & -16.97 \\ \hline
 \end{tabular}
 \end{table}
 
+\begin{table}[h!]
+\centering
+\caption{CSM 3}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+elements & dofs & ux $[10^3]$ & uy $[10^3]$ \\ \hline
+725 & 1756 & $-11.743 \pm 11.744$ & $-57.952 \pm 58.940$ \\ \hline
+2900 & 6408 & $-13.558 \pm 13.559$ & $ -61.968 \pm  63.440 $ \\ \hline
+11600 & 24412 & $ -14.128 \pm 14.127$ & $-63.216 \pm 64.744 $ \\ \hline
+46400 & 95220 & $ -14.182 \pm 14.181 $ & $ -63.305 \pm 64.843 $ \\ \hline
+ref &  & $-14.305 \pm 14.305 $ & $-63.607 \pm 65.160 $ \\ \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[ht] 
   \begin{subfigure}[b]{0.5\linewidth}
@@ -106,13 +179,10 @@ ref & ref & -0.4690 & -16.97 \\ \hline
 \end{figure}
 
 
-
-\newpage 
-
 \subsection*{FSI test}
 \begin{table}[ht]
 \centering
-\caption{Parameters}
+\caption{FSI Parameters}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -142,7 +212,3 @@ Cells & Dofs & ux of A $[x10^{-3}]$ & uy of A $[x10^{-3}]$ & Drag & Lift & Space
 \textbf{ref} & \textbf{ref} & \textbf{0.0227} & \textbf{0.8209} & \textbf{14.295} & \textbf{0.7638} & \textbf{ref} \\ \hline
 \end{tabular}
 \end{table}
-In my monolithic 
-
-
-
