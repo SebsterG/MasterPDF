@@ -20,6 +20,12 @@ Cm~Macal.
   Steiger, FB Armstrong, and JA Joines, eds.}
 \newblock {\em Simulation}, pages 1643--1649, 2005.
 
+\bibitem{Oasis}
+Mikael Mortensen and Kristian Valen-Sendstad.
+\newblock {Oasis: A high-level/high-performance open source Navier–Stokes
+  solver}.
+\newblock {\em Computer Physics Communications}, 188:177--188, 2015.
+
 \bibitem{Roache2002}
 Patrick~J. Roache.
 \newblock {Code Verification by the Method of Manufactured Solutions}.
