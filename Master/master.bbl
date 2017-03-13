@@ -1,39 +1,8 @@
 \begin{thebibliography}{1}
 
-\bibitem{DeBonis2013}
-James DeBonis.
-\newblock {Solutions of the Taylor-Green Vortex Problem Using High-Resolution
-  Explicit Finite Difference Methods}.
-\newblock {\em 51{\$}{\^{}}{\{}st{\}}{\$} AIAA Aerospace Sciences Meeting
-  including the New Horizons Forum and Aerospace Exposition}, (February):1--9,
-  2013.
-
-\bibitem{Hron2006a}
-Jaroslav Hron and Stefan Turek.
-\newblock {Proposal for numerical benchmarking of fluid-structure interaction
-  between an elastic object and laminar incompressible flow}.
-\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
-
-\bibitem{Macal2005}
-Cm~Macal.
-\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
-  Steiger, FB Armstrong, and JA Joines, eds.}
-\newblock {\em Simulation}, pages 1643--1649, 2005.
-
-\bibitem{Oasis}
-Mikael Mortensen and Kristian Valen-Sendstad.
-\newblock {Oasis: A high-level/high-performance open source Navier–Stokes
-  solver}.
-\newblock {\em Computer Physics Communications}, 188:177--188, 2015.
-
-\bibitem{Roache2002}
-Patrick~J. Roache.
-\newblock {Code Verification by the Method of Manufactured Solutions}.
-\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
-
-\bibitem{Selin2014}
-Noelle Selin.
-\newblock {Verification and Validation}.
-\newblock (February), 2014.
+\bibitem{Holzapfel2000}
+G~Holzapfel.
+\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
+  2000.
 
 \end{thebibliography}

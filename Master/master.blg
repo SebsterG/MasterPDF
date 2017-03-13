@@ -3,49 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
 Database file #1: Master_cites.bib
-Warning--I didn't find a database entry for "Roache"
-Warning--there's a number but no volume in DeBonis2013
-Warning--empty journal in Selin2014
-Warning--there's a number but no volume in Selin2014
-You've used 6 entries,
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            541 strings with 5021 characters,
-and the built_in function-call counts, 1809 in all, are:
-= -- 189
-> -- 54
-< -- 1
-+ -- 22
-- -- 16
-* -- 116
-:= -- 303
-add.period$ -- 18
-call.type$ -- 6
-change.case$ -- 26
+            505 strings with 4121 characters,
+and the built_in function-call counts, 217 in all, are:
+= -- 17
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 8
+:= -- 41
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 76
-empty$ -- 150
-format.name$ -- 16
-if$ -- 377
+cite$ -- 1
+duplicate$ -- 7
+empty$ -- 23
+format.name$ -- 2
+if$ -- 44
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 6
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 20
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 7
+num.names$ -- 2
+pop$ -- 9
 preamble$ -- 1
-purify$ -- 20
+purify$ -- 3
 quote$ -- 0
-skip$ -- 56
+skip$ -- 8
 stack$ -- 0
-substring$ -- 136
-swap$ -- 16
-text.length$ -- 1
+substring$ -- 5
+swap$ -- 1
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 3
-while$ -- 22
-width$ -- 7
-write$ -- 67
-(There were 4 warnings)
+type$ -- 4
+warning$ -- 0
+while$ -- 2
+width$ -- 2
+write$ -- 10
