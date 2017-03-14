@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  13 MAR 2017 18:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  14 MAR 2017 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,12 +963,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: continuum_mapping.png Graphic file (type png)
 
 <use continuum_mapping.png>
-Package pdftex.def Info: continuum_mapping.png used on input line 7.
+Package pdftex.def Info: continuum_mapping.png used on input line 8.
 (pdftex.def)             Requested size: 273.01517pt x 136.50757pt.
  [3 <./continuum_mapping.png>]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 49.
+d on input line 53.
 
 [4]) (./master.bbl [5] [6
 
@@ -990,7 +990,7 @@ Here is how much of TeX's memory you used:
  15359 multiletter control sequences out of 15000+600000
  21627 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,45p,480b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,45p,447b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1006,7 +1006,7 @@ e/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on master.pdf (7 pages, 171362 bytes).
+Output written on master.pdf (7 pages, 171879 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream
