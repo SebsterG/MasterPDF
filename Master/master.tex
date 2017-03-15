@@ -2,24 +2,37 @@
 \usepackage{preamble}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\lstdefinelanguage{Python}{
+ keywords={typeof, null, catch, switch, in, int, str, float, self},
+ ndkeywords={boolean, throw, import},
+ ndkeywords={return, class, if ,elif, endif, while, do, else, True, False , catch, def},
+ ndkeywordstyle=\color{blue}\bfseries,
+ identifierstyle=\color{black},
+ sensitive=false,
+ comment=[l]{\#},
+ morecomment=[s]{/*}{*/},
+ commentstyle=\color{purple}\ttfamily,
+ stringstyle=\color{red}\ttfamily,
+ backgroundcolor = \color{lightgray}
+}
 \setlength\parindent{0pt}
 \begin{document}
 \maketitle
-%\tableofcontents
-%\input{./IntroductionToFSI/IntroductionToFSI}
-%\newpage
-%\input{./IntroToFluidandStructure/IntroToFluidandStructure}
-%\input{./Navier-Stokes/Navier-Stokes}
-%\newpage
+\tableofcontents
+\input{./IntroductionToFSI/IntroductionToFSI}
+\newpage
+\input{./IntroToFluidandStructure/IntroToFluidandStructure}
+\input{./Navier-Stokes/Navier-Stokes}
+\newpage
 \input{./Solid_equations/Solid_equations}
-%\newpage
-%\input{./FSI_ALE_formulation/FSI_ALE_formulation}
-%\newpage
-%\input{./Partitioned_ALE_RN/Partitioned_ALE_RN}
-%\newpage
-%\input{./FSI_code_monolithic/FSI_code_monolithic}
-%\newpage
-%\input{./Verification_Validation/Verification_Validation}
+\newpage
+\input{./FSI_ALE_formulation/FSI_ALE_formulation}
+\newpage
+\input{./FSI_code_monolithic/FSI_code_monolithic_update}
+\newpage
+\input{./Partitioned_ALE_RN/Partitioned_ALE_RN}
+\newpage
+\input{./Verification_Validation/Verification_Validation}
 %\newpage
 %\input{./Benchmark_hron/Benchmark}
 

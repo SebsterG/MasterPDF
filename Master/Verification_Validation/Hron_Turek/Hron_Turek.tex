@@ -32,8 +32,24 @@ $$ (F_d, F_L) = \int_S \sigma_f n dS $$
 where S is the part of the circle and bar in contact with the fluid. \\
 We set a point A on the right side of the bar. This point is used to track the deformation in CSM and FSI tests. \\
 In each test the numbers with ref are the values taken from the benchmark paper \cite{Hron2006a}
-
-\subsection*{CFD test}
+We integrate the mapped fluid stress tensor over the bar and circle and appended to lists: 
+\begin{lstlisting}[language=Python]
+Dr = -assemble((sigma_f_new(v,p,d,mu_f)*n)[0]*ds(6))
+Li = -assemble((sigma_f_new(v,p,d,mu_f)*n)[1]*ds(6))
+Dr += -assemble((sigma_f_new(v("-"),p("-"),d("-"),mu_f)*n("-"))[0]*dS(5))
+Li += -assemble((sigma_f_new(v("-"),p("-"),d("-"),mu_f)*n("-"))[1]*dS(5))
+Drag_list.append(Dr)
+Lift_list.append(Li)
+\end{lstlisting}
+The deformation is calculated on the point A, and also added to lists:
+\begin{lstlisting}[language=Python]
+dsx = d(coord)[0]
+dsy = d(coord)[1]
+dis_x.append(dsx)
+dis_y.append(dsy)
+\end{lstlisting}
+\subsection{Results}
+\subsubsection*{CFD test}
 The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
 The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also calculate with the bar and setting $\rho_s$ and $\mu_s$ to a large value. 
 
@@ -79,7 +95,7 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection*{CSM test}
+\subsubsection*{CSM test}
 The CSM test are calculated using only the bare and adding a gravity term $g$ with the same value but changing the parameters of solid.
 As with the CFD test the first to CSM test cause a steady state solution, and CSM 3 is more slender causing the bar to go up and down in time. Our quantity for comparing there will be the deformation of the point $A$. In CSM 3 the energy is conserved by using a Crank-Nicholson scheme as can be seen in the plots fig7 (hvordan citer man et plot?)
 

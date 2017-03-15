@@ -29,17 +29,13 @@ We will formulate the equations in the Eulerian, Lagrangian and the ALE descript
 
 \subsection*{Solid}
 We express the solid balance laws in the Lagrangian formulation from the initial configuration
-$$\rho_s \frac{\partial^2 d}{\partial t^2} = \nabla \cdot (J \sigma_s F^{-T}) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} $$
+$$\rho_s \frac{\partial^2 d}{\partial t^2} = \nabla \cdot (P) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} $$
 
 \section*{Fluid}
 The fluid domain is moving, and therefore we need to redefine the velocity in the convective term in N-S to account for the moving domain 
 
 $$u \cdot \nabla u \rightarrow (u-\frac{\partial d_f}{\partial t}) \cdot \nabla u  $$ 
 where $d_f$ is the deformation in the fluid domain. Now the actual fluid velocity will be $u-\frac{\partial d}{\partial t}$ 
-
-
-
-The fluid particles are now moving on a moving domain $\nabla u (u-\frac{\partial d}{\partial t})$. So $u-\frac{\partial d}{\partial t}$ will be the actual fluid velocity.
 
 The fluid equations are denoted from the initial configuration again following [godboka] using the forementioned mappings
 \begin{align}
