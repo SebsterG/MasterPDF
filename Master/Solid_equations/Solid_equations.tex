@@ -1,47 +1,61 @@
 \chapter*{Solid Equations}
-In this chapter we will look briefly into the various parts that make up the solid equation. The solid equation is most commonly described in a Lagrangian description as it fits the solid problem. In a Lagrangian description the material particles are fixed with the grid points, this is a useful property when tracking the solid domain.
+In this chapter we will look briefly into the solid equation. The solid equation is most commonly described in a Lagrangian description. In a Lagrangian description the material particles are fixed with the grid points, this is a useful property when tracking the solid domain.
 
-\section*{Reference domain}
+\section*{Lagrangian physics}
 \subsection*{Mapping and identites}
 We will start by providing a short introduction to Lagrangian physics for the sake of completeness.
 \begin{center}
 \includegraphics[scale=0.4]{continuum_mapping.png}
 \end{center}
-We define $ \hat{\mathcal{S}}$ as the initial stress free configuration of a given body. $\mathcal{S}$ as the reference and $\mathcal{S}(t)$ as the current configuration respectively.
+We define $ \hat{\mathcal{S}}$ as the initial stress free configuration of a given body, $\mathcal{S}$ as the reference and $\mathcal{S}(t)$ as the current configuration respectively.
 We need to define a smooth mapping from the reference configuration to the current configuration:
-$$  \chi^s(t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     $$ 
-
+\begin{equation}
+\chi^s(t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     
+\end{equation}
 Following the notation of \cite{Holzapfel2000},where $\textbf{X}$ denote a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration. 
-$d^s(\textbf{X},t)$ denotes the displacement field and w(\textbf{X},t) is the domain velocity. we set the mapping
-$$\chi^s(\textbf{X},t) = \textbf{X}  + d^s(\textbf{X} ,t)$$
+Let $d^s(\textbf{X},t)$ denote the displacement field and w(\textbf{X},t) the domain velocity. We then set the mapping
+\begin{equation}
+ \chi^s(\textbf{X},t) = \textbf{X}  + d^s(\textbf{X} ,t) 
+\end{equation}
+
 where $d^s(\textbf{X} ,t)$ represents displacement field
-$$  d^s(\textbf{X},t) = \chi^s(\textbf{X},t) -\textbf{X}   $$
-
-$$  w(\textbf{X},t) = \frac{\partial \chi^s(\textbf{X},t)}{\partial t}   $$
-
-
+\begin{equation}
+ d^s(\textbf{X},t) = \chi^s(\textbf{X},t) -\textbf{X}   
+\end{equation}
+and the domain velocity is the partial time derivative: 
+\begin{equation}
+ w(\textbf{X},t) = \frac{\partial \chi^s(\textbf{X},t)}{\partial t}   
+\end{equation}
 
 Next we will need a function that describes the rate of deformation in the solid.
 \subsection*{Deformation gradient}
 When a continuum body undergoes deformation and is moved from the reference configuration to some current configuration we need a deformation gradient that describes the rate of deformation in the body. 
 If $d(\textbf{X},t)$ is a differentiable deformation field in a given body. We define the deformation gradient as:  
-$$F = \frac{\partial \chi}{\partial \textbf{X}} = I + \nabla d(\textbf{X},t)$$ 
-which denotes relative change of position under deformation in a Lagrangian frame of reference.
+\begin{equation}
+\label{eq:deformation_gradient}
+F = \frac{\partial \chi}{\partial \textbf{X}} = I + \nabla d(\textbf{X},t) 
+\end{equation}
+which denotes relative change of position under deformation in a Lagrangian frame of reference.  
 
 A change in volume between reference ($dv$) and current ($dV$) configuration is defined as :
-\begin{align*}
+\begin{align}
+\label{eq:det_F}
 dv =& J dV\\
-J =& \text{det}(F)\\
-\end{align*}
-Where J is the determinant of the deformation gradient F known as the Jacobian determinant or volume ratio. If there is no motion, that is $ F = I$ and $J=1$ , there is no change in volume. But we can also have the constraint $J=1$ with motion, but preserving the volume.\newline
+J =& \text{det}(F)
+\end{align}
+Where J is the determinant of the deformation gradient F known as the Jacobian determinant or volume ratio. If there is no motion, that is $ F = I$ and $J=1$ , there is no change in volume. But we can also have the constraint $J=1$ with motion, but preserving the volume.
 If we assume infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. The volume elements $dv, dV$ can be expressed by the dot product:
-$$ dv = ds\cdot dx = J dS dX$$
-This is used to get the Nanson`s formula:
-$$ ds = JF^{-T}dS$$
+\begin{equation}
+ dv = ds\cdot dx = J dS dX
+\end{equation}
+This is used to get the Nansons formula:
+\begin{equation}\label{eq:Nanson}
+ds = JF^{-T}dS
+\end{equation}
 which holds for an arbitrary line element in different configurations.
 
 \subsection*{Strain}
-In continuum mechanics relative change of location of particles is called strain and this is the fundamental quality that causes stress in a material. [Godboka]. An import strain measure is the right Cauchy-Green tensor 
+In continuum mechanics relative change of location of particles is called strain and this is the fundamental quality that causes stress in a material. \cite{Richter2016}. An import strain measure is the right Cauchy-Green tensor 
 $$C = F^TF$$ 
 which is symmetric and positive definite $C = C^T$.  We also introduce the Green-Lagrangian strain tensor E:
 $$E = \frac{1}{2}(F^TF -I) $$
@@ -49,22 +63,24 @@ which is also symmetric since C and I are symmetric. This measures the squared l
 		
 \subsection*{Stress}
 Stress is the internal forces between neighboring particles. We introduce the Cauchy stress tensor:
-$$ \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T$$
-Cauchys stress theorem states that if the traction vectors(force measured on surface area per unit) depends on $\bold{n}$ or $\bold{N}$ then they must be linear in $\bold{n}$ or $\bold{N}$. Giving: 
-\begin{align*}
-t(x,t,n) =& \sigma_s(x,t) \bold{n} \\
-T(x,t,n) =& P(X,t) \bold{N} \\
-\end{align*}
-where t is the traction vector and T is the first Piola-Kirchhoff traction vector. $\sigma$ is the Cauchy stress tensor and P is the first Piola-Kirchhoff stress tensor. Using Nanson?s formula P can be written as:
-$$ P = J \sigma F^{-T} $$
-We also introduce the second Piola-Kirchhoff stress tensor S:
-$$ S = J F^{-1}\sigma F^{-T} = F^{-1} P = S^T $$
-from this relation we can write the first Piola-Kirchhoff tensor by the second:
-$$ P = FS$$
-
-\subsection*{Solid equation}
-From the principles of conservation of mass and momentum, we get the solid equation stated in the Lagrangian reference system (Following the notation and theory from [Godboka]:
 \begin{equation}
+ \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
+\end{equation}
+Using \eqref{eq:Nanson} we get the first Piola-Kirchhoff stress tensor P:
+\begin{equation}
+ P = J \sigma F^{-T} 
+\end{equation}
+We also introduce the second Piola-Kirchhoff stress tensor S:
+\begin{equation}
+S = J F^{-1}\sigma F^{-T} = F^{-1} P = S^T 
+\end{equation}
+from this relation we can write the first Piola-Kirchhoff tensor by the second:
+\begin{equation}
+P = FS
+\end{equation}
+\subsection*{Solid equation}
+From the principles of conservation of mass and momentum, we get the solid equation stated in the Lagrangian reference system (Following the notation from \cite{Richter2016}):
+\begin{equation}\label{eq:Solid}
 \rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f 
 \end{equation}
 where we used the first Piola-Kirchhoff stress tensor.

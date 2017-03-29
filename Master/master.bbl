@@ -1,8 +1,68 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{DeBonis2013}
+James DeBonis.
+\newblock {Solutions of the Taylor-Green Vortex Problem Using High-Resolution
+  Explicit Finite Difference Methods}.
+\newblock {\em 51{\$}{\^{}}{\{}st{\}}{\$} AIAA Aerospace Sciences Meeting
+  including the New Horizons Forum and Aerospace Exposition}, (February):1--9,
+  2013.
+
+\bibitem{Fernandez2013}
+Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
+\newblock {Explicit robin-neumann schemes for the coupling of incompressible
+  fluids with thin-walled structures}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  267:566--593, 2013.
+
+\bibitem{Fernandez2015}
+Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
+\newblock {Generalized Robin-Neumann explicit coupling schemes for
+  incompressible fluid-structure interaction: Stability analysis and numerics}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  101(3):199--229, 2015.
 
 \bibitem{Holzapfel2000}
 G~Holzapfel.
 \newblock {Nonlinear solid mechanics: A continuum approach for engineering},
   2000.
+
+\bibitem{Hron2006a}
+Jaroslav Hron and Stefan Turek.
+\newblock {Proposal for numerical benchmarking of fluid-structure interaction
+  between an elastic object and laminar incompressible flow}.
+\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
+
+\bibitem{Macal2005}
+Cm~Macal.
+\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
+  Steiger, FB Armstrong, and JA Joines, eds.}
+\newblock {\em Simulation}, pages 1643--1649, 2005.
+
+\bibitem{Oasis}
+Mikael Mortensen and Kristian Valen-Sendstad.
+\newblock {Oasis: A high-level/high-performance open source Navier–Stokes
+  solver}.
+\newblock {\em Computer Physics Communications}, 188:177--188, 2015.
+
+\bibitem{Richter2016}
+Thomas Richter.
+\newblock {Fluid Structure Interactions}.
+\newblock 2016.
+
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
+\bibitem{Selin2014}
+Noelle Selin.
+\newblock {Verification and Validation}.
+\newblock (February), 2014.
+
+\bibitem{White2000}
+Frank~M White.
+\newblock {Viscous Fluid Flow Viscous}.
+\newblock {\em New York}, Second:413, 2000.
 
 \end{thebibliography}
