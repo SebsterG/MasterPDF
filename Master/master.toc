@@ -1,10 +1,18 @@
 \select@language {norsk}
-\contentsline {chapter}{\numberline {1}Fluid Structure Interaction Problem}{11}{chapter.1}
-\contentsline {chapter}{\numberline {2}Verification and validation. }{21}{chapter.2}
-\contentsline {section}{\numberline {2.1}Verification}{21}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}MMS on FSI ALE}{22}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Structure MMS}{23}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Validation}{24}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Taylor-Green vortex}{24}{subsection.2.2.1}
-\contentsline {subsubsection}{Problem definition}{24}{section*.31}
-\contentsline {subsection}{\numberline {2.2.2}Results}{26}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {1}Introduction to FSI}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Introduction to Fluid and Structure}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}Fluid equations}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Solid Equations}{11}{chapter.4}
+\contentsline {chapter}{\numberline {5}Fluid Structure Interaction Problem}{15}{chapter.5}
+\contentsline {chapter}{\numberline {6}Discretization}{21}{chapter.6}
+\contentsline {chapter}{\numberline {7}Implementation in FENiCS}{23}{chapter.7}
+\contentsline {chapter}{\numberline {8}Verification and validation. }{27}{chapter.8}
+\contentsline {subsection}{\numberline {8.0.1}MMS on FSI ALE}{28}{subsection.8.0.1}
+\contentsline {subsection}{\numberline {8.0.2}Structure MMS}{29}{subsection.8.0.2}
+\contentsline {subsection}{\numberline {8.0.3}Taylor-Green vortex}{30}{subsection.8.0.3}
+\contentsline {subsubsection}{Problem definition}{30}{section*.30}
+\contentsline {subsection}{\numberline {8.0.4}Results}{33}{subsection.8.0.4}
+\contentsline {chapter}{\numberline {9}Speed improvements}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}Jacobian reuse}{37}{section.9.1}
+\contentsline {chapter}{\numberline {10}Conclusions and further work}{39}{chapter.10}
+\contentsline {section}{\numberline {10.1}Partitioned}{39}{section.10.1}

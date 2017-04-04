@@ -1,8 +1,16 @@
-\BOOKMARK [0][-]{chapter.1}{Fluid Structure Interaction Problem}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Verification and validation. }{}% 2
-\BOOKMARK [1][-]{section.2.1}{Verification}{chapter.2}% 3
-\BOOKMARK [2][-]{subsection.2.1.1}{MMS on FSI ALE}{section.2.1}% 4
-\BOOKMARK [2][-]{subsection.2.1.2}{Structure MMS}{section.2.1}% 5
-\BOOKMARK [1][-]{section.2.2}{Validation}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.2.1}{Taylor-Green vortex}{section.2.2}% 7
-\BOOKMARK [2][-]{subsection.2.2.2}{Results}{section.2.2}% 8
+\BOOKMARK [0][-]{chapter.1}{Introduction to FSI}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Introduction to Fluid and Structure}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Fluid equations}{}% 3
+\BOOKMARK [0][-]{chapter.4}{Solid Equations}{}% 4
+\BOOKMARK [0][-]{chapter.5}{Fluid Structure Interaction Problem}{}% 5
+\BOOKMARK [0][-]{chapter.6}{Discretization}{}% 6
+\BOOKMARK [0][-]{chapter.7}{Implementation in FENiCS}{}% 7
+\BOOKMARK [0][-]{chapter.8}{Verification and validation. }{}% 8
+\BOOKMARK [1][-]{subsection.8.0.1}{MMS on FSI ALE}{chapter.8}% 9
+\BOOKMARK [2][-]{subsection.8.0.2}{Structure MMS}{subsection.8.0.1}% 10
+\BOOKMARK [2][-]{subsection.8.0.3}{Taylor-Green vortex}{subsection.8.0.1}% 11
+\BOOKMARK [2][-]{subsection.8.0.4}{Results}{subsection.8.0.1}% 12
+\BOOKMARK [0][-]{chapter.9}{Speed improvements}{}% 13
+\BOOKMARK [1][-]{section.9.1}{Jacobian reuse}{chapter.9}% 14
+\BOOKMARK [0][-]{chapter.10}{Conclusions and further work}{}% 15
+\BOOKMARK [1][-]{section.10.1}{Partitioned}{chapter.10}% 16
