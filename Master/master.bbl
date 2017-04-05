@@ -66,6 +66,12 @@ Noelle Selin.
 \newblock {Verification and Validation}.
 \newblock (February), 2014.
 
+\bibitem{Stein2003}
+K.~Stein, T.~Tezduyar, and R.~Benney.
+\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
+  Displacements}.
+\newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
+
 \bibitem{VanBrummelen2009}
 E.~H. van Brummelen.
 \newblock {Added Mass Effects of Compressible and Incompressible Flows in
@@ -76,5 +82,12 @@ E.~H. van Brummelen.
 Frank~M White.
 \newblock {Viscous Fluid Flow Viscous}.
 \newblock {\em New York}, Second:413, 2000.
+
+\bibitem{Wick2011}
+Thomas Wick.
+\newblock {Adaptive Finite Element Simulation of Fluid-Structure Interaction
+  with Application to Heart-Valve Dynamics}.
+\newblock {\em Institute of Applied Mathematics, University of Heidelber}, page
+  157, 2011.
 
 \end{thebibliography}

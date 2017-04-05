@@ -79,12 +79,21 @@ To bind together the computation of fluid and structure domain, we need an harmo
 For this purpose define the following harmonic extension equation in the fluid domain:
 
 \begin{equation}
-\nabla^2 d^f = 0\hspace{4mm}in \hspace{2mm} \mathcal{\hat{F}}
+ - \alpha_u \nabla^2 d^f = 0\hspace{4mm}in \hspace{2mm} \mathcal{\hat{F}}
 \end{equation}
 
 This equation is chosen for its good regularity and smoothing properties.
-
-It is also possible to chose an harmonic extension with stiffening, which can give better control of the deformed meshes. This in practice behaves like a transport problem, transporting the deformation into the fluid domain. Another possibility is extension by pseudo-elasticity which defines the extension operator by means of the Navier-Lame equation. And lastly we can chose a biharmonic extension, that is of fourth order character, and thus will have a high computational cost. For now I will stick with the harmonic extension and maybe look at these in the future. \cite{Richter2016}
+A strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011}, and further discussed in \cite{Stein2003}. Where they set 
+\begin{equation}
+\label{eq:alpha_u}
+\alpha_u = J^{-1}
+\end{equation} 
+This is a smart choice since J gets smaller closer to the interface, which again makes alpha large, this upholds the cell structure closer to the interface where most of the cell distortion appears.  
+It is also possible to chose an harmonic extension with stiffening, which can give better control of the deformed meshes. This in practice behaves like a transport problem, transporting the deformation into the fluid domain. Another possibility is extension by pseudo-elasticity which defines the extension operator by means of the Navier-Lame equation. And lastly we can chose a biharmonic extension, 
+\begin{equation}
+- \alpha_u \nabla^4 d^f = 0
+\end{equation}
+this gives the freedom of not requiring a careful choice of mesh dependent parameter. Implementation of the biharmonic extension is more tedious in that we have to implement an extra function and extra boundary conditions.  It is also of fourth order character, and thus will have a high computational cost. \cite{Richter2016}
 
 \subsection*{Coupled Fluid Structure Interface conditions}
 We introduce a global domain $\Omega \in \mathcal{S} \cup \mathcal{F} $ that is made up of the fluid and the structure and the interface. We define a global velocity function $u$ that is the fluid velocity in the fluid domain and the structure velocity in the structure domain. This can be done due to the interface condition making the velocity field continuous over the entire domain. Then the interface will be $ \Gamma \in \mathcal{S} \cap \mathcal{F}  $  
