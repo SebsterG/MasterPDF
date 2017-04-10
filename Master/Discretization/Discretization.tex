@@ -1,2 +1,61 @@
-\chapter{Discretization}
-CN and a bunch of stuff
+\section{Discretization}
+Now that we have stated the full FSI monolithic scheme we need to specify the ways in which the scheme is discretized. The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method.  \
+Following the ideas and notations of \cite{Wick2011}. In the domain $\Omega$ and time interval [0,T]. We use for simplicity the harmonic mesh motion: 
+Find $ U = \{\bold{u}, d, p\} \in X_D $ bla bla function spaces.
+
+\begin{align}
+A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}}  \\
+       &+ ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
+       &+ (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} \\
+       &+ ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}),\gamma )_{\mathcal{\hat{F}}} \\
+       &+ (\partial_t d , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\ 
+       &+  \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big) 	 		
+\end{align}
+
+
+I will here formulate the \textit{One step-$\theta$ scheme} from \cite{Wick2011}. This $\theta$ scheme has the advantage of easily being changed from the backward (implicit), forward(excplicit) or Crank-Nicholson (implicit) scheme. The backward Euler scheme is of first order and is implicit in that it is using the newest time step appears on both sides of the equation. The Crank-Nicholson is of second order and both the current and previous time step is used. This scheme suffers from instabilities in its normal context, we will therefore look at a \textit{shifted} Crank-Nicholson scheme. 
+
+We define the variational form by dividing into four categories: time term, implicit, pressure and the rest (stress, convection):
+
+\begin{align}
+A_T(U) &= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\partial_t d) , \phi )_{\mathcal{\hat{F}}} \\
+	    & + (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}} + (\partial_t d , \psi)_{\mathcal{\hat{S}}}  \\
+A_I(U) &= ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}), \gamma)_{\mathcal{\hat{F}}} \\
+A_E(U) &= (J (\nabla u)F^{-1} \bold{u} , \phi )_{\mathcal{\hat{F}}} + ( J \sigma_{f,u} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
+	    & + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\
+A_P(U) &= \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big)  	 		
+\end{align}
+
+Here the stress tensors have been split into a velocity and pressure part. 
+\begin{align}
+\sigma_{f,u} &= \mu ( \nabla u F^{-1} + F^{-T} \nabla u) \\
+\sigma_{f,p} &= -p I
+\end{align}
+We also notice that the we have split up 
+
+For the time group we discretize in the following way:
+\begin{align}
+A_T(U^{n,k}) \approx & \frac{1}{k} \big( \rho_f J^{n,\theta} (u^n - u^{n-1}) , \phi  \big)_{\mathcal{\hat{F}}} - \frac{1}{k} \big( \rho_f (\nabla u ) (d^n - d^{n-1}) , \phi \big)_{\mathcal{\hat{F}}} \\
++ & \frac{1}{k} \big( \rho_s J^{n,\theta} (u^n - u^{n-1}) , \phi  \big)_{\mathcal{\hat{S}}} +  \frac{1}{k} \big(  J^{n,\theta} (d^n - d^{n-1}) , \psi  \big)_{\mathcal{\hat{S}}}
+\end{align}
+And the Jacobian is written with superscript $\theta$ as:
+
+\begin{equation}
+J^{n, \theta} = \theta J^n + (1-\theta)J^{n-1}
+\end{equation}
+
+We can now introduce the \textit{One step-$\theta$ scheme}: 
+Find $U^n = \{u^n , d^n, p^n \}$
+
+\begin{align}
+& A_T(U^{n,k}) + \theta A_E(U^{n}) + A_P(U^{n}) + A_I(U^{n}) = \\
+& - (1-\theta) A_E(U^{n-1}) + \theta F^n + (1-\theta) F^{n-1}  
+\end{align}
+
+We see here that scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. 
+
+
+
+
+
+

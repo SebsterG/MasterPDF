@@ -1,3 +1,7 @@
 \chapter{Speed improvements}
 \section{Jacobian reuse}
 When solving a monolithic FSI problem, the size of the solution matrix can quickly become quite large. To solve non-linear FSI problems we as discussed before use a Newton solver. The majority of the time spent on in the newton solver is assembling the Jacobian. In most cases we employ a small $\delta t = 10^-2, 10^-3$, which in turn means that the Jacobian only differs by a small amount. The trick therefore is to reuse the Jacobian. This is done by telling the solver that we only assemble the Jacobian for a given number of iterations. The rest of the newton solver stays the same and keeps iterating until convergence, but the Jacobian matrix stays the same for a set number of iterations. When employed it was noticed that we needed a larger number of iterations to reach convergence, but the overall time of the Newton solver was much faster.
+
+RESULTS:
+FSI3 does not work with jacobian reuse or quadreduce. \\
+FSI2 works perfectly with reuse and quad, going pretty fast.

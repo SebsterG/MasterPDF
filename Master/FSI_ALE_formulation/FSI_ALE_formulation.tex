@@ -8,15 +8,6 @@ From a technical point of view, both formulations are equivalent.\cite{Richter20
 Lastly in this chapter we look at how to solve the equations. This problem is tackled using either a monolithic or a partitioned approach. We will go into details later, but the overall idea is that a monolithic scheme involves computing all the equations together into one block. The partitioned splits up into parts, that is we solve the fluid problem and structure problem separately. The advantage of this is that we can use existing solvers and techniques for each of the problems, but the difficulty is the treatment of the interface. The monolithic approach however, offers more stability but is more costly as the size of the problem increases\cite{Liu2014}.
 
 
-\subsection*{Notation}
-$u$ - Velocity in fluid and structure. \\
-$w$- Velocity in the domain. It is the velocity of the mesh in the calculations. This will also be the velocity in structure when defined in the Lagrangian formulation. \\
-$d$ - Displacement of the solid. The time derivative of the displacement will be the domain velocity. \\
-$p$ - Pressure in the fluid. \\
-$\hat{\mathcal{S}}$ - Solid reference domain  \\
-$\mathcal{S}$ - Solid current domain  \\
-$ \hat{\mathcal{F}}$ - Fluid reference domain \\
-$ \mathcal{F} $ - Fluid reference domain \\
 
 \subsection*{Mapping}
 Let $\hat{\mathcal{V}}$ be a reference volume and $\mathcal{V}(t)$ be the current time volume using \cite{Richter}. Then using \eqref{eq:deformation_gradient} and \eqref{eq:det_F} we define a mapping between the volumes from the current to reference configurations:
@@ -95,6 +86,7 @@ It is also possible to chose an harmonic extension with stiffening, which can gi
 \end{equation}
 this gives the freedom of not requiring a careful choice of mesh dependent parameter. Implementation of the biharmonic extension is more tedious in that we have to implement an extra function and extra boundary conditions.  It is also of fourth order character, and thus will have a high computational cost. \cite{Richter2016}
 
+
 \subsection*{Coupled Fluid Structure Interface conditions}
 We introduce a global domain $\Omega \in \mathcal{S} \cup \mathcal{F} $ that is made up of the fluid and the structure and the interface. We define a global velocity function $u$ that is the fluid velocity in the fluid domain and the structure velocity in the structure domain. This can be done due to the interface condition making the velocity field continuous over the entire domain. Then the interface will be $ \Gamma \in \mathcal{S} \cap \mathcal{F}  $  
 We need to define conditions that couple that motions of the fluid and structure together. These consist of:
@@ -125,6 +117,9 @@ Find $\bold{u} \in \hat{\mathcal{F}} , p \in \hat{\mathcal{F}} \text{  and  } d 
 \bold{u} - \frac{\partial d}{\partial t}  &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{S}}\\
 J\sigma_f F^{-T} n_f &= \sigma_s  n_s \hspace{3mm} \text{on  } \Gamma
 \end{align}
+
+\input{./Discretization/Discretization}
+
 
 
 
