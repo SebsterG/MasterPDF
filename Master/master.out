@@ -1,5 +1,34 @@
-\BOOKMARK [0][-]{chapter.1}{Equations and notation}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Solid Equations}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Fluid equations}{chapter.1}% 3
-\BOOKMARK [0][-]{chapter.2}{Fluid Structure Interaction Problem}{}% 4
-\BOOKMARK [1][-]{section.2.1}{Discretization}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.1}{Introduction to FSI}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Equations and notation}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Notation}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{Spaces}{section.2.1}% 4
+\BOOKMARK [1][-]{section.2.2}{Lagrangian physics}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.1}{Deformation gradient}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.2}{Strain}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.3}{Stress}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Solid equation}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Fluid equations}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.4.1}{Boundary conditions}{section.2.4}% 11
+\BOOKMARK [0][-]{chapter.3}{Fluid Structure Interaction Problem}{}% 12
+\BOOKMARK [1][-]{section.3.1}{Mapping}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.2}{Balance laws}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.2.1}{Solid}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.2}{Fluid}{section.3.2}% 16
+\BOOKMARK [1][-]{section.3.3}{Mesh motion}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Coupled Fluid Structure Interface conditions}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.5}{Monolithic FSI Problem}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.6}{Discretization}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.6.1}{Spaces and Elements}{section.3.6}% 21
+\BOOKMARK [0][-]{chapter.4}{Implementation in FENiCS}{}% 22
+\BOOKMARK [0][-]{chapter.5}{Verification and validation. }{}% 23
+\BOOKMARK [1][-]{section.5.1}{Structure MMS}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{MMS on FSI ALE}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.3}{Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{chapter.5}% 26
+\BOOKMARK [2][-]{subsection.5.3.1}{Problem Defintion}{section.5.3}% 27
+\BOOKMARK [2][-]{subsection.5.3.2}{Results}{section.5.3}% 28
+\BOOKMARK [1][-]{section.5.4}{Mesh motion techniques}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.5}{Temporal stability}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{Speed improvements}{}% 31
+\BOOKMARK [1][-]{section.6.1}{Jacobian reuse}{chapter.6}% 32
+\BOOKMARK [0][-]{chapter.7}{Conclusions and further work}{}% 33
+\BOOKMARK [1][-]{section.7.1}{Partitioned}{chapter.7}% 34

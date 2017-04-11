@@ -1,8 +1,21 @@
 \section{Discretization}
 Now that we have stated the full FSI monolithic scheme we need to specify the ways in which the scheme is discretized. The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method.  \
-Following the ideas and notations of \cite{Wick2011}. In the domain $\Omega$ and time interval [0,T]. We use for simplicity the harmonic mesh motion: 
-Find $ U = \{\bold{u}, d, p\} \in X_D $ bla bla function spaces.
+Following the ideas and notations of \cite{Wick2011}. In the domain $\Omega$ and time interval [0,T]. \\
+Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \texttimes \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
 
+\begin{equation}
+\int_0^T A(U)(\Psi) dt = \int_0^T \hat{F}(\Psi) dt \hspace{4mm} \forall  \Psi \in \hat{X}
+\end{equation}
+
+where $ \Psi = \{  \hat{\psi}^\bold{u}_f, \hat{\psi}^\bold{u}_s, \hat{\psi}^d_f, \hat{\psi}^d_s, \hat{\psi}^p_f,\hat{\psi}^p_f  \}$ and
+
+ $\hat{X} = \hat{V}^0_{f,\bold{u}} \times \hat{L}_f \times \hat{V}^0_{f,d,\hat{\Sigma}} \times \hat{V}_s^0 \times \hat{L}_f^0 \times \hat{L}_s^0  $
+
+
+We use for simplicity the harmonic mesh motion and we use a global function for $\bold{u}$ in the entire domain instead of $\bold{u}_f$ in the fluid and $\bold{u}_s$ in the solid. Same for the test functions. This is done for ease of reading and also for the ease of implementation later.
+
+The full monolithic FSI variational form reads:
+  
 \begin{align}
 A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}}  \\
        &+ ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
@@ -49,10 +62,10 @@ Find $U^n = \{u^n , d^n, p^n \}$
 
 \begin{align}
 & A_T(U^{n,k}) + \theta A_E(U^{n}) + A_P(U^{n}) + A_I(U^{n}) = \\
-& - (1-\theta) A_E(U^{n-1}) + \theta F^n + (1-\theta) F^{n-1}  
+& - (1-\theta) A_E(U^{n-1}) + \theta \hat{f}^n + (1-\theta) \hat{f}^{n-1}  
 \end{align}
 
-We see here that scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. 
+We see here that scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. $\hat{f}$ is the body forces which will be ignored in this thesis. 
 
 
 

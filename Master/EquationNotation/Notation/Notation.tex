@@ -1,10 +1,42 @@
-\section*{Notation}
-Let $\Omega \in \mathbb{R}^d $ for $d \in \{2\}$, be a bounded domain with boundary $ \partial \Omega$. The domain is made up of of two sub domains $ \mathcal{F} $ for the fluid domain, and $\mathcal{S}$ for the solid. The interface between the domains are denoted by $ \Sigma = \mathcal{F} \cap \mathcal{S} $. The reference or initial is denoted by $ \hat{\Sigma} = \hat{\mathcal{F}} \cap \hat{\mathcal{S}}  $ 
-The functions will be denoted as:
+\section{Notation}
+Let $\Omega \in \mathbb{R}^d $ for $d \in \{1,2\}$, be a bounded domain with boundary $ \partial \Omega$. The domain is made up of of two sub domains $ \mathcal{F} $ for the fluid domain, and $\mathcal{S}$ for the solid. The interface between the domains are denoted by $ \Sigma = \mathcal{F} \cap \mathcal{S} $. The reference or initial is denoted by $ \hat{\Sigma} = \hat{\mathcal{F}} \cap \hat{\mathcal{S}}  $ 
+The functions will be denoted as: \\
 $u$ - Velocity in fluid and structure. \\
 $d$ - Displacement in the solid and in the fluid mesh.\\
 $p$ - Pressure in the fluid. \\
 
 \subsection{Spaces}
+Let $ X \in \mathbb{R}^d , d \in\{ 1,2  \} $ be a time dependent domain we define:\\
+
+\begin{equation}
+\hat{V}_X := H^1(X), \hspace{6mm}  \hat{V}^1_X := H^1_0(X) \\
+\end{equation}
+
+$ H^1 $ indicating a Hilbert space and
+
+\begin{equation}
+\hat{L}_X := L^2(X), \hspace{6mm} \hat{L}^0_X := L^2(X) / \mathbb{R}
+\end{equation}
+
+$L^2$ indicating a standard Lebesque space.
+
+The trial and test spaces for the velocity variable in the fluid domain,
+
+\begin{equation}
+\hat{V}^0_{f,u} := \{ \hat{u} \in H^1_0(\mathcal{F}) : \hat{u}_f = \hat{u}_s on \hat{\Sigma}  \}
+\end{equation}
+
+and the same for the artificial displacement in the moving fluid domain:
+
+\begin{equation}
+\hat{V}^0_{f,d} := \{ \hat{d} \in H^1_0(\mathcal{F}) : \hat{d}_f = \hat{d}_s on \hat{\Sigma}  \}
+\end{equation}
+\begin{equation}
+\hat{V}^0_{f,d} := \{ \hat{d} \in H^1_0(\mathcal{F}) : \hat{\psi_f} = \hat{\psi_s} on \hat{\Sigma}  \}
+\end{equation}
+
+
+
+   
 
 

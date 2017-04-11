@@ -1,37 +1,4 @@
-\subsection{MMS on FSI ALE}
-In this section we use the method of manufactured solutions to verify the FSI ALE monolithic solver. We start by prescribing a motion to $ d$ and $w$ and give a solution to $u$ and $p$. We set $u = w$ to start with:
-\begin{align*}
-d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
-p =& cos(x)cos(t)
-\end{align*}
-We make the solutions to uphold the criterias : $ \nabla \cdot u =0  $ and $ \frac{\partial d}{\partial t} = w  $ \\
-
-To test the mapping we make the source term $f$ without mappings:
-$$ \rho_f \frac{\partial u}{\partial t}  +  \nabla u (u-\frac{\partial d}{\partial t})  -  \nabla \cdot \sigma_f  = f $$
-Then we use this f and map it to the reference configuration and compute:
-$$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f$$
-The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
-\begin{table}[h!]
-\centering
-\caption{MMS ALE FSI u=w}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-N & $\Delta t$ & m & $E_u$ & $k_u$ & $E_p$ & $k_p$ \\ \hline
-64 & 0.1 & 2 & 0.0140496662424 & - & 4.78779559903 & - \\ \hline
-64 & 0.05 & 2 & 0.00697215098985 & 1.01086014072 & 2.38002096658 & 1.00838727906 \\ \hline
-64 & 0.025 & 2 & 0.00341287458821 & 1.03061641184 & 1.18981484439 & 1.00023719999 \\ \hline
-64 & 0.0125 & 2 & 0.00164214907307 & 1.05540230133 & 0.595733372533 & 0.99799839775 \\ \hline
-2 & $10x^{-6}$ & 2 & 0.000520027806571 & - & 0.0194221106771 & - \\ \hline
-4 & $10x^{-6}$ & 2 & 6.60205272446e-05 & 2.97760220293 & 0.00480815191132 & 2.01414560945 \\ \hline
-8 & $10x^{-6}$ & 2 & 8.28184559099e-06 & 2.99489045 & 0.00118568799584 & 2.0197580517 \\ \hline
-16 & $10x^{-6}$ & 2 & 1.0417232845e-06 & 2.99098020306 & 0.000281586546806 & 2.0740741124 \\ \hline
-\end{tabular}
-\end{table}
-
-\newpage
-\subsection{Structure MMS}
+\section{Structure MMS}
 We also want to test the coupled solid solver. We make a sourceterm $f_s$:
 $$\rho_s \frac{\partial u}{\partial t} - \nabla \cdot ( P ) = f_s $$
 Solid variational formulation:
@@ -85,6 +52,41 @@ N  & $\Delta t$ & $E_u$             & $k_u$          & $E_u$             & $k_d$
 64 & 0.00005    & 1.46821750169e-07 & 0.998149192911 & 1.00209817454e-09 & 1.01388570182 \\ \hline
 \end{tabular}
 \end{table}
+
+
+\section{MMS on FSI ALE}
+In this section we use the method of manufactured solutions to verify the FSI ALE monolithic solver. We start by prescribing a motion to $ d$ and $w$ and give a solution to $u$ and $p$. We set $u = w$ to start with:
+\begin{align*}
+d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+u = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
+p =& cos(x)cos(t)
+\end{align*}
+We make the solutions to uphold the criterias : $ \nabla \cdot u =0  $ and $ \frac{\partial d}{\partial t} = w  $ \\
+
+To test the mapping we make the source term $f$ without mappings:
+$$ \rho_f \frac{\partial u}{\partial t}  +  \nabla u (u-\frac{\partial d}{\partial t})  -  \nabla \cdot \sigma_f  = f $$
+Then we use this f and map it to the reference configuration and compute:
+$$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f$$
+The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
+\begin{table}[h!]
+\centering
+\caption{MMS ALE FSI u=w}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+N & $\Delta t$ & m & $E_u$ & $k_u$ & $E_p$ & $k_p$ \\ \hline
+64 & 0.1 & 2 & 0.0140496662424 & - & 4.78779559903 & - \\ \hline
+64 & 0.05 & 2 & 0.00697215098985 & 1.01086014072 & 2.38002096658 & 1.00838727906 \\ \hline
+64 & 0.025 & 2 & 0.00341287458821 & 1.03061641184 & 1.18981484439 & 1.00023719999 \\ \hline
+64 & 0.0125 & 2 & 0.00164214907307 & 1.05540230133 & 0.595733372533 & 0.99799839775 \\ \hline
+2 & $10x^{-6}$ & 2 & 0.000520027806571 & - & 0.0194221106771 & - \\ \hline
+4 & $10x^{-6}$ & 2 & 6.60205272446e-05 & 2.97760220293 & 0.00480815191132 & 2.01414560945 \\ \hline
+8 & $10x^{-6}$ & 2 & 8.28184559099e-06 & 2.99489045 & 0.00118568799584 & 2.0197580517 \\ \hline
+16 & $10x^{-6}$ & 2 & 1.0417232845e-06 & 2.99098020306 & 0.000281586546806 & 2.0740741124 \\ \hline
+\end{tabular}
+\end{table}
+
+
 
 
 
