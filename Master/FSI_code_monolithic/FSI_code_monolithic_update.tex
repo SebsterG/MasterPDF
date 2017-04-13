@@ -1,8 +1,3 @@
-\chapter{Implementation in FENiCS}
-Here we will look at the implementation of the monolithic FSI Code in FENiCS. 
-
-
-
 \lstdefinelanguage{Python}{
  keywords={typeof, null, catch, switch, in, int, str, float, self},
  ndkeywords={boolean, throw, import},
@@ -17,47 +12,103 @@ Here we will look at the implementation of the monolithic FSI Code in FENiCS.
  backgroundcolor = \color{lightgray}
 }
 
+\chapter{FSI Implementation in FEniCS}
+Here we will look at the implementation of the monolithic FSI Code in FENiCS. Not every part of the code will be handled here, but hopefully enough so that someone familiar with FEniCS could in short time implement the scheme.
 
-All the mappings and stresstensors are made using functions, I will just show some to understand the code later on:
-
-\begin{lstlisting}[language=Python]
-def F_(U):
-	return (Identity(len(U)) + grad(U))
-
-def J_(U):
-	return det(F_(U))
-
-def sigma_f_new(u,p,d,mu_f):
-	return -p*Identity(len(u)) + mu_f*(grad(u)*inv(F_(d)) + inv(F_(d)).T*grad(u).T)
-
+\section{Mesh, mappings and stress tensors}
+The mesh was made with Gmesh, with a clear straight boundary splitting the fluid and solid domains. This is converted to a xml file and loaded into FEniCS. 
+\begin{lstlisting}[language=Python, basicstyle=\small]
+mesh_file = Mesh("Mesh/fluid_new.xml")
 \end{lstlisting}
+
+The boundaries are defined using built in domain functions. We only here show the inlet where we specified where the spatial points are, and give it a mark value to be used when the Dirichlet conditions are set. This is also done using CellFunctions to define the fluid and structure domain. 
+
+\begin{lstlisting}[language=Python,basicstyle=\small]
+Inlet = AutoSubDomain(lambda x: "on_boundary" and near(x[0],0))
+boundaries = FacetFunction("size_t",mesh_file)
+Inlet.mark(boundaries, 3)
+\end{lstlisting}
+
+
+All the mappings are made with python functions, this is done so we can call the mappings later in the variational form.
+
+\begin{lstlisting}[language=Python, basicstyle=\small]
+def F_(d):
+	return (Identity(len(d)) + grad(d))
+
+def J_(d):
+	return det(F_(d))
+\end{lstlisting}
+
+The stress tensors are also defined as functions to be used in the variational form.
+
+\begin{lstlisting}[language=Python, basicstyle=\small]
+def E(d):
+	return 0.5*(F_(d).T*F_(d) - Identity(len(d)))
+
+def S(d,lamda_s,mu_s):
+    I = Identity(len(d))
+    return 2*mu_s*E(d) + lamda_s*tr(E(d))*I
+
+def Piola1(d,lamda_s,mu_s):
+	return F_(d)*S(d,lamda_s,mu_s)
+	
+def sigma_f_u(u,d,mu_f):
+    return  mu_f*(grad(u)*inv(F_(d)) + inv(F_(d)).T*grad(u).T)
+
+def sigma_f_p(p, u):
+    return -p*Identity(len(u))
+    
+\end{lstlisting}
+
+\section{Variational form}
 
 The variational form can be written directly into FEniCS. We write all the forms and add them together to make one big form to be calculated in the upcoming timeloop. We start by looking at the fluid variational form
-\begin{lstlisting}[language=Python]
-F_fluid = (rho_f/k)*inner(J_(d_["n"])*(v_["n"] - v_["n-1"]), phi)*dx_f
-F_fluid += rho_f*inner(J_(d_["n"])*grad(v_["n"])*inv(F_(d_["n"]))*(v_["n"] - (d_["n"]-d_["n-1"])/k), phi)*dx_f
-F_fluid += inner(J_(d_["n"])*sigma_f_new(v_["n"], p_["n"], d_["n"], mu_f)*inv(F_(d_["n"])).T, grad(phi))*dx_f
-F_fluid -= inner(div(J_(d_["n"])*inv(F_(d_["n"]))*v_["n"]), gamma)*dx_f
-\end{lstlisting}
+\begin{lstlisting}[language=Python, basicstyle=\small]
+J_theta = theta*J_(d_["n"]) + (1 - theta)*J_(d_["n-1"])
 
-where $dx_f$ is the fluid domain.
+F_fluid_linear = rho_f/k*inner(J_theta*(v_["n"] - v_["n-1"]), psi)*dx_f
+
+F_fluid_nonlinear =  Constant(theta)*rho_f*\
+inner(J_(d_["n"])*grad(v_["n"])*inv(F_(d_["n"]))*v_["n"], psi)*dx_f
+
+F_fluid_nonlinear += inner(J_(d_["n"])*sigma_f_p(p_["n"], d_["n"])*\
+inv(F_(d_["n"])).T, grad(psi))*dx_f
+
+F_fluid_nonlinear += Constant(theta)*inner(J_(d_["n"])\
+*sigma_f_u(v_["n"], d_["n"], mu_f)*inv(F_(d_["n"])).T, grad(psi))*dx_f
+
+F_fluid_nonlinear += Constant(1 - theta)*inner(J_(d_["n-1"])*\
+sigma_f_u(v_["n-1"], d_["n-1"], mu_f)*inv(F_(d_["n-1"])).T, grad(psi))*dx_f
+
+F_fluid_nonlinear += \
+inner(div(J_(d_["n"])*inv(F_(d_["n"]))*v_["n"]), gamma)*dx_f
+
+F_fluid_nonlinear += Constant(1 - theta)*rho_f*\
+inner(J_(d_["n-1"])*grad(v_["n-1"])*inv(F_(d_["n-1"]))*v_["n-1"], psi)*dx_f
+
+F_fluid_nonlinear -= rho_f*inner(J_(d_["n"])*\
+grad(v_["n"])*inv(F_(d_["n"]))*((d_["n"]-d_["n-1"])/k), psi)*dx_f
+\end{lstlisting}
+where $dx_f$ is the fluid domain. The theta value choses the scheme we want. inv() gives the inverse of the matrix. 
+
+
 Next is the solid variational form:
-\begin{lstlisting}[language=Python]
+\begin{lstlisting}[language=Python, basicstyle=\small]
 delta = 1E10
-	F_solid = rho_s/k*inner(v_["n"] - v_["n-1"], phi)*dx_s
-	
-	F_solid += inner(Piola1(0.5*(d_["n"] + d_["n-1"]), lamda_s, mu_s), grad(phi))*dx_s
+F_solid_linear = rho_s/k*inner(v_["n"] - v_["n-1"], psi)*dx_s +\
+delta*(1/k)*inner(d_["n"] - d_["n-1"], phi)*dx_s -\
+delta*inner(Constant(theta)*v_["n"] + Constant(1-theta)*v_["n-1"], phi)*dx_s
 
-	F_solid += delta*((1./k)*inner(d_["n"] - d_["n-1"],phi)*dx_s - inner(0.5*(v_["n"] + v_["n-1"]), psi)*dx_s)
-	
-	F_solid += inner(grad(d_["n"]), grad(phi))*dx_f + (1./k)*inner(d_["n"] - d_["n-1"], psi)*dx_f
+F_solid_nonlinear = inner(Piola1(Constant(theta)*d_["n"] +\
+Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 \end{lstlisting}
 
-The condition $ u = \frac{\partial d}{\partial t} in \mathcal{S} $, is weighted with a delta value. This is done since we compute everything together this is an important condition? vet ikke hva jeg skal skrive her...
-We have used a Crank-Nicholson scheme in the solid to preserve the energy, which will be discussed later in the Verification and Validation chapter.
+The weighed delta is talked about in section \ref{Discretization}
 
+\section{NewtonSolver}
 To solve a non-linear problem we need make a newton solver, taken from [Mikael kompendium]. F is derivated wrt to $dvp$ and is assembled to a matrix. -F is assembled as b and we solve until the residual is smaller than a give tolerance. There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve speed, as we shall see later. Lastly the the mpi line is when the code is running in parallell that we only print out the values for one of the computational nodes.  
-\begin{lstlisting}[language=Python]
+\begin{lstlisting}[language=Python, basicstyle=\small]
     Iter      = 0
     residual   = 1
     rel_res    = residual
@@ -88,9 +139,10 @@ To solve a non-linear problem we need make a newton solver, taken from [Mikael k
 \end{lstlisting}
 
 
+\section{Timeloop}
 In the time loop we call on the solver and update the functions $ v,d,p$ for each round. The counter value is used when we only want to take out values every certain number of time iterations.
 
-\begin{lstlisting}[language=Python]
+\begin{lstlisting}[language=Python, basicstyle=\small]
 
 while t <= T:
     print "Time t = %.5f" % t
@@ -117,12 +169,3 @@ while t <= T:
 
 
 	
-
-
-
-
-
-
-
-
-

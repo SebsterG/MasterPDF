@@ -20,18 +20,22 @@
 \contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{14}{section.3.5}
 \contentsline {section}{\numberline {3.6}Discretization}{14}{section.3.6}
 \contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{16}{subsection.3.6.1}
-\contentsline {chapter}{\numberline {4}Implementation in FENiCS}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Verification and validation. }{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Structure MMS}{20}{section.5.1}
-\contentsline {section}{\numberline {5.2}MMS on FSI ALE}{20}{section.5.2}
-\contentsline {section}{\numberline {5.3}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{22}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Problem Defintion}{22}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Results}{23}{subsection.5.3.2}
-\contentsline {subsubsection}{CFD test}{23}{section*.11}
-\contentsline {subsubsection}{CSM test}{24}{section*.15}
-\contentsline {section}{\numberline {5.4}Mesh motion techniques}{25}{section.5.4}
-\contentsline {section}{\numberline {5.5}Temporal stability}{25}{section.5.5}
-\contentsline {chapter}{\numberline {6}Speed improvements}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Jacobian reuse}{27}{section.6.1}
-\contentsline {chapter}{\numberline {7}Conclusions and further work}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Partitioned}{29}{section.7.1}
+\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Variational form}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}NewtonSolver}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Timeloop}{19}{section.4.4}
+\contentsline {chapter}{\numberline {5}Verification and validation. }{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Structure MMS}{22}{section.5.1}
+\contentsline {section}{\numberline {5.2}MMS on FSI ALE}{22}{section.5.2}
+\contentsline {section}{\numberline {5.3}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{24}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Problem Defintion}{24}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Results}{25}{subsection.5.3.2}
+\contentsline {subsubsection}{CFD test}{25}{section*.11}
+\contentsline {subsubsection}{CSM test}{26}{section*.15}
+\contentsline {section}{\numberline {5.4}Mesh motion techniques}{27}{section.5.4}
+\contentsline {section}{\numberline {5.5}Temporal stability}{27}{section.5.5}
+\contentsline {chapter}{\numberline {6}Speed improvements}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Jacobian reuse}{29}{section.6.1}
+\contentsline {chapter}{\numberline {7}Conclusions and further work}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Partitioned}{31}{section.7.1}

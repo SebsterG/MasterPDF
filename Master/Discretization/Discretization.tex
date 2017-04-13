@@ -1,4 +1,4 @@
-\section{Discretization}
+\section{Discretization}\label{Discretization}
 Now that we have stated the full FSI monolithic scheme we need to specify the ways in which the scheme is discretized. The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method.  \
 Following the ideas and notations of \cite{Wick2011}. In the domain $\Omega$ and time interval [0,T]. \\
 Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \texttimes \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
@@ -21,11 +21,13 @@ A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\bold{u} - \
        &+ ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
        &+ (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} \\
        &+ ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}),\gamma )_{\mathcal{\hat{F}}} \\
-       &+ (\partial_t d , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\ 
+       \label{eq:condition}
+       &+ \delta\big((\partial_t d , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}}\big) \\ 
        &+  \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big) 	 		
 \end{align}
 
-
+The condition \eqref{eq:condition} , is weighted with a $\delta$ value. This is a critical detail for the program (detailed later) to run. The only two places where we use the test function $\psi$ is on this condition and the lifting operator. The weighting says in a weak manner that this condition is important for the overall program. In \cite{Wick} they have $\rho_s$ in front of the condition which has no physical meaning, but will act as a weight. $\rho_s$ is 7800 for steel and 1400 PVC \cite{Hron2006a} so these could work as weights. While in our program we set it to a large value $\delta = 10^{10}$. Whilst in \cite{Wick2011a}, where the same scheme is used there is no weighting. 
+\\
 I will here formulate the \textit{One step-$\theta$ scheme} from \cite{Wick2011}. This $\theta$ scheme has the advantage of easily being changed from the backward (implicit), forward(excplicit) or Crank-Nicholson (implicit) scheme. The backward Euler scheme is of first order and is implicit in that it is using the newest time step appears on both sides of the equation. The Crank-Nicholson is of second order and both the current and previous time step is used. This scheme suffers from instabilities in its normal context, we will therefore look at a \textit{shifted} Crank-Nicholson scheme. 
 
 We define the variational form by dividing into four categories: time term, implicit, pressure and the rest (stress, convection):
