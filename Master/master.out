@@ -30,9 +30,14 @@
 \BOOKMARK [1][-]{section.5.3}{Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{chapter.5}% 30
 \BOOKMARK [2][-]{subsection.5.3.1}{Problem Defintion}{section.5.3}% 31
 \BOOKMARK [2][-]{subsection.5.3.2}{Results}{section.5.3}% 32
-\BOOKMARK [1][-]{section.5.4}{Mesh motion techniques}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.5}{Temporal stability}{chapter.5}% 34
-\BOOKMARK [0][-]{chapter.6}{Speed improvements}{}% 35
-\BOOKMARK [1][-]{section.6.1}{Jacobian reuse}{chapter.6}% 36
-\BOOKMARK [0][-]{chapter.7}{Conclusions and further work}{}% 37
-\BOOKMARK [1][-]{section.7.1}{Partitioned}{chapter.7}% 38
+\BOOKMARK [1][-]{section.5.4}{Flexible tube}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.4.1}{Problem definition}{section.5.4}% 34
+\BOOKMARK [2][-]{subsection.5.4.2}{Boundary conditions}{section.5.4}% 35
+\BOOKMARK [2][-]{subsection.5.4.3}{Quanities for comparison}{section.5.4}% 36
+\BOOKMARK [2][-]{subsection.5.4.4}{Results}{section.5.4}% 37
+\BOOKMARK [1][-]{section.5.5}{Mesh motion techniques}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.6}{Temporal stability}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Speed improvements}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Jacobian reuse}{chapter.6}% 41
+\BOOKMARK [0][-]{chapter.7}{Conclusions and further work}{}% 42
+\BOOKMARK [1][-]{section.7.1}{Partitioned}{chapter.7}% 43

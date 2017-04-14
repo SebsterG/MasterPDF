@@ -30,13 +30,31 @@ Same for the divergence of a vector $ \bold{u}$:
 
 \section{Balance laws}
 
-We will formulate the equations in the Eulerian, Lagrangian and the ALE description.
+We will formulate the equations in the Eulerian, Lagrangian and the ALE description. We start by briefly talking about time derivatives in the different configurations. In the Lagrangian setting the total and partial derivatives are the same \cite{Wick2011}:
+
+\begin{equation}
+d_t f(x,t) = \partial_t f(x,t)
+\end{equation}
+
+in the Eulerian framework we have the following relation between total and partial derivatives:
+
+\begin{equation}
+d_t f(x,t) = \bold{u} + \partial_t f(x,t)
+\end{equation}
+
+whilst in the ALE framework we extend this concept to take into account the motion of the domain:
+
+\begin{equation}
+d_t f(x,t) = \bold{w} + \partial_t f(x,t)
+\end{equation}
+
+Here we can see that for the Lagrangian framework $ \bold{w}$ is zero and for Eulerian $\bold{w} = \bold{u}$.
 
 \subsection{Solid}
 We express the solid balance laws in the Lagrangian formulation from the initial configuration
 
 \begin{equation}
-\rho_s \frac{\partial^2 d}{\partial t^2} = \nabla \cdot (P) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
+\rho_s \frac{\partial \bold{u}}{\partial t} = \nabla \cdot (P) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
 \end{equation}
 
 \subsection{Fluid}
@@ -45,7 +63,7 @@ The fluid domain is moving, and therefore we need to redefine the velocity in th
 \begin{equation}
 \bold{u} \cdot \nabla \bold{u} \rightarrow (\bold{u}-\frac{\partial d_f}{\partial t}) \cdot \nabla \bold{u}  
 \end{equation}
-where $d_f$ is the deformation in the fluid domain. Now the actual fluid velocity will be $u-\frac{\partial d}{\partial t}$ 
+where $d_f$ is the deformation in the fluid domain. We see that $\bold{w}$ is written as $\frac{\partial d}{\partial t}$ . Now the actual fluid velocity will be $u-\frac{\partial d}{\partial t}$ 
 
 The fluid equations are denoted from the initial configuration using the aforementioned mappings:
 
@@ -110,12 +128,14 @@ We need to define conditions that couple that motions of the fluid and structure
 
 \begin{itemize}
 \item Kinematic condition: $\bold{u}_f = \bold{u}_s  \hspace{4mm} on \Gamma$. The fluid and structure velocities need to be equal on the boundary. \\
-We later realize this later by setting  $\bold{u}- \frac{\partial d}{\partial t}  = 0  $ on the solid domain to strongly imply that the velocity on the solid is the derivative of the deformation.  
+We have will use a global function for $\bold{u}$ in both fluid and structure domains. In that way this condition is upheld.\\
+We also set  $\bold{u} - \frac{\partial d}{\partial t}  = 0  $ on the solid domain to strongly imply that the velocity on the solid is the derivative of the deformation.  
+
 \item Dynamic condition: $  \sigma_f n_f = \sigma_s n_s \hspace{4mm} on  \hspace{2mm}\Gamma   $. \\
 	This relates to Newtons third law of action and reaction. The forces on the interface area, here written as the normal stresses are balanced on the interface. These will be written in a Lagrangian formulation: \\
 	$J\sigma_f F^{-T} n_f = F\Sigma n_s \hspace{4mm} on  \hspace{2mm}\Gamma $. \\
 	This condition is often added to structure problem, since it is most often in FSI problem the fluid exerting force that cause deformation.
-\item Geometrical condition: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continouos across the entire domain.
+\item Geometrical condition: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
 \end{itemize}
 
 \section{Monolithic FSI Problem}

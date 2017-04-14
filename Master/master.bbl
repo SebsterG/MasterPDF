@@ -1,13 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{DeBonis2013}
-James DeBonis.
-\newblock {Solutions of the Taylor-Green Vortex Problem Using High-Resolution
-  Explicit Finite Difference Methods}.
-\newblock {\em 51{\$}{\^{}}{\{}st{\}}{\$} AIAA Aerospace Sciences Meeting
-  including the New Horizons Forum and Aerospace Exposition}, (February):1--9,
-  2013.
-
 \bibitem{Fernandez2013}
 Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {Explicit robin-neumann schemes for the coupling of incompressible
@@ -21,6 +13,13 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
   incompressible fluid-structure interaction: Stability analysis and numerics}.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
+
+\bibitem{Greenshields2005}
+Chris~J. Greenshields and H.~G. Weller.
+\newblock {A unified formulation for continuum mechanics applied to
+  fluid-structure interaction in flexible tubes}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  64(12):1575--1593, 2005.
 
 \bibitem{Holzapfel2000}
 G~Holzapfel.
@@ -44,12 +43,6 @@ Cm~Macal.
 \newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
   Steiger, FB Armstrong, and JA Joines, eds.}
 \newblock {\em Simulation}, pages 1643--1649, 2005.
-
-\bibitem{Oasis}
-Mikael Mortensen and Kristian Valen-Sendstad.
-\newblock {Oasis: A high-level/high-performance open source Navier–Stokes
-  solver}.
-\newblock {\em Computer Physics Communications}, 188:177--188, 2015.
 
 \bibitem{Oberkampf2010}
 William~L. Oberkampf and Christopher~J. Roy.
