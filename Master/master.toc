@@ -1,46 +1,45 @@
-\select@language {norsk}
 \contentsline {chapter}{\numberline {1}Introduction to FSI}{5}{chapter.1}
 \contentsline {chapter}{\numberline {2}Equations and notation}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Notation}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Spaces}{7}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Lagrangian physics}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Deformation gradient}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Deformation gradient}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Strain}{9}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Stress}{9}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Solid equation}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Stress}{10}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Solid equation}{10}{section.2.3}
 \contentsline {section}{\numberline {2.4}Fluid equations}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Boundary conditions}{10}{subsection.2.4.1}
-\contentsline {chapter}{\numberline {3}Fluid Structure Interaction Problem}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Mapping}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Balance laws}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Solid}{12}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Fluid}{12}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Mesh motion}{13}{section.3.3}
-\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{14}{section.3.4}
-\contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{14}{section.3.5}
-\contentsline {section}{\numberline {3.6}Discretization}{15}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{16}{subsection.3.6.1}
-\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Variational form}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}NewtonSolver}{18}{section.4.3}
-\contentsline {section}{\numberline {4.4}Timeloop}{19}{section.4.4}
-\contentsline {chapter}{\numberline {5}Verification and validation. }{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}Structure MMS}{22}{section.5.1}
-\contentsline {section}{\numberline {5.2}MMS on FSI ALE}{22}{section.5.2}
-\contentsline {section}{\numberline {5.3}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{24}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Problem Defintion}{24}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Results}{25}{subsection.5.3.2}
-\contentsline {subsubsection}{CFD test}{25}{section*.11}
-\contentsline {subsubsection}{CSM test}{26}{section*.15}
-\contentsline {section}{\numberline {5.4}Flexible tube}{28}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Problem definition}{28}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Boundary conditions}{29}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Quanities for comparison}{29}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Results}{29}{subsection.5.4.4}
-\contentsline {section}{\numberline {5.5}Mesh motion techniques}{29}{section.5.5}
-\contentsline {section}{\numberline {5.6}Temporal stability}{29}{section.5.6}
-\contentsline {chapter}{\numberline {6}Speed improvements}{31}{chapter.6}
-\contentsline {section}{\numberline {6.1}Jacobian reuse}{31}{section.6.1}
-\contentsline {chapter}{\numberline {7}Conclusions and further work}{33}{chapter.7}
-\contentsline {section}{\numberline {7.1}Partitioned}{33}{section.7.1}
+\contentsline {subsection}{\numberline {2.4.1}Boundary conditions}{11}{subsection.2.4.1}
+\contentsline {chapter}{\numberline {3}Fluid Structure Interaction Problem}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Mapping}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Balance laws}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Solid}{15}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Fluid}{15}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Mesh motion}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Harmonic}{16}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Linear elasticity}{16}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Biharmonic}{16}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{17}{section.3.4}
+\contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{17}{section.3.5}
+\contentsline {section}{\numberline {3.6}Discretization}{18}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{20}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Variational form}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}NewtonSolver}{23}{section.4.3}
+\contentsline {section}{\numberline {4.4}Timeloop}{24}{section.4.4}
+\contentsline {chapter}{\numberline {5}Verification and validation. }{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Structure MMS}{26}{section.5.1}
+\contentsline {section}{\numberline {5.2}MMS on FSI ALE}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{29}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Problem Defintion}{30}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Results}{31}{subsection.5.3.2}
+\contentsline {subsubsection}{CFD test}{31}{section*.11}
+\contentsline {subsubsection}{CSM test}{32}{section*.15}
+\contentsline {section}{\numberline {5.4}Flexible tube}{33}{section.5.4}
+\contentsline {section}{\numberline {5.5}Mesh motion techniques}{35}{section.5.5}
+\contentsline {section}{\numberline {5.6}Temporal stability}{36}{section.5.6}
+\contentsline {chapter}{\numberline {6}Speed improvements}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Jacobian reuse}{37}{section.6.1}
+\contentsline {section}{\numberline {6.2}Quad reduce}{37}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions and further work}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}Partitioned}{39}{section.7.1}

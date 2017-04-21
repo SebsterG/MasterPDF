@@ -83,22 +83,31 @@ Putting this together \eqref{eq:NS} then turns into:
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
-\section{Mesh motion}
-In the ALE format the deformation from the solid needs to be lifted into the deformation of the fluid mesh. The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. For small to moderate deformations we can use a harmonic extension, eg the Laplace equation: 
+\section{Mesh motion}\label{sec:meshmotion}
+In the ALE format the deformation from the solid needs to be lifted into the deformation of the fluid mesh. The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. We will in this section look at three different mesh motion techniques, that act differently on the computational domain. In chapter 5 they will be tested and we investigate their strong and weak points.
+
+\subsection{Harmonic}
+For small to moderate deformations we can use a harmonic extension, eg the Laplace equation. This has a constant $\alpha_u$ which is set either constant or dependent on the mesh : 
 
 \begin{align}
  - \alpha_u \nabla^2 d =& 0\hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
   \hspace{4mm} d =& 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma}
 \end{align}
 
-This equation is chosen for its good regularity and smoothing properties.
-A strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011}, and further discussed in \cite{Stein2003}. Where they set 
-\begin{equation}
-\label{eq:alpha_u}
-\alpha_u = J^{-1}
-\end{equation} 
-This is a smart choice since J gets smaller closer to the interface, which again makes alpha large, this upholds the cell structure closer to the interface where most of the cell distortion appears.  
-It is also possible to chose an harmonic extension with stiffening, which can give better control of the deformed meshes. This in practice behaves like a transport problem, transporting the deformation into the fluid domain. Another possibility is extension by pseudo-elasticity which defines the extension operator by means of the Navier-Lame equation. 
+This equation in practice behaves like a transport problem, transporting the deformation into the fluid domain.
+When using the harmonic lifting operator the constant $\alpha_u$ is very important when calculating moderate deformations. A strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011a}, and further discussed in \cite{Stein2003}. Is an alpha that gets bigger when closer to the interface. This is a smart choice since this upholds the cell structure closer to the interface where most of the cell distortion appears
+
+\subsection{Linear elasticity}
+Mesh motion with linear elasticity comes from the momentum equations of structure problems. The model is as follows:
+
+\begin{align}
+-\nabla \cdot \sigma_{mesh} &= 0 \hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
+\hspace{4mm} d &= 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma} \\
+\sigma_{mesh} &= \alpha_\lambda (tr\epsilon)I + 2\alpha_\mu \epsilon 
+\end{align}
+where $\epsilon = \frac{1}{2}(\nabla d + (\nabla d)^T)$. This is the linearized version of the strain tensor \eqref{eq:StrainTensor}. The parameters are chosen to uphold mesh quality. This is done by computing the parameters from Youngs modulus and poisson ration. l
+
+\subsection{Biharmonic} 
 And lastly we can chose a biharmonic extension. This provides more freedom in choosing boundary conditions and choice of parameter $\alpha_u$. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations. In its simplest form it is written as:
 \begin{equation}
 - \alpha_u \nabla^4 d = 0 \hspace{4mm}  in \hspace{2mm} \hat{\mathcal{F}}\\

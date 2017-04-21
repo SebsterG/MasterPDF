@@ -1,7 +1,7 @@
 \section{Discretization}\label{Discretization}
 Now that we have stated the full FSI monolithic scheme we need to specify the ways in which the scheme is discretized. The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method.  \
 Following the ideas and notations of \cite{Wick2011}. In the domain $\Omega$ and time interval [0,T]. \\
-Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \texttimes \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
+Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
 
 \begin{equation}
 \int_0^T A(U)(\Psi) dt = \int_0^T \hat{F}(\Psi) dt \hspace{4mm} \forall  \Psi \in \hat{X}

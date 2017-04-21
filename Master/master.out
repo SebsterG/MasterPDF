@@ -15,29 +15,29 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Solid}{section.3.2}% 15
 \BOOKMARK [2][-]{subsection.3.2.2}{Fluid}{section.3.2}% 16
 \BOOKMARK [1][-]{section.3.3}{Mesh motion}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Coupled Fluid Structure Interface conditions}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Monolithic FSI Problem}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.6}{Discretization}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.6.1}{Spaces and Elements}{section.3.6}% 21
-\BOOKMARK [0][-]{chapter.4}{FSI Implementation in FEniCS}{}% 22
-\BOOKMARK [1][-]{section.4.1}{Mesh, mappings and stress tensors}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.2}{Variational form}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.3}{NewtonSolver}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.4}{Timeloop}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Verification and validation. }{}% 27
-\BOOKMARK [1][-]{section.5.1}{Structure MMS}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{MMS on FSI ALE}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.3}{Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.3.1}{Problem Defintion}{section.5.3}% 31
-\BOOKMARK [2][-]{subsection.5.3.2}{Results}{section.5.3}% 32
-\BOOKMARK [1][-]{section.5.4}{Flexible tube}{chapter.5}% 33
-\BOOKMARK [2][-]{subsection.5.4.1}{Problem definition}{section.5.4}% 34
-\BOOKMARK [2][-]{subsection.5.4.2}{Boundary conditions}{section.5.4}% 35
-\BOOKMARK [2][-]{subsection.5.4.3}{Quanities for comparison}{section.5.4}% 36
-\BOOKMARK [2][-]{subsection.5.4.4}{Results}{section.5.4}% 37
-\BOOKMARK [1][-]{section.5.5}{Mesh motion techniques}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.6}{Temporal stability}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter.6}{Speed improvements}{}% 40
-\BOOKMARK [1][-]{section.6.1}{Jacobian reuse}{chapter.6}% 41
+\BOOKMARK [2][-]{subsection.3.3.1}{Harmonic}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.2}{Linear elasticity}{section.3.3}% 19
+\BOOKMARK [2][-]{subsection.3.3.3}{Biharmonic}{section.3.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Coupled Fluid Structure Interface conditions}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Monolithic FSI Problem}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.6}{Discretization}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.6.1}{Spaces and Elements}{section.3.6}% 24
+\BOOKMARK [0][-]{chapter.4}{FSI Implementation in FEniCS}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Mesh, mappings and stress tensors}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Variational form}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.3}{NewtonSolver}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.4}{Timeloop}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Verification and validation. }{}% 30
+\BOOKMARK [1][-]{section.5.1}{Structure MMS}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{MMS on FSI ALE}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.3}{Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.3.1}{Problem Defintion}{section.5.3}% 34
+\BOOKMARK [2][-]{subsection.5.3.2}{Results}{section.5.3}% 35
+\BOOKMARK [1][-]{section.5.4}{Flexible tube}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.5}{Mesh motion techniques}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.6}{Temporal stability}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Speed improvements}{}% 39
+\BOOKMARK [1][-]{section.6.1}{Jacobian reuse}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.2}{Quad reduce}{chapter.6}% 41
 \BOOKMARK [0][-]{chapter.7}{Conclusions and further work}{}% 42
 \BOOKMARK [1][-]{section.7.1}{Partitioned}{chapter.7}% 43
