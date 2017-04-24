@@ -1,5 +1,7 @@
 \section{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
-The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark \" flow around cylinder\" with fluid considered incompressible and in the laminar regime, and the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. 
+The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing robustness and efficiency. 
+
+
 
 \subsection{Problem Defintion}
 \subsubsection*{Domain}
@@ -44,7 +46,14 @@ In each test the numbers with ref are the values taken from the benchmark paper 
 The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
 The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also calculate with the bar and setting $\rho_s$ and $\mu_s$ to a large value. 
 
-\begin{table}[h!]
+\begin{figure}[H]
+\caption{Fluid mesh}
+\includegraphics[scale=0.5,trim={24mm 46mm 14mm 40mm},clip]{./Verification_Validation/Hron_Turek/fluid.png}
+\end{figure}
+
+\vspace{1cm}
+
+\begin{table}[H]
 \centering
 \caption{CFD parameters}
 \label{my-label}
@@ -58,7 +67,7 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \caption{CFD 1}
 \label{my-label}
@@ -72,7 +81,7 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \caption{CFD 2}
 \label{my-label}
@@ -90,6 +99,14 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 The CSM test are calculated using only the bar and adding a gravity term $g$ with the same value but changing the parameters of solid. The tests CSM1 and CSM2 are steady state solutions. The difference is a more slender bar. The CSM 3 test is unsteady and even more slender causing the bar to move up and down. Since there is no resistance from any fluid the unsteady test should if energy is preserved make the bar move up and down infinitely. 
 
 Our quantity for comparing there will be the deformation at the point $A$. 
+\begin{center}
+\begin{figure}[H]
+\caption{Structure mesh}
+\includegraphics[scale=0.50,trim={18mm 55mm 18mm 55mm},clip]{./Verification_Validation/Hron_Turek/structure.png}
+\end{figure}
+\end{center}
+
+\vspace{0cm}
 
 \begin{table}[H]
 \centering
@@ -119,12 +136,10 @@ elements & dofs & ux $[\times10^{-3}]$ & uy $[\times10^{-3}]$ \\ \hline
 2900 & 6408 & -6.779 & -64.21 \\ \hline
 11600 & 24412 & -7.085 & -65.63 \\ \hline
 46400 & 95220 & -7.116 & -65.74 \\ \hline
-\textbf{ref} & \textbf{ref} & -7.187 &  -66.10 \\ \hline
+\textbf{ref} & \textbf{ref} & \textbf{-7.187} &  \textbf{-66.10} \\ \hline
 \end{tabular}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[H]
 \centering
 \caption{CSM 2}
@@ -136,7 +151,7 @@ Elements & Dofs & ux $[\times10^{-3}] $& ux $[\times10^{-3}] $\\ \hline
 2900 & 6408 & -0.441 & -16.46\\ \hline
 11600 & 24412 & -0.462 & -16.84 \\ \hline
 46400 & 95220 & -0.464 & -16.87\\ \hline
-\textbf{ref} & \textbf{ref} &  -0.469 &  -16.97 \\ \hline
+\textbf{ref} & \textbf{ref} &  \textbf{-0.469} &  \textbf{-16.97} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -146,12 +161,12 @@ Elements & Dofs & ux $[\times10^{-3}] $& ux $[\times10^{-3}] $\\ \hline
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
-elements & dofs & ux $[\times10^3]$ & uy $[\times10^3]$ \\ \hline
+elements & dofs & ux $[\times10^{-3}]$ & uy $[\times10^{-3}]$ \\ \hline
 725 & 1756 & $-11.743 \pm 11.744$ & $-57.952 \pm 58.940$ \\ \hline
 2900 & 6408 & $-13.558 \pm 13.559$ & $ -61.968 \pm  63.440 $ \\ \hline
 11600 & 24412 & $ -14.128 \pm 14.127$ & $-63.216 \pm 64.744 $ \\ \hline
 46400 & 95220 & $ -14.182 \pm 14.181 $ & $ -63.305 \pm 64.843 $ \\ \hline
-\textbf{ref} &  & $ -14.305 \pm  14.305 $ & $ -63.607 \pm  65.160 $ \\ \hline
+\textbf{ref} &  & $ \textbf{-14.305} \pm \textbf{14.305} $ & $ \textbf{-63.607} \pm  \textbf{65.160} $ \\ \hline
 \end{tabular}
 \end{table}
 
@@ -184,9 +199,17 @@ elements & dofs & ux $[\times10^3]$ & uy $[\times10^3]$ \\ \hline
   \end{minipage} 
 \end{figure}
 
-The plots \ref{CSM3_plots} is a plot of the CSM3 test. This was run with Crank-Nicholson and as we can see the energy has been preserved. 
+The plots \ref{CSM3_plots} is a plot of the CSM3 test. This was run with Crank-Nicholson, $\theta = 0.5$ and as we can see the energy has been preserved. 
 
 \subsubsection*{FSI test}
+Lastly we run the full FSI problem. Here we can see in \ref{fig:fluid_structure} that now both fluid and structure has a mesh. The tests are run with 2 different inflows. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three [cite?]. The FSI-3 test has the highest inflow speed giving more rapid oscillations.
+
+\begin{figure}[H]
+\label{fig:fluid_structure}
+\caption{Fluid and Structure mesh with 2698 Cells}
+\includegraphics[scale=0.45, trim={4mm 21mm 2mm 10mm},clip]{./Verification_Validation/Hron_Turek/fluid_structure.png}
+\end{figure}
+
 \begin{table}[h!]
 \centering
 \caption{FSI Parameters}
@@ -203,8 +226,9 @@ $\nu_s$ & 0.4 & 0.4 & 0.4 \\ \hline
 $\mu_s[10^6 \frac{m^2}{s}]$ & 0.5 & 0.5 & 2 \\ \hline
 \end{tabular}
 \end{table}
-Results: 
-\begin{table}[h!]
+
+
+\begin{table}[H]
 \centering
 \caption{FSI 1}
 \label{my-label}
@@ -220,18 +244,16 @@ Cells & Dofs & ux of A $[x10^{-3}]$ & uy of A $[x10^{-3}]$ & Drag & Lift & Space
 
 
 The FSI-2 results were with $\Delta t = 0.01, \theta = 0.51, biharmonic bc 1$
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \caption{FSI-2}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & ux of A {[}x10?3{]} & uy of A {[}x10?3{]}, & Drag & Lift \\ \hline
-2698 & 23563 &  & $-1.36 \pm 78.92$ & $160.61 \pm 18.09$ & $5.20 \pm 266.02$ \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
-ref & ref & $-14.58 \pm 12.44$ & $1.23 \pm 80.6$ & $208.83 \pm 73.75  $ & $0.88 \pm 234.2 $ \\ \hline
+Cells & Dofs & ux of A $[x10^{?3}]$ & uy of A $[x10^{-3}]$ & Drag & Lift & Extrapolation & $\Delta t$ \\ \hline
+2698 & 23563 & $-15.17 \pm 13.3  $ & $-1.13 \pm 82.5$ & $160.12 \pm 17.88$ & $0.87 \pm 259.62$ & Biharmonic & 0.01 \\ \hline
+10792 & 92992 &  &  & $161.93 \pm 18.62$ & $0.69 \pm 257.75$ &  &  \\ \hline
+2698 & 23563 & $-15.1 \pm 13.3 $ & $1.16 \pm 82 $ & $159.53 \pm,17.44 $ & $ 0.68 \pm 25910 $ & Harmonic & 0.01 \\ \hline
+ref & ref & $-14.58 \pm 12.44$ & $1.23 \pm 80.6$ & $208.83 \pm 73.75  $ & $0.88 \pm 234.2 $ &  & \textbf{} \\ \hline
 \end{tabular}
 \end{table}
-
 

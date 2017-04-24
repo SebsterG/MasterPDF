@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Master_Sebben.aux
+The style file: plain.bst
+Database file #1: Master_cites.bib
+Warning--I didn't find a database entry for "Richter"
+Warning--I didn't find a database entry for "Wick"
+Warning--I didn't find a database entry for "Roache"
+Warning--empty journal in Richter2016
+Warning--empty journal in Selin2014
+Warning--there's a number but no volume in Selin2014
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            603 strings with 6309 characters,
+and the built_in function-call counts, 4155 in all, are:
+= -- 417
+> -- 154
+< -- 2
++ -- 62
+- -- 48
+* -- 267
+:= -- 703
+add.period$ -- 41
+call.type$ -- 14
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 167
+empty$ -- 342
+format.name$ -- 48
+if$ -- 864
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 14
+newline$ -- 72
+num.names$ -- 28
+pop$ -- 62
+preamble$ -- 1
+purify$ -- 52
+quote$ -- 0
+skip$ -- 121
+stack$ -- 0
+substring$ -- 280
+swap$ -- 30
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 3
+while$ -- 45
+width$ -- 16
+write$ -- 150
+(There were 6 warnings)

@@ -3,51 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Master_krister.aux
 The style file: plain.bst
 Database file #1: Master_cites.bib
-Warning--I didn't find a database entry for "Richter"
-Warning--I didn't find a database entry for "Wick"
 Warning--I didn't find a database entry for "Roache"
-Warning--empty journal in Richter2016
 Warning--empty journal in Selin2014
 Warning--there's a number but no volume in Selin2014
-You've used 15 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            610 strings with 6501 characters,
-and the built_in function-call counts, 4506 in all, are:
-= -- 454
-> -- 167
-< -- 2
-+ -- 67
-- -- 52
-* -- 295
-:= -- 760
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 70
+            534 strings with 4877 characters,
+and the built_in function-call counts, 1594 in all, are:
+= -- 164
+> -- 53
+< -- 1
++ -- 21
+- -- 16
+* -- 100
+:= -- 263
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 178
-empty$ -- 371
-format.name$ -- 52
-if$ -- 936
+cite$ -- 7
+duplicate$ -- 66
+empty$ -- 131
+format.name$ -- 16
+if$ -- 336
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 77
-num.names$ -- 30
-pop$ -- 65
+int.to.str$ -- 5
+missing$ -- 6
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 18
 quote$ -- 0
-skip$ -- 129
+skip$ -- 51
 stack$ -- 0
-substring$ -- 316
-swap$ -- 31
-text.length$ -- 2
+substring$ -- 121
+swap$ -- 15
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
-warning$ -- 3
-while$ -- 49
-width$ -- 17
-write$ -- 161
-(There were 6 warnings)
+type$ -- 18
+warning$ -- 2
+while$ -- 17
+width$ -- 6
+write$ -- 56
+(There were 3 warnings)
