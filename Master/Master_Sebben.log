@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  24 APR 2017 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  25 APR 2017 18:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1198,6 +1198,9 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:fluid_structure' multiply defined.
+
 )
 \openout1 = `Master_Sebben.aux'.
 
@@ -1695,24 +1698,92 @@ Overfull \hbox (155.76398pt too wide) in paragraph at lines 250--258
  []
 
 ) (./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex
-[39 <./Verification_Validation/Hron_Turek/fluid_structure.png (PNG copy)>])
-(./Verification_Validation/Temporal_stability/Temporal_stability.tex
-<./Verification_Validation/Temporal_stability/lift_shifted.png, id=195, 578.16p
-t x 433.62pt>
-File: ./Verification_Validation/Temporal_stability/lift_shifted.png Graphic fil
-e (type png)
-
-<use ./Verification_Validation/Temporal_stability/lift_shifted.png>
-Package pdftex.def Info: ./Verification_Validation/Temporal_stability/lift_shif
-ted.png used on input line 6.
+[39 <./Verification_Validation/Hron_Turek/fluid_structure.png (PNG copy)>]
+<./Verification_Validation/Mesh_motion_results/CSM1.png, id=195, 578.16pt x 433
+.62pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1.png Graphic file (type
+ png)
+ <use ./Verification_Validation/Mesh_motion_results/CSM1.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1.png
+ used on input line 14.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
- [40]))
-(./Speedup/Speedup.tex [41 <./Verification_Validation/Temporal_stability/lift_s
-hifted.png>] [42
+)
+(./Verification_Validation/Temporal_stability/Temporal_stability.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [40]
+<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=200, 586
+.8324pt x 433.62pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+051_big.png used on input line 9.
+(pdftex.def)             Requested size: 205.39441pt x 151.76927pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 9--10
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=201, 586
+.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+050_big.png used on input line 15.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 15--16
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=202, 5
+86.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png Graph
+ic file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+051_small.png used on input line 21.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 21--22
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=203, 5
+86.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png Graph
+ic file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+050_small.png used on input line 27.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 27--28
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41 <./Verification_Validation/Mesh_motion_results/CSM1.png>])) (./Speedup/Spe
+edup.tex
+[42 <./Verification_Validation/Temporal_stability/FSI2_001_051_big.png> <./Veri
+fication_Validation/Temporal_stability/FSI2_001_050_big.png> <./Verification_Va
+lidation/Temporal_stability/FSI2_001_051_small.png> <./Verification_Validation/
+Temporal_stability/FSI2_001_050_small.png>]
 Chapter 6.
-) (./Conclusions/Conclusions.tex [43] [44
+) (./Conclusions/Conclusions.tex [43
+
+] [44
 
 ]
 Chapter 7.
@@ -1727,10 +1798,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27928 strings out of 493089
- 555719 string characters out of 6134842
- 633401 words of memory out of 5000000
- 30852 multiletter control sequences out of 15000+600000
+ 27948 strings out of 493089
+ 556901 string characters out of 6134842
+ 633399 words of memory out of 5000000
+ 30868 multiletter control sequences out of 15000+600000
  43487 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,101p,10452b,1654s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1761,10 +1832,10 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (52 pages, 836244 bytes).
+Output written on Master_Sebben.pdf (52 pages, 1036947 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
+ 320 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

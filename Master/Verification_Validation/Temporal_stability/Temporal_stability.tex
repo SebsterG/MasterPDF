@@ -1,36 +1,33 @@
 \section{Temporal stability}
-The following section will be looking at the results from choosing different $\theta$ values in our scheme. The benchmark test FSI-2 has been used to with a pretty high time step $ k = 0.01$. We only study the effects of lift as the three other quantities shows the same behavior.   
-\begin{figure}[H]
-\label{fig:lift_shifted}
-\caption{LiftShifted}
-\includegraphics[scale=0.6, trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Temporal_stability/lift_shifted.png}
-\end{figure}
+The following section will be looking at the results from choosing different $\theta$ values in our scheme. The benchmark test FSI-2 has been used to since it is known to blow up with certain values of $\theta$ and $\Delta t$. We only study the effects of Drag as the three other quantities shows the same behavior.   
 
-
-\begin{figure}[H]  \label{CSM3_plots} 
-  \caption {Displacement of point A, CSM3}
+\ref{fig:FSI2drag_plots} show the plots of Drag with $\Delta t = 0.01$. This will not produce very good drag values compared to the benchmark, but it shows the instability when choosing $\theta = 0.5$. The Crank-Nicholson scheme is stable until about 13 seconds where we see that it blows up and the solver diverges.
+\begin{figure}[H]  \label{fig:FSI2drag_plots} 
+  \caption {Drag for FSI2 with $\Delta t = 0.01$}
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation/Temporal_stability/FSI2_001_05_big.png} 
-    \caption{$ $} 
+    \includegraphics[scale=0.35]{./Verification_Validation/Temporal_stability/FSI2_001_051_big.png} 
+    \caption{$\theta = 0.51 $} 
     \vspace{4ex}
   \end{minipage}%%
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation//Hron_Turek/dis_y.png} 
-    \caption{Discplacement y} 
+    \includegraphics[scale=0.35]{./Verification_Validation/Temporal_stability/FSI2_001_050_big.png} 
+    \caption{$\theta = 0.50 $} 
     \vspace{4ex}
   \end{minipage} 
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation//Hron_Turek/dis_x_short.png} 
-    \caption{Displacement x} 
+    \includegraphics[scale=0.35]{./Verification_Validation/Temporal_stability/FSI2_001_051_small.png} 
+    \caption{$\theta = 0.51 $} 
     \vspace{4ex}
   \end{minipage}%% 
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation/Hron_Turek/dis_y_short.png} 
-    \caption{Discplacement y} 
+    \includegraphics[scale=0.35]{./Verification_Validation/Temporal_stability/FSI2_001_050_small.png} 
+    \caption{$\theta = 0.50 $} 
     \vspace{4ex}
   \end{minipage} 
 \end{figure}
+
+Put in plot of $\theta = 0.5$ and $\Delta t = 0.001$ to see if its stable longer?
