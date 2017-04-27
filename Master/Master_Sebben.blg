@@ -9,45 +9,45 @@ Warning--I didn't find a database entry for "Roache"
 Warning--empty journal in Richter2016
 Warning--empty journal in Selin2014
 Warning--there's a number but no volume in Selin2014
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            603 strings with 6309 characters,
-and the built_in function-call counts, 4155 in all, are:
-= -- 417
-> -- 154
-< -- 2
-+ -- 62
-- -- 48
-* -- 267
-:= -- 703
-add.period$ -- 41
-call.type$ -- 14
-change.case$ -- 65
+            609 strings with 6473 characters,
+and the built_in function-call counts, 4579 in all, are:
+= -- 464
+> -- 167
+< -- 3
++ -- 67
+- -- 52
+* -- 290
+:= -- 764
+add.period$ -- 44
+call.type$ -- 15
+change.case$ -- 70
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 167
-empty$ -- 342
-format.name$ -- 48
-if$ -- 864
+cite$ -- 18
+duplicate$ -- 187
+empty$ -- 374
+format.name$ -- 52
+if$ -- 961
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 14
-newline$ -- 72
-num.names$ -- 28
-pop$ -- 62
+int.to.str$ -- 15
+missing$ -- 15
+newline$ -- 77
+num.names$ -- 30
+pop$ -- 67
 preamble$ -- 1
-purify$ -- 52
+purify$ -- 56
 quote$ -- 0
-skip$ -- 121
+skip$ -- 141
 stack$ -- 0
-substring$ -- 280
-swap$ -- 30
-text.length$ -- 2
+substring$ -- 317
+swap$ -- 40
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
+type$ -- 58
 warning$ -- 3
-while$ -- 45
-width$ -- 16
-write$ -- 150
+while$ -- 50
+width$ -- 17
+write$ -- 161
 (There were 6 warnings)

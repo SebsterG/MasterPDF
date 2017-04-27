@@ -1,49 +1,40 @@
-\newpage
-In this chapter we will look briefly into Lagrangian and Eulerian physics. The solid equation is most commonly described in a Lagrangian description. In a Lagrangian description the material particles are fixed with the grid points, this is a useful property when tracking the solid domain. The fluid equations are described in an Eulerian framework where the material points are not fixed to the grid points but move through.
-
 \section{Lagrangian physics}
-We will start by providing a short introduction to Lagrangian physics for the sake of completeness.
+I will start by providing a short introduction to Lagrangian physics for the sake of completeness. For a more detailed look see \cite{Holzapfel2000}.
 \begin{center}
 \includegraphics[scale=0.4]{continuum_mapping.png}
 \end{center}
-We define $ \hat{\mathcal{S}}$ as the initial stress free configuration of a given body, $\mathcal{S}$ as the reference and $\mathcal{S}(t)$ as the current configuration respectively.
-We need to define a smooth mapping from the reference configuration to the current configuration:
+I define $ \hat{\mathcal{S}}$ as the initial stress free configuration of a given body, $\mathcal{S}$ as the reference and $\mathcal{S}(t)$ as the current configuration respectively.
+I need to define a smooth mapping from the reference configuration to the current configuration:
 \begin{equation}
-\chi^s(t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     
+\chi^s(\textbf{X},t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     
 \end{equation}
-Following the notation of \cite{Holzapfel2000},where $\textbf{X}$ denote a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration. 
-Let $d^s(\textbf{X},t)$ denote the displacement field and w(\textbf{X},t) the domain velocity. We then set the mapping
+Where $\textbf{X}$ denotes a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration to the current configuration. Let $d^s(\textbf{X},t)$ denote the displacement field which describes deformation on a body. I then set the mapping $\chi^s$   to be specified from the its current position plus the displacement from that position:
 \begin{equation}
  \chi^s(\textbf{X},t) = \textbf{X}  + d^s(\textbf{X} ,t) 
 \end{equation}
-
-where $d^s(\textbf{X} ,t)$ represents displacement field
+which can be written in terms of the displacement field:
 \begin{equation}
  d^s(\textbf{X},t) = \chi^s(\textbf{X},t) -\textbf{X}   
 \end{equation}
-and the domain velocity is the partial time derivative: 
+
+I can then define w(\textbf{X},t) as  the domain velocity which is the partial time derivative: 
 \begin{equation}
  w(\textbf{X},t) = \frac{\partial \chi^s(\textbf{X},t)}{\partial t}   
 \end{equation}
 
-Next we will need a function that describes the rate of deformation in the solid.
 \subsection{Deformation gradient}
-When a continuum body undergoes deformation and is moved from the reference configuration to some current configuration we need a deformation gradient that describes the rate of deformation in the body. 
-If $d(\textbf{X},t)$ is a differentiable deformation field in a given body. We define the deformation gradient as:  
+To describe the rate at which a body undergoes deformation I will need to define a deformation gradient.
+If $d(\textbf{X},t)$ is a differentiable deformation field in a given body. I define the deformation gradient as:  
 \begin{equation}
 \label{eq:deformation_gradient}
-F = \frac{\partial \chi}{\partial \textbf{X}} = I + \nabla d(\textbf{X},t) 
+F = \frac{\partial \chi^s(\textbf{x},t)}{\partial \textbf{X}} = \frac{\partial \textbf{X}  + d^s(\textbf{X} ,t) }{\partial \textbf{X}} =  I + \nabla d(\textbf{X},t) 
 \end{equation}
-which denotes relative change of position under deformation in a Lagrangian frame of reference.  
-
-A change in volume between reference ($dv$) and current ($dV$) configuration is defined as :
-\begin{align}
-\label{eq:det_F}
-dv =& J dV\\
-J =& \text{det}(F)
-\end{align}
-Where J is the determinant of the deformation gradient F known as the Jacobian determinant or volume ratio. If there is no motion, that is $ F = I$ and $J=1$ , there is no change in volume. But we can also have the constraint $J=1$ with motion, but preserving the volume.
-If we assume infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. The volume elements $dv, dV$ can be expressed by the dot product:
+which denotes relative change of position under deformation in a Lagrangian frame of reference. We see that when there is no motion, hence no deformation. The deformation gradient $F$ is simply the identity matrix. \newline
+We also need a way to change between volumes, from the reference ($dv$) to current ($dV$) configuration. This is defined with the Jacobian, which is the determinant of the of the deformation gradient F:
+\begin{equation}
+J = \text{det}(F)
+\end{equation}
+The Jacobian is used to change between volumes ,if I assume infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. The volume elements $dv, dV$ can be expressed by the dot product:
 \begin{equation}
  dv = ds\cdot dx = J dS dX
 \end{equation}
@@ -51,41 +42,69 @@ This is used to get the Nansons formula:
 \begin{equation}\label{eq:Nanson}
 ds = JF^{-T}dS
 \end{equation}
-which holds for an arbitrary line element in different configurations.
+which holds for an arbitrary line element in different configurations. This will be useful later on when describing equations in different configurations.
 
 \subsection{Strain}
-In continuum mechanics relative change of location of particles is called strain and this is the fundamental quality that causes stress in a material. \cite{Richter2016}. An import strain measure is the right Cauchy-Green tensor 
-$$C = F^TF$$ 
-which is symmetric and positive definite $C = C^T$.  We also introduce the Green-Lagrangian strain tensor E:
+The relative change of location between two particles is called strain. This is the fundamental quality the causes stress. \cite{Richter2016}. 
+If we look at two neighboring points \textbf{X} and \textbf{Y}. I can describe \textbf{Y} with:
+\begin{equation}
+\textbf{Y} = \textbf{Y} + \textbf{X} - \textbf{X} = \textbf{X} + |\textbf{Y} - \textbf{X}| \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|} = \textbf{X} + d\textbf{X}
+\end{equation}
+
+I write $d\textbf{X} = d\epsilon \textbf{a}_0$,
+where $d\epsilon = |\textbf{Y} - \textbf{X}|$ is the distance between the two points and $\textbf{a}_0 = \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|}$
+A certain motion transform the points $\textbf{Y}$ and $\textbf{X}$ into the displaced positions $\textbf{x} = \chi^s(\textbf{X},t)$ and $\textbf{y} = \chi^s(\textbf{Y},t)$. Using Taylor?s expansion \textbf{y} can be expressed in terms of deformation gradient:
+\begin{align}
+\textbf{y} =& \chi^s(\textbf{Y},t) = \chi^s(\textbf{X} + d\epsilon \textbf{a}_0,t) \\
+=& \chi^s(\textbf{X},t) + d\epsilon F \textbf{a}_0 + o(\textbf{Y}-\textbf{X}) \\
+\end{align}
+where $o(\textbf{Y}-\textbf{X})$ refers to the small error that tends to zero faster than $\textbf{X} - \textbf{Y}$
+Next I define the $\textbf{stretch vector}$ $\lambda_{\textbf{a}0}$ : 
+\begin{equation}
+\lambda_{\textbf{a}0}(\textbf{X},t) = F(\textbf{X},t)\textbf{a}_0 
+\end{equation}
+If we look at the square of $\lambda$
+
+\begin{align}
+\lambda^2 &=  \lambda_{\textbf{a}0} \lambda_{\textbf{a}0} = F(\textbf{X},t)\textbf{a}_0 F(\textbf{X},t)\textbf{a}_0 \\
+&= \textbf{a}_0 F^TF\textbf{a}_0 = \textbf{a}_0 C \textbf{a}_0
+\end{align}
+We have not introduced the important right Cauchy-Green tensor:
+ \begin{equation}
+ C = F^TF
+\end{equation}
+which is symmetric and positive definite $C = C^T$.  I also introduce the Green-Lagrangian strain tensor E:
 \begin{equation}\label{eq:StrainTensor}
 E = \frac{1}{2}(F^TF -I) 
 \end{equation}
 which is also symmetric since C and I are symmetric. This measures the squared length change under deformation.
 		
 \subsection{Stress}
-Stress is the internal forces between neighboring particles. We introduce the Cauchy stress tensor:
+Stress is the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. 
+
+I introduce the Cauchy stress tensor:
 \begin{equation}
  \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
 \end{equation}
-Using \eqref{eq:Nanson} we get the first Piola-Kirchhoff stress tensor P:
+Using \eqref{eq:Nanson} I get the first Piola-Kirchhoff stress tensor P:
 \begin{equation}
  P = J \sigma F^{-T} 
 \end{equation}
-We also introduce the second Piola-Kirchhoff stress tensor S:
+I also introduce the second Piola-Kirchhoff stress tensor S:
 \begin{equation}
 S = J F^{-1}\sigma F^{-T} = F^{-1} P = S^T 
 \end{equation}
-from this relation we can write the first Piola-Kirchhoff tensor by the second:
+from this relation I can write the first Piola-Kirchhoff tensor by the second:
 \begin{equation}
 P = FS
 \end{equation}
 
 \section{Solid equation}
-From the principles of conservation of mass and momentum, we get the solid equation stated in the Lagrangian reference system (Following the notation from \cite{Richter2016}):
+From the principles of conservation of mass and momentum, I get the solid equation stated in the Lagrangian reference system (Following the notation from \cite{Richter2016}):
 \begin{equation}\label{eq:Solid}
 \rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f 
 \end{equation}
-where we used the first Piola-Kirchhoff stress tensor.
+where I used the first Piola-Kirchhoff stress tensor.
 
 \subsection*{Locking}
 The problem og shear locking can happen FEM computations with certain elements. 

@@ -13,3 +13,49 @@ We will also look at the a plot of the deformation in the domain. To visualize t
 \caption{CSM1}
 \includegraphics[scale=0.60, trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Mesh_motion_results/CSM1.png}
 \end{figure}
+
+\begin{figure}[H]  \label{fig:CSM1_pictures} 
+  \caption {CSM1 with different techniques}
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.2]{./Verification_Validation/Mesh_motion_results/CSM1_laplace.png} 
+    \caption{Harmonic smart} 
+    \vspace{4ex}
+  \end{minipage}%%
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.2]{./Verification_Validation/Mesh_motion_results/CSM1_constant.png} 
+    \caption{Harmonic constant} 
+    \vspace{4ex}
+  \end{minipage} 
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.2]{./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png} 
+    \caption{Biharmonic bc1} 
+    \vspace{4ex}
+  \end{minipage}%% 
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.2]{./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png} 
+    \caption{Biharmonic bc2} 
+    \vspace{4ex}
+  \end{minipage} 
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Displacement of CSM1 test}
+\label{my-label}
+\begin{tabular}{|l|l|l|}
+\hline
+Technique & $d_y(A) [\times 10^{-3}]$ & $d_x(A) [\times 10^{-3}]$ \\ \hline
+Harmonic & 65.406 & 7.036 \\ \hline
+Constant & 43.033 & 2.999 \\ \hline
+Bibc1 & 65.404 & 7.036 \\ \hline
+Bibc2 & 65.405 & 7.036 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+

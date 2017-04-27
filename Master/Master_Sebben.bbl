@@ -42,6 +42,12 @@ William~L. Oberkampf and Christopher~J. Roy.
 \newblock {\em {Verification and Validation in Scientific Computing}}.
 \newblock Cambridge University Press, Cambridge, 2010.
 
+\bibitem{Richter2013}
+T~Richter and T~Wick.
+\newblock {On time discretizations of Fluid-structure interactions}.
+\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
+  377--400, 2013.
+
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
