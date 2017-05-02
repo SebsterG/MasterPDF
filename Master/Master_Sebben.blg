@@ -3,51 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Master_Sebben.aux
 The style file: plain.bst
 Database file #1: Master_cites.bib
-Warning--I didn't find a database entry for "Richter"
 Warning--I didn't find a database entry for "Wick"
 Warning--I didn't find a database entry for "Roache"
 Warning--empty journal in Richter2016
 Warning--empty journal in Selin2014
 Warning--there's a number but no volume in Selin2014
-You've used 15 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            609 strings with 6473 characters,
-and the built_in function-call counts, 4579 in all, are:
-= -- 464
-> -- 167
+            621 strings with 6765 characters,
+and the built_in function-call counts, 5169 in all, are:
+= -- 520
+> -- 192
 < -- 3
-+ -- 67
-- -- 52
-* -- 290
-:= -- 764
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 70
++ -- 77
+- -- 60
+* -- 336
+:= -- 867
+add.period$ -- 50
+call.type$ -- 17
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 187
-empty$ -- 374
-format.name$ -- 52
-if$ -- 961
+cite$ -- 20
+duplicate$ -- 209
+empty$ -- 423
+format.name$ -- 60
+if$ -- 1081
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 77
-num.names$ -- 30
-pop$ -- 67
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 87
+num.names$ -- 34
+pop$ -- 73
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 64
 quote$ -- 0
-skip$ -- 141
+skip$ -- 155
 stack$ -- 0
-substring$ -- 317
-swap$ -- 40
+substring$ -- 354
+swap$ -- 42
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
+type$ -- 66
 warning$ -- 3
-while$ -- 50
-width$ -- 17
-write$ -- 161
-(There were 6 warnings)
+while$ -- 56
+width$ -- 19
+write$ -- 183
+(There were 5 warnings)

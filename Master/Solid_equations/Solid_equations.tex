@@ -9,7 +9,7 @@ I need to define a smooth mapping from the reference configuration to the curren
 \chi^s(\textbf{X},t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     
 \end{equation}
 Where $\textbf{X}$ denotes a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration to the current configuration. Let $d^s(\textbf{X},t)$ denote the displacement field which describes deformation on a body. I then set the mapping $\chi^s$   to be specified from the its current position plus the displacement from that position:
-\begin{equation}
+\begin{equation} \label{eq:chi}
  \chi^s(\textbf{X},t) = \textbf{X}  + d^s(\textbf{X} ,t) 
 \end{equation}
 which can be written in terms of the displacement field:
@@ -31,7 +31,7 @@ F = \frac{\partial \chi^s(\textbf{x},t)}{\partial \textbf{X}} = \frac{\partial \
 \end{equation}
 which denotes relative change of position under deformation in a Lagrangian frame of reference. We see that when there is no motion, hence no deformation. The deformation gradient $F$ is simply the identity matrix. \newline
 We also need a way to change between volumes, from the reference ($dv$) to current ($dV$) configuration. This is defined with the Jacobian, which is the determinant of the of the deformation gradient F:
-\begin{equation}
+\begin{equation}\label{eq:J}
 J = \text{det}(F)
 \end{equation}
 The Jacobian is used to change between volumes ,if I assume infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. The volume elements $dv, dV$ can be expressed by the dot product:
@@ -45,51 +45,74 @@ ds = JF^{-T}dS
 which holds for an arbitrary line element in different configurations. This will be useful later on when describing equations in different configurations.
 
 \subsection{Strain}
-The relative change of location between two particles is called strain. This is the fundamental quality the causes stress. \cite{Richter2016}. 
+The relative change of location between two particles is called strain. Strain, strain rate and deformation is used to describe the relative motion of particles in a continuum. This is the fundamental quality the causes stress \cite{Richter2016}.
+
 If we look at two neighboring points \textbf{X} and \textbf{Y}. I can describe \textbf{Y} with:
 \begin{equation}
 \textbf{Y} = \textbf{Y} + \textbf{X} - \textbf{X} = \textbf{X} + |\textbf{Y} - \textbf{X}| \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|} = \textbf{X} + d\textbf{X}
 \end{equation}
 
-I write $d\textbf{X} = d\epsilon \textbf{a}_0$,
-where $d\epsilon = |\textbf{Y} - \textbf{X}|$ is the distance between the two points and $\textbf{a}_0 = \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|}$
-A certain motion transform the points $\textbf{Y}$ and $\textbf{X}$ into the displaced positions $\textbf{x} = \chi^s(\textbf{X},t)$ and $\textbf{y} = \chi^s(\textbf{Y},t)$. Using Taylor?s expansion \textbf{y} can be expressed in terms of deformation gradient:
+I write $d\textbf{X}$ as:
+\begin{align}
+d\textbf{X} =& d\epsilon \textbf{a}_0\\
+d\epsilon =& |\textbf{Y} - \textbf{X}| \\
+\textbf{a}_0 =& \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|}
+\end{align}
+where $d\epsilon$ is the distance between the two points and $\textbf{a}_0$ is a unit vector 
+
+We see now that $d\textbf{X}$ is the distance between the two points times the unit vector or direction from $\textbf{X}$ to $\textbf{Y}$.
+\newline
+
+A certain motion transform the points $\textbf{Y}$ and $\textbf{X}$ into the displaced positions $\textbf{x} = \chi^s(\textbf{X},t)$ and $\textbf{y} = \chi^s(\textbf{Y},t)$. Using Taylor?s expansion \textbf{y} can be expressed in terms of the deformation gradient:
 \begin{align}
 \textbf{y} =& \chi^s(\textbf{Y},t) = \chi^s(\textbf{X} + d\epsilon \textbf{a}_0,t) \\
-=& \chi^s(\textbf{X},t) + d\epsilon F \textbf{a}_0 + o(\textbf{Y}-\textbf{X}) \\
+=& \chi^s(\textbf{X},t) + d\epsilon F \textbf{a}_0 + o(\textbf{Y}-\textbf{X}) 
 \end{align}
-where $o(\textbf{Y}-\textbf{X})$ refers to the small error that tends to zero faster than $\textbf{X} - \textbf{Y}$
-Next I define the $\textbf{stretch vector}$ $\lambda_{\textbf{a}0}$ : 
+where $o(\textbf{Y}-\textbf{X})$ refers to the small error that tends to zero faster than $(\textbf{X} - \textbf{Y}) \rightarrow o$. \newline
+
+If I set $\textbf{x} = \chi^s(\textbf{X},t)$  It follows that:
+\begin{align}
+\textbf{y} - \textbf{x} =&  d\epsilon F \textbf{a}_0 + o(\textbf{Y}-\textbf{X}) \\
+=& F(\textbf{Y} - \textbf{X}) + o(\textbf{Y}-\textbf{X}) 
+\end{align}
+
+Next I define the $\textbf{stretch vector}$ $\lambda_{\textbf{a}0}$, which goes in the direction of $\textbf{a}_0$: 
 \begin{equation}
 \lambda_{\textbf{a}0}(\textbf{X},t) = F(\textbf{X},t)\textbf{a}_0 
 \end{equation}
-If we look at the square of $\lambda$
 
+If we look at the square of $\lambda$:
 \begin{align}
 \lambda^2 &=  \lambda_{\textbf{a}0} \lambda_{\textbf{a}0} = F(\textbf{X},t)\textbf{a}_0 F(\textbf{X},t)\textbf{a}_0 \\
 &= \textbf{a}_0 F^TF\textbf{a}_0 = \textbf{a}_0 C \textbf{a}_0
 \end{align}
+
 We have not introduced the important right Cauchy-Green tensor:
  \begin{equation}
  C = F^TF
 \end{equation}
-which is symmetric and positive definite $C = C^T$.  I also introduce the Green-Lagrangian strain tensor E:
+Since $\textbf{a}_0 $ is just a unit vector, we see that this measures the squared length of change under deformation. We see that in order to determine the stretch one needs only the direction of $\textbf{a}_0$ and the tensor C.
+C is also symmetric and positive definite $C = C^T$.  I also introduce the Green-Lagrangian strain tensor E:
 \begin{equation}\label{eq:StrainTensor}
 E = \frac{1}{2}(F^TF -I) 
 \end{equation}
-which is also symmetric since C and I are symmetric. This measures the squared length change under deformation.
+which is also symmetric since C and I are symmetric. 
 		
 \subsection{Stress}
-Stress is the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. 
+While strain, deformation and strain rate only describe the relative motion of particles in a given volume. Stress give us the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. The unit of stress is force per area.
 
 I introduce the Cauchy stress tensor:
 \begin{equation}
  \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
 \end{equation}
+If we use this tensor on an area that is taking the stress tensor times the normal vector $\sigma_s \bold{n}$ we get the forces acting on that area.
+
 Using \eqref{eq:Nanson} I get the first Piola-Kirchhoff stress tensor P:
 \begin{equation}
  P = J \sigma F^{-T} 
 \end{equation}
+This is known as the \textit{Piola Transformation} and maps the tensor into a Lagrangian formulation which will be used when stating the solid equation.
+
 I also introduce the second Piola-Kirchhoff stress tensor S:
 \begin{equation}
 S = J F^{-1}\sigma F^{-T} = F^{-1} P = S^T 
@@ -100,18 +123,14 @@ P = FS
 \end{equation}
 
 \section{Solid equation}
-From the principles of conservation of mass and momentum, I get the solid equation stated in the Lagrangian reference system (Following the notation from \cite{Richter2016}):
+The solid equation describes the motion of a solid. It is derived from the principles of conservation of mass and momentum. Stated in the Lagrangian reference system \cite{Richter2016}:
 \begin{equation}\label{eq:Solid}
 \rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f 
 \end{equation}
-where I used the first Piola-Kirchhoff stress tensor.
+written in terms of the deformation $d$, where I used the first Piola-Kirchhoff stress tensor. $f$ is a force acting on the solid body. Again see \cite{Holzapfel2000} for more details.
 
+\begin{comment}
 \subsection*{Locking}
 The problem og shear locking can happen FEM computations with certain elements. 
 [mek4250 Kent] - Locking occurs if  $ \lambda >> \nu $ that is, the material is nearly incompressible. The reason is that all the elements discussed in this course are poor at approximating the divergence. Locking refers to the case where the displacement is to small because the divergence term essentially lock the displacement. It is a numerical artifact not a physical feature. [Verbatum]
-
-
-
-
-
-
+\end{comment}
