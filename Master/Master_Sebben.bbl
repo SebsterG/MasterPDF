@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Billah1991}
-K.~Yusuf Billah.
-\newblock {Resonance, Tacoma Narrows bridge failure, and undergraduate physics
-  textbooks}.
-\newblock {\em American Journal of Physics}, 59(2):118, 1991.
-
 \bibitem{Fernandez2013}
 Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {Explicit robin-neumann schemes for the coupling of incompressible
@@ -20,11 +14,6 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
 
-\bibitem{Holzapfel2000}
-G~Holzapfel.
-\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
-  2000.
-
 \bibitem{Hron2006a}
 Jaroslav Hron and Stefan Turek.
 \newblock {Proposal for numerical benchmarking of fluid-structure interaction
@@ -37,32 +26,10 @@ Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
   strong added-mass effects}.
 \newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
 
-\bibitem{Macal2005}
-Cm~Macal.
-\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
-  Steiger, FB Armstrong, and JA Joines, eds.}
-\newblock {\em Simulation}, pages 1643--1649, 2005.
-
-\bibitem{Oberkampf2010}
-William~L. Oberkampf and Christopher~J. Roy.
-\newblock {\em {Verification and Validation in Scientific Computing}}.
-\newblock Cambridge University Press, Cambridge, 2010.
-
-\bibitem{Richter2013}
-T~Richter and T~Wick.
-\newblock {On time discretizations of Fluid-structure interactions}.
-\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
-  377--400, 2013.
-
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
-
-\bibitem{Selin2014}
-Noelle Selin.
-\newblock {Verification and Validation}.
-\newblock (February), 2014.
 
 \bibitem{Stein2003}
 K.~Stein, T.~Tezduyar, and R.~Benney.
@@ -81,11 +48,6 @@ E.~H. van Brummelen.
 \newblock {Added Mass Effects of Compressible and Incompressible Flows in
   Fluid-Structure Interaction}.
 \newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
-
-\bibitem{White2000}
-Frank~M White.
-\newblock {Viscous Fluid Flow Viscous}.
-\newblock {\em New York}, Second:413, 2000.
 
 \bibitem{Wick2011}
 Thomas Wick.

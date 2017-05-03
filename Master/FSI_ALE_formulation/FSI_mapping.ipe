@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.6">
-<info created="D:20170502154544" modified="D:20170502164310"/>
+<info created="D:20170502154544" modified="D:20170503175346"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -12953,5 +12953,7 @@ h
 <text transformations="translations" pos="398.513 771.842" stroke="black" type="minipage" width="0" height="7.393" depth="2.41" valign="top" size="Large">$\mathcal{S}$</text>
 <text transformations="translations" pos="400.255 676.953" stroke="black" type="minipage" width="0" height="7.393" depth="2.41" valign="top" size="Large">$\mathcal{S}$</text>
 <text transformations="translations" pos="489.239 710.451" stroke="black" type="minipage" width="0" height="6.703" depth="1.71" valign="top">$\partial \mathcal{F}_{out}$</text>
+<text transformations="translations" pos="442.424 755.707" stroke="black" type="minipage" width="0" height="5.898" depth="0.91" valign="top">$\Sigma$</text>
+<text transformations="translations" pos="446.806 686.114" stroke="black" type="minipage" width="0" height="5.898" depth="0.91" valign="top">$\Sigma$</text>
 </page>
 </ipe>
