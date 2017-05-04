@@ -1,18 +1,9 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{Fernandez2013}
-Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
-\newblock {Explicit robin-neumann schemes for the coupling of incompressible
-  fluids with thin-walled structures}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  267:566--593, 2013.
-
-\bibitem{Fernandez2015}
-Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
-\newblock {Generalized Robin-Neumann explicit coupling schemes for
-  incompressible fluid-structure interaction: Stability analysis and numerics}.
-\newblock {\em International Journal for Numerical Methods in Engineering},
-  101(3):199--229, 2015.
+\bibitem{Holzapfel2000}
+G~Holzapfel.
+\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
+  2000.
 
 \bibitem{Hron2006a}
 Jaroslav Hron and Stefan Turek.
@@ -20,46 +11,36 @@ Jaroslav Hron and Stefan Turek.
   between an elastic object and laminar incompressible flow}.
 \newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
 
-\bibitem{Liu2014}
-Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
-\newblock {A stable second-order scheme for fluid-structure interaction with
-  strong added-mass effects}.
-\newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
+\bibitem{Macal2005}
+Cm~Macal.
+\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
+  Steiger, FB Armstrong, and JA Joines, eds.}
+\newblock {\em Simulation}, pages 1643--1649, 2005.
+
+\bibitem{Oberkampf2010}
+William~L. Oberkampf and Christopher~J. Roy.
+\newblock {\em {Verification and Validation in Scientific Computing}}.
+\newblock Cambridge University Press, Cambridge, 2010.
+
+\bibitem{Richter2013}
+T~Richter and T~Wick.
+\newblock {On time discretizations of Fluid-structure interactions}.
+\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
+  377--400, 2013.
 
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
 
-\bibitem{Stein2003}
-K.~Stein, T.~Tezduyar, and R.~Benney.
-\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
-  Displacements}.
-\newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
+\bibitem{Selin2014}
+Noelle Selin.
+\newblock {Verification and Validation}.
+\newblock (February), 2014.
 
-\bibitem{Valkov2015}
-Boris Valkov, Chris~H. Rycroft, and Ken Kamrin.
-\newblock {Eulerian Method for Multiphase Interactions of Soft Solid Bodies in
-  Fluids}.
-\newblock {\em Journal of Applied Mechanics}, 82(4):041011, 2015.
-
-\bibitem{VanBrummelen2009}
-E.~H. van Brummelen.
-\newblock {Added Mass Effects of Compressible and Incompressible Flows in
-  Fluid-Structure Interaction}.
-\newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
-
-\bibitem{Wick2011}
-Thomas Wick.
-\newblock {Adaptive Finite Element Simulation of Fluid-Structure Interaction
-  with Application to Heart-Valve Dynamics}.
-\newblock {\em Institute of Applied Mathematics, University of Heidelber}, page
-  157, 2011.
-
-\bibitem{Wick2011a}
-Thomas Wick.
-\newblock {Fluid-structure interactions using different mesh motion
-  techniques}.
-\newblock {\em Computers and Structures}, 89(13-14):1456--1467, 2011.
+\bibitem{White2000}
+Frank~M White.
+\newblock {Viscous Fluid Flow Viscous}.
+\newblock {\em New York}, Second:413, 2000.
 
 \end{thebibliography}
