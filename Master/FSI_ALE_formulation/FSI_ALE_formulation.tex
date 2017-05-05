@@ -148,7 +148,7 @@ Since the biharmonic extension is of fourth order character it will have a highe
 
 
 \section{Coupled Fluid Structure Interface conditions}
-In \ref{pic:FSI_mapping} we see a typical Fluid Structure Interaction. The fluid is surrounded by elastic walls, like a blood vessel. The inflow at $\partial \hat{\mathcal{F}}_{in}$, a change in pressure, or a motion of the solid determines the flow of the fluid.
+In figure \ref{pic:FSI_mapping} we see a typical Fluid Structure Interaction. The fluid is surrounded by elastic walls, like a blood vessel. The inflow at $\partial \hat{\mathcal{F}}_{in}$, a change in pressure, or a motion of the solid determines the flow of the fluid.
 The fluid`s stress on the walls causes deformation in the solid domain and vice versa. The interface is where these energies are transferred and we therefore need conditions on the interface. \newline
 
 Let $\Omega \in \hat{\mathcal{S}} \cup \hat{\mathcal{F}} $ be a global domain that is made up of the fluid, structure, and the interface. We define a global velocity function $u$ that describes the fluid velocity in the fluid domain and the structure velocity in the structure domain. Using a global velocity makes the velocity continuous across the entire domain. Let interface be $ \hat{\Sigma} \in \hat{\mathcal{S}} \cap \hat{\mathcal{F}}  $.\newline 
@@ -169,7 +169,8 @@ The fluid and solid velocities are usually in different coordinate systems, the 
 
 \section{Monolithic FSI Problem}
 As stated in the introduction there are generally two types of schemes used when simulating FSI. The first is the partitioned approach where fluid and structure are solved sequentially.  This approach is appealing in that we have a wealth of knowledge and techniques on how to solve each of these kinds of problems in an efficient manner. The difficulty however is dealing with the interface. As we know there are kinematic and dynamic conditions needed in FSI, and the coupling of these conditions is where the problems arise. So called explicit coupled schemes are known to be unconditionally unstable for standard Dirichlet-Neumann strategies when there is a large amount of added-mass in the system \cite{Fernandez2015}, \cite{VanBrummelen2009}. There are however, schemes which offer added-mass free stability with explicit coupling, where the interface is treated through a Robin-Neumann coupling. First for a coupling with a thin walled structure \cite{Fernandez2013} and later with an extension to thick wall \cite{Fernandez2015}. These schemes are rather complex and uses a number of techniques that are out of the scope of this thesis. ( This may be in more detail in a later chapter (discussion and further work.) ) \newline
-The other approach is monolithic, where all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become large and computationally costly. \newline
+
+The other approach is  called monolithic. In the monolithic approach all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become large and computationally costly. \newline
 
 \begin{comment}
 We start by stating the entire FSI ALE problem in a monolithic framework using the mapped approach: 

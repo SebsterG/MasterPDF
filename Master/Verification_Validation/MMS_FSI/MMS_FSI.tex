@@ -15,41 +15,53 @@ u =& ( cos(y)cos(t), cos(x)cos(t) )
 
 
 
-and doing the order of convergence test we get, first in space:
+and doing the order of convergence test we get, first in space with m = 1:
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
-\caption{Structure MMS}
+\caption{Structure Method of Manufactured of Solution in space in m = 1}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-N & $\Delta t$ & m & $E_u$ & $k_u$ & $E_d$ & $k_d$ \\ \hline
-4 & $1x10^{-6}$ & 1 & 0.00688260782038 &  & 3.7854343057e-08 &  \\ \hline
-8 & $1x10^{-6}$ & 1 & 0.00172039793734 & 2.00021299904 & 9.46218870811e-09 & 2.00021299271 \\ \hline
-16 & $1x10^{-6}$ & 1 & 0.000430084236596 & 2.00005114684 & 2.36546335807e-09 & 2.00005112024 \\ \hline
-32 & $1x10^{-6}$ & 1 & 0.000107520101545 & 2.00001284898 & 5.91360617339e-10 & 2.00001274007 \\ \hline
-64 & $1x10^{-6}$ & 1 & 2.68799509236e-05 & 2.00000399654 & 1.47839789951e-10 & 2.00000355583 \\ \hline
-4 & $1x10^{-6}$ & 2 & 6.60233871884e-05 & - & 3.63128629891e-10 & - \\ \hline
-8 & $1x10^{-6}$ & 2 & 8.28397328621e-06 & 2.9945823485 & 4.55618532822e-11 & 2.99458234332 \\ \hline
-16 & $1x10^{-6}$ & 2 & 1.03646090432e-06 & 2.99865720273 & 5.70053508884e-12 & 2.99865718019 \\ \hline
-32 & $1x10^{-6}$ & 2 & 1.2958771861e-07 & 2.99966479692 & 7.12732513531e-13 & 2.99966470221 \\ \hline
-64 & $1x10^{-6}$ & 2 & 1.61994158345e-08 & 2.99991530218 & 8.90968200767e-14 & 2.99991489187 \\ \hline
+\textbf{N}  & $\Delta t$  & \textbf{m} & $E_u \times 10^{-3}$ & $\bold{k_u}$    & $E_d \times 10^{-8}$ & $\bold{k_d}$    \\ \hline
+\textbf{4}  & $1\times10^{-6}$ & \textbf{1} & 6.88                 & \textbf{}         & 3.78                 & \textbf{}         \\ \hline
+\textbf{8}  & $1\times10^{-6}$ & \textbf{1} & 1.72                 & \textbf{2.000212} & 0.94                 & \textbf{2.000212} \\ \hline
+\textbf{16} & $1\times10^{-6}$ & \textbf{1} & 0.43                 & \textbf{2.000051} & 0.23                 & \textbf{2.000051} \\ \hline
+\textbf{32} & $1\times10^{-6}$ & \textbf{1} & 0.10                 & \textbf{2.000012} & 0.05                 & \textbf{2.000012} \\ \hline
+\textbf{64} & $1\times10^{-6}$ & \textbf{1} & 0.026                & \textbf{2.000003} & 0.0014               & \textbf{2.000003} \\ \hline
 \end{tabular}
 \end{table}
 
-Time:
-\begin{table}[h]
+\begin{table}[H]
 \centering
-\caption{Structure MMS Time}
+\caption{Structure Method of Manufactured of Solution in space in m = 2}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{N} & $\Delta t$ & \textbf{m} & $E_u [\times 10^-5]$ & $\bold{k_u}$ & $E_d [\times 10^{-10}]$ & $\bold{k_d}$ \\ \hline
+\textbf{4} & $1\times10^{-6}$ & \textbf{2} & 6.60 & \textbf{-} & 3.63 & \textbf{-} \\ \hline
+\textbf{8} & $1\times10^{-6}$ & \textbf{2} & 0.82 & \textbf{2.99458} & 0.45 & \textbf{2.99458} \\ \hline
+\textbf{16} & $1\times10^{-6}$ & \textbf{2} & 0.10 & \textbf{2.99865} & 0.057 & \textbf{2.99865} \\ \hline
+\textbf{32} & $1\times10^{-6}$ & \textbf{2} & 0.012 & \textbf{2.99966} & 0.0071 & \textbf{2.99966} \\ \hline
+\textbf{64} & $1\times10^{-6}$ & \textbf{2} & 0.00161 & \textbf{2.99991} & 0.00089 & \textbf{2.99991} \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+Time:
+\begin{table}[H]
+\centering
+\caption{Structure Method of Manufactured of Solution in time}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-N  & $\Delta t$ & $E_u$             & $k_u$          & $E_u$             & $k_d$         \\ \hline
-64 & 0.0008     & 2.40113737032e-06 & -              & 1.76531251763e-08 & -             \\ \hline
-64 & 0.0004     & 1.20432501777e-06 & 0.995493150627 & 8.68459764556e-09 & 1.02339269394 \\ \hline
-64 & 0.0002     & 5.91307436945e-07 & 1.02624446535  & 4.14332593927e-09 & 1.06766969495 \\ \hline
-64 & 0.0001     & 2.93267031994e-07 & 1.01169352445  & 2.02357953875e-09 & 1.03387975932 \\ \hline
-64 & 0.00005    & 1.46821750169e-07 & 0.998149192911 & 1.00209817454e-09 & 1.01388570182 \\ \hline
+N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-8}]$ & $\bold{k_d}$ \\ \hline
+64 & \textbf{0.0008} & 2.40 & \textbf{-} & 1.76 & \textbf{-} \\ \hline
+64 & \textbf{0.0004} & 1.20 & \textbf{0.995} & 0.86 & \textbf{1.0233} \\ \hline
+64 & \textbf{0.0002} & 0.59 & \textbf{1.026} & 0.41 & \textbf{1.0676} \\ \hline
+64 & \textbf{0.0001} & 0.29 & \textbf{1.011} & 0.20 & \textbf{1.0338} \\ \hline
+64 & \textbf{0.00005} & 0.14 & \textbf{0.998} & 0.10 & \textbf{1.0138} \\ \hline
 \end{tabular}
 \end{table}
 
