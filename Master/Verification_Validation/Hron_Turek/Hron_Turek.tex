@@ -246,7 +246,7 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A)[x10^{-3}]$ & Drag & Lift & Spaces \
 The FSI-2 results were with $\Delta t = 0.01, \theta = 0.51$, biharmonic bc 1, $\alpha_u = 0.01$
 \begin{table}[H]
 \centering
-\caption{FSI-2}
+\caption{FSI-2 with $\Delta t = 0.01$}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -254,10 +254,21 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift & Extrapo
 2698 & 23563 & $-15.17 \pm 13.35  $ & $1.13 \pm 82.5$ & $160.12 \pm 17.88$ & $0.87 \pm 259.62$ & Biharmonic & 1 & 0.01 \\ \hline
 2698 & 23563 & $-14.92 \pm 13.17 $ & $1.13 \pm 81.86$ & $160.28 \pm 17.94$ & $0.65 \pm 254.07$ & Biharmonic & 2 & 0.01 \\ \hline
 2698 & 23563 & $-15.10 \pm 13.32 $ & $1.16 \pm 82.46 $ & $159.53 \pm,17.44 $ & $ 0.68 \pm 259.10 $ & Harmonic & - & 0.01 \\ \hline
+10792 & 92992 & $-14.85 \pm 13.14 $ & $1.21 \pm 81.72$ & $ 160 \pm 17.84  $ & $0.89 \pm 255.10 $ & Harmonic & - & 0.01 \\ \hline
 \textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} & \textbf{ref} & \textbf{ref} \\ \hline
 \end{tabular}
 \end{table}
-
+\begin{table}[H]
+\centering
+\caption{FSI-2 with $\Delta t = 0.001$}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift & Extrapolation & BC & $\Delta t$ \\ \hline
+2698 & 23563 & $ 15.42 \pm 13.10$ & $1.14 \pm 83.39$ & $157.01 \pm 15.69$ &$ -0.77 \pm 174.36$ & Harmonic & - & 0.001 \\ \hline
+\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} & \textbf{ref} & \textbf{ref} \\ \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[H]
 \caption{Deformation at $t =9.20 $sec  using warp by vector in paraview}

@@ -31,11 +31,11 @@ F = \frac{\partial \chi^s(\textbf{x},t)}{\partial \textbf{X}} = \frac{\partial \
 \end{equation}
 which denotes relative change of position under deformation in a Lagrangian frame of reference. We can observe that when there is no deformation. The deformation gradient $F$ is simply the identity matrix. \newline
 
-We also need a way to change between volumes, from the reference ($\int dv$) to current ($\int dV$) configuration. This is defined with the Jacobian, which is the determinant of the of the deformation gradient F:
+We also need a way to change between volumes, from the reference ($\int dv$) to current ($\int dV$) configuration. This is defined with the Jacobian determinant, which is the determinant of the of the deformation gradient F:
 \begin{equation}\label{eq:J}
 J = \text{det}(F)
 \end{equation}
-The Jacobian is used to change between volumes, assuming infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. 
+The Jacobian determinant is used to change between volumes, assuming infinitesimal line and area elements in the current $ds, dx$ and reference $dV,dX$ configurations. The Jacobian determinant is therefore known as a volume ratio.
 
 \begin{comment}
 The volume elements $dv, dV$ can be expressed by the dot product:
@@ -108,13 +108,13 @@ which is also symmetric since C and I are symmetric.
 \subsection{Stress}
 While strain, deformation and strain rate only describe the relative motion of particles in a given volume. Stress give us the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. The unit of stress is force per area.
 
-I introduce the Cauchy stress tensor:
+I introduce the Cauchy stress tensor $\sigma_s$ by the constitutive law of St. Venant-Kirchhoff hyperelastic material model:
 \begin{equation}
  \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
 \end{equation}
 If we use this tensor on an area that is taking the stress tensor times the normal vector $\sigma_s \bold{n}$ we get the forces acting on that area.
 
-Using the deformation gradient and the Jacobian, I get the first Piola-Kirchhoff stress tensor P:
+Using the deformation gradient and the Jacobian determinant., I get the first Piola-Kirchhoff stress tensor P:
 \begin{equation}
  P = J \sigma F^{-T} 
 \end{equation}
@@ -134,7 +134,7 @@ The solid equation describes the motion of a solid. It is derived from the princ
 \begin{equation}\label{eq:Solid}
 \rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f 
 \end{equation}
-written in terms of the deformation $d$, where I used the first Piola-Kirchhoff stress tensor. $f$ is a force acting on the solid body. Considering the material law from the previous section. The stresses depend on the displacements $d$ which again depends on the strain. The solid equation will be finalized by stating the different boundary conditions needed to solve a solid problem.
+written in terms of the deformation $d$, where I used the first Piola-Kirchhoff stress tensor. $f$ is a force acting on the solid body. Considering the material law from the previous section. The stresses depend on the strain which again depends of the displacements $d$. The solid equation will be finalized by stating the different boundary conditions needed to solve a solid problem.
 \subsection{Solid Boundary Conditions}
 The solid moves within the boundary of $ \partial \mathcal{S}$.  On the Dirichlet boundary $ \partial \mathcal{S}_D$ we impose a given value. These can be initial conditions or set to a value set to a designated spot on the domain. These initial conditions are defined for $d$ and $w$:
 \begin{align}

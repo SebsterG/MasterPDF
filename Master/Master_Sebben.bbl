@@ -1,29 +1,22 @@
 \begin{thebibliography}{10}
 
-\bibitem{Billah1991}
-K.~Yusuf Billah.
-\newblock {Resonance, Tacoma Narrows bridge failure, and undergraduate physics
-  textbooks}.
-\newblock {\em American Journal of Physics}, 59(2):118, 1991.
+\bibitem{Etienne2012}
+S.~{\'{E}}tienne, A.~Garon, and D.~Pelletier.
+\newblock {Some manufactured solutions for verification of fluid-structure
+  interaction codes}.
+\newblock {\em Computers and Structures}, 106-107:56--67, 2012.
+
+\bibitem{Etienne2006}
+St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
+  2006.
 
 \bibitem{Fefferman2000}
 Charles~L. Fefferman.
 \newblock {Existence and smoothness of the Navier-Stokes equation}.
 \newblock {\em The millennium prize problems}, (1):1--5, 2000.
-
-\bibitem{Fernandez2013}
-Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
-\newblock {Explicit robin-neumann schemes for the coupling of incompressible
-  fluids with thin-walled structures}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  267:566--593, 2013.
-
-\bibitem{Fernandez2015}
-Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
-\newblock {Generalized Robin-Neumann explicit coupling schemes for
-  incompressible fluid-structure interaction: Stability analysis and numerics}.
-\newblock {\em International Journal for Numerical Methods in Engineering},
-  101(3):199--229, 2015.
 
 \bibitem{Holzapfel2000}
 G~Holzapfel.
@@ -35,12 +28,6 @@ Jaroslav Hron and Stefan Turek.
 \newblock {Proposal for numerical benchmarking of fluid-structure interaction
   between an elastic object and laminar incompressible flow}.
 \newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
-
-\bibitem{Liu2014}
-Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
-\newblock {A stable second-order scheme for fluid-structure interaction with
-  strong added-mass effects}.
-\newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
 
 \bibitem{Macal2005}
 Cm~Macal.
@@ -64,44 +51,19 @@ Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
 
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
 \bibitem{Selin2014}
 Noelle Selin.
 \newblock {Verification and Validation}.
 \newblock (February), 2014.
 
-\bibitem{Stein2003}
-K.~Stein, T.~Tezduyar, and R.~Benney.
-\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
-  Displacements}.
-\newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
-
-\bibitem{Valkov2015}
-Boris Valkov, Chris~H Rycroft, and Ken Kamrin.
-\newblock {Eulerian method for fluid – structure interaction and submerged
-  solid – solid contact problems}.
-
-\bibitem{VanBrummelen2009}
-E.~H. van Brummelen.
-\newblock {Added Mass Effects of Compressible and Incompressible Flows in
-  Fluid-Structure Interaction}.
-\newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
-
 \bibitem{White2000}
 Frank~M White.
 \newblock {Viscous Fluid Flow Viscous}.
 \newblock {\em New York}, Second:413, 2000.
-
-\bibitem{Wick2011}
-Thomas Wick.
-\newblock {Adaptive Finite Element Simulation of Fluid-Structure Interaction
-  with Application to Heart-Valve Dynamics}.
-\newblock {\em Institute of Applied Mathematics, University of Heidelber}, page
-  157, 2011.
-
-\bibitem{Wick2011a}
-Thomas Wick.
-\newblock {Fluid-structure interactions using different mesh motion
-  techniques}.
-\newblock {\em Computers and Structures}, 89(13-14):1456--1467, 2011.
 
 \end{thebibliography}

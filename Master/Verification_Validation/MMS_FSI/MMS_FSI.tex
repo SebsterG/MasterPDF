@@ -1,21 +1,22 @@
 \section{Structure MMS}
-We also want to test the coupled solid solver. We make a sourceterm $f_s$:
+To do MMS of the solid I use the solid equation and make a sourceterm $f_s$:
 $$\rho_s \frac{\partial u}{\partial t} - \nabla \cdot ( P ) = f_s $$
-Solid variational formulation:
+The solid variational formulation is written as:
 \begin{align}
 \big(\rho_s \frac{\partial u}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
 \big( u- \frac{\partial d}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
 \end{align}
-We should make another sourceterm f for the second equation but the solutions will be made so this line becomes zero.
-Using the solutions 
+These equations are solved together and we solve for $d$ and $u$. The functions u and d will be computed to match the source term. In the tables below we investigate convergence in space and time. \newline
+
+Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $u = \frac{\partial d}{\partial t}$:
 \begin{align*}
 d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
 u =& ( cos(y)cos(t), cos(x)cos(t) )
 \end{align*}
+To meet the requirements of MMS such as smoothness and complexity, i chose functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
+\newline
 
-
-
-and doing the order of convergence test we get, first in space with m = 1:
+I start with checking order of convergence in space. Setting m = 1, the expected order of convergence will 2. 
 
 \begin{table}[H]
 \centering
@@ -32,6 +33,8 @@ and doing the order of convergence test we get, first in space with m = 1:
 \end{tabular}
 \end{table}
 
+Up next I set m=2 changing the expected order of convergence to 2:
+
 \begin{table}[H]
 \centering
 \caption{Structure Method of Manufactured of Solution in space in m = 2}
@@ -47,9 +50,8 @@ and doing the order of convergence test we get, first in space with m = 1:
 \end{tabular}
 \end{table}
 
+Lastly I check convergence in time. Here i set N = 64 and the timestep is halved for each computation.
 
-
-Time:
 \begin{table}[H]
 \centering
 \caption{Structure Method of Manufactured of Solution in time}

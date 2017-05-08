@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  5 MAY 2017 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  8 MAY 2017 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1210,6 +1210,9 @@ LaTeX Warning: Label `my-label' multiply defined.
 LaTeX Warning: Label `my-label' multiply defined.
 
 
+LaTeX Warning: Label `my-label' multiply defined.
+
+
 LaTeX Warning: Label `fig:fluid_structure' multiply defined.
 
 
@@ -1339,39 +1342,68 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 ]
-(./Master_Sebben.toc [1
-
-])
+(./Master_Sebben.toc)
 \tf@toc=\write6
 \openout6 = `Master_Sebben.toc'.
 
- [2] (./IntroductionToFSI/IntroductionToFSI.tex
+ [1
+
+] [2
+
+] (./Continuum_mechanics/Continuum_mechanics.tex
 Chapter 1.
-<./IntroductionToFSI/tacoma2.jpeg, id=34, 770.88pt x 536.75531pt>
-File: ./IntroductionToFSI/tacoma2.jpeg Graphic file (type jpg)
 
-<use ./IntroductionToFSI/tacoma2.jpeg>
-Package pdftex.def Info: ./IntroductionToFSI/tacoma2.jpeg used on input line 7.
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
-(pdftex.def)             Requested size: 188.95235pt x 131.55943pt.
+ []
 
-<./IntroductionToFSI/tacoma3.jpeg, id=35, 770.88pt x 595.47469pt>
-File: ./IntroductionToFSI/tacoma3.jpeg Graphic file (type jpg)
 
-<use ./IntroductionToFSI/tacoma3.jpeg>
-Package pdftex.def Info: ./IntroductionToFSI/tacoma3.jpeg used on input line 13
-.
-(pdftex.def)             Requested size: 185.2494pt x 143.08948pt.
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
-Overfull \hbox (3.89786pt too wide) in paragraph at lines 5--17
- []$[]$$[]$ 
  []
 
 [1
 
+] (./Solid_equations/Solid_equations.tex
+<continuum_mapping.png, id=37, 682.55pt x 341.275pt>
+File: continuum_mapping.png Graphic file (type png)
 
-]) (./Continuum_mechanics/Continuum_mechanics.tex [2 <./IntroductionToFSI/tacom
-a2.jpeg> <./IntroductionToFSI/tacoma3.jpeg>]
+<use continuum_mapping.png>
+Package pdftex.def Info: continuum_mapping.png used on input line 4.
+(pdftex.def)             Requested size: 273.01517pt x 136.50757pt.
+ [2 <./continuum_mapping.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+[4]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 115.
+
+[5]) (./Navier-Stokes/Navier-Stokes.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+[6])) (./Verification_Validation/Verification_Validation.tex [7] [8
+
+]
 Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
@@ -1383,169 +1415,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[3
-
-] (./Solid_equations/Solid_equations.tex
-<continuum_mapping.png, id=46, 682.55pt x 341.275pt>
-File: continuum_mapping.png Graphic file (type png)
-
-<use continuum_mapping.png>
-Package pdftex.def Info: continuum_mapping.png used on input line 4.
-(pdftex.def)             Requested size: 273.01517pt x 136.50757pt.
- [4 <./continuum_mapping.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
- []
-
-[6]
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 115.
-
-[7]) (./Navier-Stokes/Navier-Stokes.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-[8])) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [9] [10
 
-]
-Chapter 3.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+ [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--8
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-<./FSI_ALE_formulation/FSI_mapping.png, id=82, 1013.7875pt x 360.34625pt>
-File: ./FSI_ALE_formulation/FSI_mapping.png Graphic file (type png)
-
-<use ./FSI_ALE_formulation/FSI_mapping.png>
-Package pdftex.def Info: ./FSI_ALE_formulation/FSI_mapping.png used on input li
-ne 21.
-(pdftex.def)             Requested size: 456.20016pt x 162.15431pt.
-
-Overfull \hbox (66.20016pt too wide) in paragraph at lines 21--22
-[][] 
- []
-
-[12] [13 <./FSI_ALE_formulation/FSI_mapping.png>] [14] [15] [16]
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 138.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
-
- []
-
-[17]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 158.
-
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-
- []
-
-(./Discretization/Discretization.tex
-Overfull \hbox (35.49678pt too wide) in paragraph at lines 1--1
- |[]\T1/cmr/bx/n/17.28 Discretization of mono-lithic FSI equa-tions| 
- []
-
-[19] [20]
-
-LaTeX Warning: Citation `Wick' on page 21 undefined on input line 63.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Citation `Roache' on page 10 undefined on input line 25.
 
- [21])
-[22]) (./FSI_code_monolithic/FSI_code_monolithic_update.tex [23] [24
-
-]
-Chapter 4.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/09/06 1.5e listings language file
-) [25]
-[26] [27]
-Underfull \vbox (badness 7522) has occurred while \output is active []
-
- [28]
-[29]) (./Verification_Validation/Verification_Validation.tex [30]
-Chapter 5.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31
-
-]
-
-LaTeX Warning: Citation `Roache' on page 32 undefined on input line 18.
-
-[32] (./Verification_Validation/MMS_FSI/MMS_FSI.tex [33]
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-[34]
-Overfull \hbox (90.1394pt too wide) in paragraph at lines 87--99
+(./Verification_Validation/MMS_FSI/MMS_FSI.tex [11]
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+
+Overfull \hbox (90.1394pt too wide) in paragraph at lines 89--101
  [][] 
  []
 
-[35]) (./Verification_Validation/Hron_Turek/Hron_Turek.tex
+[13] [14]) (./Verification_Validation/Hron_Turek/Hron_Turek.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-<./Verification_Validation/Hron_Turek/Domain_drawing.png, id=170, 756.8275pt x 
-250.9375pt>
+ [15]
+<./Verification_Validation/Hron_Turek/Domain_drawing.png, id=97, 756.8275pt x 2
+50.9375pt>
 File: ./Verification_Validation/Hron_Turek/Domain_drawing.png Graphic file (typ
 e png)
  <use ./Verification_Validation/Hron_Turek/Domain_drawing.png>
@@ -1562,13 +1482,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[37 <./Verification_Validation/Hron_Turek/Domain_drawing.png>]
+[16 <./Verification_Validation/Hron_Turek/Domain_drawing.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[38]
-<./Verification_Validation/Hron_Turek/fluid.png, id=177, 919.435pt x 380.42125p
+[17]
+<./Verification_Validation/Hron_Turek/fluid.png, id=104, 919.435pt x 380.42125p
 t>
 File: ./Verification_Validation/Hron_Turek/fluid.png Graphic file (type png)
  <use ./Verification_Validation/Hron_Turek/fluid.png>
@@ -1583,14 +1503,14 @@ Overfull \hbox (15.6563pt too wide) in paragraph at lines 50--51
 
 Underfull \vbox (badness 1184) has occurred while \output is active []
 
- [39 <./Verification_Validation/Hron_Turek/fluid.png (PNG copy)>]
+ [18 <./Verification_Validation/Hron_Turek/fluid.png (PNG copy)>]
 Overfull \hbox (2.20117pt too wide) in paragraph at lines 100--101
 []\T1/cmr/m/n/12 Our quan-tity for com-par-ing there will be the de-for-ma-tion
  at the point $\OML/cmm/m/it/12 A$\T1/cmr/m/n/12 . 
  []
 
 
-<./Verification_Validation/Hron_Turek/structure.png, id=184, 919.435pt x 380.42
+<./Verification_Validation/Hron_Turek/structure.png, id=110, 919.435pt x 380.42
 125pt>
 File: ./Verification_Validation/Hron_Turek/structure.png Graphic file (type png
 )
@@ -1606,8 +1526,8 @@ Overfull \hbox (18.50156pt too wide) in paragraph at lines 104--105
 
 Underfull \vbox (badness 2020) has occurred while \output is active []
 
- [40 <./Verification_Validation/Hron_Turek/structure.png (PNG copy)>]
-<./Verification_Validation//Hron_Turek/dis_x.png, id=190, 578.16pt x 433.62pt>
+ [19 <./Verification_Validation/Hron_Turek/structure.png (PNG copy)>]
+<./Verification_Validation//Hron_Turek/dis_x.png, id=116, 578.16pt x 433.62pt>
 File: ./Verification_Validation//Hron_Turek/dis_x.png Graphic file (type png)
 
 <use ./Verification_Validation//Hron_Turek/dis_x.png>
@@ -1615,7 +1535,7 @@ Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x.png used o
 n input line 177.
 (pdftex.def)             Requested size: 146.25pt x 109.68172pt.
 
-<./Verification_Validation//Hron_Turek/dis_y.png, id=192, 578.16pt x 433.62pt>
+<./Verification_Validation//Hron_Turek/dis_y.png, id=118, 578.16pt x 433.62pt>
 File: ./Verification_Validation//Hron_Turek/dis_y.png Graphic file (type png)
 
 <use ./Verification_Validation//Hron_Turek/dis_y.png>
@@ -1623,7 +1543,7 @@ Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_y.png used o
 n input line 183.
 (pdftex.def)             Requested size: 146.25pt x 109.68172pt.
 
-<./Verification_Validation//Hron_Turek/dis_x_short.png, id=193, 578.16pt x 433.
+<./Verification_Validation//Hron_Turek/dis_x_short.png, id=119, 578.16pt x 433.
 62pt>
 File: ./Verification_Validation//Hron_Turek/dis_x_short.png Graphic file (type 
 png)
@@ -1632,7 +1552,7 @@ Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x_short.png
 used on input line 189.
 (pdftex.def)             Requested size: 146.25pt x 109.68172pt.
 
-<./Verification_Validation/Hron_Turek/dis_y_short.png, id=194, 578.16pt x 433.6
+<./Verification_Validation/Hron_Turek/dis_y_short.png, id=120, 578.16pt x 433.6
 2pt>
 File: ./Verification_Validation/Hron_Turek/dis_y_short.png Graphic file (type p
 ng)
@@ -1643,8 +1563,8 @@ sed on input line 195.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-<./Verification_Validation/Hron_Turek/fluid_structure.png, id=198, 919.435pt x 
+ [20]
+<./Verification_Validation/Hron_Turek/fluid_structure.png, id=124, 919.435pt x 
 380.42125pt>
 File: ./Verification_Validation/Hron_Turek/fluid_structure.png Graphic file (ty
 pe png)
@@ -1660,7 +1580,7 @@ Overfull \hbox (16.05978pt too wide) in paragraph at lines 209--210
 
 Underfull \vbox (badness 6236) has occurred while \output is active []
 
- [42 <./Verification_Validation//Hron_Turek/dis_x.png> <./Verification_Validati
+ [21 <./Verification_Validation//Hron_Turek/dis_x.png> <./Verification_Validati
 on//Hron_Turek/dis_y.png> <./Verification_Validation//Hron_Turek/dis_x_short.pn
 g> <./Verification_Validation/Hron_Turek/dis_y_short.png>]
 Overfull \hbox (21.93153pt too wide) in paragraph at lines 234--242
@@ -1668,33 +1588,42 @@ Overfull \hbox (21.93153pt too wide) in paragraph at lines 234--242
  []
 
 
-Overfull \hbox (179.74707pt too wide) in paragraph at lines 251--259
+Overfull \hbox (184.25017pt too wide) in paragraph at lines 251--260
  [][] 
  []
 
-[43 <./Verification_Validation/Hron_Turek/fluid_structure.png (PNG copy)>]
-<./Verification_Validation/Hron_Turek/FSI2_d_920.png, id=212, 919.435pt x 380.4
+
+Overfull \hbox (193.74458pt too wide) in paragraph at lines 265--271
+ [][] 
+ []
+
+[22 <./Verification_Validation/Hron_Turek/fluid_structure.png (PNG copy)>]
+<./Verification_Validation/Hron_Turek/FSI2_d_920.png, id=138, 919.435pt x 380.4
 2125pt>
 File: ./Verification_Validation/Hron_Turek/FSI2_d_920.png Graphic file (type pn
 g)
  <use ./Verification_Validation/Hron_Turek/FSI2_d_920.png>
 Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_d_920.png us
-ed on input line 264.
+ed on input line 275.
 (pdftex.def)             Requested size: 367.76749pt x 152.16579pt.
 
-<./Verification_Validation/Hron_Turek/FSI2_u_920.png, id=214, 919.435pt x 380.4
+<./Verification_Validation/Hron_Turek/FSI2_u_920.png, id=140, 919.435pt x 380.4
 2125pt>
 File: ./Verification_Validation/Hron_Turek/FSI2_u_920.png Graphic file (type pn
 g)
  <use ./Verification_Validation/Hron_Turek/FSI2_u_920.png>
 Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_u_920.png us
-ed on input line 268.
+ed on input line 279.
 (pdftex.def)             Requested size: 367.76749pt x 152.16579pt.
 )
-(./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex [44 <./V
-erification_Validation/Hron_Turek/FSI2_d_920.png (PNG copy)> <./Verification_Va
-lidation/Hron_Turek/FSI2_u_920.png (PNG copy)>]
-<./Verification_Validation/Mesh_motion_results/CSM1.png, id=221, 578.16pt x 433
+(./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex
+
+LaTeX Warning: Reference `sec:meshmotion' on page 23 undefined on input line 2.
+
+
+[23 <./Verification_Validation/Hron_Turek/FSI2_d_920.png (PNG copy)> <./Verific
+ation_Validation/Hron_Turek/FSI2_u_920.png (PNG copy)>]
+<./Verification_Validation/Mesh_motion_results/CSM1.png, id=147, 578.16pt x 433
 .62pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1.png Graphic file (type
  png)
@@ -1705,8 +1634,8 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1.png
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
-<./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=227, 919.43
+ [24]
+<./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=152, 919.43
 5pt x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_laplace.png Graphic fi
 le (type png)
@@ -1716,7 +1645,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_lap
 lace.png used on input line 21.
 (pdftex.def)             Requested size: 183.88374pt x 76.08289pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_constant.png, id=228, 919.4
+<./Verification_Validation/Mesh_motion_results/CSM1_constant.png, id=153, 919.4
 35pt x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_constant.png Graphic f
 ile (type png)
@@ -1726,7 +1655,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_con
 stant.png used on input line 27.
 (pdftex.def)             Requested size: 183.88374pt x 76.08289pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png, id=229, 919.435p
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png, id=154, 919.435p
 t x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png Graphic file
  (type png)
@@ -1736,7 +1665,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_bib
 c1.png used on input line 33.
 (pdftex.def)             Requested size: 183.88374pt x 76.08289pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png, id=230, 919.435p
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png, id=155, 919.435p
 t x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png Graphic file
  (type png)
@@ -1748,9 +1677,9 @@ c2.png used on input line 39.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./Verification_Validation/Mesh_motion_results/CSM1.png>])
+ [25 <./Verification_Validation/Mesh_motion_results/CSM1.png>])
 (./Verification_Validation/Temporal_stability/Temporal_stability.tex
-<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=236, 586
+<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=161, 586
 .8324pt x 433.62pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png Graphic
  file (type png)
@@ -1765,7 +1694,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 9--10
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=237, 586
+<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=162, 586
 .8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png Graphic
  file (type png)
@@ -1780,7 +1709,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 15--16
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=238, 5
+<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=163, 5
 86.8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png Graph
 ic file (type png)
@@ -1795,7 +1724,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 21--22
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=239, 5
+<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=164, 5
 86.8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png Graph
 ic file (type png)
@@ -1809,24 +1738,17 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 27--28
  [][] 
  []
 
-[47 <./Verification_Validation/Mesh_motion_results/CSM1_laplace.png (PNG copy)>
+[26 <./Verification_Validation/Mesh_motion_results/CSM1_laplace.png (PNG copy)>
  <./Verification_Validation/Mesh_motion_results/CSM1_constant.png (PNG copy)> <
 ./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png (PNG copy)> <./Ver
 ification_Validation/Mesh_motion_results/CSM1_bibc2.png (PNG copy)>]))
-(./Speedup/Speedup.tex [48 <./Verification_Validation/Temporal_stability/FSI2_0
-01_051_big.png> <./Verification_Validation/Temporal_stability/FSI2_001_050_big.
-png> <./Verification_Validation/Temporal_stability/FSI2_001_051_small.png> <./V
-erification_Validation/Temporal_stability/FSI2_001_050_small.png>]
-Chapter 6.
-) (./Conclusions/Conclusions.tex [49
+(./Master_Sebben.bbl [27 <./Verification_Validation/Temporal_stability/FSI2_001
+_051_big.png> <./Verification_Validation/Temporal_stability/FSI2_001_050_big.pn
+g> <./Verification_Validation/Temporal_stability/FSI2_001_051_small.png> <./Ver
+ification_Validation/Temporal_stability/FSI2_001_050_small.png>] [28
 
-] [50
-
-]
-Chapter 7.
-) (./Master_Sebben.bbl [51] [52
-
-] [53]) [54] (./Master_Sebben.aux)
+] [29])
+[30] (./Master_Sebben.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1835,13 +1757,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28274 strings out of 493089
- 562153 string characters out of 6134842
- 817384 words of memory out of 5000000
- 31182 multiletter control sequences out of 15000+600000
+ 27560 strings out of 493089
+ 554486 string characters out of 6134842
+ 621189 words of memory out of 5000000
+ 30500 multiletter control sequences out of 15000+600000
  40436 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,13n,101p,10452b,1717s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,13n,101p,10452b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texm
@@ -1859,21 +1781,17 @@ pe1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
 c/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx08
-00.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0600.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (58 pages, 1492049 bytes).
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx0800.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Master_Sebben.pdf (34 pages, 1214307 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 258 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 
