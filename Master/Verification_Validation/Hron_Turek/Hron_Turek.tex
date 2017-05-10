@@ -1,8 +1,8 @@
-\section{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
+\subsection{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
 The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing robustness and efficiency. 
 
 
-\subsection{Problem Defintion}
+\subsection*{Problem Defintion}
 \subsubsection*{Domain}
 
 \begin{center}
@@ -40,7 +40,7 @@ frequency =& \frac{1}{T}
 
 In each test the numbers with ref are the values taken from the benchmark paper \cite{Hron2006a}
 
-\subsection{Results}
+\subsubsection{Results}
 \subsubsection{CFD test}
 The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
 The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also calculate with the bar and setting $\rho_s$ and $\mu_s$ to a large value. 

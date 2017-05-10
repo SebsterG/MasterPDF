@@ -1,9 +1,91 @@
-\chapter{Speed improvements}
-\section{Jacobian reuse}
-When solving a monolithic FSI problem, the size of the solution matrix can quickly become quite large. To solve non-linear FSI problems we as discussed before use a Newton solver. The majority of the time spent on in the newton solver is assembling the Jacobian. In most cases we employ a small $\delta t = 10^-2, 10^-3$, which in turn means that the Jacobian only differs by a small amount. The trick therefore is to reuse the Jacobian. This is done by telling the solver that we only assemble the Jacobian for a given number of iterations. The rest of the newton solver stays the same and keeps iterating until convergence, but the Jacobian matrix stays the same for a set number of iterations. When employed it was noticed that we needed a larger number of iterations to reach convergence, but the overall time of the Newton solver was much faster.
+\chapter{Runtime improvements}
+Modeling Fluid Structure Interaction accurately has been difficult not only because of the lack of stable schemes. It is also difficult because of the increase in runtime when modeling both fluid and structure, especially with monolithic schemes. When accuracy is needed in CFSI the number of cells can quickly become large. The strain on computers increases giving increased runtime. 
 
-RESULTS:
-FSI3 does not work with jacobian reuse or quadreduce. \\
-FSI2 works perfectly with reuse and quad, going pretty fast.
+To solve non-linear FSI problems I use in this these a Newton solver. In the Newton solver we have to assemble the Jacobian of the matrix, assemble the residual and solve for each iteration, until convergence is met. Working on this thesis the issue of runtime was certainly a problem, taking days and weeks for a simulation to finish. 
 
-\section{Quad reduce}
+I have in this chapter added the runtime improvements I have made to my newton solver. The point of this chapter is not to rigorously experiment with time improvement techniques. But merely to show what helped me make the simulation time bearable. And hopefully help others when employing a newton solver. The ideas covered are not new and has been implemented in Gabriel Balaban?s master thesis in 2012 \cite{Sciences2012}.
+
+\section{Newton runtime profile}
+In table \ref{no_opt} I ran the FSI1 problem with no optimizations, checking the amount of time spent on: Jacobian Assembly, residual assembly and time to solve. 
+
+\begin{table}[H]
+\centering
+\caption{Newton solver timed with no optimizations run with $\bold{\Delta t = 0.5}$ }
+\label{no_opt}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Method               & \textbf{Runtime {{[}}s{{]}}} & Runtime {{[}}\%{{]}} & \textbf{Calls} \\ \hline
+Assembly of Jacobian & \textbf{60.7}                    & 94.4                     & \textbf{5}     \\ \hline
+Assembly or residual & \textbf{0.6}                     & 0.9                      & \textbf{5}     \\ \hline
+Solve                & \textbf{2.8}                     & 4.4                      & \textbf{5}     \\ \hline
+Fulltime             & \textbf{64.3}                    & 100\%                    & -                \\ \hline
+\end{tabular}
+\end{table}
+
+As we can see in table \ref{no_opt} the majority of time spent is in the assembly of the Jacobian. Therefore energy will be spent on reducing the time spent on assembling the jacobian. In the next sections I will introduce two ways of improving time spent on assembling greatly. The first is reusing of the Jacobian and the second is employing a function in FENiCS called quadrature reduce. I will compare the techniques time improvement to table \ref{no_opt}.
+
+\section{Jacobian reuse }
+ The majority of the time spent on in the newton solver is assembling the Jacobian. In most cases we employ a small $\delta t = 10^-2, 10^-3$, which in turn means that the Jacobian only differs by a small amount. The trick therefore is to reuse the Jacobian. This is done by telling the solver that we only assemble the Jacobian for a given number of iterations. The rest of the newton solver stays the same and keeps iterating until convergence, but the Jacobian matrix stays the same for a set number of iterations. When employed it was noticed that we needed a larger number of iterations to reach convergence, but the overall time of the Newton solver was much faster.\newline
+
+\begin{table}[H]
+\centering
+\caption{Newton solver timed with reuse of the jacobian run with $\bold{\Delta t = 0.5}$}
+\label{jac_reuse}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Method & \textbf{Runtime {[}s{]}} & Runtime {[}\%{]} & \textbf{Calls} \\ \hline
+Assembly of Jacobian & \textbf{11.5 (-80\%)} & 68.7 & \textbf{1 (-20\%)} \\ \hline
+Assembly or residual & \textbf{0.9 (+50\%)} & 5.8 & \textbf{9 (+46\%)} \\ \hline
+Solve & \textbf{4.2 (+50\%)} & 25.0 & \textbf{9 (+46\%)} \\ \hline
+Fulltime & \textbf{16.8 (-74 \%)} & - & - \\ \hline
+\end{tabular}
+\end{table}
+
+In table \ref{jac_reuse} the same FSI1 test is done with $\Delta t = 0.5$. Even with a timestep that is fairly large, we get great improvements in runtime (-74\%). The Jacobian assembles once meaning that at this timestep the Jacobian was calculated once and used again 9 times. What happens when we reuse the Jacobian, we have to iterate more times (9 times in this case) and as we can see the runtime in assembling the residual has increased by 50 \%. This is a much less costly process, so even when iterating more times we get a reduce in runtime.
+
+
+\section{Quadrature reduce}
+Assembling of the Jacobian matrix with non-linear functions, requires a high number of quadrature points. When the accuracy of the Jacobian can be reduced, we can reduce the number of quadrature degree. This improves the runtime but reduces the accuracy leading to more iterations per time step. Reducing the quadrature degree can lead to blow up of the system in some cases. But is of great help in many other cases.\newline
+
+The FSI1 test is run with $\Delta t = 0.5$ like the section above.
+
+\begin{table}[H]
+\centering
+\caption{Newton solver timed with quadrature reduxe run with $\bold{\Delta t = 0.5}$}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Method & \textbf{Runtime {[}s{]}} & Runtime {[}\%{]} & \textbf{Calls} \\ \hline
+Assembly of Jacobian & \textbf{4.9 (-92\%)} & 60.3 & \textbf{5 (0\%)} \\ \hline
+Assembly or residual & \textbf{0.5 (-17\%)} & 6.9 & \textbf{5 (0\%)} \\ \hline
+Solve & \textbf{2.6 (-7\%)} & 31.9 & \textbf{5 (0\%)} \\ \hline
+Fulltime & \textbf{8.2 (-87\%)} & - & - \\ \hline
+\end{tabular}
+\end{table}
+
+Reducing the quadrature degree as we can see gives a 92 \% decrease in time spent assembling the Jacobian even with the same number of calls. The full time spent went down by 87 \%.
+
+\section{Summary of runtime improvement techniques}
+
+
+\begin{table}[H]
+\centering
+\caption{Newton solver timed with jacobian reuse and quadrature reduce run with $\bold{\Delta t = 0.5}$}
+\label{both_tech}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Method & \textbf{Runtime {[}s{]}} & Runtime {[}\%{]} & \textbf{Calls} \\ \hline
+Assembly of Jacobian & \textbf{1.2 (-98\%)} & 18.1 & \textbf{1 (-20\%)} \\ \hline
+Assembly or residual & \textbf{0.9 (+50\%)} & 14.7 & \textbf{9 (+46\%)} \\ \hline
+Solve & \textbf{4.4 (+57\%)} & 66.2 & \textbf{9 (+46\%)} \\ \hline
+Fulltime & \textbf{6.6 (-89\%)} & - & - \\ \hline
+\end{tabular}
+\end{table}
+
+Finally I used both the reuse of Jacobian and the reduction of the quadrature. As we can see in table \ref{both_tech} the total runtime went down 89\%. In my work on this thesis I used these two techniques as often as i could. However I found that in the case of FSI3 neither reuse of the Jacobian or the reduction of quadrature degree gave convergence in the solutions. Both techniques worked with great success in the FSI2 case. So the reason for it not working in FSI3 might be because of the higher reynolds number leading to the need for a more accurate assembly of the Jacobian.
+
+
+
+
+
+

@@ -48,7 +48,7 @@ The stress tensors are also defined as functions to be used in the variational f
 
 \begin{python}
 def E(d):
-	return 0.5*(F_(d).T*F_(d) - Identity(len(d)))
+	return 0.5*(F_(d).T*F_(d) - Identity(len(d))) 
 
 def S(d,lamda_s,mu_s):
     I = Identity(len(d))
@@ -113,7 +113,7 @@ Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 The weighed delta is talked about in section \ref{Discretization}
 
 \section{NewtonSolver}
-To solve a non-linear problem we need make a newton solver, taken from [Mikael kompendium]. F is derivated wrt to $dvp$ and is assembled to a matrix. -F is assembled as b and we solve until the residual is smaller than a give tolerance. There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve speed, as we shall see later. Lastly the the mpi line is when the code is running in parallell that we only print out the values for one of the computational nodes.  
+To solve a non-linear problem we need make a newton solver, taken from [Mikael kompendium]. F is derivated wrt to $dvp$ and is assembled to a matrix. -F is assembled as b and we solve until the residual is smaller than a give tolerance. There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve speed, as we shall see later. Lastly the the mpi line is when the code is running in paralel that we only print out the values for one of the computational nodes.  
 \begin{python}
 def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
                 dvp_, up_sol, dvp_res, rtol, atol, max_it, T, t, **monolithic):
@@ -123,32 +123,25 @@ def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
     lmbda = 1
 
     while rel_res > rtol and residual > atol and Iter < max_it:
-        if Iter % 10 == 0:              # assembles every 10 iteration
-            A = assemble(J_nonlinear, tensor=A, \
-            form_compiler_parameters = {"quadrature_degree": 4}) #keep_diagonal = True 
-            # reduces number of points in the jacobian assembly
+        if Iter % 10 == 0:
+            A = assemble(J_nonlinear, tensor=A, form_compiler_parameters = {"quadrature_degree": 4})
             A.axpy(1.0, A_pre, True)
-            A.ident_zeros()        
+            A.ident_zeros()
 
         b = assemble(-F, tensor=b)
 
         [bc.apply(A, b, dvp_["n"].vector()) for bc in bcs]
         up_sol.solve(A, dvp_res.vector(), b)
-        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())  
-        
-        # axpy is used for improved speed
-        
+        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())
         [bc.apply(dvp_["n"].vector()) for bc in bcs]
         rel_res = norm(dvp_res, 'l2')
         residual = b.norm('l2')
-        if isnan(rel_res) or isnan(residual): 
-   # this test checks if residue is nan and if so we then jump out of the time loop. 
+        if isnan(rel_res) or isnan(residual):
             print "type rel_res: ",type(rel_res)
             t = T*T
 
         if MPI.rank(mpi_comm_world()) == 0:
-            print "Newton iteration \
-            %d: r (atol) = %.3e (tol = %.3e), r (rel) = %.3e (tol = %.3e) " \
+            print "Newton iteration %d: r (atol) = %.3e (tol = %.3e), r (rel) = %.3e (tol = %.3e) " \
         % (Iter, residual, atol, rel_res, rtol)
         Iter += 1
 
@@ -169,7 +162,7 @@ while t <= T:
     if t >= 2:
         inlet.t = 2;
 
-    #Reset counters
+    ##Reset counters
     atol = 1e-6;rtol = 1e-6; max_it = 100; lmbda = 1.0;
 
     dvp = Newton_manual(F, dvp, bcs, atol, rtol, max_it, lmbda,dvp_res,VVQ)

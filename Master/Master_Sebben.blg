@@ -3,51 +3,56 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Master_Sebben.aux
 The style file: plain.bst
 Database file #1: Master_cites.bib
+Warning--I didn't find a database entry for "Wick"
 Warning--I didn't find a database entry for "Roache"
 Warning--there's a number but no volume in Etienne2006
 Warning--there's a number but no volume in Fefferman2000
 Warning--empty journal in Richter2016
+Warning--empty journal in Sciences2012
+Warning--there's a number but no volume in Sciences2012
 Warning--empty journal in Selin2014
 Warning--there's a number but no volume in Selin2014
-You've used 12 entries,
+Warning--empty journal in Valkov2015
+Warning--empty year in Valkov2015
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            580 strings with 5776 characters,
-and the built_in function-call counts, 3485 in all, are:
-= -- 353
-> -- 124
-< -- 2
-+ -- 50
-- -- 38
-* -- 212
-:= -- 587
-add.period$ -- 35
-call.type$ -- 12
-change.case$ -- 54
+            649 strings with 7584 characters,
+and the built_in function-call counts, 6480 in all, are:
+= -- 649
+> -- 249
+< -- 3
++ -- 100
+- -- 78
+* -- 429
+:= -- 1099
+add.period$ -- 64
+call.type$ -- 22
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 147
-empty$ -- 287
-format.name$ -- 38
-if$ -- 729
+cite$ -- 31
+duplicate$ -- 262
+empty$ -- 524
+format.name$ -- 78
+if$ -- 1339
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 12
-newline$ -- 62
-num.names$ -- 24
-pop$ -- 56
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 111
+num.names$ -- 44
+pop$ -- 98
 preamble$ -- 1
-purify$ -- 43
+purify$ -- 83
 quote$ -- 0
-skip$ -- 108
+skip$ -- 184
 stack$ -- 0
-substring$ -- 217
-swap$ -- 30
-text.length$ -- 2
+substring$ -- 412
+swap$ -- 45
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
-warning$ -- 5
-while$ -- 40
-width$ -- 14
-write$ -- 128
-(There were 6 warnings)
+type$ -- 86
+warning$ -- 9
+while$ -- 72
+width$ -- 24
+write$ -- 233
+(There were 11 warnings)

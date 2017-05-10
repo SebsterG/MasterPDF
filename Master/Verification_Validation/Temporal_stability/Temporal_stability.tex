@@ -1,4 +1,4 @@
-\section{Temporal stability}
+\subsection{Temporal stability}
 The following section will be looking at the results from choosing different $\theta$ values in our scheme. The benchmark test FSI-2 has been used to since it is known to blow up with certain values of $\theta$ and $\Delta t$. We only study the effects of Drag as the three other quantities shows the same behavior.   
 
 \ref{fig:FSI2drag_plots} show the plots of Drag with $\Delta t = 0.01$. This will not produce very good drag values compared to the benchmark, but it shows the instability when choosing $\theta = 0.5$. The Crank-Nicholson scheme is stable until about 13 seconds where we see that it blows up and the solver diverges.

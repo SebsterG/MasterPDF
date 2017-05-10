@@ -1,22 +1,28 @@
-\section{Structure MMS}
-To do MMS of the solid I use the solid equation and make a sourceterm $f_s$:
-$$\rho_s \frac{\partial u}{\partial t} - \nabla \cdot ( P ) = f_s $$
+\subsection{MMS of the Solid equation }
+The first MMS is with the solid problem alone. Here I test the solid equation with the condition $u = \frac{\partial d}{\partial t}$.\newline
+
+MMS of the solid equation is done using the manufactured solutions $d_e$ and $u_e$: 
+\begin{align*}
+d_e =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+u_e =& ( cos(y)cos(t), cos(x)cos(t) )
+\end{align*}
+To meet the requirements of MMS such as smoothness and complexity, i chose functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
+\newline
+
+These solutions are used to make a sourceterm $f_s$:
+$$\rho_s \frac{\partial u_e}{\partial t} - \nabla \cdot ( P(d_e) ) = f_s $$
 The solid variational formulation is written as:
 \begin{align}
 \big(\rho_s \frac{\partial u}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
 \big( u- \frac{\partial d}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
 \end{align}
-These equations are solved together and we solve for $d$ and $u$. The functions u and d will be computed to match the source term. In the tables below we investigate convergence in space and time. \newline
 
-Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $u = \frac{\partial d}{\partial t}$:
-\begin{align*}
-d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u =& ( cos(y)cos(t), cos(x)cos(t) )
-\end{align*}
-To meet the requirements of MMS such as smoothness and complexity, i chose functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
-\newline
+These equations are solved together and we solve for $d$ and $u$ on a unit square domain. The number N denotes the number of spatial points in x and y direction. The functions u and d will be computed to match the source term. 
 
-I start with checking order of convergence in space. Setting m = 1, the expected order of convergence will 2. 
+Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $u = \frac{\partial d}{\partial t}$.\newline
+
+In the tables below we investigate convergence in space and time.
+I start with checking order of convergence in space. Setting m = 1, the expected order of convergence will be 2. 
 
 \begin{table}[H]
 \centering
@@ -24,29 +30,12 @@ I start with checking order of convergence in space. Setting m = 1, the expected
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-\textbf{N}  & $\Delta t$  & \textbf{m} & $E_u \times 10^{-3}$ & $\bold{k_u}$    & $E_d \times 10^{-8}$ & $\bold{k_d}$    \\ \hline
-\textbf{4}  & $1\times10^{-6}$ & \textbf{1} & 6.88                 & \textbf{}         & 3.78                 & \textbf{}         \\ \hline
-\textbf{8}  & $1\times10^{-6}$ & \textbf{1} & 1.72                 & \textbf{2.000212} & 0.94                 & \textbf{2.000212} \\ \hline
-\textbf{16} & $1\times10^{-6}$ & \textbf{1} & 0.43                 & \textbf{2.000051} & 0.23                 & \textbf{2.000051} \\ \hline
-\textbf{32} & $1\times10^{-6}$ & \textbf{1} & 0.10                 & \textbf{2.000012} & 0.05                 & \textbf{2.000012} \\ \hline
-\textbf{64} & $1\times10^{-6}$ & \textbf{1} & 0.026                & \textbf{2.000003} & 0.0014               & \textbf{2.000003} \\ \hline
-\end{tabular}
-\end{table}
-
-Up next I set m=2 changing the expected order of convergence to 2:
-
-\begin{table}[H]
-\centering
-\caption{Structure Method of Manufactured of Solution in space in m = 2}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-\textbf{N} & $\Delta t$ & \textbf{m} & $E_u [\times 10^-5]$ & $\bold{k_u}$ & $E_d [\times 10^{-10}]$ & $\bold{k_d}$ \\ \hline
-\textbf{4} & $1\times10^{-6}$ & \textbf{2} & 6.60 & \textbf{-} & 3.63 & \textbf{-} \\ \hline
-\textbf{8} & $1\times10^{-6}$ & \textbf{2} & 0.82 & \textbf{2.99458} & 0.45 & \textbf{2.99458} \\ \hline
-\textbf{16} & $1\times10^{-6}$ & \textbf{2} & 0.10 & \textbf{2.99865} & 0.057 & \textbf{2.99865} \\ \hline
-\textbf{32} & $1\times10^{-6}$ & \textbf{2} & 0.012 & \textbf{2.99966} & 0.0071 & \textbf{2.99966} \\ \hline
-\textbf{64} & $1\times10^{-6}$ & \textbf{2} & 0.00161 & \textbf{2.99991} & 0.00089 & \textbf{2.99991} \\ \hline
+\textbf{N} & $\Delta t$ & \textbf{m} & $E_u $ & $\bold{k_u}$ & $E_d $ & $\bold{k_d}$ \\ \hline
+\textbf{4} & $1\times10^{-7}$ & \textbf{1} & 0.0068828 & \textbf{-} & $3.7855 \times 10^{-9} $ & \textbf{-} \\ \hline
+\textbf{8} & $1\times10^{-7}$ & \textbf{1} & 0.0017204 & \textbf{2.0002577} & $9.4622 \times 10^{-10} $ & \textbf{2.0002577} \\ \hline
+\textbf{16} & $1\times10^{-7}$ & \textbf{1} & 0.0004300 & \textbf{2.0000622} & $2.3654 \times 10^{-10} $ & \textbf{2.0000622} \\ \hline
+\textbf{32} & $1\times10^{-7}$ & \textbf{1} & 0.0001075 & \textbf{2.0000154} & $5.9136 \times 10^{-11} $ & \textbf{2.0000154} \\ \hline
+\textbf{64} & $1\times10^{-7}$ & \textbf{1} & 0.0000268 & \textbf{2.0000038} & $1.4783 \times 10^{-11} $ & \textbf{2.0000038} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -59,60 +48,63 @@ Lastly I check convergence in time. Here i set N = 64 and the timestep is halved
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-8}]$ & $\bold{k_d}$ \\ \hline
-64 & \textbf{0.0008} & 2.40 & \textbf{-} & 1.76 & \textbf{-} \\ \hline
-64 & \textbf{0.0004} & 1.20 & \textbf{0.995} & 0.86 & \textbf{1.0233} \\ \hline
-64 & \textbf{0.0002} & 0.59 & \textbf{1.026} & 0.41 & \textbf{1.0676} \\ \hline
-64 & \textbf{0.0001} & 0.29 & \textbf{1.011} & 0.20 & \textbf{1.0338} \\ \hline
-64 & \textbf{0.00005} & 0.14 & \textbf{0.998} & 0.10 & \textbf{1.0138} \\ \hline
+64 & \textbf{0.1} & 0.027663 & \textbf{} & 0.0034221 & \textbf{} \\ \hline
+64 & \textbf{0.05} & 0.013390 & \textbf{1.0467} & 0.0018093 & \textbf{0.9194} \\ \hline
+64 & \textbf{0.025} & 0.007016 & \textbf{0.9324} & 0.0009246 & \textbf{0.9685} \\ \hline
+64 & \textbf{0.0125} & 0.003645 & \textbf{0.9444} & 0.0004688 & \textbf{0.9798} \\ \hline
+64 & \textbf{0.00625} & 0.001828 & \textbf{0.9957} & 0.0002414 & \textbf{0.9571} \\ \hline
 \end{tabular}
 \end{table}
 
 
-\section{MMS on FSI ALE}
-In this section we use the method of manufactured solutions to verify the FSI ALE monolithic solver. We start by prescribing a motion to $ d$ and $w$ and give a solution to $u$ and $p$. We set $u = w$ to start with:
+\subsection{MMS of Fluid equations with prescribed motion}
+I start by prescribing a motion to $ d$ and $w$ and manufacturing solutions $u_e$ and $p_e$. We set $u_e = w$ to start with:
 \begin{align*}
 d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
-p =& cos(x)cos(t)
+u_e = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
+p_e =& cos(x)cos(t)
 \end{align*}
-We make the solutions to uphold the criterias : $ \nabla \cdot u =0  $ and $ \frac{\partial d}{\partial t} = w  $ \\
+I make the solutions to uphold the criteria : 
 
-To test the mapping we make the source term $f$ without mappings:
-$$ \rho_f \frac{\partial u}{\partial t}  +  \nabla u (u-\frac{\partial d}{\partial t})  -  \nabla \cdot \sigma_f  = f $$
-Then we use this f and map it to the reference configuration and compute:
-$$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f$$
+$$ \nabla \cdot u =0  ,\hspace{2mm} \frac{\partial d}{\partial t} = w  $$
+
+I also want to test the mappings so we make the source term $f_f$ without mappings:
+
+$$ \rho_f \frac{\partial u_e}{\partial t}  +  \nabla u_e (u_e - \frac{\partial d}{\partial t})  -  \nabla \cdot \sigma(u_e,p_e)_f  = f_f $$
+
+Then we use $f_f$ and map it to the reference configuration and compute:
+$$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f_f$$
+This is in fact the fluid equation in the ALE framework mapped ref.
+
 The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
-\begin{table}[h!]
+
+\begin{table}[H]
 \centering
 \caption{MMS ALE FSI u=w}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-N & $\Delta t$ & m & $E_u$ & $k_u$ & $E_p$ & $k_p$ \\ \hline
-64 & 0.1 & 2 & 0.0140496662424 & - & 4.78779559903 & - \\ \hline
-64 & 0.05 & 2 & 0.00697215098985 & 1.01086014072 & 2.38002096658 & 1.00838727906 \\ \hline
-64 & 0.025 & 2 & 0.00341287458821 & 1.03061641184 & 1.18981484439 & 1.00023719999 \\ \hline
-64 & 0.0125 & 2 & 0.00164214907307 & 1.05540230133 & 0.595733372533 & 0.99799839775 \\ \hline
-2 & $10x^{-6}$ & 2 & 0.000520027806571 & - & 0.0194221106771 & - \\ \hline
-4 & $10x^{-6}$ & 2 & 6.60205272446e-05 & 2.97760220293 & 0.00480815191132 & 2.01414560945 \\ \hline
-8 & $10x^{-6}$ & 2 & 8.28184559099e-06 & 2.99489045 & 0.00118568799584 & 2.0197580517 \\ \hline
-16 & $10x^{-6}$ & 2 & 1.0417232845e-06 & 2.99098020306 & 0.000281586546806 & 2.0740741124 \\ \hline
+\textbf{N} & $\Delta t$ & \textbf{m} & $E_u$ & \textbf{$k_u$} & $E_p$ & \textbf{$k_p$} \\ \hline
+\textbf{64} & 0.1 & \textbf{2} & $5.1548 \times 10^{-5}$ & \textbf{-} & 0.008724 & \textbf{-} \\ \hline
+\textbf{64} & 0.05 & \textbf{2} & $2.5369 \times 10^{-5}$ & \textbf{1.0228} & 0.004290 & \textbf{1.0240} \\ \hline
+\textbf{64} & 0.025 & \textbf{2} & $1.2200 \times 10^{-5}$ & \textbf{1.0561} & 0.002058 & \textbf{1.0596} \\ \hline
+\textbf{64} & 0.0125 & \textbf{2} & $0.56344 \times 10^{-5}$ & \textbf{1.1145} & 0.0009556 & \textbf{1.1068} \\ \hline
 \end{tabular}
 \end{table}
 
-
-
-
-
-\newpage
-
-
-
-
-
-
-
-
+\begin{table}[H]
+\centering
+\caption{MMS ALE FSI u=w}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{N}  & $\Delta t$ & \textbf{m} & $E_u$                   & \textbf{$k_u$}  & $E_p$   & \textbf{$k_p$}  \\ \hline
+\textbf{2}  & $1 \times 10^{-6}$ & \textbf{2} & $8.6955 \times 10^{-4}$ & \textbf{-}      & 0.01943 & \textbf{-}      \\ \hline
+\textbf{4}  & $1 \times 10^{-6}$ & \textbf{2} & $1.0844 \times 10^{-4}$ & \textbf{3.0032} & 0.00481 & \textbf{2.0140} \\ \hline
+\textbf{8}  & $1 \times 10^{-6}$ & \textbf{2} & $0.1354 \times 10^{-4}$ & \textbf{3.0007} & 0.00119 & \textbf{2.0120} \\ \hline
+\textbf{16} & $1 \times 10^{-6}$ & \textbf{2} & $0.0169 \times 10^{-4}$ & \textbf{3.0001} & 0.00029 & \textbf{2.0074} \\ \hline
+\end{tabular}
+\end{table}
 
 
 
