@@ -1,45 +1,49 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction to FSI}{1}
-\contentsline {chapter}{\numberline {2}Equations and notation}{3}
-\contentsline {section}{\numberline {2.1}Notation}{3}
-\contentsline {subsection}{\numberline {2.1.1}Spaces}{3}
-\contentsline {section}{\numberline {2.2}Lagrangian physics}{5}
-\contentsline {subsection}{\numberline {2.2.1}Deformation gradient}{6}
-\contentsline {subsection}{\numberline {2.2.2}Strain}{6}
-\contentsline {subsection}{\numberline {2.2.3}Stress}{7}
-\contentsline {section}{\numberline {2.3}Solid equation}{7}
-\contentsline {section}{\numberline {2.4}Fluid equations}{8}
-\contentsline {subsection}{\numberline {2.4.1}Boundary conditions}{8}
+\contentsline {chapter}{\numberline {1}Introduction to Fluid-Structure Interaction}{1}
+\contentsline {chapter}{\numberline {2}Continuum mechanics in different frames of reference}{3}
+\contentsline {section}{\numberline {2.1}Lagrangian physics}{4}
+\contentsline {subsection}{\numberline {2.1.1}Deformation gradient}{5}
+\contentsline {subsection}{\numberline {2.1.2}Strain}{5}
+\contentsline {subsection}{\numberline {2.1.3}Stress}{7}
+\contentsline {section}{\numberline {2.2}Solid equation}{7}
+\contentsline {subsection}{\numberline {2.2.1}Solid Boundary Conditions}{8}
+\contentsline {section}{\numberline {2.3}Fluid equations}{8}
+\contentsline {subsection}{\numberline {2.3.1}Fluid Boundary conditions}{9}
 \contentsline {chapter}{\numberline {3}Fluid Structure Interaction Problem}{11}
-\contentsline {section}{\numberline {3.1}Mapping}{12}
-\contentsline {section}{\numberline {3.2}Balance laws}{13}
-\contentsline {subsection}{\numberline {3.2.1}Solid}{13}
-\contentsline {subsection}{\numberline {3.2.2}Fluid}{14}
-\contentsline {section}{\numberline {3.3}Mesh motion}{14}
-\contentsline {subsection}{\numberline {3.3.1}Harmonic}{15}
-\contentsline {subsection}{\numberline {3.3.2}Linear elasticity}{15}
-\contentsline {subsection}{\numberline {3.3.3}Biharmonic}{15}
-\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{16}
-\contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{17}
-\contentsline {section}{\numberline {3.6}Discretization}{18}
-\contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{20}
-\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{21}
-\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{21}
-\contentsline {section}{\numberline {4.2}Variational form}{22}
-\contentsline {section}{\numberline {4.3}NewtonSolver}{23}
-\contentsline {section}{\numberline {4.4}Timeloop}{24}
-\contentsline {chapter}{\numberline {5}Verification and validation. }{27}
-\contentsline {section}{\numberline {5.1}Structure MMS}{29}
-\contentsline {section}{\numberline {5.2}MMS on FSI ALE}{29}
-\contentsline {section}{\numberline {5.3}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{33}
-\contentsline {subsection}{\numberline {5.3.1}Problem Defintion}{33}
-\contentsline {subsection}{\numberline {5.3.2}Results}{35}
-\contentsline {subsubsection}{CFD test}{35}
-\contentsline {subsubsection}{CSM test}{36}
-\contentsline {section}{\numberline {5.4}Mesh motion techniques}{40}
-\contentsline {section}{\numberline {5.5}Temporal stability}{40}
-\contentsline {chapter}{\numberline {6}Speed improvements}{43}
-\contentsline {section}{\numberline {6.1}Jacobian reuse}{43}
-\contentsline {section}{\numberline {6.2}Quad reduce}{43}
-\contentsline {chapter}{\numberline {7}Conclusions and further work}{45}
-\contentsline {section}{\numberline {7.1}Partitioned}{45}
+\contentsline {section}{\numberline {3.1}Mapping between different frames of reference}{13}
+\contentsline {section}{\numberline {3.2}Governing equations for Fluid Structure Interaction}{14}
+\contentsline {subsection}{\numberline {3.2.1}Derivatives in different frameworks}{14}
+\contentsline {subsection}{\numberline {3.2.2}Solid equation}{14}
+\contentsline {subsection}{\numberline {3.2.3}Fluid equations}{15}
+\contentsline {section}{\numberline {3.3}Mesh motion techniques}{15}
+\contentsline {subsection}{\numberline {3.3.1}Harmonic extension}{16}
+\contentsline {subsection}{\numberline {3.3.2}Linear elastic extension}{16}
+\contentsline {subsection}{\numberline {3.3.3}Biharmonic extension}{17}
+\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{18}
+\contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{19}
+\contentsline {section}{\numberline {3.6}Discretization of monolithic FSI equations}{19}
+\contentsline {subsubsection}{Spaces}{20}
+\contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{23}
+\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{25}
+\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{25}
+\contentsline {section}{\numberline {4.2}Variational form}{26}
+\contentsline {section}{\numberline {4.3}NewtonSolver}{27}
+\contentsline {section}{\numberline {4.4}Timeloop}{29}
+\contentsline {chapter}{\numberline {5}Verification and Validation in Computational Fluid Structure Interaction. }{31}
+\contentsline {section}{\numberline {5.1}Verification}{32}
+\contentsline {subsection}{\numberline {5.1.1}MMS of the Solid equation }{34}
+\contentsline {subsection}{\numberline {5.1.2}MMS of Fluid equations with prescribed motion}{35}
+\contentsline {section}{\numberline {5.2}Validation}{37}
+\contentsline {subsection}{\numberline {5.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{38}
+\contentsline {subsubsection}{Results}{39}
+\contentsline {subsubsection}{CFD test}{39}
+\contentsline {subsubsection}{CSM test}{41}
+\contentsline {subsection}{\numberline {5.2.2}Mesh motion techniques}{46}
+\contentsline {subsection}{\numberline {5.2.3}Temporal stability}{48}
+\contentsline {chapter}{\numberline {6}Runtime improvements}{51}
+\contentsline {section}{\numberline {6.1}Newton runtime profile}{51}
+\contentsline {section}{\numberline {6.2}Jacobian reuse }{52}
+\contentsline {section}{\numberline {6.3}Quadrature reduce}{53}
+\contentsline {section}{\numberline {6.4}Summary of runtime improvement techniques}{54}
+\contentsline {chapter}{\numberline {7}Conclusions and further work}{55}
+\contentsline {section}{\numberline {7.1}Partitioned}{55}

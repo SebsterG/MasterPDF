@@ -1,21 +1,26 @@
 
 \section{Fluid equations}
 The fluid equation will be stated in an Eulerian framework. In this framework the domain has fixed points where the fluid passes through. 
-The Navier-Stokes equations are derived using principles of mass and momentum conservation. These equations describes the velocity and pressure in a given fluid continuum. They are here written in the time domain $\mathcal{F}$:
+The Navier-Stokes(N-S) equations are, like the solid equation, derived using principles of mass and momentum conservation. N-S describes the velocity and pressure in a given fluid continuum. They are here written in the fluid time domain $\mathcal{F}$ as an incompressible fluid:
 \begin{align}
 \label{eq:NS}
-\rho\frac{\partial u}{\partial t} + \rho u \cdot \nabla u &= \nabla \cdot \sigma_f + f \\
+\rho_f\big( \frac{\partial u}{\partial t} +  u \cdot \nabla u\big) &= \nabla \cdot \sigma_f + f  \\
 \nabla \cdot u &= 0
 \end{align}
-where $u$ is the fluid velocity, $p$ is the fluid pressure$, \rho$ stands for constant density, f is body force and $ \sigma_f = \mu_f (\nabla u + \nabla u^T)  - pI$ \\
-We will only compute incompressible fluids. \\
-There does not yet exist an analytical solutions to the N-S equations, only simplified problems can be solved \cite{White2000}. But this does not stop us from discretizing and solving them numerically. \\
+where $u$ is the fluid velocity, $p$ is the fluid pressure$, \rho$ stands for density which, will be kept constant. f is body force and $\sigma_f$ is the Cauchy stress tensor, $ \sigma_f = \mu_f (\nabla u + \nabla u^T)  - pI$, where $I$ is the Identity matrix. \\
+
+There does not yet exist an analytical solutions to the N-S equations, only simplified problems can be solved \cite{White2000}. Actually there is a prize set out by the Clay Mathematics Institute of 1 million dollars to whomever can show the existence and smoothness of Navier-Stokes solutions \cite{Fefferman2000}, as apart of their millennium problems. 
+Nonetheless this does not stop us from discretizing and solving N-S numerically. The field of modeling fluids numerically is known as Computational Fluid Dynamics(CFD). And CFD is extensively used in for instance weather forecasts, construction of aircraft, and biomedical engineering.\\
+
+One difficulty in the N-S equations is the nonlinearity appearing in the convection term on the left hand side. Non-linearity is most often handled using Newtons method or Picard iteration.
+
 Before these equations can be solved we need to impose boundary conditions.
-\subsection{Boundary conditions}
-On the Dirichlet boundary $ \partial \mathcal{F}_D$ we impose a given value. This can be initial conditions or set to zero as on walls with "no slip" condition. These conditions needs to be defined for both $u$ and $p$
+\subsection{Fluid Boundary conditions}
+Lastly I need to impose boundary conditions. The fluid flows within the boundary noted as $ \partial \mathcal{F}$. On the Dirichlet boundary $ \partial \mathcal{F}_D$ we impose a given value. This can be initial conditions or set to zero as on walls with "no slip" condition. These conditions are defined for $u$ $p$ and $d$:
 $$  u = u_0 \text{   on   } \partial \mathcal{F}_D  $$
 $$  p = p_0 \text{   on   } \partial \mathcal{F}_D  $$
-The forces on the boundaries need to equal an eventual external force $ \bold{f}$
+
+The forces on the boundaries need to equal an eventual external force $ \bold{f}$. These are are enforced on the Neumann boundaries:
 $$ \sigma \cdot \bold{n} = f \text{   on   } \partial \mathcal{F}_N    $$
 
 

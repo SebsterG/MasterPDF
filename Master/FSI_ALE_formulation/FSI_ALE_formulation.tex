@@ -1,16 +1,28 @@
 \chapter{Fluid Structure Interaction Problem}
-In FSI the computing domain is split into three parts. Fluid, structure and interface. The Navier-Stokes equations are solved on the fluid domain and the structure equation on the structure. The interface is where the solid and fluid meet, and FSI is generally solved using two methods. These two main methods differ in their treatment of the interface \cite{Liu2014}. The first uses a fixed mesh, known as Eulerian, where the interface is tracked across the mesh. This treatment is useful for a fluid problem since fluids are continuously deformable and tracking each fluid particle is not essential in computing fluid dynamics. For the solid this formulation is not very practical as the distance between particles are used to track the deformation, hence the particles need to be tracked. Tracking where the particles are, and consequentially the interface is, across meshpoints is a difficult task. One would need short spacing between meshpoints to accurately track the interface. In the second method (ALE) the interface moves with the mesh. 
-The ALE formulation stands for Arbitrary Lagrangian Eulerian. This entails formulating the fluid equations in an Eulerian and the solid in a Lagrangian framework. The mesh itself moves with the structure and hence interface displacements, and the fluid moves through these points. In this way we get best of both world so to speak. The structure equation will remain as previously stated \eqref{eq:Solid}, and we will need to change the fluid equations to take into account the moving mesh changing the fluid velocity. This is done in two ways. One is to move the mesh itself in relation to the structural displacements, and calculate using this new mesh every time. 
-This approach gives advantages as we can explicitly represent the fluid-structure interface, and the equations are stated in a more familiar manner. But problems arise when there are large deformations in the solid giving large deformations into the fluid domain. Moving the mesh with large deformation can be a challenge. 
+So far I have introduced the fluid and solid equations, and the descriptions in which they are stated. In this chapter I will introduce the full FSI problem. With all the equations, conditions and discretization needed to to build a solver. \newline
+
+When we compute FSI problems the computing domain is split into three parts, Fluid, Structure and Interface. Fluid and structure domains are as we know separated, and different constitutive equations are solved in each domain. The place in which fluid and structure meet is what we call the interface. The manner in which we treat the interface gives the two main methods for solving FSI problems \cite{Liu2014}. The first method is called fully Eulerian. In fully Eulerian both the fluid and structure equations are solved in an Eulerian description. Here the interface is tracked across a still standing domain \cite{Valkov2015}. The fully Eulerian description is suited for fluid problems but is problematic for structure problems and certainly FSI where tracking of the interface across the domain is a difficult task. I therefore introduce the more commonly used method ALE. Which is the method that will be used in this thesis. \newline
+
+ALE stands for Arbitrary Lagrangian Eulerian. The ALE method entails formulating the fluid equations in an Eulerian framework and the solid in a Lagrangian framework. The entire domain itself moves with the structural displacements and the fluid moves through these points. In the ALE framework we get best of both world. The structure equation will remain as previously stated \eqref{eq:Solid}, and we will need to change the fluid equations to take into account the moving domain changing the fluid velocity. Dealing with the movement of the domain is done in two ways. One way is to move the domain itself in relation to the structural displacements, and use this new domain to calculate the equations every time.
+Moving the domain gives advantages as we can explicitly represent the fluid-structure interface, and the equations are stated in a more familiar manner. But problems arise when there are large deformations in the solid giving large deformations into the fluid domain. Moving the mesh with large deformation can be a challenge. \newline
+
 In this thesis the ALE approach is used from a reference frame.
-Meaning we solve the equation on a initial, stress free domain, and use a series of mappings to account for the movements of the domain. The equations are mapped to the current domain, that is where the domain has moved to in the present time. It is the displacement in the solid and the displacement extrapolated from the solid to the fluid domain that determines the mappings. 
-From a technical point of view, both formulations are equivalent.\cite{Richter2016} But the ease of computing and time efficiency, in that we do not need an extra function to move the mesh between every timestep, contributes to the choice of using the mapped approached.
-Lastly in this chapter we look at how to solve the equations. This problem is tackled using either a monolithic or a partitioned approach. We will go into details later, but the overall idea is that a monolithic scheme involves computing all the equations together into one block. The partitioned splits up into parts, that is we solve the fluid problem and structure problem separately. The advantage of this is that we can use existing solvers and techniques for each of the problems, but the difficulty is the treatment of the interface. The monolithic approach however, offers more stability but is more costly as the size of the problem increases\cite{Liu2014}.
+Meaning we solve the equations on a initial, stress free domain, and use a series of mappings to account for the movements of the domain. The equations are mapped to the current domain, that is where the domain has moved to in the present time. It is the displacements in the solid that determines the mappings. The displacements in the solid and the interface are extrapolated into the fluid mesh. I will deal with the manner in which these extrapolations work in this chapter. \newline
 
+From a technical point of view, both moving the mesh and using a reference frame are equivalent \cite{Richter2016}. Since the reference frame method does not need a function to move the mesh between each time iteration can be less time consuming. The interface is also located in the same position, making the interface easy to track. \newline
 
+Lastly in this chapter the equations are discretized. Discretization of the equations is tackled using either a monolithic or a partitioned approach. We will go into details later, but the overall idea is that a monolithic scheme involves computing all the equations together into one block, while the partitioned splits up into parts. That is we solve the fluid problem and structure problem separately. The advantage of this is that we can use existing solvers and techniques for each of the problems, but the difficulty is the treatment of the interface. The monolithic approach however, offers more stability but is more costly as the size of the problem increases\cite{Liu2014}. \newline
 
-\section{Mapping}
-Let $\hat{\mathcal{V}}$ be a reference volume and $\mathcal{V}(t)$ be the current time volume using \cite{Richter}. Then using \eqref{eq:deformation_gradient} and \eqref{eq:det_F} we define a mapping between the volumes from the current to reference configurations:
+I will start by introducing the mappings, this follows the notation and ideas from \cite{Richter2016}:
+
+\section{Mapping between different frames of reference}
+\begin{figure}[H]
+\label{pic:FSI_mapping}
+\includegraphics[scale=0.45]{./FSI_ALE_formulation/FSI_mapping.png}
+\caption{Mapping of domain from reference to current}
+\end{figure}
+
+Let $\hat{\mathcal{V}}$ be a reference volume and $\mathcal{V}(t)$ be the current time volume. Then using \eqref{eq:deformation_gradient} and \eqref{eq:J} we define a mapping between the volumes from the current to reference configurations:
 
 \begin{equation}
  \int_{\mathcal{V}(t)} 1  dx = \int_{\hat{\mathcal{V}}} J dx  
@@ -28,36 +40,38 @@ Same for the divergence of a vector $ \bold{u}$:
 \int_{\mathcal{V}(t)} \nabla \cdot \bold{u}   dx = \int_{\hat{\mathcal{V}}} \nabla \cdot( J  F^{-1} \bold{u}) dx  
 \end{equation}
 
-\section{Balance laws}
+\section{Governing equations for Fluid Structure Interaction}
 
 We will formulate the equations in the Eulerian, Lagrangian and the ALE description. We start by briefly talking about time derivatives in the different configurations. In the Lagrangian setting the total and partial derivatives are the same \cite{Wick2011}:
 
+\subsection{Derivatives in different frameworks}
 \begin{equation}
-d_t f(x,t) = \partial_t f(x,t)
+D_t f(x,t) = \partial_t f(x,t)
 \end{equation}
 
 in the Eulerian framework we have the following relation between total and partial derivatives:
 
 \begin{equation}
-d_t f(x,t) = \bold{u} + \partial_t f(x,t)
+D_t f(x,t) = \bold{u} + \partial_t f(x,t)
 \end{equation}
 
 whilst in the ALE framework we extend this concept to take into account the motion of the domain:
 
 \begin{equation}
-d_t f(x,t) = \bold{w} + \partial_t f(x,t)
+D_t f(x,t) = \bold{w} + \partial_t f(x,t)
 \end{equation}
 
 Here we can see that for the Lagrangian framework $ \bold{w}$ is zero and for Eulerian $\bold{w} = \bold{u}$.
 
-\subsection{Solid}
+\subsection{Solid equation}
 We express the solid balance laws in the Lagrangian formulation from the initial configuration
 
 \begin{equation}
 \rho_s \frac{\partial \bold{u}}{\partial t} = \nabla \cdot (P) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
 \end{equation}
 
-\subsection{Fluid}
+\subsection{Fluid equations}
+
 
 The fluid domain is moving, and therefore we need to redefine the velocity in the convective term in \eqref{eq:NS} to account for the moving domain 
 \begin{equation}
@@ -75,7 +89,7 @@ The fluid equations are denoted from the initial configuration using the aforeme
 \hat{\sigma_f} &= -pI + \mu ( \nabla \bold{u} F^{-1} + F^{-T} \bold{u}^{T}  ) 
 \end{align}
 
-Putting this together \eqref{eq:NS} then turns into:
+Assembling all these terms together with \eqref{eq:NS} gives the fluid equations from a reference frame:
 
 \begin{align}
 \label{eq:NS_mapped}
@@ -83,76 +97,83 @@ Putting this together \eqref{eq:NS} then turns into:
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
-\section{Mesh motion}\label{sec:meshmotion}
-In the ALE format the deformation from the solid needs to be lifted into the deformation of the fluid mesh. The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. We will in this section look at three different mesh motion techniques, that act differently on the computational domain. In chapter 5 they will be tested and we investigate their strong and weak points.
+\section{Mesh motion techniques} \label{sec:meshmotion}
+Using the ALE method the deformations from the structure through the interface is extrapolated to the fluid domain. The fluid domain itself acts as a structure, deforming according to the deformations from the structure domain.
+The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice will make the mesh overlap and singularities may occur. I will in this section present different mesh motion techniques, that act differently on the computational domain. In \ref{sec:mesh_motion} the techniques will be tested and investigated.
 
-\subsection{Harmonic}
-For small to moderate deformations we can use a harmonic extension, eg the Laplace equation. This has a constant $\alpha_u$ which is set either constant or dependent on the mesh : 
+\subsection{Harmonic extension}
+For small to moderate deformations we can use a harmonic extension to lift the deformations. The harmonic extenstion uses the Laplace equation, transporting the deformations from the solid into the fluid domain. A variable $\alpha_u > 0$ can be multiplied to the Laplace equation, to control the amount of lifting of deformations to the fluid domain.
 
 \begin{align}
  - \alpha_u \nabla^2 d =& 0\hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
   \hspace{4mm} d =& 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma}
 \end{align}
 
-This equation in practice behaves like a transport problem, transporting the deformation into the fluid domain.
-When using the harmonic lifting operator the constant $\alpha_u$ is very important when calculating moderate deformations. A strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011a}, and further discussed in \cite{Stein2003}. Is an alpha that gets bigger when closer to the interface. This is a smart choice since this upholds the cell structure closer to the interface where most of the cell distortion appears
+When using the harmonic lifting operator the variable $\alpha_u$ is very important when calculating moderate deformations. For small deformations a constant can be used for $\alpha_u$. But for larger deformations we need to be a bit more clever. A good strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011a}, and further discussed in \cite{Stein2003}. Which is an alpha that gets bigger when closer to the interface. This is a smart choice since this upholds the cell structure closer to the interface where most of the cell distortion appears. 
 
-\subsection{Linear elasticity}
-Mesh motion with linear elasticity comes from the momentum equations of structure problems. The model is as follows:
+\subsection{Linear elastic extension}
+Since the fluid domain acts as structure we can use a linear elastic equation to lift the deformations from the solid into the fluid domain. The linear elastic equation is best known from computing solid problems \cite{Wick2011a}.  The model is as follows:
 
 \begin{align}
 -\nabla \cdot \sigma_{mesh} &= 0 \hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
 \hspace{4mm} d &= 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma} \\
 \sigma_{mesh} &= \alpha_\lambda (tr\epsilon)I + 2\alpha_\mu \epsilon 
 \end{align}
-where $\epsilon = \frac{1}{2}(\nabla d + (\nabla d)^T)$. This is the linearized version of the strain tensor \eqref{eq:StrainTensor}. The parameters are chosen to uphold mesh quality. This is done by computing the parameters from Youngs modulus and poisson ration. l
+where $\epsilon = \frac{1}{2}(\nabla d + (\nabla d)^T)$. $\epsilon$ is the linearized version of the strain tensor \eqref{eq:StrainTensor}. The parameters $\alpha_\lambda$ and $\alpha_\mu$ are chosen to uphold domain quality. This is done by computing the parameters $\alpha_\lambda$ and $\alpha_\mu$ from Youngs modulus and poisson ration. 
 
-\subsection{Biharmonic} 
-And lastly we can chose a biharmonic extension. This provides more freedom in choosing boundary conditions and choice of parameter $\alpha_u$. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations. In its simplest form it is written as:
+\subsection{Biharmonic extension} 
+The last extension is the biharmonic extension. The biharmonic extension provides more freedom than the harmonic and linear elastic in choosing boundary conditions and choice of parameter $\alpha_u > 0$. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations, even with $\alpha_u$ as a constant. In its simplest form it is written as:
+
 \begin{equation}
 - \alpha_u \nabla^4 d = 0 \hspace{4mm}  in \hspace{2mm} \hat{\mathcal{F}}\\
 \end{equation}
 
-The model used is with a mixed formulation where we introduce a new function $\omega$ (not to be confused with the deformation velocity), this function is added to the system so that we solve for now 4 functions:
+The biharmonic extension is calculated with a mixed formulation where we introduce a new function $\omega$ (not to be confused with the deformation velocity), this function is added to the system so that we solve for 4 functions:
 
 \begin{equation}
-\omega = \alpha_u \nabla^2 d \hspace{4mm} and \hspace{4mm} - \alpha_u \nabla^2 \omega = 0   in \hspace{2mm} \hat{\mathcal{F}}
+\omega = \alpha_u \nabla^2 d \hspace{4mm} and \hspace{4mm} - \alpha_u \nabla^2 \omega = 0 \hspace{2mm}   in \hspace{2mm} \hat{\mathcal{F}}
 \end{equation}
 with the two types of boundary conditions. The first being:
 \begin{equation}
-d = \partial_n d = 0 \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}} / \hat{\Sigma}
+d = \partial_n d = 0 \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}} \hspace{2mm} \textbackslash \hspace{2mm} \hat{\Sigma}
 \end{equation}
 
-The second also imposes conditions on the function $\omega$:	
-\begin{equation}
-d = \partial_n d = 0 , and \hspace{4mm}   \omega = \partial_n \omega = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}} / \hat{\Sigma}
-\end{equation}
+The second imposes conditions on the function $\omega$, and are written in terms of single component functions $d^{(1)},d^{(2)}$ and $\omega^{(1)}, \omega^{(2)}$	
+\begin{align}
+d^{(1)} =& \partial_n d^{(1)} = 0 , and \hspace{4mm}   \omega^{(1)} = \partial_n \omega^{(1)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{in,out} \\
+d^{(2)} =& \partial_n d^{(2)} = 0 , and \hspace{4mm}   \omega^{(2)} = \partial_n \omega^{(2)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{walls} \\
+\end{align}
 
-Since the biharmonic extension is of fourth order it will have a higher computational cost \cite{Richter2016}. The difference in mesh motion technique choices will be discussed later.
+Since the biharmonic extension is of fourth order character it will have a higher computational cost \cite{Richter2016} than the harmonic or linear elastic. 
 
 
 \section{Coupled Fluid Structure Interface conditions}
-We introduce a global domain $\Omega \in \mathcal{S} \cup \mathcal{F} $ that is made up of the fluid and the structure and the interface. We define a global velocity function $u$ that is the fluid velocity in the fluid domain and the structure velocity in the structure domain. This can be done due to the interface condition making the velocity field continuous over the entire domain. Then the interface will be $ \Gamma \in \mathcal{S} \cap \mathcal{F}  $  
-We need to define conditions that couple that motions of the fluid and structure together. These consist of:
+In figure \ref{pic:FSI_mapping} we see a typical Fluid Structure Interaction. The fluid is surrounded by elastic walls, like a blood vessel. The inflow at $\partial \hat{\mathcal{F}}_{in}$, a change in pressure, or a motion of the solid determines the flow of the fluid.
+The fluid`s stress on the walls causes deformation in the solid domain and vice versa. The interface is where these energies are transferred and we therefore need conditions on the interface. \newline
+
+Let $\Omega \in \hat{\mathcal{S}} \cup \hat{\mathcal{F}} $ be a global domain that is made up of the fluid, structure, and the interface. We define a global velocity function $u$ that describes the fluid velocity in the fluid domain and the structure velocity in the structure domain. Using a global velocity makes the velocity continuous across the entire domain. Let interface be $ \hat{\Sigma} \in \hat{\mathcal{S}} \cap \hat{\mathcal{F}}  $.\newline 
+The three interface comes from simple physical properties and consist of \cite{Richter2016}:
 
 \begin{itemize}
-\item Kinematic condition: $\bold{u}_f = \bold{u}_s  \hspace{4mm} on \Gamma$. The fluid and structure velocities need to be equal on the boundary. \\
-We have will use a global function for $\bold{u}$ in both fluid and structure domains. In that way this condition is upheld.\\
-We also set  $\bold{u} - \frac{\partial d}{\partial t}  = 0  $ on the solid domain to strongly imply that the velocity on the solid is the derivative of the deformation.  
+\item \textit{Kinematic condition}: $\bold{u}_f = \bold{u}_s  \hspace{2mm} on \hspace{2mm} \hat{\Sigma}$. The fluid and structure velocities are equal on the interface. Meaning the fluid moves with the interface at all times. \\
+Since we use a global function for $\bold{u}$ in both fluid and structure domains, this condition is upheld.\\ 
+The fluid and solid velocities are usually in different coordinate systems, the solid velocity is then not available in Eulerian Coordinates. We instead link fluid velocity at the interface by using the fact that $\bold{u}_s = \frac{\partial d}{\partial t}$. Setting $\bold{u}_f = \frac{\partial d}{\partial t}$ at the interface.
 
-\item Dynamic condition: $  \sigma_f n_f = \sigma_s n_s \hspace{4mm} on  \hspace{2mm}\Gamma   $. \\
+\item \textit{Dynamic condition}: $  \sigma_f n_f = \sigma_s n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma}   $. \\
 	This relates to Newtons third law of action and reaction. The forces on the interface area, here written as the normal stresses are balanced on the interface. These will be written in a Lagrangian formulation: \\
-	$J\sigma_f F^{-T} n_f = F\Sigma n_s \hspace{4mm} on  \hspace{2mm}\Gamma $. \\
-	This condition is often added to structure problem, since it is most often in FSI problem the fluid exerting force that cause deformation.
-\item Geometrical condition: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
+	$J\sigma_f F^{-T} n_f = P n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma} $. \\
+	The dynamic condition is a Neumann condition that belongs to both subproblems.
+	
+\item \textit{Geometrical condition}: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
 \end{itemize}
 
 \section{Monolithic FSI Problem}
-As stated in the introduction there are generally two types of schemes used when simulating FSI. The partitioned approach where fluid and structure are solved sequentially, is appealing in that we have a wealth of knowledge and techniques on how to solve these kinds of problems in an efficient manner. The difficulty however is dealing with the interface. As we know there are kinematic and dynamic conditions needed in FSI, and the coupling of these conditions is where the problems arise. So called explicit coupled schemes are known to be unconditionally unstable for standard Dirichlet-Neumann strategies when there is a large amount of added-mass in the system \cite{Fernandez2015}, \cite{VanBrummelen2009}. There are schemes which offer added-mass free stability with explicit coupling, where the interface is treated through a Robin-Neumann coupling. First for a coupling with a thin walled structure \cite{Fernandez2013} and later an extension to thick wall \cite{Fernandez2015}. These schemes are rather complex and uses a number of techniques that are out of the scope of this thesis. ( This may be in more detail in a later chapter (discussion and further work.) ) \newline
-The other is approach is monolithic, where all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become very large and computationally costly. \newline
+As stated in the introduction there are generally two types of schemes used when simulating FSI. The first is the partitioned approach where fluid and structure are solved sequentially.  This approach is appealing in that we have a wealth of knowledge and techniques on how to solve each of these kinds of problems in an efficient manner. The difficulty however is dealing with the interface. As we know there are kinematic and dynamic conditions needed in FSI, and the coupling of these conditions is where the problems arise. So called explicit coupled schemes are known to be unconditionally unstable for standard Dirichlet-Neumann strategies when there is a large amount of added-mass in the system \cite{Fernandez2015}, \cite{VanBrummelen2009}. There are however, schemes which offer added-mass free stability with explicit coupling, where the interface is treated through a Robin-Neumann coupling. First for a coupling with a thin walled structure \cite{Fernandez2013} and later with an extension to thick wall \cite{Fernandez2015}. These schemes are rather complex and uses a number of techniques that are out of the scope of this thesis. ( This may be in more detail in a later chapter (discussion and further work.) ) \newline
+
+The other approach is  called monolithic. In the monolithic approach all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become large and computationally costly. \newline
+
+\begin{comment}
 We start by stating the entire FSI ALE problem in a monolithic framework using the mapped approach: 
-
-
 
 Find $\bold{u} \in \hat{\mathcal{F}} , p \in \hat{\mathcal{F}} \text{  and  } d \in \hat{\mathcal{S}} \text{  such that}:$ 
 \begin{align}
@@ -161,15 +182,16 @@ Find $\bold{u} \in \hat{\mathcal{F}} , p \in \hat{\mathcal{F}} \text{  and  } d 
 \rho_s \frac{\partial \bold{u} }{\partial t} + \nabla \cdot F S_s,&=0 \hspace{8mm} \text{on  } \hat{\mathcal{S}}\\
 \nabla^2 d &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{F}}\\
 \bold{u} - \frac{\partial d}{\partial t}  &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{S}}\\
-J\sigma_f F^{-T} n_f &= \sigma_s  n_s \hspace{3mm} \text{on  } \Gamma
+J\sigma_f F^{-T} n_f &= \sigma_s  n_s \hspace{3mm} \text{on  } \hat{\Sigma}
 \end{align}
+\end{comment}
 
 \input{./Discretization/Discretization}
 
 \subsection{Spaces and Elements}
 The velocity and pressure copling in the fluid domain must satisfy the inf-sup condition. If not stabilization has to added. We here need to define some spaces that will have these desired properties.
 We denote $u_h \in V_h$ and $ d_h \in W_h $, here the finite element pair og pressure and velocity mush satisfy the inf-sup condition given in ALE coordinates:
-$$   \inf_{\substack{p_h \in L_{h,f}}}  \sup_{\substack{v_h \in V_{h,f}}} \frac{ (p_h, div(J_f F_f^{-1} u_h))_{\mathcal{F}} }{ \|\|J^{\frac{1}{2}} p_h  \|\|_{\mathcal{F}} \|\|  J^{\frac{1}{2}}_{f} \nabla u_h F_f^{-T} \|\|_{\mathcal{F}}  } \geq \gamma     $$
+$$   \inf_{\substack{p_h \in L_{h,f}}}  \sup_{\substack{v_h \in V_{h,f}}} \frac{ (p_h, div(J_f F_f^{-1} u_h))_{\mathcal{F}} }{ \|\|J^{\frac{1}{2}} p_h  \|\|_{\mathcal{F}} \|\|  J^{\frac{1}{2}}_{f} \nabla u_h F_f^{-T} \|\|_{\mathcal{F}}  } \geq \hat{\Sigma}     $$
 A good choice of spaces will be P2-P2-P1 for velocity, displacement and fluid pressure respectively. 
 
 

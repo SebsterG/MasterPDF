@@ -19,12 +19,55 @@
 \usepackage{enumerate}
 \usepackage{subfigure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% python style
+\usepackage[utf8]{inputenc}
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{9} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{9}  % for normal
+% Defining colors
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+backgroundcolor=\color{white}, %can remove comma for other result
+breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+captionpos=b,
+basicstyle=\ttm,
+otherkeywords={self},            
+keywordstyle=\ttb\color{deepblue},
+emph={F_(d):, J_(d):},     
+frame=single,	                   % adds a frame around the code
+keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt,                   % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers     
+emphstyle=\ttb\color{deepred},    
+stringstyle=\color{deepgreen},
+commentstyle=\color{red}
+frame=tb,                         
+showstringspaces=false            
+}}
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{float} % these are so we can use H
 \restylefloat{table} % so we can use H to position
 
 \usepackage[MEK,60]{masterfrontpage}
 
-\title{FSI solver}
+
+
+\title{Monolithic solver for Computational Fluid Structure Interaction}
 \subtitle{}
 \author{Sebastian Gjertsen}
 
@@ -45,11 +88,11 @@
 
 \input{./IntroductionToFSI/IntroductionToFSI}	
 
-\input{./EquationNotation/Equations_notation}
+\input{./Continuum_mechanics/Continuum_mechanics}
 
 \input{./FSI_ALE_formulation/FSI_ALE_formulation}
-
 \input{./FSI_code_monolithic/FSI_code_monolithic_update}
+%!TEX encoding = UTF-8 Unicode\input{./FSI_code_monolithic/FSI_code_monolithic_update}
 %\newpage
 %\input{./Partitioned_ALE_RN/Partitioned_ALE_RN}
 

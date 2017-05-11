@@ -1,5 +1,29 @@
 \begin{thebibliography}{10}
 
+\bibitem{Billah1991}
+K.~Yusuf Billah.
+\newblock {Resonance, Tacoma Narrows bridge failure, and undergraduate physics
+  textbooks}.
+\newblock {\em American Journal of Physics}, 59(2):118, 1991.
+
+\bibitem{Etienne2012}
+S.~{\'{E}}tienne, A.~Garon, and D.~Pelletier.
+\newblock {Some manufactured solutions for verification of fluid-structure
+  interaction codes}.
+\newblock {\em Computers and Structures}, 106-107:56--67, 2012.
+
+\bibitem{Etienne2006}
+St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
+  2006.
+
+\bibitem{Fefferman2000}
+Charles~L. Fefferman.
+\newblock {Existence and smoothness of the Navier-Stokes equation}.
+\newblock {\em The millennium prize problems}, (1):1--5, 2000.
+
 \bibitem{Fernandez2013}
 Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {Explicit robin-neumann schemes for the coupling of incompressible
@@ -42,10 +66,27 @@ William~L. Oberkampf and Christopher~J. Roy.
 \newblock {\em {Verification and Validation in Scientific Computing}}.
 \newblock Cambridge University Press, Cambridge, 2010.
 
+\bibitem{Richter2013}
+T~Richter and T~Wick.
+\newblock {On time discretizations of Fluid-structure interactions}.
+\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
+  377--400, 2013.
+
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
+
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
+\bibitem{Sciences2012}
+Natural Sciences.
+\newblock {A Newton ' s Method Finite Element Algorithm for Fluid-Structure
+  Interaction}.
+\newblock (October), 2012.
 
 \bibitem{Selin2014}
 Noelle Selin.
@@ -57,6 +98,11 @@ K.~Stein, T.~Tezduyar, and R.~Benney.
 \newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
   Displacements}.
 \newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
+
+\bibitem{Valkov2015}
+Boris Valkov, Chris~H Rycroft, and Ken Kamrin.
+\newblock {Eulerian method for fluid – structure interaction and submerged
+  solid – solid contact problems}.
 
 \bibitem{VanBrummelen2009}
 E.~H. van Brummelen.
