@@ -82,7 +82,7 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{CFD 2}
+\caption{CFD 2 with }
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -91,6 +91,19 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 26464 & 124488 & 136.566 & 9.82166 \\ \hline
 105856 & 487152 & 136.573 & 10.4441 \\ \hline
 \textbf{ref} & \textbf{} & \textbf{136.7} & \textbf{10.53} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{CFD 3 with $\Delta t = 0.001$}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{elements} & \textbf{dofs} & \textbf{Drag} & \textbf{Lift} \\ \hline
+6616 & 32472 & $ -10.42 \pm 446.57  $ & $ 435.13 \pm 5.02 $ \\ \hline
+26464 & 124488 & $ -18.42 \pm 445.57 $ & $ 440.73 \pm 5.22 $ \\ \hline
+ref & ref & $\bold{ -11.893 \pm 437.81 }$ & $\bold{ 439.45 \pm 5.61 }$ \\ \hline
 \end{tabular}
 \end{table}
 
@@ -169,7 +182,6 @@ elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ \\ \hline
 \end{tabular}
 \end{table}
 
-
 \begin{figure}[H]  \label{CSM3_plots} 
   \caption {Displacement of point A, CSM3}
   \begin{minipage}[b]{0.5\linewidth}
@@ -233,40 +245,58 @@ $\mu_s[10^6 \frac{m^2}{s}]$ & 0.5 & 0.5 & 2 \\ \hline
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A)[x10^{-3}]$ & Drag & Lift & Spaces \\ \hline
+Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift & Spaces \\ \hline
 2698 & 23563 &0.0227418 &0.799314  &  14.1735 &0.761849 & P2-P2-P1 \\ \hline
 10792 & 92992  &0.0227592 & 0.80795 & 14.1853 &  0.775063 &  P2-P2-P1 \\ \hline
-43168 & 369448 & 00.227566 & 0.813184 & 14.2269 & 0.771071 & P2-P2-P1 \\ \hline
+43168 & 369448 & 0.0227566 & 0.813184 & 14.2269 & 0.771071 & P2-P2-P1 \\ \hline
 \textbf{ref} & \textbf{ref} & \textbf{0.0227} & \textbf{0.8209} & \textbf{14.295} & \textbf{0.7638} & \textbf{ref} \\ \hline
 \end{tabular}
 \end{table}
 
 \subsubsection*{FSI2}
 
-The FSI-2 results were with $\Delta t = 0.01, \theta = 0.51$, biharmonic bc 1, $\alpha_u = 0.01$
+\begin{comment}
 \begin{table}[H]
 \centering
 \caption{FSI-2 with $\Delta t = 0.01$}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift & Extrapolation & BC & $\Delta t$ \\ \hline
+Cells & Dofs & $d_x(A) [\times 10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift & Extrapolation & BC & $\Delta t$ \\ \hline
 2698 & 23563 & $-15.17 \pm 13.35  $ & $1.13 \pm 82.5$ & $160.12 \pm 17.88$ & $0.87 \pm 259.62$ & Biharmonic & 1 & 0.01 \\ \hline
 2698 & 23563 & $-14.92 \pm 13.17 $ & $1.13 \pm 81.86$ & $160.28 \pm 17.94$ & $0.65 \pm 254.07$ & Biharmonic & 2 & 0.01 \\ \hline
 2698 & 23563 & $-15.10 \pm 13.32 $ & $1.16 \pm 82.46 $ & $159.53 \pm,17.44 $ & $ 0.68 \pm 259.10 $ & Harmonic & - & 0.01 \\ \hline
-10792 & 92992 & $-14.85 \pm 13.14 $ & $1.21 \pm 81.72$ & $ 160 \pm 17.84  $ & $0.89 \pm 255.10 $ & Harmonic & - & 0.01 \\ \hline
+10792 & 92992 & $-14.83 \pm 13.11 $ & $1.24 \pm 81.72$ & $ 161.50 \pm 18.17  $ & $0.89 \pm 255.10 $ & Harmonic & - & 0.01 \\ \hline
 \textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} & \textbf{ref} & \textbf{ref} \\ \hline
 \end{tabular}
 \end{table}
+\end{comment}
+
+
+\begin{table}[H]
+\centering
+\caption{FSI-2 with $\Delta t = 0.01$ harmonic}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift \\ \hline
+2698 & 23563 & $ -15.10 \pm 13.32 $ & $1.16 \pm 82.46 $ & $ 159.53 \pm 17.44 $ & $ 0.68 \pm 259.10 $ \\ \hline
+10792 & 92992 & $ -14.85 \pm 13.14 $ & $1.21 \pm 81.72 $ & $ 160.72 \pm 17.84  $ & $0.93 \pm 255.14 $ \\ \hline
+43168 & 369448 & $ -14.83  \pm 13.11  $ & $ 1.24 \pm 81.6 $ & $ 161.50 \pm 18.17  $ & $0.62 \pm 254.40  $ \\ \hline
+\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ \\ \hline
+\end{tabular}
+\end{table}
+
 \begin{table}[H]
 \centering
 \caption{FSI-2 with $\Delta t = 0.001$}
 \label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift & Extrapolation & BC & $\Delta t$ \\ \hline
-2698 & 23563 & $ 15.42 \pm 13.10$ & $1.14 \pm 83.39$ & $157.01 \pm 15.69$ &$ -0.77 \pm 174.36$ & Harmonic & - & 0.001 \\ \hline
-\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} & \textbf{ref} & \textbf{ref} \\ \hline
+Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift & Extrapolation \\ \hline
+2698 & 23563 & $ 15.42 \pm 13.10$ & $1.14 \pm 83.39$ & $157.01 \pm 15.69$ & $ -0.77 \pm 274.36$ & Harmonic \\ \hline
+10792 & 92992 & $ 15.16 \pm 12.94$ & $ 1.20 \pm 82.5 $ & $ 158.26 \pm 16.03$ & $ -0.09 \pm 267.81$ & Harmonic \\ \hline
+\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -278,6 +308,25 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift & Extrapo
 \caption{Velocity at $ t = 9.20 $sec on reference mesh}
 \includegraphics[scale=0.40,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_u_920.png}
 \end{figure}
+
+\subsubsection*{FSI3}
+\begin{table}[]
+\centering
+\caption{FSI3 with $\Delta t = 0.01$}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+ &  & $d_x(A) [\times10^{-3}]$ & \& $d_y(A)[\times10^{-3}]$ & Lift & Drag \\ \hline
+0 & bi\_bc2 & $-1.74 \pm 1.766$ & $ 3.565e \pm 26.01 $ & $ -1.357 \pm 138.74$ & $439.41 \pm12.218$ \\ \hline
+ & bi\_bc1 & $-1.77 \pm 1.793$ & $ 3.582 \pm 26.21 $ & $ -1.843 \pm 139.29$ & $439.60\pm12.218$ \\ \hline
+ & laplace & $-1.791 \pm 1.807$ & $ 3.290 \pm 26.48 $ & $1.960 \pm 142.306$ & $ 439.35 \pm 12.04$ \\ \hline
+ &  &  &  &  &  \\ \hline
+1 & bi\_bc2 & $-2.397 \pm 2.406$ & $ 1.774 \pm 32.282 $ & $ 3.668 \pm 150.02$ & $ 449.71 \pm 18.172$ \\ \hline
+ & bi\_bc1 & $ -2.440 \pm 2.446$ & $ 1.766 \pm 32.562 $ & $ 3.929 \pm 150.76$ & $ 449.98 \pm 18.030$ \\ \hline
+ & laplace & $ -2.481 \pm 2.486$ & $ 1.655 \pm 32.851$ & $ 3.318 \pm 153.58$ & $ 449.74 \pm18.052$ \\ \hline
+ref. &  & $ ?2.69 \pm 2.53$ & $1.48 \pm 34.38 $ & $ 2.22 \pm 149.78$ & $ 457.3 \pm 22.66$ \\ \hline
+\end{tabular}
+\end{table}
 
 
 

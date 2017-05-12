@@ -5,40 +5,40 @@
 \contentsline {subsection}{\numberline {2.1.1}Deformation gradient}{5}
 \contentsline {subsection}{\numberline {2.1.2}Strain}{5}
 \contentsline {subsection}{\numberline {2.1.3}Stress}{7}
-\contentsline {section}{\numberline {2.2}Solid equation}{7}
+\contentsline {section}{\numberline {2.2}Solid equation}{8}
 \contentsline {subsection}{\numberline {2.2.1}Solid Boundary Conditions}{8}
-\contentsline {section}{\numberline {2.3}Fluid equations}{8}
+\contentsline {section}{\numberline {2.3}Fluid equations}{9}
 \contentsline {subsection}{\numberline {2.3.1}Fluid Boundary conditions}{9}
 \contentsline {chapter}{\numberline {3}Fluid Structure Interaction Problem}{11}
 \contentsline {section}{\numberline {3.1}Mapping between different frames of reference}{13}
 \contentsline {section}{\numberline {3.2}Governing equations for Fluid Structure Interaction}{14}
 \contentsline {subsection}{\numberline {3.2.1}Derivatives in different frameworks}{14}
-\contentsline {subsection}{\numberline {3.2.2}Solid equation}{14}
+\contentsline {subsection}{\numberline {3.2.2}Solid equation}{15}
 \contentsline {subsection}{\numberline {3.2.3}Fluid equations}{15}
-\contentsline {section}{\numberline {3.3}Mesh motion techniques}{15}
+\contentsline {section}{\numberline {3.3}Mesh motion techniques}{16}
 \contentsline {subsection}{\numberline {3.3.1}Harmonic extension}{16}
-\contentsline {subsection}{\numberline {3.3.2}Linear elastic extension}{16}
-\contentsline {subsection}{\numberline {3.3.3}Biharmonic extension}{17}
-\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{18}
-\contentsline {section}{\numberline {3.5}Monolithic FSI Problem}{19}
-\contentsline {section}{\numberline {3.6}Discretization of monolithic FSI equations}{19}
-\contentsline {subsubsection}{Spaces}{20}
-\contentsline {subsection}{\numberline {3.6.1}Spaces and Elements}{23}
-\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{25}
-\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{25}
-\contentsline {section}{\numberline {4.2}Variational form}{26}
-\contentsline {section}{\numberline {4.3}NewtonSolver}{27}
-\contentsline {section}{\numberline {4.4}Timeloop}{29}
-\contentsline {chapter}{\numberline {5}Verification and Validation in Computational Fluid Structure Interaction. }{31}
-\contentsline {section}{\numberline {5.1}Verification}{32}
-\contentsline {subsection}{\numberline {5.1.1}MMS of the Solid equation }{34}
-\contentsline {subsection}{\numberline {5.1.2}MMS of Fluid equations with prescribed motion}{35}
-\contentsline {section}{\numberline {5.2}Validation}{37}
-\contentsline {subsection}{\numberline {5.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{38}
-\contentsline {subsubsection}{Results}{39}
-\contentsline {subsubsection}{CFD test}{39}
-\contentsline {subsubsection}{CSM test}{41}
-\contentsline {subsection}{\numberline {5.2.2}Mesh motion techniques}{46}
+\contentsline {subsection}{\numberline {3.3.2}Biharmonic extension}{17}
+\contentsline {section}{\numberline {3.4}Coupled Fluid Structure Interface conditions}{17}
+\contentsline {section}{\numberline {3.5}Discretization of monolithic FSI equations}{18}
+\contentsline {subsubsection}{Spaces}{19}
+\contentsline {subsubsection}{Discretization}{19}
+\contentsline {subsection}{\numberline {3.5.1}Spaces and Elements}{22}
+\contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{23}
+\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{23}
+\contentsline {section}{\numberline {4.2}Variational form}{24}
+\contentsline {section}{\numberline {4.3}NewtonSolver}{25}
+\contentsline {section}{\numberline {4.4}Timeloop}{27}
+\contentsline {chapter}{\numberline {5}Verification and Validation in Computational Fluid Structure Interaction. }{29}
+\contentsline {section}{\numberline {5.1}Verification}{30}
+\contentsline {subsection}{\numberline {5.1.1}MMS of the Solid equation }{32}
+\contentsline {subsection}{\numberline {5.1.2}MMS of Fluid equations with prescribed motion}{33}
+\contentsline {section}{\numberline {5.2}Validation}{35}
+\contentsline {subsection}{\numberline {5.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{36}
+\contentsline {subsubsection}{Results}{37}
+\contentsline {subsubsection}{CFD test}{37}
+\contentsline {subsubsection}{CSM test}{39}
+\contentsline {subsection}{\numberline {5.2.2}Mesh motion techniques}{44}
+\contentsline {subsubsection}{FSI2}{48}
 \contentsline {subsection}{\numberline {5.2.3}Temporal stability}{48}
 \contentsline {chapter}{\numberline {6}Runtime improvements}{51}
 \contentsline {section}{\numberline {6.1}Newton runtime profile}{51}

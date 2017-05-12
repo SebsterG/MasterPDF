@@ -1,19 +1,22 @@
 \chapter{Fluid Structure Interaction Problem}
-So far I have introduced the fluid and solid equations, and the descriptions in which they are stated. In this chapter I will introduce the full FSI problem. With all the equations, conditions and discretization needed to to build a solver. \newline
+In this chapter I will introduce the full FSI problem. With all the equations, conditions, and discretizations needed to to build a Fluid Structure Interaction solver. \newline
 
-When we compute FSI problems the computing domain is split into three parts, Fluid, Structure and Interface. Fluid and structure domains are as we know separated, and different constitutive equations are solved in each domain. The place in which fluid and structure meet is what we call the interface. The manner in which we treat the interface gives the two main methods for solving FSI problems \cite{Liu2014}. The first method is called fully Eulerian. In fully Eulerian both the fluid and structure equations are solved in an Eulerian description. Here the interface is tracked across a still standing domain \cite{Valkov2015}. The fully Eulerian description is suited for fluid problems but is problematic for structure problems and certainly FSI where tracking of the interface across the domain is a difficult task. I therefore introduce the more commonly used method ALE. Which is the method that will be used in this thesis. \newline
+When we compute FSI problems the computing domain is split into three parts, fluid, structure and interface. Fluid and structure domains are as we know separated, and different constitutive equations are solved in each domain. The place in which fluid and structure meet is what we call the interface. The manner in which we treat the interface gives the two main methods for solving FSI problems \cite{Liu2014}. The first method is called fully Eulerian. In fully Eulerian both the fluid and structure equations are solved in an Eulerian description. Here the interface is tracked across a still standing domain \cite{Valkov2015}. The fully Eulerian description is suited for fluid problems but is problematic for structure problems and certainly FSI where tracking of the interface across the domain is a difficult task. \newline
 
-ALE stands for Arbitrary Lagrangian Eulerian. The ALE method entails formulating the fluid equations in an Eulerian framework and the solid in a Lagrangian framework. The entire domain itself moves with the structural displacements and the fluid moves through these points. In the ALE framework we get best of both world. The structure equation will remain as previously stated \eqref{eq:Solid}, and we will need to change the fluid equations to take into account the moving domain changing the fluid velocity. Dealing with the movement of the domain is done in two ways. One way is to move the domain itself in relation to the structural displacements, and use this new domain to calculate the equations every time.
-Moving the domain gives advantages as we can explicitly represent the fluid-structure interface, and the equations are stated in a more familiar manner. But problems arise when there are large deformations in the solid giving large deformations into the fluid domain. Moving the mesh with large deformation can be a challenge. \newline
+The second approach is the \textit{Arbitrary Lagrangian Eulerian}
+The ALE method entails formulating the fluid equations in a type of Eulerian framework and the solid in a Lagrangian framework. The entire domain itself moves with the structural displacements and the fluid moves through these points. In the ALE framework we get best of both world, in that fluid and solid are described in their natural states. The structure equation will remain as previously stated \eqref{eq:Solid}, and we will need to change the fluid equations to take into account the moving domain changing the fluid velocity. Dealing with the movement of the domain is done in two ways. One way is to move the domain itself in relation to the structural displacements, and use this new domain to calculate the equations every time.
+Moving the domain gives advantages as we can explicitly represent the fluid-structure interface, and the equations are stated in a more familiar manner. But problems arise when there are large deformations in the solid giving large deformations into the fluid domain. Moving the mesh with large deformation can be a challenge in that the domain can overlap causing singularities. \newline
 
-In this thesis the ALE approach is used from a reference frame.
-Meaning we solve the equations on a initial, stress free domain, and use a series of mappings to account for the movements of the domain. The equations are mapped to the current domain, that is where the domain has moved to in the present time. It is the displacements in the solid that determines the mappings. The displacements in the solid and the interface are extrapolated into the fluid mesh. I will deal with the manner in which these extrapolations work in this chapter. \newline
+\textbf{In this thesis the ALE approach is used from a reference frame.}
+Meaning we solve the equations on a initial, stress free domain, and use a series of mappings to account for the movements of the domain. The equations are mapped to the current domain, that is where the domain has moved to in the present time. It is the displacements in the in the domain that determines the mappings between frames of reference. The displacements in the solid and the interface are extrapolated into the fluid mesh. \newline
 
-From a technical point of view, both moving the mesh and using a reference frame are equivalent \cite{Richter2016}. Since the reference frame method does not need a function to move the mesh between each time iteration can be less time consuming. The interface is also located in the same position, making the interface easy to track. \newline
+From a technical point of view, both moving the mesh and using a reference frame are equivalent \cite{Richter2016}. Since the reference frame method does not need a function to move the mesh between each time iteration, it can be less time consuming. The interface is also located in the same position, making the interface easy to track. \newline
 
-Lastly in this chapter the equations are discretized. Discretization of the equations is tackled using either a monolithic or a partitioned approach. We will go into details later, but the overall idea is that a monolithic scheme involves computing all the equations together into one block, while the partitioned splits up into parts. That is we solve the fluid problem and structure problem separately. The advantage of this is that we can use existing solvers and techniques for each of the problems, but the difficulty is the treatment of the interface. The monolithic approach however, offers more stability but is more costly as the size of the problem increases\cite{Liu2014}. \newline
+There are generally two types of schemes used when simulating FSI. The first is the partitioned approach where fluid and structure are solved sequentially.  This approach is appealing in that we have a wealth of knowledge and techniques on how to solve each of these kinds of problems in an efficient manner. The difficulty however is dealing with the interface. As we know there are kinematic and dynamic conditions needed in FSI, and the coupling of these conditions is where the problems arise. So called explicit coupled schemes are known to be unconditionally unstable for standard Dirichlet-Neumann strategies when there is a large amount of added-mass in the system \cite{Fernandez2015}, \cite{VanBrummelen2009}. There are however, schemes which offer added-mass free stability with explicit coupling, where the interface is treated through a Robin-Neumann coupling. First for a coupling with a thin walled structure \cite{Fernandez2013} and later with an extension to thick wall \cite{Fernandez2015}. These schemes are rather complex and uses a number of techniques that are out of the scope of this thesis. ( This may be in more detail in a later chapter (discussion and further work.) ) \newline
 
-I will start by introducing the mappings, this follows the notation and ideas from \cite{Richter2016}:
+The other approach is called monolithic. In the monolithic approach all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become large and computationally costly. \newline
+
+I will start by introducing the mappings needed to change between current and reference domain, this follows the notation and ideas from \cite{Richter2016}:
 
 \section{Mapping between different frames of reference}
 \begin{figure}[H]
@@ -46,19 +49,19 @@ We will formulate the equations in the Eulerian, Lagrangian and the ALE descript
 
 \subsection{Derivatives in different frameworks}
 \begin{equation}
-D_t f(x,t) = \partial_t f(x,t)
+D_t f(x,t) = \partial_t f(x,t) 
 \end{equation}
 
 in the Eulerian framework we have the following relation between total and partial derivatives:
 
 \begin{equation}
-D_t f(x,t) = \bold{u} + \partial_t f(x,t)
+D_t f(x,t) = \bold{u}\cdot \nabla{f} + \partial_t f(x,t)
 \end{equation}
 
 whilst in the ALE framework we extend this concept to take into account the motion of the domain:
 
 \begin{equation}
-D_t f(x,t) = \bold{w} + \partial_t f(x,t)
+D_t f(x,t) = \bold{w} \cdot\nabla{f} + \partial_t f(x,t)
 \end{equation}
 
 Here we can see that for the Lagrangian framework $ \bold{w}$ is zero and for Eulerian $\bold{w} = \bold{u}$.
@@ -67,17 +70,18 @@ Here we can see that for the Lagrangian framework $ \bold{w}$ is zero and for Eu
 We express the solid balance laws in the Lagrangian formulation from the initial configuration
 
 \begin{equation}
-\rho_s \frac{\partial \bold{u}}{\partial t} = \nabla \cdot (P) \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
+\rho_s \frac{\partial \bold{u}}{\partial t} = \nabla \cdot (P) + \rho_s f \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
 \end{equation}
+written in terms of the solid velocity $\bold{u} = \bold{u_s} = \frac{\partial \bold{d}}{\partial t}$.
 
 \subsection{Fluid equations}
 
 
 The fluid domain is moving, and therefore we need to redefine the velocity in the convective term in \eqref{eq:NS} to account for the moving domain 
 \begin{equation}
-\bold{u} \cdot \nabla \bold{u} \rightarrow (\bold{u}-\frac{\partial d_f}{\partial t}) \cdot \nabla \bold{u}  
+\bold{u} \cdot \nabla \bold{u} \rightarrow (\bold{u}-\frac{\partial \bold{d}_f}{\partial t}) \cdot \nabla \bold{u}  
 \end{equation}
-where $d_f$ is the deformation in the fluid domain. We see that $\bold{w}$ is written as $\frac{\partial d}{\partial t}$ . Now the actual fluid velocity will be $u-\frac{\partial d}{\partial t}$ 
+where $d_f$ is the deformation in the fluid domain. We see that $\bold{w}$ is written as $\frac{\partial \bold{d}}{\partial t}$ . Now the actual fluid convection will be $\bold{u}-\frac{\partial \bold{d}}{\partial t} \nabla \bold{u}$ 
 
 The fluid equations are denoted from the initial configuration using the aforementioned mappings:
 
@@ -93,24 +97,32 @@ Assembling all these terms together with \eqref{eq:NS} gives the fluid equations
 
 \begin{align}
 \label{eq:NS_mapped}
-\rho_f J \big( \frac{\partial \bold{u}}{\partial t} dx + (\nabla \bold{u})F^{-1}(\bold{u}-\frac{\partial d}{\partial t}) \big) &= \nabla \cdot( J F^{-1} \hat{\sigma_f} ) + J \rho_f f \\
+\rho_f J \big( \frac{\partial \bold{u}}{\partial t} dx + (\nabla \bold{u})F^{-1}(\bold{u}-\frac{\partial \bold{d}}{\partial t}) \big) &= \nabla \cdot( J F^{-1} \hat{\sigma_f} ) + J \rho_f f \\
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
 \section{Mesh motion techniques} \label{sec:meshmotion}
-Using the ALE method the deformations from the structure through the interface is extrapolated to the fluid domain. The fluid domain itself acts as a structure, deforming according to the deformations from the structure domain.
-The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice will make the mesh overlap and singularities may occur. I will in this section present different mesh motion techniques, that act differently on the computational domain. In \ref{sec:mesh_motion} the techniques will be tested and investigated.
+Using the ALE method the deformations from the structure through the interface is extrapolated to the fluid domain. The choice of mesh motion technique is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice will make the mesh overlap and singularities may occur. 
+When extrapolating deformation from the solid to the fluid domain, the fluid domain itself acts as a structure, deforming according to the deformations from the structure domain.
+I will in this section present different mesh motion techniques, that act differently on the computational domain. In \ref{sec:mesh_motion} the techniques will be tested and investigated.
 
 \subsection{Harmonic extension}
 For small to moderate deformations we can use a harmonic extension to lift the deformations. The harmonic extenstion uses the Laplace equation, transporting the deformations from the solid into the fluid domain. A variable $\alpha_u > 0$ can be multiplied to the Laplace equation, to control the amount of lifting of deformations to the fluid domain.
 
 \begin{align}
- - \alpha_u \nabla^2 d =& 0\hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
-  \hspace{4mm} d =& 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma}
+ - \alpha_u \nabla^2 \bold{d} =& 0\hspace{4mm} in \hspace{2mm} \hat{\mathcal{F}}\\
+  \hspace{4mm} \bold{d} =& 0 \hspace{4mm } on \hspace{2mm }  \partial \hat{\mathcal{F}} / \hat{\Sigma} \\
+  \bold{d}_f =& \bold{d}_s \hspace{4mm } on \hspace{2mm } \hat{\Sigma} 
 \end{align}
 
-When using the harmonic lifting operator the variable $\alpha_u$ is very important when calculating moderate deformations. For small deformations a constant can be used for $\alpha_u$. But for larger deformations we need to be a bit more clever. A good strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011a}, and further discussed in \cite{Stein2003}. Which is an alpha that gets bigger when closer to the interface. This is a smart choice since this upholds the cell structure closer to the interface where most of the cell distortion appears. 
+When using the harmonic lifting operator the variable $\alpha_u$ is very important when calculating moderate deformations. For small deformations a constant can be used for $\alpha_u$. But for larger deformations we need to be a bit more clever. A good strategy for choosing $\alpha_u$ is proposed by Wick in \cite{Wick2011a}, and further discussed in \cite{Stein2003} and \cite{MM2016}. Which is an alpha that gets bigger when closer to the interface. 
+\begin{equation}
+\alpha_u = \frac{1}{x^q}
+\end{equation}
+where $x^q$ is the distance from the interface. If $q=0$ the laplacian i recovered. When the distance becomes larger, $\alpha_u$ gets smaller, and vice versa. 
+Defining $\alpha_u$ in this manner is a smart choice since it upholds the cell structure closer to the interface where most of the cell distortion appears. 
 
+\begin{comment}
 \subsection{Linear elastic extension}
 Since the fluid domain acts as structure we can use a linear elastic equation to lift the deformations from the solid into the fluid domain. The linear elastic equation is best known from computing solid problems \cite{Wick2011a}.  The model is as follows:
 
@@ -120,6 +132,8 @@ Since the fluid domain acts as structure we can use a linear elastic equation to
 \sigma_{mesh} &= \alpha_\lambda (tr\epsilon)I + 2\alpha_\mu \epsilon 
 \end{align}
 where $\epsilon = \frac{1}{2}(\nabla d + (\nabla d)^T)$. $\epsilon$ is the linearized version of the strain tensor \eqref{eq:StrainTensor}. The parameters $\alpha_\lambda$ and $\alpha_\mu$ are chosen to uphold domain quality. This is done by computing the parameters $\alpha_\lambda$ and $\alpha_\mu$ from Youngs modulus and poisson ration. 
+
+\end{comment}
 
 \subsection{Biharmonic extension} 
 The last extension is the biharmonic extension. The biharmonic extension provides more freedom than the harmonic and linear elastic in choosing boundary conditions and choice of parameter $\alpha_u > 0$. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations, even with $\alpha_u$ as a constant. In its simplest form it is written as:
@@ -131,17 +145,18 @@ The last extension is the biharmonic extension. The biharmonic extension provide
 The biharmonic extension is calculated with a mixed formulation where we introduce a new function $\omega$ (not to be confused with the deformation velocity), this function is added to the system so that we solve for 4 functions:
 
 \begin{equation}
-\omega = \alpha_u \nabla^2 d \hspace{4mm} and \hspace{4mm} - \alpha_u \nabla^2 \omega = 0 \hspace{2mm}   in \hspace{2mm} \hat{\mathcal{F}}
+\omega = \alpha_u \nabla^2 \bold{d} \hspace{4mm} and \hspace{4mm} - \alpha_u \nabla^2 \omega = 0 \hspace{2mm}   in \hspace{2mm} \hat{\mathcal{F}}
 \end{equation}
 with the two types of boundary conditions. The first being:
-\begin{equation}
-d = \partial_n d = 0 \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}} \hspace{2mm} \textbackslash \hspace{2mm} \hat{\Sigma}
-\end{equation}
-
-The second imposes conditions on the function $\omega$, and are written in terms of single component functions $d^{(1)},d^{(2)}$ and $\omega^{(1)}, \omega^{(2)}$	
 \begin{align}
-d^{(1)} =& \partial_n d^{(1)} = 0 , and \hspace{4mm}   \omega^{(1)} = \partial_n \omega^{(1)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{in,out} \\
-d^{(2)} =& \partial_n d^{(2)} = 0 , and \hspace{4mm}   \omega^{(2)} = \partial_n \omega^{(2)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{walls} \\
+\bold{d} = \partial_n \bold{d} =& 0 \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}} \hspace{2mm} \textbackslash \hspace{2mm} \hat{\Sigma}\\
+\bold{d}_f =& \bold{d}_s \hspace{4mm } on \hspace{2mm } \hat{\Sigma} 
+\end{align}
+
+The second imposes conditions on $\bold{d}$ and $\omega$, and are written in terms of single component functions $d^{(1)},d^{(2)}$ and $\omega^{(1)}, \omega^{(2)}$	
+\begin{align}
+\bold{d}^{(1)} =& \partial_n d^{(1)} = 0 , and \hspace{4mm}   \omega^{(1)} = \partial_n \omega^{(1)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{in,out} \\
+\bold{d}^{(2)} =& \partial_n d^{(2)} = 0 , and \hspace{4mm}   \omega^{(2)} = \partial_n \omega^{(2)} = 0    \hspace{4mm} on \hspace{2mm} \partial \hat{\mathcal{F}}_{walls} \\
 \end{align}
 
 Since the biharmonic extension is of fourth order character it will have a higher computational cost \cite{Richter2016} than the harmonic or linear elastic. 
@@ -167,10 +182,7 @@ The fluid and solid velocities are usually in different coordinate systems, the 
 \item \textit{Geometrical condition}: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
 \end{itemize}
 
-\section{Monolithic FSI Problem}
-As stated in the introduction there are generally two types of schemes used when simulating FSI. The first is the partitioned approach where fluid and structure are solved sequentially.  This approach is appealing in that we have a wealth of knowledge and techniques on how to solve each of these kinds of problems in an efficient manner. The difficulty however is dealing with the interface. As we know there are kinematic and dynamic conditions needed in FSI, and the coupling of these conditions is where the problems arise. So called explicit coupled schemes are known to be unconditionally unstable for standard Dirichlet-Neumann strategies when there is a large amount of added-mass in the system \cite{Fernandez2015}, \cite{VanBrummelen2009}. There are however, schemes which offer added-mass free stability with explicit coupling, where the interface is treated through a Robin-Neumann coupling. First for a coupling with a thin walled structure \cite{Fernandez2013} and later with an extension to thick wall \cite{Fernandez2015}. These schemes are rather complex and uses a number of techniques that are out of the scope of this thesis. ( This may be in more detail in a later chapter (discussion and further work.) ) \newline
 
-The other approach is  called monolithic. In the monolithic approach all of the equations are solved at once. This approach has the advantage of offering numerical stability for problems with strong added-mass effects \cite{Liu2014}, and are fully coupled. The disadvantage over the partitioned approach is that we loose flexibility when solving many equations simultaneously, and the problems can quickly become large and computationally costly. \newline
 
 \begin{comment}
 We start by stating the entire FSI ALE problem in a monolithic framework using the mapped approach: 

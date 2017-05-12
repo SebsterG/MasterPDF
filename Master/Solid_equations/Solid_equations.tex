@@ -3,12 +3,12 @@
 \begin{center}
 \includegraphics[scale=0.4]{continuum_mapping.png}
 \end{center}
-Let $ \hat{\mathcal{S}}$, $\mathcal{S}$, $\mathcal{S}(t)$ be the initial stress free configuration of a given body, the reference and  as the current configuration respectively.
+Let $ \hat{\mathcal{S}}$, $\mathcal{S}$, $\mathcal{S}(t)$ be the initial stress free configuration of a given body, the reference and the current configuration respectively.
 I define a smooth mapping from the reference configuration to the current configuration:
 \begin{equation}
 \chi^s(\textbf{X},t) : \hat{\mathcal{S}} \rightarrow \mathcal{S}(t)     
 \end{equation}
-Where $\textbf{X}$ denotes a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration to the current configuration. Let $d^s(\textbf{X},t)$ denote the displacement field which describes deformation on a body. The mapping $\chi^s$ can then be specified from its current position plus the displacement from that position:
+Where $\textbf{X}$ denotes a material point in the reference domain and $\chi^s$ denotes the mapping from the reference configuration to the current configuration. Let $d^s(\textbf{X},t)$ denote the displacement field which describes deformation on a body. The mapping $\chi^s$ can then be specified from a current position plus the displacement from that position:
 \begin{equation} \label{eq:chi}
  \chi^s(\textbf{X},t) = \textbf{X}  + d^s(\textbf{X} ,t) 
 \end{equation}
@@ -23,15 +23,15 @@ Let w(\textbf{X},t) be the domain velocity which is the partial time derivative 
 \end{equation}
 
 \subsection{Deformation gradient}
-To describe the rate at which a body undergoes deformation I will need to define a deformation gradient.
+The deformation gradient describes the rate at which a bode undergoes deformation.
 Let $d(\textbf{X},t)$ be a differentiable deformation field in a given body, the deformation gradient is then:  
 \begin{equation}
 \label{eq:deformation_gradient}
-F = \frac{\partial \chi^s(\textbf{x},t)}{\partial \textbf{X}} = \frac{\partial \textbf{X}  + d^s(\textbf{X} ,t) }{\partial \textbf{X}} =  I + \nabla d(\textbf{X},t) 
+F = \frac{\partial \chi^s(\textbf{X},t)}{\partial \textbf{X}} = \frac{\partial \textbf{X}  + d^s(\textbf{X} ,t) }{\partial \textbf{X}} =  I + \nabla d(\textbf{X},t) 
 \end{equation}
 which denotes relative change of position under deformation in a Lagrangian frame of reference. We can observe that when there is no deformation. The deformation gradient $F$ is simply the identity matrix. \newline
 
-We also need a way to change between volumes, from the reference ($\int dv$) to current ($\int dV$) configuration. This is defined with the Jacobian determinant, which is the determinant of the of the deformation gradient F:
+Let the Jacobian determinant, which is the determinant of the of the deformation gradient F, be defined as:
 \begin{equation}\label{eq:J}
 J = \text{det}(F)
 \end{equation}
@@ -50,9 +50,15 @@ which holds for an arbitrary line element in different configurations. This will
 \end{comment}
 
 \subsection{Strain}
-The relative change of location between two particles is called strain. Strain, strain rate and deformation is used to describe the relative motion of particles in a continuum. This is the fundamental quality that causes stress \cite{Richter2016}.
+\begin{figure}[H]
+\includegraphics[scale=0.40]{./Solid_equations/Strain.png}
+\caption{Deformation of a line element with length $d\epsilon$ into a line element with length $\lambda d \epsilon$}
+\end{figure}
 
-If we observe two neighboring points \textbf{X} and \textbf{Y}. I can describe \textbf{Y} with:
+
+Strain is the relative change of location between two particles. Strain, strain rate and deformation is used to describe the relative motion of particles in a continuum. This is the fundamental quality that causes stress \cite{Richter2016}.
+
+Observing two neighboring points \textbf{X} and \textbf{Y}. Let \textbf{Y} be described by:
 \begin{equation}
 \textbf{Y} = \textbf{Y} + \textbf{X} - \textbf{X} = \textbf{X} + |\textbf{Y} - \textbf{X}| \frac{\textbf{Y} - \textbf{X}}{|\textbf{Y} - \textbf{X}|} = \textbf{X} + d\textbf{X}
 \end{equation}
@@ -77,7 +83,7 @@ A certain motion transform the points $\textbf{Y}$ and $\textbf{X}$ into the dis
 
 where $\mathcal{O} (\textbf{Y}-\textbf{X})$ refers to the small error that tends to zero faster than $(\textbf{X} - \textbf{Y}) \rightarrow \mathcal{O}$. \newline
 
-If I set $\textbf{x} = \chi^s(\textbf{X},t)$  It follows that:
+Setting $\textbf{x} = \chi^s(\textbf{X},t)$  It follows that:
 \begin{align}
 \textbf{y} - \textbf{x} =&  d\epsilon F \textbf{a}_0 + \mathcal{O}(\textbf{Y}-\textbf{X}) \\
 =& F(\textbf{Y} - \textbf{X}) + \mathcal{O}(\textbf{Y}-\textbf{X}) 
@@ -88,7 +94,7 @@ Let the $\textbf{stretch vector}$ be $\lambda_{\textbf{a}0}$, which goes in the 
 \lambda_{\textbf{a}0}(\textbf{X},t) = F(\textbf{X},t)\textbf{a}_0 
 \end{equation}
 
-If we look at the square of $\lambda$:
+Looking at the square of $\lambda$:
 \begin{align}
 \lambda^2 &=  \lambda_{\textbf{a}0} \lambda_{\textbf{a}0} = F(\textbf{X},t)\textbf{a}_0 F(\textbf{X},t)\textbf{a}_0 \\
 &= \textbf{a}_0 F^TF\textbf{a}_0 = \textbf{a}_0 C \textbf{a}_0
@@ -98,21 +104,22 @@ We have not introduced the important right Cauchy-Green tensor:
  \begin{equation}
  C = F^TF
 \end{equation}
-Since $\textbf{a}_0 $ is just a unit vector, we see that this measures the squared length of change under deformation. We see that in order to determine the stretch one needs only the direction of $\textbf{a}_0$ and the tensor C.
+Since $\textbf{a}_0 $ is just a unit vector, we see that C measures the squared length of change under deformation. We see that in order to determine the stretch one needs only the direction of $\textbf{a}_0$ and the tensor C.
 C is also symmetric and positive definite $C = C^T$.  I also introduce the Green-Lagrangian strain tensor E:
 \begin{equation}\label{eq:StrainTensor}
 E = \frac{1}{2}(F^TF -I) 
 \end{equation}
-which is also symmetric since C and I are symmetric. 
+which is also symmetric since C and I are symmetric. The Green-Lagrangian strain tensor E has the advantage of having no contributions when there is no deformations. Where the Cauchy-Green tensor gives the identity matrix for zero deformation.
 		
 \subsection{Stress}
-While strain, deformation and strain rate only describe the relative motion of particles in a given volume. Stress give us the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. The unit of stress is force per area.
+While strain, deformation and strain rate only describe the relative motion of particles in a given volume, stress give us the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. The unit of stress is force per area.
 
-I introduce the Cauchy stress tensor $\sigma_s$ by the constitutive law of St. Venant-Kirchhoff hyperelastic material model:
-\begin{equation}
- \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
-\end{equation}
-If we use this tensor on an area that is taking the stress tensor times the normal vector $\sigma_s \bold{n}$ we get the forces acting on that area.
+
+that completely define the state of stress at a point inside a material in the deformed state, placement, or configuration. The tensor relates a unit-length direction vector n to the stress vector T(n) across an imaginary surface perpendicular to n:
+
+
+Introducing the Cauchy stress tensor $\sigma_s$, which define the state of stress inside a material. The version of Cauchy stress tensor is defined by the material model used. 
+If we use this tensor on an area, taking the stress tensor times the normal vector $\sigma_s \bold{n}$ we get the forces acting on that area.
 
 Using the deformation gradient and the Jacobian determinant., I get the first Piola-Kirchhoff stress tensor P:
 \begin{equation}
@@ -120,7 +127,7 @@ Using the deformation gradient and the Jacobian determinant., I get the first Pi
 \end{equation}
 This is known as the \textit{Piola Transformation} and maps the tensor into a Lagrangian formulation which will be used when stating the solid equation.
 
-I also introduce the second Piola-Kirchhoff stress tensor S:
+Introducing the second Piola-Kirchhoff stress tensor S:
 \begin{equation}
 S = J F^{-1}\sigma F^{-T} = F^{-1} P = S^T 
 \end{equation}
@@ -130,11 +137,17 @@ P = FS
 \end{equation}
 
 \section{Solid equation}
+
+
 The solid equation describes the motion of a solid. It is derived from the principles of conservation of mass and momentum. Stated in the Lagrangian reference system \cite{Richter2016}:
 \begin{equation}\label{eq:Solid}
-\rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f 
+\rho_s \frac{\partial d^2}{\partial t^2} = \nabla \cdot ( P ) + \rho_s f  \hspace{4mm} in \hspace{2mm} \mathcal{S}
 \end{equation}
-written in terms of the deformation $d$, where I used the first Piola-Kirchhoff stress tensor. $f$ is a force acting on the solid body. Considering the material law from the previous section. The stresses depend on the strain which again depends of the displacements $d$. The solid equation will be finalized by stating the different boundary conditions needed to solve a solid problem.
+written in terms of the deformation $d$. Where I used the first Piola-Kirchhoff stress tensor defined from the cauchy by the constitutive law of St. Venant-Kirchhoff hyperelastic material model: 
+\begin{equation}
+ \sigma_s = \frac{1}{J} F(\lambda_s (tr E)I + 2\mu_sE) F^T
+\end{equation}
+$f$ is a force acting on the solid body. The stresses depend on the strain which again depends of the displacements $d$. The solid equation will be finalized by stating the different boundary conditions needed to solve a solid problem.
 \subsection{Solid Boundary Conditions}
 The solid moves within the boundary of $ \partial \mathcal{S}$.  On the Dirichlet boundary $ \partial \mathcal{S}_D$ we impose a given value. These can be initial conditions or set to a value set to a designated spot on the domain. These initial conditions are defined for $d$ and $w$:
 \begin{align}
@@ -142,7 +155,7 @@ d =& d_0 \text{ on   } \partial \mathcal{S}_D  \\
 w(\textbf{X},t)_0 =& \frac{\partial d(t=0)}{\partial t} \text{   on   } \partial \mathcal{S}_D   
 \end{align}
 
-The forces on the boundaries need to equal an eventual external force $ \bold{f}$. These are are enforced on the Neumann boundaries:
+The forces on the boundaries need to equal an eventual external force $ f$. These are are enforced on the Neumann boundaries:
 $$ P\cdot \bold{n} = f \text{   on   } \partial \mathcal{S}_N    $$
 
 \begin{comment}
