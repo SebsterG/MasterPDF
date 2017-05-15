@@ -1,25 +1,26 @@
 \subsection{MMS of the Solid equation }
-The first MMS is with the solid problem alone. Here I test the solid equation with the condition $u = \frac{\partial d}{\partial t}$.\newline
+The first MMS is with the solid problem alone. Here I test the solid equation with the condition $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
 
-MMS of the solid equation is done using the manufactured solutions $d_e$ and $u_e$: 
+MMS of the solid equation is done using the manufactured solutions $\hat{\bold{d}}$ and $\hat{\bold{u}}$: 
 \begin{align*}
-d_e =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u_e =& ( cos(y)cos(t), cos(x)cos(t) )
+\hat{\bold{d_e}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+\hat{\bold{u_e}} =& ( cos(y)cos(t), cos(x)cos(t) )
 \end{align*}
 To meet the requirements of MMS such as smoothness and complexity, i chose functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
 \newline
 
 These solutions are used to make a sourceterm $f_s$:
-$$\rho_s \frac{\partial u_e}{\partial t} - \nabla \cdot ( P(d_e) ) = f_s $$
+$$\rho_s \frac{\partial \hat{\bold{u}}}{\partial t} - \nabla \cdot ( P(\hat{\bold{d}}) ) = f_s $$
 The solid variational formulation is written as:
 \begin{align}
-\big(\rho_s \frac{\partial u}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
-\big( u- \frac{\partial d}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
+\big(\rho_s \frac{\partial \bold{u}}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
+\big( \bold{u}- \frac{\partial \bold{d}}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
 \end{align}
 
 These equations are solved together and we solve for $d$ and $u$ on a unit square domain. The number N denotes the number of spatial points in x and y direction. The functions u and d will be computed to match the source term. 
+The computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
 
-Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $u = \frac{\partial d}{\partial t}$.\newline
+Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
 
 In the tables below we investigate convergence in space and time.
 I start with checking order of convergence in space. Setting m = 1, the expected order of convergence will be 2. 
@@ -58,22 +59,23 @@ N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-
 
 
 \subsection{MMS of Fluid equations with prescribed motion}
-I start by prescribing a motion to $ d$ and $w$ and manufacturing solutions $u_e$ and $p_e$. We set $u_e = w$ to start with:
+I start by prescribing a motion to $ d$ and $w$ and manufacturing solutions $\hat{\bold{u}}$ and $\hat{p}$. Setting $\hat{\bold{u}} = \bold{w}$:
 \begin{align*}
-d =& ( cos(y)sin(t) , cos(x)sin(t) )\\
-u_e = w=& ( cos(y)cos(t), cos(x)cos(t) ) \\
-p_e =& cos(x)cos(t)
+\hat{\bold{d}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
+\hat{\bold{u}} = \hat{\bold{w}}=& ( cos(y)cos(t), cos(x)cos(t) ) \\
+\hat{p} =& cos(x)cos(t)
 \end{align*}
-I make the solutions to uphold the criteria : 
 
-$$ \nabla \cdot u =0  ,\hspace{2mm} \frac{\partial d}{\partial t} = w  $$
+Solutions are made to uphold the criterias : 
+
+$$ \nabla \cdot \bold{u} =0  ,\hspace{2mm} \frac{\partial \bold{d}}{\partial t} = w  $$
 
 I also want to test the mappings so we make the source term $f_f$ without mappings:
 
-$$ \rho_f \frac{\partial u_e}{\partial t}  +  \nabla u_e (u_e - \frac{\partial d}{\partial t})  -  \nabla \cdot \sigma(u_e,p_e)_f  = f_f $$
+$$ \rho_f \frac{\partial \hat{\bold{u}}}{\partial t}  +  \nabla \hat{\bold{u}} (\hat{\bold{u}} - \frac{\partial \hat{\bold{d}}}{\partial t})  -  \nabla \cdot \sigma(\hat{\bold{u}}, \hat{p})_f  = f_f $$
 
 Then we use $f_f$ and map it to the reference configuration and compute:
-$$ \rho_f J \frac{\partial u}{\partial t} + (\nabla u)F^{-1}(u-\frac{\partial d}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f_f$$
+$$ \rho_f J \frac{\partial \bold{u}}{\partial t} + (\nabla \bold{u})F^{-1}(u-\frac{\partial \bold{d}}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f_f$$
 This is in fact the fluid equation in the ALE framework mapped ref.
 
 The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.

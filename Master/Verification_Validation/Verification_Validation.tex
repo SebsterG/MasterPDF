@@ -2,7 +2,7 @@
 When we set out to solve a real world problem with numerical computing, we start by defining the mathematics, we implement the equations numerically and solve the equations on a computer. We use the solutions to extract data that will answer the questions we set out to answer. A problem then immediately arises, is the solution correct? To answer this we need to answer another question, are the equations solved correct numerically, if so is the problem defined correct mathematically, that is in accordance with the governing laws and equations?
 Without answering these questions, being confident that your solutions are correct is difficult \cite{Selin2014}. The goal of this section will hence be to verify and validate the different numerical schemes outlined in the last chapter.  \\
 
-I start with the process of Verification where the fluid and structure parts of the code will be verified. Following will be Validation of the code where I look at a well known benchmark testing the fluid and structure parts individually and as a full FSI problem. After that I investigate the impact of using different time order schemes, and different mesh motion techniques.\newline
+Starting with the process of Verification where the fluid and structure parts of the code will be verified. Following will be Validation of the code where I look at a well known benchmark testing the fluid and structure parts individually and as a full FSI problem. After that I investigate the impact of using different time order schemes, and different mesh motion techniques.\newline
 
 \begin{comment}
 We start with Verification, which is the process of assessing numerical correctness and accuracy of a computed solution. Then comes Validation, which is assessing physical accuracy of the numerical model, a process which is done by comparing numerical simulation with experimental data. In simple terms we check that we are solving the equations right and then that we are solving the right equations. The process of Verification has to always come before Validation. Because there is no need in checking if we are using the right equations if the equations are not solved right. 
@@ -10,23 +10,23 @@ We start with Verification, which is the process of assessing numerical correctn
 
 \section{Verification}
 Verification is the process of determining wether or not the implementation of numerical algorithms in computer code, is done correctly. \cite{Oberkampf2010}. 
-In verification we get evidence that the numerical model derived from mathematics is solved correctly by the computer. The strategy will be to identify, quantify and reduce errors cause by mapping a mathematical model to a computational model. Verification does not address wether or not the computed solutions are in alignment with the real world. It only tells us that our model is computed correctly or not. To verify that we are computing correctly we can compare our computed solution to an exact solution. But the problem is that there are no known exact solution to for instance the Navier-Stokes equations, other than for very simplified problems. \newline
+In verification we get evidence that the numerical model derived from mathematics is solved correctly by the computer. The strategy will be to identify, quantify and reduce errors cause by mapping a mathematical model to a computational model. Verification does not address wether or not the computed solutions are in alignment with the real world. It only tells us that our model is computed correctly or not. To verify that we are computing correctly we can compare our computed solution to an exact solution. But the problem is that there are no known exact solutions to for instance the Navier-Stokes equations, other than for very simplified problems. \newline
 
 In Verification there are multiple classes of test that can be performed, and the most rigorous is the \textit{Method of manufactured solution}(MMS) \cite{Oberkampf2010}. Rather than looking for an exact solution we manufacture one. The idea is to make a solution \textit{a priori},  and use this solution to generate an analytical source term for the governing PDEs and than run the PDE with the source term to get a solution hopefully matching the manufactured one. The manufactured solution does not need to have a physically realistic relation, since the solution deals only with the mathematics. 
 The procedure is as follows \cite{Oberkampf2010}:
 \begin{itemize}
-\item We define a mathematical model on the form $ L(u) = 0$ where $L(u)$ is a differential operator and $u$ is a dependent variable.
-\item Define the analytical form of the manufactured solution $\hat{u}$
-\item Use the model $L(u)$ with $\hat{u}$ inserted to obtain an analytical source term $ f = L(\hat{u}) $
-\item Initial and boundary conditions are enforced from $\hat{u}$
-\item Then use this source term to calculate the solution $u$, $L(u) = f $
+\item We define a mathematical model on the form $ L(\bold{u}) = 0$ where $L(\bold{u})$ is a differential operator and $u$ is a dependent variable.
+\item Define the analytical form of the manufactured solution $\hat{\bold{u}}$
+\item Use the model $L(u)$ with $\hat{\bold{u}}$ inserted to obtain an analytical source term $ f = L(\hat{\bold{u}}) $
+\item Initial and boundary conditions are enforced from $\hat{\bold{u}}$
+\item Then use this source term to calculate the solution $\bold{u}$, $L(\bold{u}) = f $
 \end{itemize}
 
 After the solution has been computed we perform systematic convergence tests \cite{Roache}. The idea behind order of convergence tests is based on the behavior of the error between the manufactured exact solution and the computed solution. 
-If we let $u$ be the numerical solution and $ u_e $ be the exact solution, $|| . ||$ be the $L^2$ norm, we define the error as:
+If we let $\bold{u}$ be the numerical solution and $\hat{\bold{u}}$ be the exact solution, $|| . ||$ be the $L^2$ norm, we define the error as:
 
 \begin{equation}
-E = || u - u_e ||
+E = || \bold{u} - \hat{\bold{u}} ||
 \end{equation}
 
 When we increase the number of spatial points ($ \Delta x, \Delta y$ or $ \Delta z$) or decrease timestep($\Delta t$), we expect the error to get smaller. It is the rate of this error that lets us know wether the solution is converging correctly.
@@ -53,11 +53,11 @@ I begin with verifying the solid part of the code. Then the fluid part of the co
 \newpage
 
 \section{Validation}
-After the code has been verified to see that we are indeed computing in the right fashion. We move on to Validation which is the process of determining if the model gives an accurate representation of the real world within the bounds of the intended use \cite{Selin2014}. A model is made for a specific purpose, its only valid in respect to that purpose \cite{Macal2005}. If the purpose is complex and trying to answer multiple question then the validity need to be determined to each question. The idea is to validate the solver \textsl{brick by brick}. We start with simple testing of each part of the model and build more complexity and eventually test the whole model.\newline
+After the code has been verified to see that we are indeed computing in the right fashion. We move on to Validation which is the process of determining if a model gives an accurate representation of the real world within the bounds of the intended use \cite{Selin2014}. A model is made for a specific purpose, its only valid in respect to that purpose \cite{Macal2005}. If the purpose is complex and trying to answer multiple question then the validity need to be determined to each question. The idea is to validate the solver \textsl{brick by brick}. We start with simple testing of each part of the model and build more complexity and eventually test the whole model.\newline
 
 Three issues have been identified in this process \cite{Selin2014}: Quantifying the accuracy of the model by comparing responses with experimental responses, interpolation of the model to conditions corresponding to the intended use and determining the accuracy of the model for the conditions under which its meant to be used. Well known benchmarks will be used as validation, we will see in this chapter that these tests supply us with a problem setup, initial and boundary conditions, and lastly results that we can compare with. \newline
 
-The process of Validation is also, as I have experienced, a way to figure out at what size timestep and number of spatial points the model can handle to run. As we will see in the chapter all the benchmarks are run with different timesteps and number of cells to see how it reacts. The problem with using benchmarks with known data for comparison is that we do not test the model blindly. It is easier to mold the model to the data we already have. As Oberkampf and Trucano in \cite{Selin2014} puts it ``Knowing the ``correct" answer beforehand is extremely seductive, even to a saint.''. Knowing the limitations of our tests will therefore strengthen our confidence in the model. It really can be an endless process of verifying and validating if one does not clearly now the bounds of sufficient accuracy. 
+The process of Validation is also, as I have experienced, a way to figure out at what size timestep and number of spatial points the model can handle to run. As we will see in the chapter all the benchmarks are run with different timesteps and number of cells to see how it reacts. The problem with using benchmarks with known data for comparison is that we do not test the model blindly. It is easier to mold the model to the data we already have. As Oberkampf and Trucano in \cite{Selin2014} puts it "Knowing the "correct" answer beforehand is extremely seductive, even to a saint.''. Knowing the limitations of our tests will therefore strengthen our confidence in the model. It really can be an endless process of verifying and validating if one does not clearly know the bounds of sufficient accuracy. 
 
 \cite{Selin2014} \\
 In the following we will look at tests for the fluid solvers both alone, testing laminar to turbulent flow, and with solid. We will test the solid solver, and lastly the entire coupled FSI problem. 

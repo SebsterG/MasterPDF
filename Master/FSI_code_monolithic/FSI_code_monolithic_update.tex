@@ -14,8 +14,14 @@
 }
 \end{comment}
 
+
+The FEniCS computing platform
+FEniCS is a popular computing platform for partial differential equations (PDE). FEniCS enables users to quickly translate scientific models into efficient finite element code. With the high-level Python and C++ interfaces to FEniCS, it is easy to get started, but FEniCS offers also powerful capabilities for more experienced programmers. FEniCS runs on a multitude of platforms ranging from laptops to high-performance clusters.
+
 \chapter{FSI Implementation in FEniCS}
-Here we will look at the implementation of the monolithic FSI Code in FENiCS. Not every part of the code will be handled here, but hopefully enough so that someone familiar with FEniCS could in short time implement the scheme.
+This Chapter shows the implementation of the FSI code in FEniCS \cite{FENICS}. FEniCS is platform used to solve partial differential equations. Code is written in python and FEniCS makes it easy to run efficient finite element code. \newline
+
+Not every part of the code will be handled here, but hopefully enough so that someone familiar with FEniCS could in short time implement the scheme.
 
 
 \section{Mesh, mappings and stress tensors}
@@ -68,7 +74,7 @@ def sigma_f_p(p, u):
 \section{Variational form}
 
 The variational form can be written directly into FEniCS. We write all the forms and add them together to make one big form to be calculated in the upcoming timeloop. We start by looking at the fluid variational form
-%\begin{python}[language=Python, basicstyle=\small]
+
 \begin{python}
 J_theta = theta*J_(d_["n"]) + (1 - theta)*J_(d_["n-1"])
 
@@ -95,7 +101,7 @@ inner(J_(d_["n-1"])*grad(v_["n-1"])*inv(F_(d_["n-1"]))*v_["n-1"], psi)*dx_f
 F_fluid_nonlinear -= rho_f*inner(J_(d_["n"])*\
 grad(v_["n"])*inv(F_(d_["n"]))*((d_["n"]-d_["n-1"])/k), psi)*dx_f
 \end{python}
-%\end{python}
+
 where $dx_f$ is the fluid domain. The theta value choses the scheme we want. inv() gives the inverse of the matrix. 
 
 
@@ -113,7 +119,7 @@ Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 The weighed delta is talked about in section \ref{Discretization}
 
 \section{NewtonSolver}
-To solve a non-linear problem we need make a newton solver, taken from [Mikael kompendium]. F is derivated wrt to $dvp$ and is assembled to a matrix. -F is assembled as b and we solve until the residual is smaller than a give tolerance. There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve speed, as we shall see later. Lastly the the mpi line is when the code is running in paralel that we only print out the values for one of the computational nodes.  
+To solve a non-linear problem we need make a newton solver, taken from \cite{White2006} F is derivated wrt to $dvp$ and is assembled to a matrix. -F is assembled as b and we solve until the residual is smaller than a give tolerance. There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve runtime, which is discussed in chapter \ref{runtime}. Lastly the the mpi line is when the code is running in parallel.
 \begin{python}
 def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
                 dvp_, up_sol, dvp_res, rtol, atol, max_it, T, t, **monolithic):
@@ -162,7 +168,6 @@ while t <= T:
     if t >= 2:
         inlet.t = 2;
 
-    ##Reset counters
     atol = 1e-6;rtol = 1e-6; max_it = 100; lmbda = 1.0;
 
     dvp = Newton_manual(F, dvp, bcs, atol, rtol, max_it, lmbda,dvp_res,VVQ)

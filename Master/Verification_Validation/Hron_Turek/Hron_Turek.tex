@@ -1,5 +1,5 @@
 \subsection{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
-The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing robustness and efficiency. 
+The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing the robustness and efficiency of the CFSI model.
 
 
 \subsection*{Problem Defintion}
@@ -9,8 +9,7 @@ The goal of this benchmark is to test the fluid and solid solver first separatel
 \includegraphics[scale=0.4]{./Verification_Validation/Hron_Turek/Domain_drawing.png}
 \end{center}
 
-The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, this is done to induce oscillations to an otherwise laminar flow. 
-This gives a force to the elastic bar. The parameters of the domain are:\\
+The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, this is done to induce oscillations to an otherwise laminar flow. The fluid oscillations gives a force to the elastic bar. The parameters of the domain are:\\
 L = 2.5, H = 0.41, l = 0.35, h = 0.02, A = (0.2, 0.6) \\
 
 \subsubsection*{Boundary conditions}
@@ -31,11 +30,10 @@ When the fluid moves around the circle and bar it exerts a force. These are spli
 $$ (F_d, F_L) = \int_S \sigma_f n dS $$ 
 where S is the part of the circle and bar in contact with the fluid. \\
 We set a point A on the right side of the bar. This point is used to track the deformation in CSM and FSI tests. \\
-In the unsteady time dependent problems the values are represented with a mean , amplitude and frequency:
+In the unsteady time dependent problems the values are represented with a mean and amplitude:
 \begin{align}
 mean =& \frac{1}{2} (max + min) \\
 amplitude =& \frac{1}{2} (max - min)\\
-frequency =& \frac{1}{T}
 \end{align}
 
 In each test the numbers with ref are the values taken from the benchmark paper \cite{Hron2006a}
@@ -43,7 +41,7 @@ In each test the numbers with ref are the values taken from the benchmark paper 
 \subsubsection{Results}
 \subsubsection{CFD test}
 The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
-The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also calculate with the bar and setting $\rho_s$ and $\mu_s$ to a large value. 
+The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also compute as a full FSI problem by setting $\rho_s$ and $\mu_s$ to a large value. 
 
 \begin{figure}[H]
 \caption{Fluid mesh}
@@ -293,24 +291,24 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift \\ \hline
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift & Extrapolation \\ \hline
-2698 & 23563 & $ 15.42 \pm 13.10$ & $1.14 \pm 83.39$ & $157.01 \pm 15.69$ & $ -0.77 \pm 274.36$ & Harmonic \\ \hline
-10792 & 92992 & $ 15.16 \pm 12.94$ & $ 1.20 \pm 82.5 $ & $ 158.26 \pm 16.03$ & $ -0.09 \pm 267.81$ & Harmonic \\ \hline
-\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ & \textbf{ref} \\ \hline
+Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift  \\ \hline
+2698 & 23563 & $ 15.42 \pm 13.10$ & $1.14 \pm 83.39$ & $157.01 \pm 15.69$ & $ -0.77 \pm 274.36$  \\ \hline
+10792 & 92992 & $ 15.16 \pm 12.94$ & $ 1.20 \pm 82.5 $ & $ 158.26 \pm 16.03$ & $ -0.09 \pm 267.81$  \\ \hline
+\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{figure}[H]
-\caption{Deformation at $t =9.20 $sec  using warp by vector in paraview}
 \includegraphics[scale=0.40,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_d_920.png}
+\caption{Deformation at $t =9.20 $sec. The bar is marked with pink colour and deformed using warp by vector in paraview.}
 \end{figure}
 \begin{figure}[H]
-\caption{Velocity at $ t = 9.20 $sec on reference mesh}
 \includegraphics[scale=0.40,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_u_920.png}
+\caption{Fluid velocity at $ t = 9.20 $sec on the reference mesh}
 \end{figure}
 
 \subsubsection*{FSI3}
-\begin{table}[]
+\begin{table}[H]
 \centering
 \caption{FSI3 with $\Delta t = 0.01$}
 \label{my-label}
@@ -327,6 +325,20 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift
 ref. &  & $ ?2.69 \pm 2.53$ & $1.48 \pm 34.38 $ & $ 2.22 \pm 149.78$ & $ 457.3 \pm 22.66$ \\ \hline
 \end{tabular}
 \end{table}
+
+\subsection*{Comment on FSI tests}
+The FSI1 test gives a low fluid velocity and gives very low displacements. FSI1 is therefore not a rigid test for FSI. In fact I experienced in the beginning of making the FSI solver, that even with a wrong implementation i got good FSI1 results. However it is a good test for early checks, because if FSI1 is wrong the rest will definitely not work.  \newline
+
+FSI2 has a Reynolds number of 100 with medium fluid speeds. It does however induce great deformations and is therefore a great FSI test. Using a mesh motion technique that upholds the mesh structure is crucial. The results shown are with the Harmonic extension but I got similar results for biharmonic extension. The FSI2 test could be run with a fairly large time $\Delta t = 0.01 $, since the fluid velocity is not very high. And it can been seen from the results that choosing a time step $\Delta t = 0.001$ did not yield much better results. The Drag was computed to be about a value of 40 less than reported by Hron and Turek. This i believe is because a combination of the way the mesh was constructed, without a good enough boundary layer, and the mapping to a reference configuration. +++ \newline
+
+Lastly the FSI3 test has a Reynolds number of 200 with greater inflow speeds. The run time improvements such as reusing the jacobian did not work with the FSI3 test. The Jacobian needed to be more precise than for FSI2. For this reason a different mesh, with lower number of cells needed to be used in FSI3.  +++
+
+
+
+
+
+
+
 
 
 

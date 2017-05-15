@@ -55,11 +55,21 @@ Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
   strong added-mass effects}.
 \newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
 
+\bibitem{FENICS}
+Anders Logg, Harish Narayanan, Marie Rognes, Johannes Ring, Kristian~B.
+  {\O}lgaard, and Garth~N. Wells.
+\newblock {FEniCS Project}, 2011.
+
 \bibitem{Macal2005}
 Cm~Macal.
 \newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
   Steiger, FB Armstrong, and JA Joines, eds.}
 \newblock {\em Simulation}, pages 1643--1649, 2005.
+
+\bibitem{MM2016}
+Selim MM and Koomullil RP.
+\newblock {Mesh Deformation Approaches – A Survey}.
+\newblock {\em Journal of Physical Mathematics}, 7(2), 2016.
 
 \bibitem{Oberkampf2010}
 William~L. Oberkampf and Christopher~J. Roy.
@@ -114,6 +124,11 @@ E.~H. van Brummelen.
 Frank~M White.
 \newblock {Viscous Fluid Flow Viscous}.
 \newblock {\em New York}, Second:413, 2000.
+
+\bibitem{White2006}
+Frank~M. White.
+\newblock {Chapter 3 - Solutions of the Newtonian viscous-flow equa- tions}.
+\newblock {\em Viscous Fluid Flow}, (5), 2006.
 
 \bibitem{Wick2011}
 Thomas Wick.

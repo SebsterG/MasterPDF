@@ -1,4 +1,4 @@
-\chapter{Runtime improvements}
+\chapter{Runtime improvements}\label{runtime}
 Modeling Fluid Structure Interaction accurately has been difficult not only because of the lack of stable schemes. It is also difficult because of the increase in runtime when modeling both fluid and structure, especially with monolithic schemes. When accuracy is needed in CFSI the number of cells can quickly become large. The strain on computers increases giving increased runtime. 
 
 To solve non-linear FSI problems I use in this these a Newton solver. In the Newton solver we have to assemble the Jacobian of the matrix, assemble the residual and solve for each iteration, until convergence is met. Working on this thesis the issue of runtime was certainly a problem, taking days and weeks for a simulation to finish. 

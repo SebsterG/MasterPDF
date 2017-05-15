@@ -51,26 +51,26 @@ where $ \Psi = \{\phi, \psi, \gamma \} $% \hat{\psi}^\bold{u}_f, \hat{\psi}^\bol
 
 I first introduce the scheme using, for simplicity, the harmonic mesh motion. Let $\bold{u}$ be a global function in the entire domain instead of $\bold{u}_f$ in the fluid and $\bold{u}_s$ in the solid. Same for the test functions. This is done for ease of reading and also for the ease of implementation later.
 
-The full monolithic FSI variational form reads:
+\textbf{The full monolithic FSI variational form reads}:
 \begin{align}
 A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}}  \\
        &+ ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
        &+ (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} \\
        &+ ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}),\gamma )_{\mathcal{\hat{F}}} \\
        \label{eq:condition}
-       &+ \delta\big((\partial_t d , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}}\big) \\ 
+       &+ \delta\big((\partial_t \bold{d} , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}}\big) \\ 
        &+  \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big) 	 		
 \end{align}
 
 The condition \eqref{eq:condition} , is weighted with a $\delta$ value. This is a critical detail for the program (detailed later) to run. The only two places where we use the test function $\psi$ is on this condition and the lifting operator. The weighting says in a weak manner that this condition is important for the overall program. \newline
 
-I will here formulate the \textit{One step-$\theta$ scheme} from \cite{Wick2011}. This $\theta$ scheme has the advantage of easily being changed from the backward (implicit), forward(excplicit) or Crank-Nicholson (implicit) scheme. The backward Euler scheme is of first order and is implicit in that it is using the newest time step appears on both sides of the equation. The Crank-Nicholson is of second order and both the current and previous time step is used. This scheme suffers from instabilities in its normal context, we will therefore look at a \textit{shifted} Crank-Nicholson scheme. 
+I will here formulate the \textit{One step-$\theta$ scheme} from \cite{Wick2011}. This $\theta$ scheme has the advantage of easily being changed from the backward (implicit), forward(excplicit) or Crank-Nicholson (implicit) scheme. The Crank-Nicholson scheme is of second order, but suffers from instabilities in this monolithic scheme \cite{Wick2011}. A remedy for these instabilities is to chose a Crank-Nicholson scheme that is shifted towards the implicit side. How this is done will become evident once the scheme is defined.
 
 We define the variational form by dividing into four categories, this may seem strenuous at first but the need for it will become evident when implementing the $\theta$-scheme. The four divided categories consists of: a time term, implicit, pressure and the rest (stress, convection):
 
 \begin{align}
-A_T(U) &= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\partial_t d) , \phi )_{\mathcal{\hat{F}}} \\
-	    & + (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}} + (\partial_t d , \psi)_{\mathcal{\hat{S}}}  \\
+A_T(U) &= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\partial_t \bold{d}) , \phi )_{\mathcal{\hat{F}}} \\
+	    & + (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}} + (\partial_t \bold{d} , \psi)_{\mathcal{\hat{S}}}  \\
 A_I(U) &= ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}), \gamma)_{\mathcal{\hat{F}}} \\
 A_E(U) &= (J (\nabla u)F^{-1} \bold{u} , \phi )_{\mathcal{\hat{F}}} + ( J \sigma_{f,u} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
 	    & + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\
@@ -85,8 +85,8 @@ Notice that the stress tensors have been split into a velocity and pressure part
 
 For the time group, discretization is done in the following way:
 \begin{align}
-A_T(U^{n,k}) \approx & \frac{1}{k} \big( \rho_f J^{n,\theta} (u^n - u^{n-1}) , \phi  \big)_{\mathcal{\hat{F}}} - \frac{1}{k} \big( \rho_f (\nabla u ) (d^n - d^{n-1}) , \phi \big)_{\mathcal{\hat{F}}} \\
-+ & \frac{1}{k} \big( \rho_s J^{n,\theta} (u^n - u^{n-1}) , \phi  \big)_{\mathcal{\hat{S}}} +  \frac{1}{k} \big(  J^{n,\theta} (d^n - d^{n-1}) , \psi  \big)_{\mathcal{\hat{S}}}
+A_T(U^{n,k}) \approx & \frac{1}{k} \big( \rho_f J^{n,\theta} (\bold{u}^n - \bold{u}^{n-1}) , \phi  \big)_{\mathcal{\hat{F}}} - \frac{1}{k} \big( \rho_f (\nabla u ) (\bold{d}^n - \bold{d}^{n-1}) , \phi \big)_{\mathcal{\hat{F}}} \\
++ & \frac{1}{k} \big( \rho_s  (\bold{u}^n - \bold{u}^{n-1}) , \phi  \big)_{\mathcal{\hat{S}}} +  \frac{1}{k} \big( (\bold{d}^n - \bold{d}^{n-1}) , \psi  \big)_{\mathcal{\hat{S}}}
 \end{align}
 And the Jacobian is written with superscript $\theta$ as:
 
@@ -95,15 +95,14 @@ J^{n, \theta} = \theta J^n + (1-\theta)J^{n-1}
 \end{equation}
 
 We can now introduce the \textit{One step-$\theta$ scheme}: 
-Find $U^n = \{u^n , d^n, p^n \}$
+Find $U^n = \{\bold{u}^n , \bold{d}^n, p^n \}$
 
 \begin{align}
 & A_T(U^{n,k}) + \theta A_E(U^{n}) + A_P(U^{n}) + A_I(U^{n}) = \\
 & - (1-\theta) A_E(U^{n-1}) + \theta \hat{f}^n + (1-\theta) \hat{f}^{n-1}  
 \end{align}
 
-We notice that the scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. $\hat{f}$ is the body forces which will be ignored in this thesis. The shifting toward the implicit side is important for long term stability for certain time step values \cite{Wick2011}. The shifting will be investigated in the next chapter.
-
+We notice that the scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and for the shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. $\hat{f}$ is the body forces which will be ignored in this thesis. The shifting toward the implicit side is important for long term stability for certain time step values \cite{Wick2011}. The shifting will be investigated in the next chapter.
 
 
 
