@@ -18,10 +18,10 @@
 \contentsline {subsubsection}{Spaces}{15}
 \contentsline {subsubsection}{Discretization}{16}
 \contentsline {chapter}{\numberline {4}FSI Implementation in FEniCS}{19}
-\contentsline {section}{\numberline {4.1}Mesh, mappings and stress tensors}{19}
+\contentsline {section}{\numberline {4.1}Mappings}{19}
 \contentsline {section}{\numberline {4.2}Variational form}{20}
-\contentsline {section}{\numberline {4.3}NewtonSolver}{22}
-\contentsline {section}{\numberline {4.4}Timeloop}{23}
+\contentsline {section}{\numberline {4.3}Newtons method}{21}
+\contentsline {section}{\numberline {4.4}Timeloop}{22}
 \contentsline {chapter}{\numberline {5}Verification and Validation in Computational Fluid Structure Interaction. }{25}
 \contentsline {section}{\numberline {5.1}Verification}{26}
 \contentsline {subsection}{\numberline {5.1.1}MMS of the Solid equation }{28}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  15 MAY 2017 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  16 MAY 2017 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1169,65 +1169,7 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 \MFPtextlength=\skip83
 \MFPapollonx=\skip84
 )
-(./Master_Sebben.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `fig:fluid_structure' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+(./Master_Sebben.aux)
 \openout1 = `Master_Sebben.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
@@ -1244,7 +1186,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
 LaTeX Font Info:    ... okay on input line 77.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
 LaTeX Font Info:    ... okay on input line 77.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count183
 \scratchdimen=\dimen217
@@ -1351,14 +1294,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 ]
-(./Master_Sebben.toc [1
-
-])
+(./Master_Sebben.toc)
 \tf@toc=\write6
 \openout6 = `Master_Sebben.toc'.
 
- [2] (./IntroductionToFSI/IntroductionToFSI.tex
+ [1
+
+] [2
+
+] (./IntroductionToFSI/IntroductionToFSI.tex
 Chapter 1.
+
+LaTeX Warning: Citation `Billah1991' on page 1 undefined on input line 7.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
@@ -1391,7 +1339,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
 [1
 
-
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
@@ -1417,12 +1364,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 [3
 
-] (./Solid_equations/Solid_equations.tex) (./Navier-Stokes/Navier-Stokes.tex
+] (./Solid_equations/Solid_equations.tex
+
+LaTeX Warning: Citation `Richter2016' on page 4 undefined on input line 2.
+
+) (./Navier-Stokes/Navier-Stokes.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
 [4]
+
+LaTeX Warning: Citation `White2000' on page 5 undefined on input line 12.
+
+
+LaTeX Warning: Citation `Fefferman2000' on page 5 undefined on input line 12.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
@@ -1447,9 +1405,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
  []
 
 
+LaTeX Warning: Citation `Liu2014' on page 7 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Valkov2015' on page 7 undefined on input line 4.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
+
+
+LaTeX Warning: Reference `eq:Solid' on page 7 undefined on input line 7.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--9
@@ -1464,9 +1431,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--12
  []
 
 
+LaTeX Warning: Citation `Richter2016' on page 8 undefined on input line 13.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
+
+
+LaTeX Warning: Citation `Fernandez2015' on page 8 undefined on input line 15.
+
+
+LaTeX Warning: Citation `VanBrummelen2009' on page 8 undefined on input line 15
+.
+
+
+LaTeX Warning: Citation `Fernandez2013' on page 8 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Fernandez2015' on page 8 undefined on input line 15.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -1474,9 +1457,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
  []
 
 [8]
+
+LaTeX Warning: Citation `Liu2014' on page 9 undefined on input line 17.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
+
+
+LaTeX Warning: Citation `Richter2016' on page 9 undefined on input line 19.
 
 <./FSI_ALE_formulation/FSI_mapping.png, id=70, 1013.7875pt x 360.34625pt>
 File: ./FSI_ALE_formulation/FSI_mapping.png Graphic file (type png)
@@ -1490,35 +1480,84 @@ Overfull \hbox (66.20016pt too wide) in paragraph at lines 24--25
 [][] 
  []
 
+
+LaTeX Warning: Reference `eq:deformation_gradient' on page 9 undefined on input
+ line 28.
+
+
+LaTeX Warning: Reference `eq:J' on page 9 undefined on input line 28.
+
 [9 <./FSI_ALE_formulation/FSI_mapping.png>]
+
+LaTeX Warning: Citation `Wick2011' on page 10 undefined on input line 48.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 [10]
+
+LaTeX Warning: Reference `eq:Solid' on page 11 undefined on input line 72.
+
+
+LaTeX Warning: Reference `eq:NS' on page 11 undefined on input line 80.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
+
+LaTeX Warning: Reference `eq:NS' on page 12 undefined on input line 96.
+
+
 Overfull \hbox (6.25871pt too wide) in paragraph at lines 104--104
  |[]\T1/cmr/bx/n/17.28 Lifting op-er-a-tors for up-hold-ing mesh qual-
  []
+
+
+LaTeX Warning: Citation `Wick2011a' on page 12 undefined on input line 106.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 105--108
 
  []
 
-[12] [13]
+
+LaTeX Warning: Reference `sec:mesh_motion' on page 12 undefined on input line 1
+09.
+
+[12]
+
+LaTeX Warning: Citation `Wick2011a' on page 13 undefined on input line 120.
+
+
+LaTeX Warning: Citation `Stein2003' on page 13 undefined on input line 120.
+
+
+LaTeX Warning: Citation `MM2016' on page 13 undefined on input line 120.
+
+[13]
 
 LaTeX Warning: Command \textbackslash invalid in math mode on input line 156.
 
 
 LaTeX Warning: Command \textbackslash invalid in math mode on input line 156.
+
+
+LaTeX Warning: Citation `Richter2016' on page 14 undefined on input line 164.
+
+
+LaTeX Warning: Reference `pic:FSI_mapping' on page 14 undefined on input line 1
+68.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
+
+
+LaTeX Warning: Citation `Richter2016' on page 14 undefined on input line 172.
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
 
@@ -1533,31 +1572,70 @@ Overfull \hbox (35.49678pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Discretization of mono-lithic FSI equa-tions| 
  []
 
+
+LaTeX Warning: Citation `Wick2011' on page 15 undefined on input line 3.
+
 [15] [16]
+
+LaTeX Warning: Reference `eq:condition' on page 17 undefined on input line 65.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[17])) (./FSI_code_monolithic/FSI_code_monolithic_update.tex [18]
+
+LaTeX Warning: Citation `Wick2011' on page 17 undefined on input line 67.
+
+
+LaTeX Warning: Citation `Wick2011' on page 17 undefined on input line 67.
+
+[17]
+
+LaTeX Warning: Citation `Wick2011' on page 18 undefined on input line 105.
+
+)) (./FSI_code_monolithic/FSI_code_monolithic_update.tex [18]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+LaTeX Warning: Citation `FENICS' on page 19 undefined on input line 19.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
-) [19
+)
+
+Package Listings Warning: Text dropped after begin of listing on input line 27.
+
+
+[19
 
 ]
-[20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-[22]) (./Verification_Validation/Verification_Validation.tex [23] [24
+Package Listings Warning: Text dropped after begin of listing on input line 40.
+
+
+[20]
+
+LaTeX Warning: Reference `Discretization' on page 21 undefined on input line 96
+.
+
+
+LaTeX Warning: Citation `White2006' on page 21 undefined on input line 99.
+
+
+LaTeX Warning: Reference `runtime' on page 21 undefined on input line 99.
+
+[21] [22]) (./Verification_Validation/Verification_Validation.tex [23] [24
 
 ]
 Chapter 5.
+
+LaTeX Warning: Citation `Selin2014' on page 25 undefined on input line 3.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
@@ -1569,6 +1647,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 
+LaTeX Warning: Citation `Oberkampf2010' on page 25 undefined on input line 12.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
@@ -1578,17 +1659,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
 
+LaTeX Warning: Citation `Oberkampf2010' on page 26 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Oberkampf2010' on page 26 undefined on input line 16.
+
+
 LaTeX Warning: Citation `Roache' on page 26 undefined on input line 25.
 
 [26]
+
+LaTeX Warning: Reference `eq:Error' on page 27 undefined on input line 40.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
 
+LaTeX Warning: Citation `Roache2002' on page 27 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Oberkampf2010' on page 27 undefined on input line 48.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
+
+
+LaTeX Warning: Citation `Etienne2012' on page 27 undefined on input line 50.
+
+
+LaTeX Warning: Citation `Etienne2006' on page 27 undefined on input line 50.
 
 (./Verification_Validation/MMS_FSI/MMS_FSI.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
@@ -1614,16 +1717,36 @@ Overfull \hbox (2.78653pt too wide) in paragraph at lines 32--41
  []
 
 [28] [29]) [30]
+
+LaTeX Warning: Citation `Selin2014' on page 31 undefined on input line 56.
+
+
+LaTeX Warning: Citation `Macal2005' on page 31 undefined on input line 56.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
+
+
+LaTeX Warning: Citation `Selin2014' on page 31 undefined on input line 58.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
+
+LaTeX Warning: Citation `Selin2014' on page 31 undefined on input line 60.
+
+
+LaTeX Warning: Citation `Selin2014' on page 31 undefined on input line 62.
+
 (./Verification_Validation/Hron_Turek/Hron_Turek.tex
+
+LaTeX Warning: Citation `Hron2006a' on page 31 undefined on input line 2.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
@@ -1649,6 +1772,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
+
+
+LaTeX Warning: Citation `Hron2006a' on page 33 undefined on input line 39.
 
 [33]
 <./Verification_Validation/Hron_Turek/fluid.png, id=160, 919.435pt x 380.42125p
@@ -1728,6 +1854,17 @@ sed on input line 205.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
+
+LaTeX Warning: Reference `CSM3_plots' on page 37 undefined on input line 211.
+
+
+LaTeX Warning: Reference `fig:fluid_structure' on page 37 undefined on input li
+ne 214.
+
+
+LaTeX Warning: Citation `Richter2013' on page 37 undefined on input line 214.
+
+
 <./Verification_Validation/Hron_Turek/fluid_structure.png, id=180, 919.435pt x 
 380.42125pt>
 File: ./Verification_Validation/Hron_Turek/fluid_structure.png Graphic file (ty
@@ -1802,6 +1939,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
 [40 <./Verification_Validation/Hron_Turek/FSI2_u_920.png (PNG copy)>])
 (./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex
+
+LaTeX Warning: Reference `sec:meshmotion' on page 41 undefined on input line 2.
+
+
+
+LaTeX Warning: Reference `sec:HronTurek' on page 41 undefined on input line 3.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
@@ -1859,6 +2004,15 @@ c2.png used on input line 41.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42 <./Verification_Validation/Mesh_motion_results/CSM1.png>]
+
+LaTeX Warning: Reference `fig:fluid_structure' on page 43 undefined on input li
+ne 64.
+
+
+LaTeX Warning: Reference `fig:CSM1_pictures' on page 43 undefined on input line
+ 65.
+
+
 <./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png, id=221, 58
 6.8324pt x 442.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png Graphi
@@ -1924,8 +2078,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [43 <./Verification_Validation/Mesh_motion_results/CSM1_laplace.png (PNG copy)
 > <./Verification_Validation/Mesh_motion_results/CSM1_constant.png (PNG copy)> 
 <./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png (PNG copy)> <./Ve
-rification_Validation/Mesh_motion_results/CSM1_bibc2.png (PNG copy)>])
-(./Verification_Validation/Temporal_stability/Temporal_stability.tex
+rification_Validation/Mesh_motion_results/CSM1_bibc2.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:FSI2_motion' on page 44 undefined on input line 9
+5.
+
+) (./Verification_Validation/Temporal_stability/Temporal_stability.tex
 Underfull \vbox (badness 4479) has occurred while \output is active []
 
  [44 <./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png> <./Ve
@@ -1992,6 +2150,10 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 27--28
  []
 
 
+LaTeX Warning: Reference `fig:FSI2drag_plots' on page 45 undefined on input lin
+e 34.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
@@ -1999,19 +2161,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 [45 <./Verification_Validation/Temporal_stability/FSI2_001_051_big.png> <./Veri
 fication_Validation/Temporal_stability/FSI2_001_050_big.png> <./Verification_Va
 lidation/Temporal_stability/FSI2_001_051_small.png> <./Verification_Validation/
-Temporal_stability/FSI2_001_050_small.png>])
+Temporal_stability/FSI2_001_050_small.png>]
+
+LaTeX Warning: Citation `Wick2011' on page 46 undefined on input line 36.
+
+)
 Underfull \hbox (badness 10000) in paragraph at lines 38--70
 
  []
 
 ) (./Speedup/Speedup.tex [46]
 Chapter 6.
+
+LaTeX Warning: Citation `Sciences2012' on page 47 undefined on input line 6.
+
+
+LaTeX Warning: Reference `no_opt' on page 47 undefined on input line 9.
+
 [47
 
 ]
+
+LaTeX Warning: Reference `no_opt' on page 48 undefined on input line 25.
+
+
+LaTeX Warning: Reference `no_opt' on page 48 undefined on input line 25.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
+
+
+LaTeX Warning: Reference `jac_reuse' on page 48 undefined on input line 44.
 
 [48]
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
@@ -2021,8 +2203,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49])
-(./Conclusions/Conclusions.tex [50]
+ [49]
+
+LaTeX Warning: Reference `both_tech' on page 50 undefined on input line 85.
+
+) (./Conclusions/Conclusions.tex [50]
 Chapter 7.
 ) (./Appendix/Appendix.tex [51
 
@@ -2051,6 +2236,10 @@ Package pdftex.def Info: ./Solid_equations/Strain.png used on input line 55.
 Underfull \vbox (badness 6592) has occurred while \output is active []
 
  [54]
+
+LaTeX Warning: Citation `Richter2016' on page 55 undefined on input line 60.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
@@ -2067,17 +2256,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 28318 strings out of 493089
- 563813 string characters out of 6134842
- 830577 words of memory out of 5000000
- 31214 multiletter control sequences out of 15000+600000
+ 28289 strings out of 493089
+ 563526 string characters out of 6134842
+ 825342 words of memory out of 5000000
+ 31185 multiletter control sequences out of 15000+600000
  40436 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,101p,10452b,1717s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,101p,10452b,1852s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texm
@@ -2106,7 +2295,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (65 pages, 1803942 bytes).
+Output written on Master_Sebben.pdf (65 pages, 1802266 bytes).
 PDF statistics:
  387 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams
