@@ -9,11 +9,11 @@ The upper, lower and left boundary is set as no slip, that is no velocity in the
 \subsection*{Quantities for comparison}
 The different techniques will be plotted with the minimal value of the Jacobian. The Jacobian determinant of the deformation rate, and \textbf{if the Jacobian is zero anywhere in the domain it means that the cells overlap and can cause singularity in the matrices during assembly.} \newline
 We will also look at the a plot of the deformation in the domain, to visualize how the different mesh motion techniques work. It is possible to see that if get thin triangles in the computational domain then the lifting operator is not good enough.
-\subsubsection*{CSM1}
+\subsubsection*{Different lifting operators with testcase CSM1}
 \begin{figure}[H]
 \label{fig:fluid_structure}
 \includegraphics[scale=0.60, trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Mesh_motion_results/CSM1.png}
-\caption{min J of the CSM1 test}
+\caption{plot of the minimum of J in entire domain, using CSM1 test. $\Delta t = 0.05$}
 \end{figure}
 
 \begin{figure}[H]  \label{fig:CSM1_pictures} 
@@ -68,24 +68,24 @@ While the harmonic named smart meaning an $\alpha_u$ that is greater closer to t
 \subsubsection{FSI2 with Lifting operator}
 
 \begin{figure}[H]  \label{fig:FSI2_motion} 
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.35]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png} 
+    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png} 
     \vspace{4ex}
   \end{minipage}%%
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.35]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png} 
+    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png} 
     \vspace{4ex}
   \end{minipage} 
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.35]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png} 
+    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png} 
     \vspace{4ex}
   \end{minipage}%% 
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.35]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png} 
+    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png} 
     \vspace{4ex}
   \end{minipage} 
 \caption {FSI2 with different lifting operators: Harmonic, Biharmonic bc1 and bc2. $\Delta t = 0.01$}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  18 MAY 2017 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  18 MAY 2017 19:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1396,7 +1396,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 [3
 
-] (./Solid_equations/Solid_equations.tex) (./Navier-Stokes/Navier-Stokes.tex
+] (./Solid_equations/Solid_equations.tex
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 4.
+
+) (./Navier-Stokes/Navier-Stokes.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
@@ -1413,10 +1418,6 @@ LaTeX Warning: Citation `Charlesworth' on page 5 undefined on input line 15.
 Overfull \hbox (28.14272pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Fluid and Struc-ture Bound-ary con-di-tions| 
  []
-
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 11.
 
 [5])) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [6]
 Chapter 3.
@@ -1478,34 +1479,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-Overfull \hbox (6.25871pt too wide) in paragraph at lines 104--104
+Overfull \hbox (6.25871pt too wide) in paragraph at lines 102--102
  |[]\T1/cmr/bx/n/17.28 Lifting op-er-a-tors for up-hold-ing mesh qual-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
  []
 
 [12] [13]
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 156.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 154.
 
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 156.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 154.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--170
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 173.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 173.
  [14]
 (./Discretization/Discretization.tex
 Overfull \hbox (35.49678pt too wide) in paragraph at lines 1--1
@@ -1683,7 +1684,7 @@ Overfull \hbox (18.50156pt too wide) in paragraph at lines 115--116
  []
 
 
-Underfull \vbox (badness 7944) has occurred while \output is active []
+Underfull \vbox (badness 7344) has occurred while \output is active []
 
  [36 <./Verification_Validation/Hron_Turek/structure.png (PNG copy)>]
 <./Verification_Validation//Hron_Turek/dis_x.png, id=175, 578.16pt x 433.62pt>
@@ -1824,14 +1825,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
  []
 
 [42]
-<./Verification_Validation/Mesh_motion_results/CSM1.png, id=221, 578.16pt x 433
-.62pt>
+<./Verification_Validation/Mesh_motion_results/CSM1.png, id=221, 586.8324pt x 4
+42.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1.png Graphic file (type
  png)
  <use ./Verification_Validation/Mesh_motion_results/CSM1.png>
 Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1.png
  used on input line 15.
-(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+(pdftex.def)             Requested size: 352.10216pt x 265.37749pt.
 
 <./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=223, 919.43
 5pt x 380.42125pt>
@@ -1894,9 +1895,9 @@ c file (type png)
 <use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png>
 Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
 01_dis_x.png used on input line 73.
-(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
 
-Overfull \hbox (10.39441pt too wide) in paragraph at lines 73--75
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 73--75
  [][] 
  []
 
@@ -1909,9 +1910,9 @@ c file (type png)
 <use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png>
 Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
 01_dis_y.png used on input line 78.
-(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
 
-Overfull \hbox (10.39441pt too wide) in paragraph at lines 78--80
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 78--80
  [][] 
  []
 
@@ -1924,9 +1925,9 @@ File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png Graphic
 <use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png>
 Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
 01_drag.png used on input line 83.
-(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
 
-Overfull \hbox (10.39441pt too wide) in paragraph at lines 83--85
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 83--85
  [][] 
  []
 
@@ -1939,10 +1940,20 @@ File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png Graphic
 <use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png>
 Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
 01_lift.png used on input line 88.
-(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
 
-Overfull \hbox (10.39441pt too wide) in paragraph at lines 88--90
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 88--90
  [][] 
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 71--91
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 71--91
+[][] 
  []
 
 
@@ -1952,13 +1963,11 @@ Underfull \vbox (badness 1838) has occurred while \output is active []
 > <./Verification_Validation/Mesh_motion_results/CSM1_constant.png (PNG copy)> 
 <./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png (PNG copy)> <./Ve
 rification_Validation/Mesh_motion_results/CSM1_bibc2.png (PNG copy)>])
-(./Verification_Validation/Temporal_stability/Temporal_stability.tex
-Underfull \vbox (badness 4479) has occurred while \output is active []
-
- [45 <./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png> <./Ve
-rification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png> <./Verification
-_Validation/Mesh_motion_results/FSI2_dt001_drag.png> <./Verification_Validation
-/Mesh_motion_results/FSI2_dt001_lift.png>]
+(./Verification_Validation/Temporal_stability/Temporal_stability.tex [45 <./Ver
+ification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png> <./Verification_
+Validation/Mesh_motion_results/FSI2_dt001_dis_y.png> <./Verification_Validation
+/Mesh_motion_results/FSI2_dt001_drag.png> <./Verification_Validation/Mesh_motio
+n_results/FSI2_dt001_lift.png>]
 <./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=247, 586
 .8324pt x 433.62pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png Graphic
@@ -2137,7 +2146,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (69 pages, 1805675 bytes).
+Output written on Master_Sebben.pdf (69 pages, 1806826 bytes).
 PDF statistics:
  408 PDF objects out of 1000 (max. 8388607)
  254 compressed objects within 3 object streams

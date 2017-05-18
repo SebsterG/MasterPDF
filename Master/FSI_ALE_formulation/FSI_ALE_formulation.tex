@@ -71,19 +71,17 @@ Let $\Omega \in \hat{\mathcal{S}} \cup \hat{\mathcal{F}} $ be a global domain th
 
 The solid equation will be written in terms of the solid velocity $\bold{u_s}$, in contrast to \ref{eq:Solid} which was written in terms of the deformation.
 We express the solid balance laws in the Lagrangian formulation from the initial configuration:
-
 \begin{equation} \label{eq:solid}
 \rho_s \frac{\partial \bold{u}}{\partial t} = \nabla \cdot (P) + \rho_s f \hspace{4mm}in\hspace{4mm} \hat{\mathcal{S}} 
 \end{equation}
-
 \subsection{Fluid equations}
 In the ALE description the fluid domain is moving, giving the need to redefine the velocity in the convective term in \eqref{eq:NS} to account for the moving domain 
 \begin{equation}
 \bold{u} \cdot \nabla \bold{u} \rightarrow (\bold{u}-\frac{\partial \bold{d}}{\partial t}) \cdot \nabla \bold{u}  
 \end{equation}
-$d$ is the deformation in the fluid domain. We see that the domain velocity $\bold{w}$ is written as $\frac{\partial \bold{d}}{\partial t}$. The actual fluid convection in the ALE approach will be ($\bold{u}-\frac{\partial \bold{d}}{\partial t}) \cdot\nabla \bold{u}$ 
+$\bold{d}$ is the deformation in the fluid domain. The domain velocity $\bold{w}$ is written in terms of the deformation as the partial time derivative $\frac{\partial \bold{d}}{\partial t}$. The actual fluid convection in the ALE approach will be ($\bold{u}-\frac{\partial \bold{d}}{\partial t}) \cdot\nabla \bold{u}$ 
 
-I now show the change in the fluid equations denoted from the initial configuration using the aforementioned mappings:
+The change in the fluid equations denoted from the initial configuration using the aforementioned mappings:
 
 \begin{align}
 \int_{\mathcal{V}(t)} \rho_f \frac{\partial \bold{u}}{\partial t} dx & = \int_{\hat{\mathcal{V}}}  \rho_f J \frac{\partial \bold{u}}{\partial t} dx \\
@@ -102,7 +100,7 @@ I now show the change in the fluid equations denoted from the initial configurat
 \end{align} 
 
 \section{Lifting operators for upholding mesh quality} \label{sec:meshmotion}
-Using the ALE method the solid domain moves into to fluid domain. The deformations from the structure through the interface is extrapolated to the fluid domain using different lifting operators. The lifting operators redistributes the interior node locations to uphold the mesh quality.  
+Using the ALE method the solid domain moves into to fluid domain. The deformations from the structure through the interface are extrapolated to the fluid domain using different lifting operators. The lifting operators redistributes the interior node locations to uphold the mesh quality.  
 The choice of lifting operator is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice will make the mesh overlap and singularities may occur. 
 When extrapolating deformation from the solid to the fluid domain, the fluid domain itself acts as a structure, deforming according to the deformations from the structure domain.\newline
 

@@ -41,13 +41,13 @@ If we assume that the number of spatial points are equal in all directions the e
 \end{equation}
 
 where $ k = m+1 $ and m is the polynomial degree of the spatial elements. The error is hence dependent on the number of spatial points and the timestep.
-If we for instance reduce $\Delta t$ significantly, $\Delta x$ will dominate, and $\Delta t$ will be negligible. If we then look at two error where $E_{n+1}$ has finer mesh than $E_n$, using \eqref{eq:Error}:
+If instance $\Delta t$ is reduced significantly, $\Delta x$ will dominate, and $\Delta t$ will be negligible. If we then look at two error where $E_{n+1}$ has finer mesh than $E_n$, using \eqref{eq:Error}:
 \begin{align}
 \frac{E_{n+1}}{E_n} = \big( \frac{\Delta x_{n+1}}{\Delta x_n} \big)^k \\
 k = \frac{log( \frac{E_{n+1}}{E_n}) }{ log(\frac{\Delta x_{n+1}}{\Delta x_n})}
 \end{align}
 
-We use $k$ to find the observed order of convergence and match with the theoretical order of convergence for each given problem.\newline
+$k$ can is used to find the observed order of convergence and match with the theoretical order of convergence for each given problem.\newline
 
 The manufactured solutions should be chosen to be non-trivial and analytic \cite{Oberkampf2010, Roache2002}. The solutions should be manufactured so that no derivatives vanish. For this reason trigonometric and exponential functions can be a smart choice, since they are smooth and infinitely differentiable. In short, a good manufactured solution is one that is complex enough so that it rigorously tests each part of the equations.\newline 
 

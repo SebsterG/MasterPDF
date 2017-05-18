@@ -3,10 +3,10 @@ To complete the fluid and solid equations, boundary conditions need to be impose
 
 On the Dirichlet boundary, $ \partial \mathcal{F}_D$ and $ \partial \mathcal{S}_D$, we impose a given value. Dirichlet conditions can be initial conditions or set values, such as zero on the fluid boundary for a "no slip" condition. The Dirichlet conditions are defined for $u$ and $p$ :
 \begin{align}
-u =& u_0 \text{   on   } \partial \mathcal{F}_D  \\
+\bold{u} =& u_0 \text{   on   } \partial \mathcal{F}_D  \\
 p =& p_0 \text{   on   } \partial \mathcal{F}_D  \\
-d =& d_0 \text{ on   } \partial \mathcal{S}_D  \\
-w(\textbf{X},t)_0 =& \frac{\partial d(t=0)}{\partial t} \text{   on   } \partial \mathcal{S}_D   
+\bold{d} =& d_0 \text{ on   } \partial \mathcal{S}_D  \\
+\bold{w}(\textbf{X},t)_0 =& \frac{\partial \bold{d}(t=0)}{\partial t} \text{   on   } \partial \mathcal{S}_D   
 \end{align}
 The forces on the boundaries equal an eventual external force $ \bold{f}$. These are are enforced on the Neumann boundaries $\partial \mathcal{F}_N$ and  $\partial \mathcal{S}_N$ :
 \begin{align}
