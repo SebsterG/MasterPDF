@@ -38,11 +38,6 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
 
-\bibitem{Holzapfel2000}
-G~Holzapfel.
-\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
-  2000.
-
 \bibitem{Hron2006a}
 Jaroslav Hron and Stefan Turek.
 \newblock {Proposal for numerical benchmarking of fluid-structure interaction
@@ -119,6 +114,12 @@ E.~H. van Brummelen.
 \newblock {Added Mass Effects of Compressible and Incompressible Flows in
   Fluid-Structure Interaction}.
 \newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
+
+\bibitem{Vinje2016}
+V~Vinje.
+\newblock {Simulating Cerebrospinal Fluid Flow and Spinal Cord Movement
+  Associated with Syringomyelia}.
+\newblock 2016.
 
 \bibitem{White2000}
 Frank~M White.

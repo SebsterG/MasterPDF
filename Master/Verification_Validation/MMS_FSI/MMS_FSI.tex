@@ -1,34 +1,34 @@
-\subsection{MMS of the Solid equation }
-The first MMS is with the solid problem alone. Here I test the solid equation with the condition $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
+\subsection{Method of Manufactured Solution on the implementation of the Solid equation}
+The first MMS is with the solid problem alone. Testing the solid equation \ref{eq:solid} with the condition $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
 
-MMS of the solid equation is done using the manufactured solutions $\hat{\bold{d}}$ and $\hat{\bold{u}}$: 
+Solutions $\hat{\bold{d}}$ and $\hat{\bold{u}}$ are manufactured to meet the requirements of MMS such as smoothness and complexity, choosing functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
+
 \begin{align*}
 \hat{\bold{d_e}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
 \hat{\bold{u_e}} =& ( cos(y)cos(t), cos(x)cos(t) )
 \end{align*}
-To meet the requirements of MMS such as smoothness and complexity, i chose functions with sine and cosine. The derivatives does not become zero and we have time and space dependencies. 
 \newline
 
-These solutions are used to make a sourceterm $f_s$:
+The manufactured solutions are used to make a sourceterm $f_s$:
 $$\rho_s \frac{\partial \hat{\bold{u}}}{\partial t} - \nabla \cdot ( P(\hat{\bold{d}}) ) = f_s $$
-The solid variational formulation is written as:
+The solid variational formulation is written in weak form with test functions $\phi$ and $\psi$ as:
 \begin{align}
 \big(\rho_s \frac{\partial \bold{u}}{\partial t},\phi \big)_{\mathcal{\hat{S}}} + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} &=f_s \\
 \big( \bold{u}- \frac{\partial \bold{d}}{\partial t} ,\psi \big)_{\mathcal{\hat{S}}} &= 0 
 \end{align}
 
 These equations are solved together and we solve for $d$ and $u$ on a unit square domain. The number N denotes the number of spatial points in x and y direction. The functions u and d will be computed to match the source term. 
-The computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
+The computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors were used to calculate the convergence rates.
 
-Even though we have two equations we do not make a source for the second. This is because the solutions are made to uphold criteria of $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
+Even though there are two equations, we do not make a source for the second equation, since the solutions are made to uphold the criteria $\bold{u} = \frac{\partial \bold{d}}{\partial t}$.\newline
 
 In the tables below we investigate convergence in space and time.
-I start with checking order of convergence in space. Setting m = 1, the expected order of convergence will be 2. 
+Starting with checking order of convergence in space, setting m = 1, the expected order of convergence will be 2. 
 
 \begin{table}[H]
 \centering
-\caption{Structure Method of Manufactured of Solution in space in m = 1}
-\label{my-label}
+\caption{Method of Manufactured Solution on the implementation of the Solid equation in space with m = 1}
+\label{tab:MMS_SOLID_SPACE}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 \textbf{N} & $\Delta t$ & \textbf{m} & $E_u $ & $\bold{k_u}$ & $E_d $ & $\bold{k_d}$ \\ \hline
@@ -40,12 +40,12 @@ I start with checking order of convergence in space. Setting m = 1, the expected
 \end{tabular}
 \end{table}
 
-Lastly I check convergence in time. Here i set N = 64 and the timestep is halved for each computation.
+Lastly I check convergence in time. The scheme tested is of first order, with a value of $\theta = 1$, hence a order of convergence of 1 is expected. Here i set N = 64 and the timestep is halved for each computation.
 
 \begin{table}[H]
 \centering
-\caption{Structure Method of Manufactured of Solution in time}
-\label{my-label}
+\caption{Method of Manufactured Solution on the implementation of the Solid equation in time}
+\label{tab:MMS_SOLID_TIME}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-8}]$ & $\bold{k_d}$ \\ \hline
@@ -57,9 +57,14 @@ N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-
 \end{tabular}
 \end{table}
 
+\subsubsection*{Comments on the Solid MMS}
+The table \ref{tab:MMS_SOLID_SPACE} shows a decrease in error with increased number of spatial points. The order of convergence tends toward the expected value of 2, hence increasing our confidence in the implementation of the solid equation.\newline
+
+Table \ref{tab:MMS_SOLID_TIME} shows a order of convergence tending towards 1, which was expected. With order of convergence tests passed for both time and space for the solid equation and the condition $\bold{u} = \frac{\partial \bold{d}}{\partial t}$, the implementation of the solid equation is satisfactory. 
+
 
 \subsection{MMS of Fluid equations with prescribed motion}
-I start by prescribing a motion to $ d$ and $w$ and manufacturing solutions $\hat{\bold{u}}$ and $\hat{p}$. Setting $\hat{\bold{u}} = \bold{w}$:
+Starting by prescribing a motion to $ d$ and $w$ and manufacturing solutions $\hat{\bold{u}}$ and $\hat{p}$. Setting $\hat{\bold{u}} = \bold{w}$:
 \begin{align*}
 \hat{\bold{d}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
 \hat{\bold{u}} = \hat{\bold{w}}=& ( cos(y)cos(t), cos(x)cos(t) ) \\
@@ -68,36 +73,40 @@ I start by prescribing a motion to $ d$ and $w$ and manufacturing solutions $\ha
 
 Solutions are made to uphold the criterias : 
 
-$$ \nabla \cdot \bold{u} =0  ,\hspace{2mm} \frac{\partial \bold{d}}{\partial t} = w  $$
+$$ \nabla \cdot \bold{u} =0  ,\hspace{2mm} \frac{\partial \bold{d}}{\partial t} = \bold{w}  $$
 
-I also want to test the mappings so we make the source term $f_f$ without mappings:
+Whilst testing the implementations of the fluid equations, the opportunity arises to also test the mappings between current and reference configurations.
+The source term $f_f$ is hence made without mappings:
 
 $$ \rho_f \frac{\partial \hat{\bold{u}}}{\partial t}  +  \nabla \hat{\bold{u}} (\hat{\bold{u}} - \frac{\partial \hat{\bold{d}}}{\partial t})  -  \nabla \cdot \sigma(\hat{\bold{u}}, \hat{p})_f  = f_f $$
 
-Then we use $f_f$ and map it to the reference configuration and compute:
-$$ \rho_f J \frac{\partial \bold{u}}{\partial t} + (\nabla \bold{u})F^{-1}(u-\frac{\partial \bold{d}}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f_f$$
-This is in fact the fluid equation in the ALE framework mapped ref.
+Then $f_f$ is used and mapped to the reference configuration and computed:
+$$ \rho_f J \frac{\partial \bold{u}}{\partial t} + (\nabla \bold{u})F^{-1}(\bold{u}-\frac{\partial \bold{d}}{\partial t})  + \nabla \cdot( J \hat{\sigma_f} F^{-T}) = J f_f$$
 
-The computations are done on a unitsquare domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
+The computations are done on a unit square domain and the computations ran with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used to calculate the convergence rates.
+
+The scheme tested for convergence time is of first order, with a value of $\theta = 1$, hence a order of convergence of 1 is expected. Here i set N = 64 and the timestep is halved for each computation.
 
 \begin{table}[H]
 \centering
 \caption{MMS ALE FSI u=w}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|}
+\label{tab:MMS_Flu?id_time}
+\begin{tabular}{|l|l|l|l|l|l|}
 \hline
-\textbf{N} & $\Delta t$ & \textbf{m} & $E_u$ & \textbf{$k_u$} & $E_p$ & \textbf{$k_p$} \\ \hline
-\textbf{64} & 0.1 & \textbf{2} & $5.1548 \times 10^{-5}$ & \textbf{-} & 0.008724 & \textbf{-} \\ \hline
-\textbf{64} & 0.05 & \textbf{2} & $2.5369 \times 10^{-5}$ & \textbf{1.0228} & 0.004290 & \textbf{1.0240} \\ \hline
-\textbf{64} & 0.025 & \textbf{2} & $1.2200 \times 10^{-5}$ & \textbf{1.0561} & 0.002058 & \textbf{1.0596} \\ \hline
-\textbf{64} & 0.0125 & \textbf{2} & $0.56344 \times 10^{-5}$ & \textbf{1.1145} & 0.0009556 & \textbf{1.1068} \\ \hline
+\textbf{N} & $\Delta t$ & $E_u$ & $\bold{k_u}$ & $E_p$ & $\bold{k_p}$ \\ \hline
+\textbf{64} & 0.1 & $5.1548 \times 10^{-5}$ & \textbf{-} & 0.008724 & \textbf{-} \\ \hline
+\textbf{64} & 0.05 & $2.5369 \times 10^{-5}$ & \textbf{1.0228} & 0.004290 & \textbf{1.0240} \\ \hline
+\textbf{64} & 0.025 & $1.2200 \times 10^{-5}$ & \textbf{1.0561} & 0.002058 & \textbf{1.0596} \\ \hline
+\textbf{64} & 0.0125 & $0.56344 \times 10^{-5}$ & \textbf{1.1145} & 0.0009556 & \textbf{1.1068} \\ \hline
 \end{tabular}
 \end{table}
 
+In testing the spatial convergence I set $m=2$, hence giving an expected order of convergence in the velocity of 3 and pressure of 2.
+
 \begin{table}[H]
 \centering
 \caption{MMS ALE FSI u=w}
-\label{my-label}
+\label{tab:MMS_Fluid_space}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 \textbf{N}  & $\Delta t$ & \textbf{m} & $E_u$                   & \textbf{$k_u$}  & $E_p$   & \textbf{$k_p$}  \\ \hline
@@ -107,6 +116,9 @@ The computations are done on a unitsquare domain and the computations ran with 1
 \textbf{16} & $1 \times 10^{-6}$ & \textbf{2} & $0.0169 \times 10^{-4}$ & \textbf{3.0001} & 0.00029 & \textbf{2.0074} \\ \hline
 \end{tabular}
 \end{table}
+
+\subsubsection*{Comments on the Solid MMS}
+In table \ref{tab:MMS_Fluid_time} the order of convergence converges as expected towards 1. In \ref{tab:MMS_Fluid_space} the MMS testing convergence in space converges toward 3 for velocity and 2 for pressure as was expected when setting $m=2$. Both results helps in building confidence that the implementation of the mapped fluid equation is correct.
 
 
 

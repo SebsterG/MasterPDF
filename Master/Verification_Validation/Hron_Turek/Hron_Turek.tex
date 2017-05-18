@@ -1,5 +1,5 @@
 \subsection{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
-The goal of this benchmark is to test the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are significant. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid deform the structure. We will measure the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing the robustness and efficiency of the CFSI model.
+The goal of this benchmark is to verify the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are large, in one case the deformations are about 2.5 larger than the height of the elastic object. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid can deform the structure. Measuring the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing the robustness and efficiency of the FSI implementation
 
 
 \subsection*{Problem Defintion}
@@ -9,11 +9,11 @@ The goal of this benchmark is to test the fluid and solid solver first separatel
 \includegraphics[scale=0.4]{./Verification_Validation/Hron_Turek/Domain_drawing.png}
 \end{center}
 
-The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, this is done to induce oscillations to an otherwise laminar flow. The fluid oscillations gives a force to the elastic bar. The parameters of the domain are:\\
+The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 of center from bottom to top, \textbf{this shift in the domain is done to induce oscillations to an otherwise steady flow}. The fluid oscillations gives a force to the elastic bar. The parameters of the domain are:\\
 L = 2.5, H = 0.41, l = 0.35, h = 0.02, A = (0.2, 0.6) \\
 
 \subsubsection*{Boundary conditions}
-The fluid velocity has a parabolic profile on the inlet that changes over time:\\
+A parabolic profile has been prescribed to the velocity that increases over time until a time = 2 has been reached.
 
 \begin{align*}
 u(0,y) &= 1.5u_0 \frac{y(H-y)}{(\frac{H}{2})^2}  \\
@@ -21,7 +21,7 @@ u(0,y,t) &= u(0,y)\frac{1-cos(\frac{\pi}{2}t)}{2} \text{  for  } t<2.0 \\
 u(0,y,t) &= u(0,y) \text{  for  } t \leq 2.0
 \end{align*}
 
-We set no slip on the "floor" and "ceiling" so to speak.\\
+Setting no slip on the "floor" and "ceiling" so to speak.\\
 $$ u(x,y,t) = 0 \text{  on  } \partial \mathcal{F}_{floor and ceiling} $$
 $$  p(x,y,t) = 0 \text{  on  } \partial \mathcal{F}_{outlet} $$
 
@@ -29,19 +29,19 @@ $$  p(x,y,t) = 0 \text{  on  } \partial \mathcal{F}_{outlet} $$
 When the fluid moves around the circle and bar it exerts a force. These are split into drag and lift and calculated as follows:
 $$ (F_d, F_L) = \int_S \sigma_f n dS $$ 
 where S is the part of the circle and bar in contact with the fluid. \\
-We set a point A on the right side of the bar. This point is used to track the deformation in CSM and FSI tests. \\
-In the unsteady time dependent problems the values are represented with a mean and amplitude:
+We set a point $A = (0.2,0.6)$ on the right side of the bar. This point is used to track the deformation. \\
+In the unsteady time dependent problems, the values are represented by mean and amplitude values:
 \begin{align}
 mean =& \frac{1}{2} (max + min) \\
 amplitude =& \frac{1}{2} (max - min)\\
 \end{align}
 
-In each test the numbers with ref are the values taken from the benchmark paper \cite{Hron2006a}
+In each test the numbers with ref are the values taken from the original benchmark paper \cite{Hron2006a}
 
 \subsubsection{Results}
 \subsubsection{CFD test}
-The first two CFD tests are run with Reynolds number 20 and 100 giving steady drag and lift around the circle. CFD 3 has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift.
-The CFD tests were run using the the bar as rigid object, that is the domain calculated is just the fluid domain. It is possible to also compute as a full FSI problem by setting $\rho_s$ and $\mu_s$ to a large value. 
+The first two CFD tests are run with Reynolds numbers 20 and 100 converging to steady solutions of drag and lift around the circle. The CFD 3 problem has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift, hence giving unsteady solutions.
+The CFD tests can be run in two ways. The first way assumes the bar to be rigid object, meaning that the computing domain is just the fluid domain. The other way, which is implemented here, is running the full FSI code and setting $\rho_s=10^{6}$ and $\mu_s=10^{12}$, so that the bar is almost completely rigid, only giving rise to very small deformation (in the $10^{-9}$ range).
 
 \begin{figure}[H]
 \caption{Fluid mesh}
@@ -52,7 +52,7 @@ The CFD tests were run using the the bar as rigid object, that is the domain cal
 
 \begin{table}[H]
 \centering
-\caption{CFD parameters}
+\caption{Summary of all the parameters in CFD tests}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -111,7 +111,7 @@ The CSM test are calculated using only the bar and adding a gravity term $g$ wit
 Our quantity for comparing there will be the deformation at the point $A$. 
 \begin{center}
 \begin{figure}[H]
-\caption{Structure mesh}
+\caption{Picture of the coarsest solid mesh used in the MMS test}
 \includegraphics[scale=0.50,trim={18mm 55mm 18mm 55mm},clip]{./Verification_Validation/Hron_Turek/structure.png}
 \end{figure}
 \end{center}
@@ -120,7 +120,7 @@ Our quantity for comparing there will be the deformation at the point $A$.
 
 \begin{table}[H]
 \centering
-\caption{Parameters}
+\caption{Summary table of the parameters used in the CSM tests}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -137,8 +137,8 @@ $g $ & 2 & 2 & 2 \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{CSM 1}
-\label{my-label}
+\caption{Results of the steady CSM1 case from coarse to fine mesh.}
+\label{tab:CSM1}
 \begin{tabular}{|l|l|l|l|}
 \hline
 elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ \\ \hline
@@ -152,8 +152,8 @@ elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{CSM 2}
-\label{my-label}
+\caption{Results of the steady CSM2 case from coarse to fine mesh.}
+\label{tab:CSM2}
 \begin{tabular}{@{}|l|l|l|l|@{}}
 \hline
 Elements & Dofs & $d_x(A) [\times10^{-3}] $& $d_y(A) [\times10^{-3}] $\\ \hline
@@ -167,8 +167,8 @@ Elements & Dofs & $d_x(A) [\times10^{-3}] $& $d_y(A) [\times10^{-3}] $\\ \hline
 
 \begin{table}[H]
 \centering
-\caption{CSM 3}
-\label{my-label}
+\caption{Results of the unsteady CSM3 case with mesh from coarse to fine.}
+\label{tab:CSM3}
 \begin{tabular}{|l|l|l|l|}
 \hline
 elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ \\ \hline
@@ -180,42 +180,46 @@ elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}[H]  \label{CSM3_plots} 
-  \caption {Displacement of point A, CSM3}
-  \begin{minipage}[b]{0.5\linewidth}
+\begin{figure}[H]  \label{plot:CSM3_plots} 
+\centering
+  \caption {Results for CSM3 showing Displacement of point A}
+  \begin{minipage}[b]{0.60\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation//Hron_Turek/dis_x.png} 
-    \caption{Displacement x} 
+    \includegraphics[width=0.9\linewidth,trim={2mm 2mm 5mm 5mm},clip]{./Verification_Validation//Hron_Turek/dis_x.png} 
+    \caption{Displacement in x direction, timeinterval (0,10)} 
     \vspace{4ex}
   \end{minipage}%%
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.60\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation//Hron_Turek/dis_y.png} 
-    \caption{Discplacement y} 
+    \includegraphics[width=0.9\linewidth,trim={2mm 2mm 5mm 5mm},clip]{./Verification_Validation//Hron_Turek/dis_y.png} 
+    \caption{Displacement in x direction, timeinterval (0,10)} 
     \vspace{4ex}
   \end{minipage} 
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.60\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation//Hron_Turek/dis_x_short.png} 
-    \caption{Displacement x} 
+    \includegraphics[width=0.9\linewidth,trim={2mm 2mm 5mm 5mm},clip]{./Verification_Validation//Hron_Turek/dis_x_short.png} 
+    \caption{Displacement in x direction, timeinterval (8,10)} 
     \vspace{4ex}
   \end{minipage}%% 
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.60\linewidth}
     \centering
-    \includegraphics[width=.75\linewidth]{./Verification_Validation/Hron_Turek/dis_y_short.png} 
-    \caption{Discplacement y} 
+    \includegraphics[width=0.9\linewidth,trim={2mm 2mm 5mm 5mm},clip]{./Verification_Validation/Hron_Turek/dis_y_short.png} 
+    \caption{Displacement in x direction, timeinterval (8,10)} 
     \vspace{4ex}
   \end{minipage} 
 \end{figure}
 
-The plots \ref{CSM3_plots} is a plot of the CSM3 test. This was run with Crank-Nicholson, $\theta = 0.5$ and as we can see the energy has been preserved. 
+\subsubsection*{Discussion of the CSM results}
+The tables \ref{tab:CSM1}, \ref{tab:CSM2} shows the results of the two steady state cases with different bar-stiffness. As the number of spatial points in the domain increases the solutions converge towards the referential value. The CSM3 case shown in table \ref{tab:CSM3} shows the same trend of converging toward referential value when the number of spatial points are increased.
 
-\subsubsection*{FSI test}
-Lastly we run the full FSI problem. Here we can see in \ref{fig:fluid_structure} that now both fluid and structure has a mesh. The tests are run with 2 different inflows. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}. The FSI-3 test has the highest inflow speed giving more rapid oscillations.
+The plot \ref{plot:CSM3_plots} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
+
+\subsubsection*{FSI tests}
+Lastly the full FSI problem ran. Here we can see in \ref{fig:fluid_structure} that now both fluid and structure has a mesh. The tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. Vinje 2016 \cite{Vinje2016} reported not being able to compute FSI-2 model due to shortcomings in the linear elasticity solid model. The FSI-3 test has the highest inflow speed giving medium deformations but more rapid oscillations.
 
 \begin{figure}[H]
 \label{fig:fluid_structure}
-\caption{Fluid and Structure mesh with 2698 Cells}
+\caption{Fluid and Structure computing mesh}
 \includegraphics[scale=0.45, trim={4mm 21mm 2mm 10mm},clip]{./Verification_Validation/Hron_Turek/fluid_structure.png}
 \end{figure}
 

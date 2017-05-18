@@ -1,19 +1,23 @@
-\chapter{Verification and Validation in Computational Fluid Structure Interaction. }
-When we set out to solve a real world problem with numerical computing, we start by defining the mathematics, we implement the equations numerically and solve the equations on a computer. We use the solutions to extract data that will answer the questions we set out to answer. A problem then immediately arises, is the solution correct? To answer this we need to answer another question, are the equations solved correct numerically, if so is the problem defined correct mathematically, that is in accordance with the governing laws and equations?
-Without answering these questions, being confident that your solutions are correct is difficult \cite{Selin2014}. The goal of this section will hence be to verify and validate the different numerical schemes outlined in the last chapter.  \\
+\chapter{Verification and Validation of the Fluid Structure Interaction Implementation.}
+The general approach when solving a real world problem with numerical computing, starts by defining the mathematics, implementing the equations numerically and solve the equations on a computer. 
 
-Starting with the process of Verification where the fluid and structure parts of the code will be verified. Following will be Validation of the code where I look at a well known benchmark testing the fluid and structure parts individually and as a full FSI problem. After that I investigate the impact of using different time order schemes, and different mesh motion techniques.\newline
+The produced solutions are used to extract data of interest. A question then immediately arises, is the solution and the extracted data trustworthy.
+
+To answer this question we need to answer another question, are the equations solved correct numerically, if so is the problem defined correct mathematically.
+Without answering these questions, being confident that your solutions are correct is difficult \cite{Selin2014}. This process of generating evidence that computed solutions meets certain requirements to fulfill an intended purpose, in the context of scientific computing, is known as Verification and Validation. The goal of this section will hence be to verify and validate the different numerical schemes outlined in the two previous chapters.  \\
+
+The chapter starts with the process of Verification where the fluid and structure parts of the code will be verified. Following will be Validation of the code where I implement at a well known benchmark testing the fluid and structure parts individually and as a full FSI problem. After that I investigate the impact of using different time order schemes, and different lifting operator.\newline
 
 \begin{comment}
 We start with Verification, which is the process of assessing numerical correctness and accuracy of a computed solution. Then comes Validation, which is assessing physical accuracy of the numerical model, a process which is done by comparing numerical simulation with experimental data. In simple terms we check that we are solving the equations right and then that we are solving the right equations. The process of Verification has to always come before Validation. Because there is no need in checking if we are using the right equations if the equations are not solved right. 
 \end{comment}
 
 \section{Verification}
-Verification is the process of determining wether or not the implementation of numerical algorithms in computer code, is done correctly. \cite{Oberkampf2010}. 
-In verification we get evidence that the numerical model derived from mathematics is solved correctly by the computer. The strategy will be to identify, quantify and reduce errors cause by mapping a mathematical model to a computational model. Verification does not address wether or not the computed solutions are in alignment with the real world. It only tells us that our model is computed correctly or not. To verify that we are computing correctly we can compare our computed solution to an exact solution. But the problem is that there are no known exact solutions to for instance the Navier-Stokes equations, other than for very simplified problems. \newline
+Verification, in the context of scientific computing, is the process of determining wether or not the implementation of numerical algorithms in computer code, is done correctly. \cite{Oberkampf2010}. 
+In verification, we get evidence that the numerical model derived from mathematics is solved correctly by the computer. The strategy is to identify, quantify and reduce errors cause by mapping a mathematical model to a computational model. Verification does not address wether or not the computed solutions are in alignment with physics in the real world. It only tells us that our model is computed correctly or not. To verify that we are computing correctly we can compare our computed solution to an exact solution. But the problem is that there are no known exact solutions to, for instance, the Navier-Stokes equations, other than for very simplified problems. \newline
 
-In Verification there are multiple classes of test that can be performed, and the most rigorous is the \textit{Method of manufactured solution}(MMS) \cite{Oberkampf2010}. Rather than looking for an exact solution we manufacture one. The idea is to make a solution \textit{a priori},  and use this solution to generate an analytical source term for the governing PDEs and than run the PDE with the source term to get a solution hopefully matching the manufactured one. The manufactured solution does not need to have a physically realistic relation, since the solution deals only with the mathematics. 
-The procedure is as follows \cite{Oberkampf2010}:
+In Verification there are multiple classes of test that can be performed, and the most rigorous is the \textit{Method of Manufactured Solution}(MMS) \cite{Oberkampf2010}. Rather than looking for an exact solution, we manufacture one. The idea is to make a solution \textit{a priori},  and use this solution to generate an analytical source term for the governing PDEs and than run the PDE with the source term to get a solution hopefully matching the manufactured one. The manufactured solution does not need to have a physically realistic relation, since the solution deals only with the mathematics. The overall idea is to make solutions in a way that all terms of the given PDE are tested.
+The procedure of MMS is as follows \cite{Oberkampf2010}:
 \begin{itemize}
 \item We define a mathematical model on the form $ L(\bold{u}) = 0$ where $L(\bold{u})$ is a differential operator and $u$ is a dependent variable.
 \item Define the analytical form of the manufactured solution $\hat{\bold{u}}$
@@ -22,14 +26,14 @@ The procedure is as follows \cite{Oberkampf2010}:
 \item Then use this source term to calculate the solution $\bold{u}$, $L(\bold{u}) = f $
 \end{itemize}
 
-After the solution has been computed we perform systematic convergence tests \cite{Roache}. The idea behind order of convergence tests is based on the behavior of the error between the manufactured exact solution and the computed solution. 
+After the solution has been computed we perform systematic convergence tests \cite{Roache2002}. The idea behind order of convergence tests is based on the behavior of the error between the manufactured exact solution and the computed solution. 
 If we let $\bold{u}$ be the numerical solution and $\hat{\bold{u}}$ be the exact solution, $|| . ||$ be the $L^2$ norm, we define the error as:
 
 \begin{equation}
 E = || \bold{u} - \hat{\bold{u}} ||
 \end{equation}
 
-When we increase the number of spatial points ($ \Delta x, \Delta y$ or $ \Delta z$) or decrease timestep($\Delta t$), we expect the error to get smaller. It is the rate of this error that lets us know wether the solution is converging correctly.
+When we decrease the node spacing ($ \Delta x, \Delta y$ or $ \Delta z$) or decrease timestep size($\Delta t$), we expect the solution to convergence towards a given solution and hence the error to get smaller. It is the rate of this error that lets us know wether the solution is converging correctly.
 If we assume that the number of spatial points are equal in all directions the error is expressed as
 \begin{equation}
 \label{eq:Error}
@@ -45,22 +49,24 @@ k = \frac{log( \frac{E_{n+1}}{E_n}) }{ log(\frac{\Delta x_{n+1}}{\Delta x_n})}
 
 We use $k$ to find the observed order of convergence and match with the theoretical order of convergence for each given problem.\newline
 
-The manufactured solutions should be chosen to be non-trivial and analytic \cite{Roache2002} \cite{Oberkampf2010}. The solutions should be so that no derivatives vanish. For this reason trigonometric and exponential functions can be a smart choice, since they are smooth and infinitely differentiable. In short a good manufactured solution is one that is complex enough so that it rigorously tests each part of the equations.\newline 
+The manufactured solutions should be chosen to be non-trivial and analytic \cite{Oberkampf2010, Roache2002}. The solutions should be manufactured so that no derivatives vanish. For this reason trigonometric and exponential functions can be a smart choice, since they are smooth and infinitely differentiable. In short, a good manufactured solution is one that is complex enough so that it rigorously tests each part of the equations.\newline 
 
-I begin with verifying the solid part of the code. Then the fluid part of the code will be tested with a given displacement, also testing the mappings between configurations. A full MMS of the entire FSI problem with all the conditions is very difficult \cite{Etienne2012}. One needs to take into account the condition of continuity of velocity on the interface \cite{Etienne2006}. The stresses need to equal on the interface and the flow needs to be divergence free. MMS of full FSI is therefore  out the scope of this thesis. 
+Starting with the verification of the solid part of the code with given displacement and velocity. Then verifying the fluid part with a given displacement, also testing the mappings between configurations. 
+To do a full verification of the entire FSI problem, one needs to take into account the condition of continuity of velocity on the interface \cite{Etienne2006}, the stresses need to equal on the interface and the flow needs to be divergence free. Manufacturing such a solution is very difficult \cite{Etienne2012}. The author has yet to find a paper that manufactures a solution fulfilling all the condition in a rigorous manner.
+MMS of full FSI is therefore  out the scope of this thesis. 
 
 \input{./Verification_Validation/MMS_FSI/MMS_FSI}
 \newpage
 
 \section{Validation}
-After the code has been verified to see that we are indeed computing in the right fashion. We move on to Validation which is the process of determining if a model gives an accurate representation of the real world within the bounds of the intended use \cite{Selin2014}. A model is made for a specific purpose, its only valid in respect to that purpose \cite{Macal2005}. If the purpose is complex and trying to answer multiple question then the validity need to be determined to each question. The idea is to validate the solver \textsl{brick by brick}. We start with simple testing of each part of the model and build more complexity and eventually test the whole model.\newline
+After the code has been verified, we move on to Validation which is the process of determining if a model gives an accurate representation of real world physics within the bounds of the intended use \cite{Selin2014}. A model is made for a specific purpose, its only valid with respect to that purpose \cite{Macal2005}. If the purpose is complex and trying to answer multiple questions, then the validity needs to be determined for each question. The idea is to validate the solver, \textsl{brick by brick}, Starting with simple testing of each part of the model and build more complexity and eventually test the whole model.\newline
 
-Three issues have been identified in this process \cite{Selin2014}: Quantifying the accuracy of the model by comparing responses with experimental responses, interpolation of the model to conditions corresponding to the intended use and determining the accuracy of the model for the conditions under which its meant to be used. Well known benchmarks will be used as validation, we will see in this chapter that these tests supply us with a problem setup, initial and boundary conditions, and lastly results that we can compare with. \newline
+Three issues have been identified in this process \cite{Selin2014}: Quantifying the accuracy of the model by comparing responses with experimental responses, interpolation of the model to conditions corresponding to the intended use and determining the accuracy of the model for the conditions under which its meant to be used. Well known benchmarks will be used as reference points and these tests supply us with a problem setup, initial and boundary conditions, and lastly results that we can compare with. \newline
 
-The process of Validation is also, as I have experienced, a way to figure out at what size timestep and number of spatial points the model can handle to run. As we will see in the chapter all the benchmarks are run with different timesteps and number of cells to see how it reacts. The problem with using benchmarks with known data for comparison is that we do not test the model blindly. It is easier to mold the model to the data we already have. As Oberkampf and Trucano in \cite{Selin2014} puts it "Knowing the "correct" answer beforehand is extremely seductive, even to a saint.''. Knowing the limitations of our tests will therefore strengthen our confidence in the model. It really can be an endless process of verifying and validating if one does not clearly know the bounds of sufficient accuracy. 
+The process of Validation is also, as I have experienced, a way to figure out at what size timestep and number of spatial points the model can handle. As we will see in the chapter all the benchmarks are run with different timesteps and number of cells to see how the model reacts. The problem with using benchmarks with known data for comparison is that we do not test the model blindly. It is easier to mold the model to the data we already have. As Oberkampf and Trucano in \cite{Selin2014} puts it "Knowing the "correct" answer beforehand is extremely seductive, even to a saint.''. Knowing the limitations of our tests will therefore strengthen our confidence in the model. It really can be an endless process of verifying and validating if one does not clearly know the bounds of sufficient accuracy. \cite{Selin2014} \\
 
-\cite{Selin2014} \\
-In the following we will look at tests for the fluid solvers both alone, testing laminar to turbulent flow, and with solid. We will test the solid solver, and lastly the entire coupled FSI problem. 
+
+The following tests are done with the solid and fluid alone. Testing both steady and unsteady cases. Lastly the full FSI model is tested with steady and unsteady cases.
 
 \input{./Verification_Validation/Hron_Turek/Hron_Turek}
 %\input{./Verification_Validation/Flexible_tube/Flexible_tube}
