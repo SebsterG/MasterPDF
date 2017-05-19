@@ -17,32 +17,10 @@
 \contentsline {section}{\numberline {3.5}Discretization of monolithic FSI equations}{15}
 \contentsline {subsubsection}{Spaces}{15}
 \contentsline {subsubsection}{Discretization}{16}
-\contentsline {chapter}{\numberline {4}Implementation of Fluid Structure Interaction in FEniCS}{19}
-\contentsline {section}{\numberline {4.1}Mappings}{19}
-\contentsline {section}{\numberline {4.2}Variational form}{20}
-\contentsline {section}{\numberline {4.3}Newtons method implementation for solving Fluid structure interaction}{21}
-\contentsline {chapter}{\numberline {5}Verification and Validation of the Fluid Structure Interaction Implementation.}{25}
-\contentsline {section}{\numberline {5.1}Verification}{26}
-\contentsline {subsection}{\numberline {5.1.1}Method of Manufactured Solution on the implementation of the Solid equation}{28}
-\contentsline {subsection}{\numberline {5.1.2}MMS of Fluid equations with prescribed motion}{30}
-\contentsline {section}{\numberline {5.2}Validation}{32}
-\contentsline {subsection}{\numberline {5.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{33}
-\contentsline {subsubsection}{Results}{34}
-\contentsline {subsubsection}{CFD test}{34}
-\contentsline {subsubsection}{CSM test}{36}
-\contentsline {subsection}{\numberline {5.2.2}Comparing different lifting operators}{42}
-\contentsline {subsubsection}{FSI2 with Lifting operator}{45}
-\contentsline {subsection}{\numberline {5.2.3}Temporal stability}{46}
-\contentsline {chapter}{\numberline {6}CPU time improvement techniques}{49}
-\contentsline {section}{\numberline {6.1}Newton runtime profile}{49}
-\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{50}
-\contentsline {section}{\numberline {6.3}Quadrature reduce}{51}
-\contentsline {section}{\numberline {6.4}Summary of runtime improvement techniques}{52}
-\contentsline {chapter}{\numberline {7}Conclusions and further work}{53}
-\contentsline {section}{\numberline {7.1}Partitioned}{53}
-\contentsline {chapter}{Appendices}{55}
-\contentsline {chapter}{\numberline {A}Appendix}{57}
-\contentsline {section}{\numberline {A.1}Lagrangian physics}{57}
-\contentsline {subsection}{\numberline {A.1.1}Deformation gradient}{58}
-\contentsline {subsection}{\numberline {A.1.2}Strain}{59}
-\contentsline {subsection}{\numberline {A.1.3}Stress}{61}
+\contentsline {chapter}{Appendices}{19}
+\contentsline {chapter}{\numberline {A}Appendix}{21}
+\contentsline {section}{\numberline {A.1}Lagrangian physics}{21}
+\contentsline {subsection}{\numberline {A.1.1}Deformation gradient}{22}
+\contentsline {subsection}{\numberline {A.1.2}Strain}{23}
+\contentsline {subsection}{\numberline {A.1.3}Stress}{25}
+\contentsline {section}{\numberline {A.2}Results}{26}

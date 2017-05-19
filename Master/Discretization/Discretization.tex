@@ -17,13 +17,13 @@ $ H^1 $ indicating a Hilbert space and
 
 $L^2$ indicating a standard Lebesque space.
 
-The trial and test spaces for the velocity variable in the fluid domain,
+The trial and test spaces for the velocity variable in the fluid domain are defined as:
 
 \begin{equation}
 \hat{V}^0_{f,u} := \{ \hat{u} \in H^1_0(\mathcal{F}) : \hat{u}_f = \hat{u}_s \hspace{2mm} on \hspace{2mm} \hat{\Sigma}  \}
 \end{equation}
 
-and the same for the artificial displacement in the moving fluid domain:
+The artificial displacement spaces in the moving fluid domain are defined:
 
 \begin{equation}
 \hat{V}^0_{f,d} := \{ \hat{d} \in H^1_0(\mathcal{F}) : \hat{d}_f = \hat{d}_s \hspace{2mm} on \hspace{2mm} \hat{\Sigma}  \}
@@ -32,13 +32,15 @@ and the same for the artificial displacement in the moving fluid domain:
 \hat{V}^0_{f,d} := \{ \hat{d} \in H^1_0(\mathcal{F}) : \hat{\psi_f} = \hat{\psi_s} \hspace{2mm} on \hspace{2mm} \hat{\Sigma}  \}
 \end{equation}
 
-Now that the spaces have been defined we are ready to discretize. The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method. I will employ a $\theta-$ scheme that will enables us to easily switch between schemes.
+
 
 \subsubsection{Discretization}
 
+The temporal discretization is done using finite difference schemes and the spatial is treated with the finite element method. Employing a so called $\theta-$ scheme that will enables us to easily switch between schemes.
+
 In the domain $\Omega$ and time interval [0,T]:
 
-Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ d_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
+Find $ U = \{\bold{u}, \bold{d}, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{u}^D_f + \hat{V}^0_{f,\bold{u}} \} \times \hat{L}_f \times \{ \bold{d}_f^D + \hat{V}^0_{f,\hat{f}} \} \times \{ \bold{d}_f^D + \hat{V}^0_{f,\hat{f}} \} \times \hat{L}^0_f \times \hat{L}^0_s  $ such that:
 
 \begin{equation}
 \int_0^T A(U)(\Psi) dt = \int_0^T \hat{F}(\Psi) dt \hspace{4mm} \forall  \Psi \in \hat{X}
@@ -46,38 +48,38 @@ Find $ U = \{\bold{u}, d, p\} \in \hat{X}^0_D $ where $ \hat{X}^0_D := \{ \bold{
 
 where $ \Psi = \{\phi, \psi, \gamma \} $% \hat{\psi}^\bold{u}_f, \hat{\psi}^\bold{u}_s, \hat{\psi}^d_f, \hat{\psi}^d_s, \hat{\psi}^p_f,\hat{\psi}^p_f  \}$ and
 
- $\hat{X} = \hat{V}^0_{f,\bold{u}} \times \hat{L}_f \times \hat{V}^0_{f,d,\hat{\Sigma}} \times \hat{V}_s^0 \times \hat{L}_f^0 \times \hat{L}_s^0  $
+ $\hat{X} = \hat{V}^0_{f,\bold{u}} \times \hat{L}_f \times \hat{V}^0_{f,\bold{d},\hat{\Sigma}} \times \hat{V}_s^0 \times \hat{L}_f^0 \times \hat{L}_s^0  $
 
 
 I first introduce the scheme using, for simplicity, the harmonic mesh motion. Let $\bold{u}$ be a global function in the entire domain instead of $\bold{u}_f$ in the fluid and $\bold{u}_s$ in the solid. Same for the test functions. This is done for ease of reading and also for the ease of implementation later.
 
 \textbf{The full monolithic FSI variational form reads}:
 \begin{align}
-A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}}  \\
+A(U)&= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla \bold{u})F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}}  \\
        &+ ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
-       &+ (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} \\
+       &+ (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} \\
        &+ ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}),\gamma )_{\mathcal{\hat{F}}} \\
        \label{eq:condition}
        &+ \delta\big((\partial_t \bold{d} , \psi)_{\mathcal{\hat{S}}}  - ( \bold{u} , \psi )_{\mathcal{\hat{S}}}\big) \\ 
        &+  \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big) 	 		
 \end{align}
 
-The condition \eqref{eq:condition} , is weighted with a $\delta$ value. This is a critical detail for the program (detailed later) to run. The only two places where we use the test function $\psi$ is on this condition and the lifting operator. The weighting says in a weak manner that this condition is important for the overall program. \newline
+The condition \eqref{eq:condition}, is weighted with a $\delta$ value. This is a critical detail for the program (detailed later) to run. The weighting says in a weak manner that this condition is important for the overall program. \newline
 
-Introducing the \textit{One step-$\theta$ scheme} from \cite{Wick2011}. The $\theta$ scheme has the advantage of easily being changed from a backward (implicit), forward(explicit), or a Crank-Nicholson (implicit) scheme. The Crank-Nicholson scheme is of second order, but suffers from instabilities in this monolithic scheme \cite{Wick2011}. A remedy for these instabilities is to chose a Crank-Nicholson scheme that is shifted towards the implicit side. How this is done will become evident once the scheme is defined.
+Introducing the \textit{One step-$\theta$ scheme} from \cite{Wick2011}, which has the advantage of easily being changed from a backward (implicit), forward(explicit), or a Crank-Nicholson (implicit) scheme, by changing the value of $\theta$. The Crank-Nicholson scheme is of second order, but suffers from instabilities in this monolithic scheme for certain time step values \cite{Wick2011}. A remedy for these instabilities is to chose a Crank-Nicholson scheme that is shifted towards the implicit side. How this is done will become evident once the scheme is defined.
 
-We define the variational form by dividing into four categories, this may seem strenuous at first but the need for it will become evident when implementing the $\theta$-scheme. The four divided categories consists of: a time term, implicit, pressure and the rest (stress, convection):
+The variational form is defined by dividing into four categories. This may seem strenuous at first, but the need for it will become evident when implementing the $\theta$-scheme. The four divided categories consists of: a time group $A_T$(with time derivatives), implicit $A_I$, pressure $A_P$ and the rest $A_E$ (stress terms and convection):
 
 \begin{align}
-A_T(U) &= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla u)F^{-1}(\partial_t \bold{d}) , \phi )_{\mathcal{\hat{F}}} \\
+A_T(U) &= (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla \bold{u})F^{-1}(\partial_t \bold{d}) , \phi )_{\mathcal{\hat{F}}} \\
 	    & + (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}} + (\partial_t \bold{d} , \psi)_{\mathcal{\hat{S}}}  \\
 A_I(U) &= ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}), \gamma)_{\mathcal{\hat{F}}} \\
 A_E(U) &= (J (\nabla u)F^{-1} \bold{u} , \phi )_{\mathcal{\hat{F}}} + ( J \sigma_{f,u} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} \\
-	    & + \big(F S_s, \nabla \phi \big)_{\mathcal{\hat{S}}} - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\
+	    & + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} - ( \bold{u} , \psi )_{\mathcal{\hat{S}}} \\
 A_P(U) &= \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big)  	 		
 \end{align}
 
-Notice that the stress tensors have been split into a velocity and pressure part. 
+Notice that the fluid stress tensors have been split into a velocity and pressure part. 
 \begin{align}
 \sigma_{f,u} &= \mu ( \nabla u F^{-1} + F^{-T} \nabla u) \\
 \sigma_{f,p} &= -p I
@@ -88,13 +90,14 @@ For the time group, discretization is done in the following way:
 A_T(U^{n,k}) \approx & \frac{1}{k} \big( \rho_f J^{n,\theta} (\bold{u}^n - \bold{u}^{n-1}) , \phi  \big)_{\mathcal{\hat{F}}} - \frac{1}{k} \big( \rho_f (\nabla u ) (\bold{d}^n - \bold{d}^{n-1}) , \phi \big)_{\mathcal{\hat{F}}} \\
 + & \frac{1}{k} \big( \rho_s  (\bold{u}^n - \bold{u}^{n-1}) , \phi  \big)_{\mathcal{\hat{S}}} +  \frac{1}{k} \big( (\bold{d}^n - \bold{d}^{n-1}) , \psi  \big)_{\mathcal{\hat{S}}}
 \end{align}
-And the Jacobian is written with superscript $\theta$ as:
+
+The Jacobian is written with superscript $\theta$ as:
 
 \begin{equation}
 J^{n, \theta} = \theta J^n + (1-\theta)J^{n-1}
 \end{equation}
 
-We can now introduce the \textit{One step-$\theta$ scheme}: 
+Finally we can introduce the \textit{One step-$\theta$ scheme}: 
 Find $U^n = \{\bold{u}^n , \bold{d}^n, p^n \}$
 
 \begin{align}
@@ -102,7 +105,7 @@ Find $U^n = \{\bold{u}^n , \bold{d}^n, p^n \}$
 & - (1-\theta) A_E(U^{n-1}) + \theta \hat{f}^n + (1-\theta) \hat{f}^{n-1}  
 \end{align}
 
-Notice that the scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and for the shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. $\hat{f}$ is the body forces which will be ignored in this thesis. The shifting toward the implicit side is important for long term stability for certain time step values \cite{Wick2011}. The shifting will be investigated in the next chapter.
+Notice that the scheme is selected by the choice of $\theta $. By choosing $ \theta = 1$ we get the back Euler scheme, for $ \theta = \frac{1}{2}$ we get the Crank-Nicholson scheme and for the shifted Crank-Nicholson we set $ \theta = \frac{1}{2} + k$, effectively shifting the scheme towards the implicit side. $\hat{f}$ is the body forces. The shifting of the scheme towards the implicit side is important for long term stability for certain time step values \cite{Wick2011}. The shifting will be investigated in chaper \ref{chap:VV}.
 
 
 

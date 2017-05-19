@@ -3,57 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Master_Sebben.aux
 The style file: plain.bst
 Database file #1: Master_cites.bib
-Warning--I didn't find a database entry for "Charlesworth"
-Warning--there's a number but no volume in Etienne2006
+Warning--empty journal in Charlesworth2003
+Warning--there's a number but no volume in Charlesworth2003
 Warning--there's a number but no volume in Fefferman2000
 Warning--empty journal in Richter2016
-Warning--empty journal in Sciences2012
-Warning--there's a number but no volume in Sciences2012
-Warning--empty journal in Selin2014
-Warning--there's a number but no volume in Selin2014
+Warning--empty journal in Turek2010
 Warning--empty journal in Valkov2015
 Warning--empty year in Valkov2015
-Warning--empty journal in Vinje2016
-Warning--there's a number but no volume in White2006
-You've used 25 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            660 strings with 7963 characters,
-and the built_in function-call counts, 7307 in all, are:
-= -- 724
-> -- 302
-< -- 3
-+ -- 121
-- -- 96
-* -- 487
-:= -- 1253
-add.period$ -- 73
-call.type$ -- 25
-change.case$ -- 122
+            598 strings with 6376 characters,
+and the built_in function-call counts, 4311 in all, are:
+= -- 420
+> -- 187
+< -- 1
++ -- 75
+- -- 60
+* -- 302
+:= -- 759
+add.period$ -- 44
+call.type$ -- 15
+change.case$ -- 75
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 292
-empty$ -- 577
-format.name$ -- 96
-if$ -- 1499
+cite$ -- 22
+duplicate$ -- 167
+empty$ -- 335
+format.name$ -- 60
+if$ -- 867
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 25
-newline$ -- 126
-num.names$ -- 50
-pop$ -- 115
+int.to.str$ -- 15
+missing$ -- 15
+newline$ -- 77
+num.names$ -- 30
+pop$ -- 64
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 60
 quote$ -- 0
-skip$ -- 206
+skip$ -- 111
 stack$ -- 0
-substring$ -- 427
-swap$ -- 47
-text.length$ -- 3
+substring$ -- 242
+swap$ -- 18
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
-warning$ -- 11
-while$ -- 78
-width$ -- 27
-write$ -- 264
-(There were 12 warnings)
+type$ -- 60
+warning$ -- 7
+while$ -- 45
+width$ -- 17
+write$ -- 159
+(There were 7 warnings)
