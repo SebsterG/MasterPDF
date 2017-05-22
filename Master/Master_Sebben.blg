@@ -5,50 +5,57 @@ The style file: plain.bst
 Database file #1: Master_cites.bib
 Warning--empty journal in Charlesworth2003
 Warning--there's a number but no volume in Charlesworth2003
+Warning--there's a number but no volume in Etienne2006
 Warning--there's a number but no volume in Fefferman2000
 Warning--empty journal in Richter2016
+Warning--empty journal in Sciences2012
+Warning--there's a number but no volume in Sciences2012
+Warning--empty journal in Selin2014
+Warning--there's a number but no volume in Selin2014
 Warning--empty journal in Turek2010
 Warning--empty journal in Valkov2015
 Warning--empty year in Valkov2015
-You've used 15 entries,
+Warning--empty journal in Vinje2016
+Warning--there's a number but no volume in White2006
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            598 strings with 6376 characters,
-and the built_in function-call counts, 4311 in all, are:
-= -- 420
-> -- 187
-< -- 1
-+ -- 75
-- -- 60
-* -- 302
-:= -- 759
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 75
+            667 strings with 8186 characters,
+and the built_in function-call counts, 7857 in all, are:
+= -- 773
+> -- 337
+< -- 3
++ -- 135
+- -- 108
+* -- 526
+:= -- 1355
+add.period$ -- 79
+call.type$ -- 27
+change.case$ -- 134
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 167
-empty$ -- 335
-format.name$ -- 60
-if$ -- 867
+cite$ -- 41
+duplicate$ -- 312
+empty$ -- 612
+format.name$ -- 108
+if$ -- 1604
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 77
-num.names$ -- 30
-pop$ -- 64
+int.to.str$ -- 27
+missing$ -- 27
+newline$ -- 136
+num.names$ -- 54
+pop$ -- 128
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 108
 quote$ -- 0
-skip$ -- 111
+skip$ -- 220
 stack$ -- 0
-substring$ -- 242
-swap$ -- 18
-text.length$ -- 1
+substring$ -- 437
+swap$ -- 47
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 7
-while$ -- 45
-width$ -- 17
-write$ -- 159
-(There were 7 warnings)
+type$ -- 106
+warning$ -- 14
+while$ -- 82
+width$ -- 29
+write$ -- 284
+(There were 14 warnings)

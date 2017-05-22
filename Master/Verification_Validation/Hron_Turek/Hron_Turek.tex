@@ -1,5 +1,7 @@
 \subsection{Fluid-Structure Interaction between an elastic object and laminar incompressible flow} \label{sec:HronTurek}
-The goal of this benchmark is to verify the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are large, in one case the deformations are about 2.5 larger than the height of the elastic object. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid can deform the structure. Measuring the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing the robustness and efficiency of the FSI implementation
+The goal of this benchmark is to verify the fluid and solid solver first separately and then together as a full FSI problem \cite{Hron2006a}. This benchmark is based on the older benchmark " flow around cylinder" with fluid considered incompressible and in the laminar regime where the structure deformations are large, in one case the deformations are about 2.5 larger than the height of the elastic object. The problem is setup with the solid submerged in the fluid, so that oscillations in the fluid can deform the structure. Measuring the drag and lift around the circle and bar, and measure structural displacement at a given point. This benchmark will be used to test and verify different numerical methods and code implementations. Testing the robustness and efficiency of the FSI implementation.\newline
+
+ A very important thing to notice about this paper \cite{Hron2006a} is that it is a proposal for a benchmark, as it is called \say{Proposal for numerical benchmarking of fluid-structure interaction between an elastic object and laminar incompressible flow}. So the point of the paper is give a specific problem setup which others can contribute result-data. In the summary of the paper it is stated: \say{The next step will be the specification of how to submit and to collect the results, and the publication of the test configurations in an international journal. Moreover, it is planned to prepare a webpage for collecting and pre-senting the FSI results. As we have learned from [3], a very important aspect will be the submission of the results on (at least) 3 different meshes and time steps.} In sight of this, a paper was published in 2010 by J. Hron, Turek, et al, \cite{Turek2010} that compared results of different discretizations and solution approaches. This paper \cite{Turek2010} gives 7 different methods and results for two of the FSI test cases. They state in the numerical results that \say{However, also clear differences between the different approaches with regard to accuracy are visible. Particularly for the drag and lift values, which lead to differences of up to order 50\%, and also for the displacement valueswhich are in the range of 10\% errors.}. With this in mind it is important to know that the referential values used are only those reported from the original paper, which only looked at one implementation. While the paper which compares results, only 2 of the 7 contributions were schemes of monolithic nature, which are the closest one should refer to in this thessis.  In the Appendix \ref{sec:bigboys} is a copy of the results from the paper comparing schemes, showing different results for different discretization, with different time steps and unknowns. 
 
 
 \subsection*{Problem Defintion}
@@ -41,12 +43,19 @@ In each test the numbers with ref are the values taken from the original benchma
 \subsubsection{Results}
 \subsubsection{CFD test}
 The first two CFD tests are run with Reynolds numbers 20 and 100 converging to steady solutions of drag and lift around the circle. The CFD 3 problem has a Reynolds number 200 which will induce oscillations behind the circle, giving fluctuations in the drag and lift, hence giving unsteady solutions.
-The CFD tests can be run in two ways. The first way assumes the bar to be rigid object, meaning that the computing domain is just the fluid domain. The other way, which is implemented here, is running the full FSI code and setting $\rho_s=10^{6}$ and $\mu_s=10^{12}$, so that the bar is almost completely rigid, only giving rise to very small deformation (in the $10^{-9}$ range).
+The CFD tests can be run in two ways. The first way assumes the bar to be rigid object, meaning that the computing domain is just the fluid domain. The other way, which is implemented here, is running the full FSI code and setting $\rho_s=10^{6}$ and $\mu_s=10^{12}$, so that the bar is almost completely rigid, only giving rise to very small deformation (in the $10^{-9}-10^{-10}$ range).
 
 \begin{figure}[H]
-\caption{Fluid mesh}
-\includegraphics[scale=0.5,trim={24mm 46mm 14mm 40mm},clip]{./Verification_Validation/Hron_Turek/fluid.png}
+\centering
+\caption{Picture of entire FSI computing domain with 11556 cells}
+\includegraphics[scale=0.40,trim={20mm 34mm 20mm 30mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2.png}
 \end{figure}
+\begin{figure}[H]
+\centering
+\caption{Picture of FSI computing domain with 11556 cells, zoomed in with the solid domain marked in pink}
+\includegraphics[scale=0.362,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png}
+\end{figure}
+
 
 \vspace{1cm}
 
@@ -66,33 +75,40 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{Results of steady state case CFD1}
+\caption{Results of CFD1 case run as full FSI, with almost rigid bar}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{elements} & \textbf{dofs} & \textbf{Drag} & \textbf{Lift} \\ \hline
-6616 & 32472 & 14.2439 & 1.0869 \\ \hline
-26464 & 124488 & 14.2646 & 1.11085 \\ \hline
-105856 & 487152 & 14.2755 & 1.11795 \\ \hline
+2474 & 21749 & 14.059 & 1.100 \\ \hline
+7307 & 63365 & 14.110 & 1.080 \\ \hline
+11556 & 99810 & 14.200 & 1.1093 \\ \hline
 \textbf{ref} & \textbf{} & \textbf{14.29} & \textbf{1.119} \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[H]
 \centering
-\caption{Results of steady state case CFD2}
+\caption{Results of CFD2 case run as full FSI with almost rigid bar}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{elements} & \textbf{dofs} & \textbf{Drag} & \textbf{Lift} \\ \hline
-6616 & 32472 & 135.465 & 6.27158 \\ \hline
-26464 & 124488 & 136.566 & 9.82166 \\ \hline
-105856 & 487152 & 136.573 & 10.4441 \\ \hline
+2474 & 21749 & 134.9 & 10.38 \\ \hline
+7307 & 63365 & 135.4 & 10.0 \\ \hline
+11556 & 99810 & 136.1 & 10.41 \\ \hline
 \textbf{ref} & \textbf{} & \textbf{136.7} & \textbf{10.53} \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{figure}[H]
+\label{fig:CFD2}
+\includegraphics[scale=0.45, trim={9mm 0mm 0mm 10mm},clip]{./Verification_Validation/Hron_Turek/CFD2.png}
+\caption{CFD2 steady state case fluid flow}
+\end{figure}
+
+\begin{comment}
+\begin{table}[H]
 \centering
 \caption{Results of unsteady state case CFD 3 with $\Delta t = 0.001$}
 \label{my-label}
@@ -104,9 +120,16 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 ref & ref & $\bold{ -11.893 \pm 437.81 }$ & $\bold{ 439.45 \pm 5.61 }$ \\ \hline
 \end{tabular}
 \end{table}
+\end{comment}
+
+\subsubsection{Discussion of CFD results}
+
+In the CFD2 case notice, in figure \ref{fig:CFD2}, that since the circle and bar are positioned non symmetric in the y direction there is more fluid flowing closer to the upper boundary. This non symmetry is what induces oscillations when the fluid inlet velocity is higher. The CFD2 case has an inlet velocity just below the point of inducing oscillations.
+
+
 
 \subsubsection{CSM test}
-The CSM test are calculated using only the bar and adding a gravity term $g$ with the same value but changing the parameters of solid. The tests CSM1 and CSM2 are steady state solutions. The difference is a more slender bar. The CSM 3 test is unsteady and even more slender causing the bar to move up and down. Since there is no resistance from any fluid the unsteady test should if energy is preserved make the bar move up and down infinitely. 
+The CSM test are calculated using only the bar as computing domain. A gravity term $g$ has been added, which has the same value throughout the CSM tests but changing the parameters of the solid. The tests CSM1 and CSM2 are steady state solutions. The difference between them is a more slender bar. The CSM 3 test is unsteady and even more slender causing the bar to move up and down. Since there is no resistance from any fluid, the unsteady test should ,if energy is preserved, make the bar move up to the initial state and down to the same point.
 
 Our quantity for comparing there will be the deformation at the point $A$. 
 \begin{center}
@@ -217,11 +240,6 @@ The plot \ref{plot:CSM3_plots} is of displacement at the point A in x and y dire
 \subsubsection*{FSI tests}
 Lastly the full FSI problem ran. Here we can see in \ref{fig:fluid_structure} that now both fluid and structure has a mesh. The tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. Vinje 2016 \cite{Vinje2016} reported not being able to compute FSI-2 model due to shortcomings in the linear elasticity solid model. The FSI-3 test has the highest inflow speed giving medium deformations but more rapid oscillations.
 
-\begin{figure}[H]
-\label{fig:fluid_structure}
-\caption{Fluid and Structure computing mesh}
-\includegraphics[scale=0.45, trim={4mm 21mm 2mm 10mm},clip]{./Verification_Validation/Hron_Turek/fluid_structure.png}
-\end{figure}
 
 \begin{table}[h!]
 \centering
@@ -243,15 +261,15 @@ $\mu_s[10^6 \frac{m^2}{s}]$ & 0.5 & 0.5 & 2 \\ \hline
 \subsubsection*{FSI1}
 \begin{table}[H]
 \centering
-\caption{FSI 1}
+\caption{Results of FSI 1 test case}
 \label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|l|}
 \hline
-Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift & Spaces \\ \hline
-2698 & 23563 &0.0227418 &0.799314  &  14.1735 &0.761849 & P2-P2-P1 \\ \hline
-10792 & 92992  &0.0227592 & 0.80795 & 14.1853 &  0.775063 &  P2-P2-P1 \\ \hline
-43168 & 369448 & 0.0227566 & 0.813184 & 14.2269 & 0.771071 & P2-P2-P1 \\ \hline
-\textbf{ref} & \textbf{ref} & \textbf{0.0227} & \textbf{0.8209} & \textbf{14.295} & \textbf{0.7638} & \textbf{ref} \\ \hline
+Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift \\ \hline
+2474 & 21749 & 0.0229 & 0.8265 & 14.0581 & 0.7546 \\ \hline
+7307 & 63365 & 0.02309 & 0.7797 & 14.1077 & 0.7518 \\ \hline
+11556 & 99810 & 0.02295 & 0.8249 & 14.2046 & 0.7613 \\ \hline
+\textbf{ref} & \textbf{ref} & \textbf{0.0227} & \textbf{0.8209} & \textbf{14.295} & \textbf{0.7638} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -274,7 +292,7 @@ Cells & Dofs & $d_x(A) [\times 10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lif
 \end{table}
 \end{comment}
 
-
+\begin{comment}
 \begin{table}[H]
 \centering
 \caption{FSI-2 with $\Delta t = 0.01$ harmonic}
@@ -329,14 +347,33 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift
 ref. &  & $ ?2.69 \pm 2.53$ & $1.48 \pm 34.38 $ & $ 2.22 \pm 149.78$ & $ 457.3 \pm 22.66$ \\ \hline
 \end{tabular}
 \end{table}
+\end{comment}
+
+
+\subsubsection*{FSI3 results}
+\begin{table}[H]
+\centering
+\caption{FSI3 unsteady test case results with $\Delta t = 0.01$, with harmonic lifting operator}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Cells & Dofs & $d_x (A)[\times10?3 ]$ & $d_y (A)[\times10?3 ]$ & Drag & Lift \\ \hline
+2474 & 21249 & $-1.79 \pm 1.80$ & $3.29 \pm 2.64$ & $439.36 \pm 12.04$ & $1.96 \pm 142.31$ \\ \hline
+7307 & 63365 & $-2.48 \pm 2.48$ & $ 1.64 \pm 3.28$ & $449.77 \pm 18.02$ & $3.41 \pm 153.47$ \\ \hline
+11556 & 99810 & $ -2.47 \pm 2.45$ & $ 1.27 \pm 3.28$ & $456.60 \pm 18.73$ & $-1.55 \pm 153.46$ \\ \hline
+ref & ref & $\bold{-2.69 \pm  2.56}$ & $\bold{1.48 \pm 34.38}$ & $\bold{457.3 \pm 22.66}$ & $\bold{2.22 \pm 149.78}$ \\ \hline
+\end{tabular}
+\end{table}
 
 \subsection*{Comment on FSI tests}
 The FSI1 test gives a low fluid velocity and gives very low displacements. FSI1 is therefore not a rigid test for FSI. In fact I experienced in the beginning of making the FSI solver, that even with a wrong implementation i got good FSI1 results. However it is a good test for early checks, because if FSI1 is wrong the rest will definitely not work.  \newline
 
+
+\begin{comment}
 FSI2 has a Reynolds number of 100 with medium fluid speeds. It does however induce great deformations and is therefore a great FSI test. Using a mesh motion technique that upholds the mesh structure is crucial. The results shown are with the Harmonic extension but I got similar results for biharmonic extension. The FSI2 test could be run with a fairly large time $\Delta t = 0.01 $, since the fluid velocity is not very high. And it can been seen from the results that choosing a time step $\Delta t = 0.001$ did not yield much better results. The Drag was computed to be about a value of 40 less than reported by Hron and Turek. This i believe is because a combination of the way the mesh was constructed, without a good enough boundary layer, and the mapping to a reference configuration. +++ \newline
 
 Lastly the FSI3 test has a Reynolds number of 200 with greater inflow speeds. The run time improvements such as reusing the jacobian did not work with the FSI3 test. The Jacobian needed to be more precise than for FSI2. For this reason a different mesh, with lower number of cells needed to be used in FSI3.  +++
-
+\end{comment}
 
 
 

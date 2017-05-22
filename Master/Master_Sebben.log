@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  19 MAY 2017 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  22 MAY 2017 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1022,14 +1022,32 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip74
 \subfig@bottom=\skip75
 )
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 30.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+\c@dirtytalk@qdepth=\count176
+)
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 33.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count176
+\c@float@type=\count177
 \float@exts=\toks40
 \float@box=\box77
 \@float@everytoks=\toks41
@@ -1129,15 +1147,15 @@ File: ts1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count177
-\calc@Bcount=\count178
+\calc@Acount=\count178
+\calc@Bcount=\count179
 \calc@Adimen=\dimen215
 \calc@Bdimen=\dimen216
 \calc@Askip=\skip76
 \calc@Bskip=\skip77
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count179
+\calc@Ccount=\count180
 \calc@Cskip=\skip78
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
@@ -1155,13 +1173,13 @@ Package: xifthen 2009/04/17 v1.3 Extended ifthen features
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
-\et@xins=\count180
+\et@xins=\count181
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 ))
-\c@MFP@cur@year=\count181
-\c@MFP@cur@month=\count182
+\c@MFP@cur@year=\count182
+\c@MFP@cur@month=\count183
 \MFPlogox=\skip79
 \MFPlogoy=\skip80
 \MFPtextx=\skip81
@@ -1169,36 +1187,60 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 \MFPtextlength=\skip83
 \MFPapollonx=\skip84
 )
-(./Master_Sebben.aux)
+(./Master_Sebben.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `Master_Sebben.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count183
+\scratchcounter=\count184
 \scratchdimen=\dimen217
 \scratchbox=\box79
-\nofMPsegments=\count184
-\nofMParguments=\count185
+\nofMPsegments=\count185
+\nofMParguments=\count186
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count186
+\MPscratchCnt=\count187
 \MPscratchDim=\dimen218
-\MPnumerator=\count187
-\makeMPintoPDFobject=\count188
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
 \everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1209,19 +1251,6 @@ Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
@@ -1232,7 +1261,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count189
+\c@lstlisting=\count190
 \AtBeginShipoutBox=\box80
 
 <masterfrontpage-images/masterfrontpage-background.pdf, id=4, 614.295pt x 845.0
@@ -1241,7 +1270,7 @@ File: masterfrontpage-images/masterfrontpage-background.pdf Graphic file (type
 pdf)
  <use masterfrontpage-images/masterfrontpage-background.pdf>
 Package pdftex.def Info: masterfrontpage-images/masterfrontpage-background.pdf 
-used on input line 84.
+used on input line 87.
 (pdftex.def)             Requested size: 614.29349pt x 845.04504pt.
 
 <masterfrontpage-images/masterfrontpage-apollon.pdf, id=5, 142.5325pt x 142.532
@@ -1250,7 +1279,7 @@ File: masterfrontpage-images/masterfrontpage-apollon.pdf Graphic file (type pdf
 )
  <use masterfrontpage-images/masterfrontpage-apollon.pdf>
 Package pdftex.def Info: masterfrontpage-images/masterfrontpage-apollon.pdf use
-d on input line 84.
+d on input line 87.
 (pdftex.def)             Requested size: 76.82243pt x 76.82285pt.
 
 <masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=6, 630.355pt x 74.2775
@@ -1259,50 +1288,51 @@ File: masterfrontpage-images/masterfrontpage-logo-eng.pdf Graphic file (type pd
 f)
  <use masterfrontpage-images/masterfrontpage-logo-eng.pdf>
 Package pdftex.def Info: masterfrontpage-images/masterfrontpage-logo-eng.pdf us
-ed on input line 84.
+ed on input line 87.
 (pdftex.def)             Requested size: 378.21591pt x 44.56683pt.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 84.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 87.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <32> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 84.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
 \MFP@titlelength=\skip85
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 84.
- [1
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
+
+Overfull \vbox (13.58458pt too high) has occurred while \output is active []
+
+
+[1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./maste
 rfrontpage-images/masterfrontpage-background.pdf> <./masterfrontpage-images/mas
 terfrontpage-apollon.pdf> <./masterfrontpage-images/masterfrontpage-logo-eng.pd
 f>]
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 84.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 87.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 84.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 84.
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 ]
-(./Master_Sebben.toc)
+(./Master_Sebben.toc [1
+
+])
 \tf@toc=\write6
 \openout6 = `Master_Sebben.toc'.
 
- [1
-
-] [2
-
-] (./IntroductionToFSI/IntroductionToFSI.tex
+ [2] (./IntroductionToFSI/IntroductionToFSI.tex
 Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--8
@@ -1336,6 +1366,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
 [1
 
+
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
@@ -1355,7 +1386,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
@@ -1364,14 +1395,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 ] (./Solid_equations/Solid_equations.tex
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 4.
+d on input line 5.
 
 ) (./Navier-Stokes/Navier-Stokes.tex
+Underfull \vbox (badness 1509) has occurred while \output is active []
+
+ [4]
 Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-[4]
+
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
@@ -1381,9 +1415,7 @@ Overfull \hbox (28.14272pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Fluid and Struc-ture Bound-ary con-di-tions| 
  []
 
-)) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [5] [6
-
-]
+[5])) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [6]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
@@ -1400,7 +1432,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-[7]
+[7
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
@@ -1425,7 +1459,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-<./FSI_ALE_formulation/FSI_mapping.png, id=70, 1013.7875pt x 360.34625pt>
+<./FSI_ALE_formulation/FSI_mapping.png, id=69, 1013.7875pt x 360.34625pt>
 File: ./FSI_ALE_formulation/FSI_mapping.png Graphic file (type png)
 
 <use ./FSI_ALE_formulation/FSI_mapping.png>
@@ -1443,45 +1477,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
  []
 
 [11]
-Overfull \hbox (6.25871pt too wide) in paragraph at lines 107--107
- |[]\T1/cmr/bx/n/17.28 Lifting op-er-a-tors for up-hold-ing mesh qual-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--111
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
-
-LaTeX Warning: Reference `sec:mesh_motion' on page 12 undefined on input line 1
-12.
-
-[12] [13]
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 159.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 159.
-
-
-Overfull \hbox (1.23665pt too wide) in paragraph at lines 161--162
-\T1/cmr/m/n/12 are writ-ten in terms of sin-gle com-po-nent func-tions $\OML/cm
-m/m/it/12 d[]; d[]$ \T1/cmr/m/n/12 and $\OML/cmm/m/it/12 ![]; ![]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 176.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 176.
- [14]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 128--131
+
+ []
+
+
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [13]
+[14]
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 179.
+
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 179.
+
+
+Overfull \hbox (1.23665pt too wide) in paragraph at lines 181--182
+\T1/cmr/m/n/12 are writ-ten in terms of sin-gle com-po-nent func-tions $\OML/cm
+m/m/it/12 d[]; d[]$ \T1/cmr/m/n/12 and $\OML/cmm/m/it/12 ![]; ![]$ 
+ []
+
 (./Discretization/Discretization.tex
 Overfull \hbox (35.49678pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Discretization of mono-lithic FSI equa-tions| 
@@ -1506,28 +1534,559 @@ U[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/bx/n/12 u[]\OML/cmm/m/it/12 ;
 \OT1/cmr/bx/n/12 d[]\OML/cmm/m/it/12 ; p[]\OMS/cmsy/m/n/12 g$ 
  []
 
+)) (./FSI_code_monolithic/FSI_code_monolithic_update.tex [18]
+Chapter 4.
 
-LaTeX Warning: Reference `chap:VV' on page 18 undefined on input line 108.
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
-)) [18] [19
+ []
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+
+Package Listings Warning: Text dropped after begin of listing on input line 27.
 
 
-] [20] (./Appendix/Appendix.tex
+[19
+
+]
+
+Package Listings Warning: Text dropped after begin of listing on input line 40.
+
+
+[20]
+Overfull \hbox (5.42894pt too wide) in paragraph at lines 98--98
+ |[]\T1/cmr/bx/n/17.28 Newtons method im-ple-men-ta-tion for solv-
+ []
+
+[21] [22]) (./Verification_Validation/Verification_Validation.tex [23] [24
+
+]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+[25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+[27] (./Verification_Validation/MMS_FSI/MMS_FSI.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+[28]
+Overfull \hbox (2.78653pt too wide) in paragraph at lines 32--41
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+[29]
+Overfull \hbox (9.02252pt too wide) in paragraph at lines 83--84
+[]\T1/cmr/m/n/12 Then $\OML/cmm/m/it/12 f[]$ \T1/cmr/m/n/12 is used and mapped 
+to the ref-er-ence con-fig-u-ra-tion and com-puted: 
+ []
+
+[30]
+
+LaTeX Warning: Reference `tab:MMS_Fluid_time' on page 31 undefined on input lin
+e 121.
+
+) [31]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+(./Verification_Validation/Hron_Turek/Hron_Turek.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+<./Verification_Validation/Hron_Turek/Domain_drawing.png, id=155, 756.8275pt x 
+250.9375pt>
+File: ./Verification_Validation/Hron_Turek/Domain_drawing.png Graphic file (typ
+e png)
+ <use ./Verification_Validation/Hron_Turek/Domain_drawing.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/Domain_drawing.pn
+g used on input line 11.
+(pdftex.def)             Requested size: 302.72563pt x 100.37321pt.
+
+Underfull \vbox (badness 3954) has occurred while \output is active []
+
+ [33]
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+[34 <./Verification_Validation/Hron_Turek/Domain_drawing.png>]
+<./Verification_Validation/Hron_Turek/FSI_domain_b2.png, id=163, 1268.74pt x 38
+0.42125pt>
+File: ./Verification_Validation/Hron_Turek/FSI_domain_b2.png Graphic file (type
+ png)
+ <use ./Verification_Validation/Hron_Turek/FSI_domain_b2.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI_domain_b2.png
+ used on input line 51.
+(pdftex.def)             Requested size: 461.96342pt x 79.32805pt.
+
+Overfull \hbox (71.96342pt too wide) in paragraph at lines 51--52
+ [][] 
+ []
+
+
+<./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png, id=165, 1268.74pt
+ x 380.42125pt>
+File: ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png Graphic file 
+(type png)
+
+<use ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoo
+m.png used on input line 56.
+(pdftex.def)             Requested size: 459.28214pt x 137.71196pt.
+
+Overfull \hbox (69.28214pt too wide) in paragraph at lines 56--57
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1275) has occurred while \output is active []
+
+ [35]
+[36 <./Verification_Validation/Hron_Turek/FSI_domain_b2.png (PNG copy)> <./Veri
+fication_Validation/Hron_Turek/FSI_domain_b2_zoom.png (PNG copy)>]
+<./Verification_Validation/Hron_Turek/CFD2.png, id=175, 919.435pt x 380.42125pt
+>
+File: ./Verification_Validation/Hron_Turek/CFD2.png Graphic file (type png)
+ <use ./Verification_Validation/Hron_Turek/CFD2.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/CFD2.png used on 
+input line 106.
+(pdftex.def)             Requested size: 402.21867pt x 158.38435pt.
+
+Overfull \hbox (12.21867pt too wide) in paragraph at lines 106--107
+[][] 
+ []
+
+[37 <./Verification_Validation/Hron_Turek/CFD2.png (PNG copy)>]
+Overfull \hbox (2.20117pt too wide) in paragraph at lines 134--135
+[]\T1/cmr/m/n/12 Our quan-tity for com-par-ing there will be the de-for-ma-tion
+ at the point $\OML/cmm/m/it/12 A$\T1/cmr/m/n/12 . 
+ []
+
+
+<./Verification_Validation/Hron_Turek/structure.png, id=181, 919.435pt x 380.42
+125pt>
+File: ./Verification_Validation/Hron_Turek/structure.png Graphic file (type png
+)
+ <use ./Verification_Validation/Hron_Turek/structure.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/structure.png use
+d on input line 138.
+(pdftex.def)             Requested size: 408.50156pt x 33.7204pt.
+
+Overfull \hbox (18.50156pt too wide) in paragraph at lines 138--139
+[][] 
+ []
+
+[38 <./Verification_Validation/Hron_Turek/structure.png (PNG copy)>]
+<./Verification_Validation//Hron_Turek/dis_x.png, id=187, 578.16pt x 433.62pt>
+File: ./Verification_Validation//Hron_Turek/dis_x.png Graphic file (type png)
+
+<use ./Verification_Validation//Hron_Turek/dis_x.png>
+Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x.png used o
+n input line 211.
+(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
+
+Underfull \hbox (badness 1454) in paragraph at lines 212--212
+[]\T1/cmr/m/n/12 Figure 5.6: Dis-place-ment in x di-rec-tion,
+ []
+
+
+<./Verification_Validation//Hron_Turek/dis_y.png, id=190, 578.16pt x 433.62pt>
+File: ./Verification_Validation//Hron_Turek/dis_y.png Graphic file (type png)
+
+<use ./Verification_Validation//Hron_Turek/dis_y.png>
+Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_y.png used o
+n input line 217.
+(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
+
+Underfull \hbox (badness 1454) in paragraph at lines 218--218
+[]\T1/cmr/m/n/12 Figure 5.7: Dis-place-ment in x di-rec-tion,
+ []
+
+
+<./Verification_Validation//Hron_Turek/dis_x_short.png, id=192, 578.16pt x 433.
+62pt>
+File: ./Verification_Validation//Hron_Turek/dis_x_short.png Graphic file (type 
+png)
+ <use ./Verification_Validation//Hron_Turek/dis_x_short.png>
+Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x_short.png 
+used on input line 223.
+(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
+
+Underfull \hbox (badness 1454) in paragraph at lines 224--224
+[]\T1/cmr/m/n/12 Figure 5.8: Dis-place-ment in x di-rec-tion,
+ []
+
+
+<./Verification_Validation/Hron_Turek/dis_y_short.png, id=194, 578.16pt x 433.6
+2pt>
+File: ./Verification_Validation/Hron_Turek/dis_y_short.png Graphic file (type p
+ng)
+ <use ./Verification_Validation/Hron_Turek/dis_y_short.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/dis_y_short.png u
+sed on input line 229.
+(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
+
+Underfull \hbox (badness 1454) in paragraph at lines 230--230
+[]\T1/cmr/m/n/12 Figure 5.9: Dis-place-ment in x di-rec-tion,
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 209--233
+ [][][] 
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 209--233
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+[40 <./Verification_Validation//Hron_Turek/dis_x.png> <./Verification_Validatio
+n//Hron_Turek/dis_y.png> <./Verification_Validation//Hron_Turek/dis_x_short.png
+> <./Verification_Validation/Hron_Turek/dis_y_short.png>]
+Overfull \hbox (32.92926pt too wide) in paragraph at lines 358--366
+ [][] 
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+) (./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex
+[42]
+<./Verification_Validation/Mesh_motion_results/CSM1.png, id=218, 586.8324pt x 4
+42.2924pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1.png Graphic file (type
+ png)
+ <use ./Verification_Validation/Mesh_motion_results/CSM1.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1.png
+ used on input line 15.
+(pdftex.def)             Requested size: 352.10216pt x 265.37749pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+<./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=223, 919.43
+5pt x 380.42125pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1_laplace.png Graphic fi
+le (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/CSM1_laplace.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_lap
+lace.png used on input line 23.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
+
+<./Verification_Validation/Mesh_motion_results/CSM1_constant.png, id=224, 919.4
+35pt x 380.42125pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1_constant.png Graphic f
+ile (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/CSM1_constant.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_con
+stant.png used on input line 29.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
+
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png, id=225, 919.435p
+t x 380.42125pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png Graphic file
+ (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_bib
+c1.png used on input line 35.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
+
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png, id=226, 919.435p
+t x 380.42125pt>
+File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png Graphic file
+ (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_bib
+c2.png used on input line 41.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 21--45
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 21--45
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44 <./Verification_Validation/Mesh_motion_results/CSM1.png>]
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png, id=232, 58
+6.8324pt x 442.2924pt>
+File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png Graphi
+c file (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
+01_dis_x.png used on input line 73.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
+
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 73--75
+ [][] 
+ []
+
+
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png, id=233, 58
+6.8324pt x 442.2924pt>
+File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png Graphi
+c file (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
+01_dis_y.png used on input line 78.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
+
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 78--80
+ [][] 
+ []
+
+
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png, id=234, 586
+.8324pt x 442.2924pt>
+File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
+01_drag.png used on input line 83.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
+
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 83--85
+ [][] 
+ []
+
+
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png, id=235, 586
+.8324pt x 442.2924pt>
+File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png>
+Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/FSI2_dt0
+01_lift.png used on input line 88.
+(pdftex.def)             Requested size: 240.60283pt x 181.34105pt.
+
+Overfull \hbox (6.60045pt too wide) in paragraph at lines 88--90
+ [][] 
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 71--91
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 71--91
+[][] 
+ []
+
+
+Underfull \vbox (badness 1838) has occurred while \output is active []
+
+ [45 <./Verification_Validation/Mesh_motion_results/CSM1_laplace.png (PNG copy)
+> <./Verification_Validation/Mesh_motion_results/CSM1_constant.png (PNG copy)> 
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png (PNG copy)> <./Ve
+rification_Validation/Mesh_motion_results/CSM1_bibc2.png (PNG copy)>])
+(./Verification_Validation/Temporal_stability/Temporal_stability.tex [46 <./Ver
+ification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png> <./Verification_
+Validation/Mesh_motion_results/FSI2_dt001_dis_y.png> <./Verification_Validation
+/Mesh_motion_results/FSI2_dt001_drag.png> <./Verification_Validation/Mesh_motio
+n_results/FSI2_dt001_lift.png>]
+<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=247, 586
+.8324pt x 433.62pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+051_big.png used on input line 9.
+(pdftex.def)             Requested size: 205.39441pt x 151.76927pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 9--10
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=248, 586
+.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png Graphic
+ file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+050_big.png used on input line 15.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 15--16
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=249, 5
+86.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png Graph
+ic file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+051_small.png used on input line 21.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 21--22
+ [][] 
+ []
+
+
+<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=250, 5
+86.8324pt x 442.2924pt>
+File: ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png Graph
+ic file (type png)
+
+<use ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png>
+Package pdftex.def Info: ./Verification_Validation/Temporal_stability/FSI2_001_
+050_small.png used on input line 27.
+(pdftex.def)             Requested size: 205.39441pt x 154.80466pt.
+
+Overfull \hbox (10.39441pt too wide) in paragraph at lines 27--28
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+[47 <./Verification_Validation/Temporal_stability/FSI2_001_051_big.png> <./Veri
+fication_Validation/Temporal_stability/FSI2_001_050_big.png> <./Verification_Va
+lidation/Temporal_stability/FSI2_001_051_small.png> <./Verification_Validation/
+Temporal_stability/FSI2_001_050_small.png>])
+Underfull \hbox (badness 10000) in paragraph at lines 38--76
+
+ []
+
+) (./Speedup/Speedup.tex [48]
+Chapter 6.
+[49
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51])
+(./Conclusions/Conclusions.tex [52]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53
+
+])
+[54] [55
+
+
+] [56] (./Appendix/Appendix.tex
 Appendix A.
-<continuum_mapping.png, id=111, 682.55pt x 341.275pt>
+<continuum_mapping.png, id=286, 682.55pt x 341.275pt>
 File: continuum_mapping.png Graphic file (type png)
 
 <use continuum_mapping.png>
 Package pdftex.def Info: continuum_mapping.png used on input line 5.
 (pdftex.def)             Requested size: 273.01517pt x 136.50757pt.
- [21
+ [57
 
  <./continuum_mapping.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
-<./Solid_equations/Strain.png, id=116, 918.43124pt x 325.215pt>
+<./Solid_equations/Strain.png, id=291, 918.43124pt x 325.215pt>
 File: ./Solid_equations/Strain.png Graphic file (type png)
 
 <use ./Solid_equations/Strain.png>
@@ -1536,37 +2095,40 @@ Package pdftex.def Info: ./Solid_equations/Strain.png used on input line 55.
 
 Underfull \vbox (badness 6592) has occurred while \output is active []
 
- [22]
+ [58]
 Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
-[23 <./Solid_equations/Strain.png>]
+[59 <./Solid_equations/Strain.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-[24] <./Appendix/BigBoyResults.png, id=127, 1284.8pt x 803.0pt>
+[60] <./Appendix/BigBoyResults.png, id=302, 1284.8pt x 803.0pt>
 File: ./Appendix/BigBoyResults.png Graphic file (type png)
 
 <use ./Appendix/BigBoyResults.png>
 Package pdftex.def Info: ./Appendix/BigBoyResults.png used on input line 148.
 (pdftex.def)             Requested size: 335.70859pt x 452.55383pt.
- [25]) (./Master_Sebben.bbl [26 <./Appendix/BigBoyResults.png>] [27
+ [61]) (./Master_Sebben.bbl [62 <./Appendix/BigBoyResults.png>] [63
 
-]) [28] (./Master_Sebben.aux)
+] [64]) [65] (./Master_Sebben.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 27491 strings out of 493089
- 550006 string characters out of 6134842
- 615174 words of memory out of 5000000
- 30447 multiletter control sequences out of 15000+600000
- 39615 words of font info for 68 fonts, out of 8000000 for 9000
+ 28308 strings out of 493089
+ 564080 string characters out of 6134842
+ 838267 words of memory out of 5000000
+ 31200 multiletter control sequences out of 15000+600000
+ 40436 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,101p,10452b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,101p,10452b,1856s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texm
@@ -1575,24 +2137,30 @@ f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf
 ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
-mri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
-fbx0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfb
-x1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1
-200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti120
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (32 pages, 905303 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx08
+00.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0600.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Master_Sebben.pdf (69 pages, 2130289 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
+ 409 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 

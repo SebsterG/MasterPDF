@@ -12,6 +12,19 @@ David~J Charlesworth.
   Unstructured Meshes by}.
 \newblock (August), 2003.
 
+\bibitem{Etienne2012}
+S.~{\'{E}}tienne, A.~Garon, and D.~Pelletier.
+\newblock {Some manufactured solutions for verification of fluid-structure
+  interaction codes}.
+\newblock {\em Computers and Structures}, 106-107:56--67, 2012.
+
+\bibitem{Etienne2006}
+St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
+  2006.
+
 \bibitem{Fefferman2000}
 Charles~L. Fefferman.
 \newblock {Existence and smoothness of the Navier-Stokes equation}.
@@ -31,21 +44,65 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
 
+\bibitem{Hron2006a}
+Jaroslav Hron and Stefan Turek.
+\newblock {Proposal for numerical benchmarking of fluid-structure interaction
+  between an elastic object and laminar incompressible flow}.
+\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
+
 \bibitem{Liu2014}
 Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
 \newblock {A stable second-order scheme for fluid-structure interaction with
   strong added-mass effects}.
 \newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
 
+\bibitem{FENICS}
+Anders Logg, Harish Narayanan, Marie Rognes, Johannes Ring, Kristian~B.
+  {\O}lgaard, and Garth~N. Wells.
+\newblock {FEniCS Project}, 2011.
+
+\bibitem{Macal2005}
+Cm~Macal.
+\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
+  Steiger, FB Armstrong, and JA Joines, eds.}
+\newblock {\em Simulation}, pages 1643--1649, 2005.
+
 \bibitem{MM2016}
 Selim MM and Koomullil RP.
 \newblock {Mesh Deformation Approaches – A Survey}.
 \newblock {\em Journal of Physical Mathematics}, 7(2), 2016.
 
+\bibitem{Oberkampf2010}
+William~L. Oberkampf and Christopher~J. Roy.
+\newblock {\em {Verification and Validation in Scientific Computing}}.
+\newblock Cambridge University Press, Cambridge, 2010.
+
+\bibitem{Richter2013}
+T~Richter and T~Wick.
+\newblock {On time discretizations of Fluid-structure interactions}.
+\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
+  377--400, 2013.
+
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
+
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
+\bibitem{Sciences2012}
+Natural Sciences.
+\newblock {A Newton ' s Method Finite Element Algorithm for Fluid-Structure
+  Interaction}.
+\newblock (October), 2012.
+
+\bibitem{Selin2014}
+Noelle Selin.
+\newblock {Verification and Validation}.
+\newblock (February), 2014.
 
 \bibitem{Stein2003}
 K.~Stein, T.~Tezduyar, and R.~Benney.
@@ -69,10 +126,21 @@ E.~H. van Brummelen.
   Fluid-Structure Interaction}.
 \newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
 
+\bibitem{Vinje2016}
+V~Vinje.
+\newblock {Simulating Cerebrospinal Fluid Flow and Spinal Cord Movement
+  Associated with Syringomyelia}.
+\newblock 2016.
+
 \bibitem{White2000}
 Frank~M White.
 \newblock {Viscous Fluid Flow Viscous}.
 \newblock {\em New York}, Second:413, 2000.
+
+\bibitem{White2006}
+Frank~M. White.
+\newblock {Chapter 3 - Solutions of the Newtonian viscous-flow equa- tions}.
+\newblock {\em Viscous Fluid Flow}, (5), 2006.
 
 \bibitem{Wick2011}
 Thomas Wick.

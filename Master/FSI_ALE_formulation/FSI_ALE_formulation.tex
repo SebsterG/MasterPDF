@@ -1,5 +1,5 @@
-\chapter{Fluid Structure Interaction Problem}
-The following chapter will be devoted to introducing the full FSI problem, with all the equations, conditions, and discretizations needed to to build a Fluid Structure Interaction solver. \newline
+\chapter{Fluid-Structure Interaction Problem}
+The following chapter will be devoted to introducing the full FSI problem, with all the equations, conditions, and discretizations needed to to build a Fluid-Structure Interaction solver. \newline
 
 When computing FSI problems the computing domain is split into three parts, fluid, structure, and interface. Fluid and structure domains are separated, and different constitutive equations are solved in each domain. The spatial points in which fluid and structure join is called the interface. The treatment of the interface gives the two main methods for solving FSI problems \cite{Liu2014}. The first method is called fully Eulerian. In a fully Eulerian framework, both the fluid and structure equations are defined and solved in a purely Eulerian description. The interface in a fully Eulerian framework is tracked across a fixed domain \cite{Valkov2015}. The fully Eulerian description is suited for fluid problems but is problematic for structure problem. And certainly for FSI problems where tracking of the interface across the domain is a difficult task. \newline
 
@@ -45,7 +45,7 @@ The divergence of a vector $ \bold{u}$ will be mapped  between configurations as
 \int_{\mathcal{V}(t)} \nabla \cdot \bold{u}   dx = \int_{\hat{\mathcal{V}}} \nabla \cdot( J  F^{-1} \bold{u}) dx  
 \end{equation}
 
-\section{Governing equations for Fluid Structure Interaction}
+\section{Governing equations for Fluid-Structure Interaction}
 
 The following section formulates the equations in the Eulerian, Lagrangian, and the ALE description. I start by Briefly talking about time derivatives in the different configurations, to understand the need to change the fluid equation in the ALE description \cite{Wick2011}:
 
@@ -104,9 +104,29 @@ The change in the fluid equations denoted from the current configuration using t
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
-\section{Lifting operators for upholding mesh quality} \label{sec:meshmotion}
-Using the ALE method the solid domain moves into to fluid domain. The deformations from the structure through the interface are extrapolated to the fluid domain using different lifting operators. The lifting operators redistributes the interior node locations to uphold the mesh quality.  
-The choice of lifting operator is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice will make the mesh overlap and singularities may occur. 
+
+
+\section{Interface conditions at the boundary}
+Figure \ref{pic:FSI_mapping} shows a typical Fluid-Structure Interaction domain. The fluid is surrounded by elastic walls, like for instance a blood vessel. Inflow of fluid at $\partial \hat{\mathcal{F}}_{in}$, a change in pressure, or a motion of the solid determines the flow of the fluid.
+The fluid`s stress on the walls causes deformation in the solid domain and vice versa. The interface is where these energies are transferred and we therefore need conditions on the interface. \newline
+
+The three interface conditions comes from simple physical properties and consist of \cite{Richter2016}:
+\begin{itemize}
+\item \textit{Kinematic condition}: $\bold{u}_f = \bold{u}_s  \hspace{2mm} on \hspace{2mm} \hat{\Sigma}$. The fluid and structure velocities are equal on the interface. Meaning the fluid moves with the interface at all times. \\
+Since we use a global function for $\bold{u}$ in both fluid and structure domains, this condition is upheld.\\ 
+The fluid and solid velocities are usually in different coordinate systems, the solid velocity is then not available in Eulerian Coordinates. We instead link fluid velocity at the interface by using the fact that $\bold{u}_s = \frac{\partial \bold{d}}{\partial t}$. Setting $\bold{u}_f = \frac{\partial \bold{d}}{\partial t}$ at the interface.
+
+\item \textit{Dynamic condition}: $  \sigma_f n_f = \sigma_s n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma}   $. \\
+	The dynamic interface condition relates to Newtons third law of action and reaction. The forces on the interface area, here written as the normal forces are balanced on the interface. These forces will be written in a Lagrangian formulation: \\
+	$J\sigma_f F^{-T} n_f = P n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma} $. \\
+	The dynamic condition is a Neumann condition that belongs to both subproblems.
+	
+\item \textit{Geometrical condition}: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
+\end{itemize}
+
+\section{Lifting operators for domain representation and mesh quality preservation} \label{sec:meshmotion}
+The kinematic interface conditions states that the fluid moves with the solid, and therefore the fluid domain needs to move in accordance with the solid deformations. The deformations from the structure are extrapolated through the interface into the fluid domain using different lifting operators. The lifting operators redistributes the interior node locations to uphold the mesh quality in the fluid domain.
+The choice of lifting operator is important for the overall FSI problem to be calculated \cite{Wick2011a}. When large deformations occur, we need a good lifting operator to uphold the integrity of the computing domain. A poor choice may make the mesh overlap and singularities may occur. 
 When extrapolating deformation from the solid to the fluid domain, the fluid domain itself acts as a structure, deforming according to the deformations from the structure domain.\newline
 
 I will in this section present different lifting operators, that act differently on the computational domain. In \ref{sec:mesh_motion} the techniques will be tested and investigated.
@@ -165,26 +185,6 @@ The second type of boundary condition imposes conditions on $\bold{d}$ and $\ome
 \end{align}
 
 Since the biharmonic extension is of fourth order character it will have a higher computational cost \cite{Richter2016} than the harmonic or linear elastic. 
-
-
-\section{Interface conditions}
-Figure \ref{pic:FSI_mapping} shows a typical Fluid Structure Interaction domain. The fluid is surrounded by elastic walls, like for instance a blood vessel. Inflow of fluid at $\partial \hat{\mathcal{F}}_{in}$, a change in pressure, or a motion of the solid determines the flow of the fluid.
-The fluid`s stress on the walls causes deformation in the solid domain and vice versa. The interface is where these energies are transferred and we therefore need conditions on the interface. \newline
-
-The three interface conditions comes from simple physical properties and consist of \cite{Richter2016}:
-\begin{itemize}
-\item \textit{Kinematic condition}: $\bold{u}_f = \bold{u}_s  \hspace{2mm} on \hspace{2mm} \hat{\Sigma}$. The fluid and structure velocities are equal on the interface. Meaning the fluid moves with the interface at all times. \\
-Since we use a global function for $\bold{u}$ in both fluid and structure domains, this condition is upheld.\\ 
-The fluid and solid velocities are usually in different coordinate systems, the solid velocity is then not available in Eulerian Coordinates. We instead link fluid velocity at the interface by using the fact that $\bold{u}_s = \frac{\partial \bold{d}}{\partial t}$. Setting $\bold{u}_f = \frac{\partial \bold{d}}{\partial t}$ at the interface.
-
-\item \textit{Dynamic condition}: $  \sigma_f n_f = \sigma_s n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma}   $. \\
-	The dynamic interface condition relates to Newtons third law of action and reaction. The forces on the interface area, here written as the normal forces are balanced on the interface. These forces will be written in a Lagrangian formulation: \\
-	$J\sigma_f F^{-T} n_f = P n_s \hspace{2mm} on  \hspace{2mm}\hat{\Sigma} $. \\
-	The dynamic condition is a Neumann condition that belongs to both subproblems.
-	
-\item \textit{Geometrical condition}: This condition says that the fluid and structure domains do not overlap, but rather that elements connect so the functions needing to transfer force are continuos across the entire domain.
-\end{itemize}
-
 
 
 \begin{comment}
