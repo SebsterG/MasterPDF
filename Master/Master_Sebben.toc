@@ -31,7 +31,7 @@
 \contentsline {subsubsection}{CFD test}{35}
 \contentsline {subsubsection}{Discussion of CFD results}{37}
 \contentsline {subsubsection}{CSM test}{37}
-\contentsline {subsection}{\numberline {5.2.2}Comparing different lifting operators}{42}
+\contentsline {subsection}{\numberline {5.2.2}Comparing different lifting operators}{43}
 \contentsline {subsubsection}{FSI2 with Lifting operator}{46}
 \contentsline {subsection}{\numberline {5.2.3}Temporal stability}{47}
 \contentsline {chapter}{\numberline {6}CPU time improvement techniques}{49}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  22 MAY 2017 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  22 MAY 2017 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1808,18 +1808,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [40 <./Verification_Validation//Hron_Turek/dis_x.png> <./Verification_Validatio
 n//Hron_Turek/dis_y.png> <./Verification_Validation//Hron_Turek/dis_x_short.png
 > <./Verification_Validation/Hron_Turek/dis_y_short.png>]
-Overfull \hbox (32.92926pt too wide) in paragraph at lines 358--366
- [][] 
+<./Verification_Validation/Hron_Turek/FSI2_d_970.png, id=212, 1268.74pt x 380.4
+2125pt>
+File: ./Verification_Validation/Hron_Turek/FSI2_d_970.png Graphic file (type pn
+g)
+ <use ./Verification_Validation/Hron_Turek/FSI2_d_970.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_d_970.png us
+ed on input line 279.
+(pdftex.def)             Requested size: 444.06566pt x 133.14941pt.
+
+Overfull \hbox (54.06566pt too wide) in paragraph at lines 279--280
+[][] 
+ []
+
+
+<./Verification_Validation/Hron_Turek/FSI2_u_970.png, id=214, 1268.74pt x 380.4
+2125pt>
+File: ./Verification_Validation/Hron_Turek/FSI2_u_970.png Graphic file (type pn
+g)
+ <use ./Verification_Validation/Hron_Turek/FSI2_u_970.png>
+Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_u_970.png us
+ed on input line 283.
+(pdftex.def)             Requested size: 444.06566pt x 133.14941pt.
+
+Overfull \hbox (54.06566pt too wide) in paragraph at lines 283--284
+[][] 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Overfull \hbox (32.92926pt too wide) in paragraph at lines 369--377
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
-) (./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex
-[42]
-<./Verification_Validation/Mesh_motion_results/CSM1.png, id=218, 586.8324pt x 4
+[42 <./Verification_Validation/Hron_Turek/FSI2_d_970.png (PNG copy)> <./Verific
+ation_Validation/Hron_Turek/FSI2_u_970.png (PNG copy)>])
+(./Verification_Validation/Mesh_motion_results/Mesh_motion_results.tex [43]
+<./Verification_Validation/Mesh_motion_results/CSM1.png, id=227, 586.8324pt x 4
 42.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1.png Graphic file (type
  png)
@@ -1828,10 +1857,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1.png
  used on input line 15.
 (pdftex.def)             Requested size: 352.10216pt x 265.37749pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-<./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=223, 919.43
+<./Verification_Validation/Mesh_motion_results/CSM1_laplace.png, id=229, 919.43
 5pt x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_laplace.png Graphic fi
 le (type png)
@@ -1841,7 +1867,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_lap
 lace.png used on input line 23.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_constant.png, id=224, 919.4
+<./Verification_Validation/Mesh_motion_results/CSM1_constant.png, id=230, 919.4
 35pt x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_constant.png Graphic f
 ile (type png)
@@ -1851,7 +1877,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_con
 stant.png used on input line 29.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png, id=225, 919.435p
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png, id=231, 919.435p
 t x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc1.png Graphic file
  (type png)
@@ -1861,7 +1887,7 @@ Package pdftex.def Info: ./Verification_Validation/Mesh_motion_results/CSM1_bib
 c1.png used on input line 35.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-<./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png, id=226, 919.435p
+<./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png, id=232, 919.435p
 t x 380.42125pt>
 File: ./Verification_Validation/Mesh_motion_results/CSM1_bibc2.png Graphic file
  (type png)
@@ -1884,7 +1910,7 @@ Overfull \hbox (78.00476pt too wide) in paragraph at lines 21--45
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <./Verification_Validation/Mesh_motion_results/CSM1.png>]
-<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png, id=232, 58
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png, id=238, 58
 6.8324pt x 442.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png Graphi
 c file (type png)
@@ -1899,7 +1925,7 @@ Overfull \hbox (6.60045pt too wide) in paragraph at lines 73--75
  []
 
 
-<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png, id=233, 58
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png, id=239, 58
 6.8324pt x 442.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png Graphi
 c file (type png)
@@ -1914,7 +1940,7 @@ Overfull \hbox (6.60045pt too wide) in paragraph at lines 78--80
  []
 
 
-<./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png, id=234, 586
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png, id=240, 586
 .8324pt x 442.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png Graphic
  file (type png)
@@ -1929,7 +1955,7 @@ Overfull \hbox (6.60045pt too wide) in paragraph at lines 83--85
  []
 
 
-<./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png, id=235, 586
+<./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png, id=241, 586
 .8324pt x 442.2924pt>
 File: ./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png Graphic
  file (type png)
@@ -1965,7 +1991,7 @@ ification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png> <./Verification_
 Validation/Mesh_motion_results/FSI2_dt001_dis_y.png> <./Verification_Validation
 /Mesh_motion_results/FSI2_dt001_drag.png> <./Verification_Validation/Mesh_motio
 n_results/FSI2_dt001_lift.png>]
-<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=247, 586
+<./Verification_Validation/Temporal_stability/FSI2_001_051_big.png, id=253, 586
 .8324pt x 433.62pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_051_big.png Graphic
  file (type png)
@@ -1980,7 +2006,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 9--10
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=248, 586
+<./Verification_Validation/Temporal_stability/FSI2_001_050_big.png, id=254, 586
 .8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_050_big.png Graphic
  file (type png)
@@ -1995,7 +2021,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 15--16
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=249, 5
+<./Verification_Validation/Temporal_stability/FSI2_001_051_small.png, id=255, 5
 86.8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_051_small.png Graph
 ic file (type png)
@@ -2010,7 +2036,7 @@ Overfull \hbox (10.39441pt too wide) in paragraph at lines 21--22
  []
 
 
-<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=250, 5
+<./Verification_Validation/Temporal_stability/FSI2_001_050_small.png, id=256, 5
 86.8324pt x 442.2924pt>
 File: ./Verification_Validation/Temporal_stability/FSI2_001_050_small.png Graph
 ic file (type png)
@@ -2073,7 +2099,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [56] (./Appendix/Appendix.tex
 Appendix A.
-<continuum_mapping.png, id=286, 682.55pt x 341.275pt>
+<continuum_mapping.png, id=292, 682.55pt x 341.275pt>
 File: continuum_mapping.png Graphic file (type png)
 
 <use continuum_mapping.png>
@@ -2086,7 +2112,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
-<./Solid_equations/Strain.png, id=291, 918.43124pt x 325.215pt>
+<./Solid_equations/Strain.png, id=297, 918.43124pt x 325.215pt>
 File: ./Solid_equations/Strain.png Graphic file (type png)
 
 <use ./Solid_equations/Strain.png>
@@ -2105,7 +2131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-[60] <./Appendix/BigBoyResults.png, id=302, 1284.8pt x 803.0pt>
+[60] <./Appendix/BigBoyResults.png, id=308, 1284.8pt x 803.0pt>
 File: ./Appendix/BigBoyResults.png Graphic file (type png)
 
 <use ./Appendix/BigBoyResults.png>
@@ -2122,10 +2148,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28308 strings out of 493089
- 564080 string characters out of 6134842
+ 28318 strings out of 493089
+ 564554 string characters out of 6134842
  838267 words of memory out of 5000000
- 31200 multiletter control sequences out of 15000+600000
+ 31208 multiletter control sequences out of 15000+600000
  40436 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,101p,10452b,1856s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2157,10 +2183,10 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (69 pages, 2130289 bytes).
+Output written on Master_Sebben.pdf (69 pages, 2311344 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
+ 415 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 228 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
