@@ -1,13 +1,13 @@
 \subsection{Comparing different lifting operators}\label{sec:mesh_motion}
-This section is devoted to comparing different lifting operators from \ref{sec:meshmotion}. The comparisions will be run using a version of the CSM test discussed earlier, with the same computing domain as the Hron Turek benchmark. Also the FSI2 case from the previous section will be investigated. The tests will compare the different techniques by investigating how the deformation from the solid domain is lifted into the fluid domain. This is done by investigating a plot of the mesh after deformation to see how much cells distort and where the cells distort. This is visualized using Paraview.\newline
+The following section is devoted to comparing different lifting operators from section \ref{sec:meshmotion}. The comparisons will be run using a version of the CSM1 test discussed in the previous section, with the same computing domain as the Hron Turek benchmark. Also the FSI2 case from the previous section will be investigated. The tests will compare the different techniques by investigating how the deformation from the solid domain is lifted into the fluid domain. I investigate plots of the mesh after deformation to see how much cells distort and where the cells distort. This is visualized using Paraview with its built in function \textit{warp by vector}, which redistributes nodes based on the displacement values in each nodal point.\newline
 In the version of the CSM1 case the fluid is initially at rest and with no inflow on the fluid. A gravitational force is applied to the structure much like the previous CSM test. The only difference is that we now use the full domain from the \ref{sec:HronTurek} . The test is run as time-dependent with a the backward Euler scheme, leading to a steady state solution. In the first test case the parameters from CSM1 are used. \newline
 A plot of the FSI2 test case with different lifting operators has been added at the end
 
 \subsection*{Boundary conditions}
-The computing domain is the same as used in the previous section.
-The upper, lower and left boundary is set as no slip, that is no velocity in the fluid. On the left boundary there is a do nothing, and zero pressure. 
+The computing domain is the same as used in the Hron Turek benchmark.
+The upper, lower and left boundary is set as \say{no slip} condition. On the left boundary is set to \say{do nothing}, and zero pressure. 
 \subsection*{Quantities for comparison}
-The different techniques will be plotted with the minimal value of the Jacobian. The Jacobian determinant of the deformation rate, and \textbf{if the Jacobian is zero anywhere in the domain it means that the cells overlap and can cause singularity in the matrices during assembly.} \newline
+The different techniques will be plotted with the minimal value of the Jacobian. \textbf{If the Jacobian is zero anywhere in the domain it means that the cells overlap and can cause singularity in the matrices during assembly.} \newline
 A plot of the deformation in the domain has been added, to visualize how the different mesh motion techniques work. It is possible to see that if get thin triangles in the computational domain then the lifting operator is not good enough, and we might get singularities in the computing matrix.
 \subsubsection*{Different lifting operators with testcase CSM1}
 \begin{figure}[H]
@@ -70,28 +70,28 @@ While the harmonic named smart meaning an $\alpha_u$ that is greater closer to t
 \begin{figure}[H]  \label{fig:FSI2_motion} 
   \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png} 
+    \includegraphics[scale=0.45]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_x.png} 
     \vspace{4ex}
   \end{minipage}%%
   \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png} 
+    \includegraphics[scale=0.45]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_dis_y.png} 
     \vspace{4ex}
   \end{minipage} 
   \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png} 
+    \includegraphics[scale=0.45]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_drag.png} 
     \vspace{4ex}
   \end{minipage}%% 
   \begin{minipage}[b]{0.6\linewidth}
     \centering
-    \includegraphics[scale=0.41]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png} 
+    \includegraphics[scale=0.45]{./Verification_Validation/Mesh_motion_results/FSI2_dt001_lift.png} 
     \vspace{4ex}
   \end{minipage} 
 \caption {FSI2 with different lifting operators: Harmonic, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
 \end{figure}
 
-Figure \ref{fig:FSI2_motion} shows the harmonic and the two biharmonic mesh motion techniques for the FSI2 case. All three are similar and only a slight change in the period can be noticed. This indicates that with a clever $\alpha_u$ the harmonic technique can be chosen. This is an advantage since the harmonic techniques is the least computationally costly.
+Figure \ref{fig:FSI2_motion} shows the harmonic and the two biharmonic mesh motion techniques for the FSI2 case. All three are similar and only a slight change in the period can be noticed. This indicates that with a clever $\alpha_u$, the harmonic technique can be chosen. This is an advantage since the harmonic techniques is the least computationally costly.
 
 
 

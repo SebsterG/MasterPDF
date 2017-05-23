@@ -1,14 +1,17 @@
 \section{Fluid and Structure Boundary conditions}
 To complete the fluid and solid equations, boundary conditions need to be imposed. The fluid flows and the solid moves within the boundaries noted as $ \partial\mathcal{F}$ and $ \partial \mathcal{S}$ respectively. 
 
-On the Dirichlet boundary, $ \partial \mathcal{F}_D$ and $ \partial \mathcal{S}_D$, we impose a given value. Dirichlet conditions can be initial conditions or set values, such as zero on the fluid boundary for a "no slip" condition. The Dirichlet conditions are defined for $\bold{u}$ and $p$ :
+Dirichlet boundary conditions are defined on the boundaries $ \partial \mathcal{F}_D$ and $ \partial \mathcal{S}_D$,
+Dirichlet conditions can be set values, such as zero on the fluid boundary for a "no slip" condition. For a problem to be well posed we need initial conditions.
+The Dirichlet conditions are defined for $\bold{u}$ and $p$ :
 \begin{align}
 \bold{u} =& u_0 \text{   on   } \partial \mathcal{F}_D  \\
 p =& p_0 \text{   on   } \partial \mathcal{F}_D  \\
 \bold{d} =& d_0 \text{ on   } \partial \mathcal{S}_D  \\
 \bold{w}(\textbf{X},t)_0 =& \frac{\partial \bold{d}(t=0)}{\partial t} \text{   on   } \partial \mathcal{S}_D   
 \end{align}
-The forces on the boundaries equal a possible external force $ \bold{f}$. These are are enforced on the Neumann boundaries $\partial \mathcal{F}_N$ and  $\partial \mathcal{S}_N$ :
+
+In addition to Dirichlet conditions we have Neumann boundary conditions which states a specific value of the derivative of a solution on the Neumann boundary $\partial \mathcal{F}_N$ and $\partial \mathcal{S}_N$. We can control eventual forces on the Neumann boundary, these equal a possible external force $ \bold{f}$:
 \begin{align}
 \sigma \cdot \bold{n} &= f \text{   on   } \partial \mathcal{F}_N \\   
 P\cdot \bold{n} &= f \text{   on   } \partial \mathcal{S}_N    

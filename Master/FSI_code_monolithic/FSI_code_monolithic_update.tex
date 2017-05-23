@@ -16,14 +16,14 @@
 
 
 \chapter{Implementation of Fluid Structure Interaction in FEniCS}
-This Chapter shows the implementation of the FSI code in FEniCS \cite{FENICS}. FEniCS is platform used to solve partial differential equations. Code is written in python and FEniCS makes it easy to run efficient finite element code. \newline
+The following chapter shows the implementation of the FSI code in FEniCS \cite{FENICS}. FEniCS is platform used to solve partial differential equations. Code is written in python and FEniCS makes it easy to run efficient finite element code. \newline
 
 The complete code consist of many hundreds of lines of code, and therefore only the most essential parts are covered. The code that has been added is added so that a reader with a minimal skill set in scientific computing and basic knowledge of the finite element method could implement a version of the code.
 
 
 
 \section{Mappings}
-The deformation gradient and the Jacobian is made using python functions. The deformation gradient python function takes in the deformation and returns the deformation gradient. Identity in FEniCS is a function that makes the identity matrix, with the size determined by a input value. The identity takes the length of the deformation function which for 2D cases is 2. grad is a built in FEniCS function that takes a vectorfunction and take the gradient.
+The deformation gradient and the Jacobian is made using python functions. The deformation gradient Python function takes in the deformation vector and returns the deformation gradient. Identity in FEniCS is a function that makes the identity matrix, with the size determined by an input value. The Identity takes the length of the deformation function which for 2D cases is 2. grad is a built in FEniCS function that takes a vectorfunction and take the gradient.
 \begin{python}\caption{Fenics code of deformation gradient and Jacobian}
 def F_(d): """inputs deformation """
 	return (Identity(len(d)) + grad(d))  """Returns the deformation gradient"""
@@ -35,8 +35,8 @@ def J_(d):
 
 \section{Variational form}
 
-The variational form can be written directly into FEniCS. A big advantage in FEniCS is that one can write all the forms and add them together to make the full variational form.
-The vector functions and functions such as the displacement, velocity, and pressure, are written with a script n meaning at which time the function is valued. 
+The variational form can be written directly into FEniCS. A big advantage in FEniCS is that one can write all the parts of the variational form and add them together to make the full variational form.
+The vector functions and functions such as the displacement, velocity, and pressure, are written with a script \say{n} meaning at which time the function is valued. 
 \begin{python}\caption{Deformation, velocity and pressure function described at three different timesteps }
 d_["n"]  """deformation in the current timestep """
 u_["n-1"] """velocity in the last timestep """
@@ -45,14 +45,14 @@ p_["n-2"] """pressure in the second last timestep """
 
 theta is the value $\theta$ that determines the scheme.
 k is the timestep $\Delta t$\\
-$F_fluid_linear$ is the linear part of the variational form, and $F_fluid_nonlinear$ is the nonlinear part. Each part is assembled later when using newtonsmethod. 
+F\_fluid\_linear is the linear part of the fluid variational form, and F\_fluid\_nonlinear is the nonlinear part of the fluid variational form. Each part is assembled later when using Newtons method. 
 
-Constant is a function in FEniCS that represents a constant value unknown at compile-time. Its value can be changed without the need to re-compilation of C++ code, which FEniCS utilizes.
-$sigma_f$ and $sigma_f $ is the velocity and pressure parts of the fluid stress tensor.
+Constant is a function in FEniCS that represents a constant value unknown at compile-time. Its value can be changed without the need to re-compilation of C++ code.
+sigma\_f and sigma\_f  is the velocity and pressure parts of the fluid stress tensor.
 grad and div are built-in functions in FEniCS that computes the gradient and divergence and given vector.
-$dx_f$ denotes the fluid domain. 
-$inv()$ is a built-in function in FEniCS outputs the inverse of the given matrix. 
-psi, phi and gamma are the test functions.
+dx\_f denotes the fluid domain. 
+inv\(\) is a built-in function in FEniCS outputs the inverse of the given matrix. 
+psi, phi and gamma are the test functions: $\psi, \phi$ and $\gamma$.
 
 \begin{python}
 J_theta = theta*J_(d_["n"]) + (1 - theta)*J_(d_["n-1"]) 
@@ -81,7 +81,7 @@ F_fluid_nonlinear -= rho_f*inner(J_(d_["n"])*\
 grad(v_["n"])*inv(F_(d_["n"]))*((d_["n"]-d_["n-1"])/k), psi)*dx_f
 \end{python}
 
-Fsolidlinear is the linear part of the variational form, and Fsolidnonlinear is the nonlinear part.
+F\_solid\_linear is the linear part of the variational form, and Fsolidnonlinear is the nonlinear part.
 Piola1 is the first Piola-Kirchhoff stress tensor.
 \begin{python}
 delta = 1E10
@@ -98,17 +98,18 @@ The weighed delta is talked about in section \ref{Discretization}
 \section{Newtons method implementation for solving Fluid structure interaction}
 To solve a non-linear FSI problem, the newtons method has been implemented, ideas and code taken from from \cite{White2006}.
 
-The derivative of the nonlinear variational parts is take with respect to dvp, which is the mixed function of displacement, velocity and pressure. -F is assembly of full variational form.
+The derivative of the nonlinear variational parts is take with respect to the displacement, velocity and pressure. The displacement, velocity and pressure are made into a mixed function dvp. -F is assembly of the full variational form.
+
+There is also an \say{if} test which only assembles the Jacobian the first and tenth time in this case. This reuses the Jacobian to improve runtime, which is discussed in chapter \ref{runtime}. Lastly the the mpi line is when the code is running in parallel, for 
 
 
-There is also an if test which only assembles the Jacobian the first and tenth time. This reuses the Jacobian to improve runtime, which is discussed in chapter \ref{runtime}. Lastly the the mpi line is when the code is running in parallel.
 \begin{python}
 def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
                 dvp_, up_sol, dvp_res, rtol, atol, max_it, T, t, **monolithic):
     Iter      = 0  """ Setting initial values """
     residual   = 1  
     rel_res    = residual
-    lmbda = 1
+    lmbda = 1 """  """
 
     while rel_res > rtol and residual > atol and Iter < max_it:
         if Iter % 10 == 0:
@@ -118,9 +119,9 @@ def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
 
         b = assemble(-F, tensor=b)
 
-        [bc.apply(A, b, dvp_["n"].vector()) for bc in bcs]
-        up_sol.solve(A, dvp_res.vector(), b)
-        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())
+        [bc.apply(A, b, dvp_["n"].vector()) for bc in bcs] """ Applies boundary conditions to the mixed function dvp """
+        up_sol.solve(A, dvp_res.vector(), b) """ Solves the matrix equation A * dvp = b """
+        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())   """   """
         [bc.apply(dvp_["n"].vector()) for bc in bcs]
         rel_res = norm(dvp_res, 'l2')
         residual = b.norm('l2')

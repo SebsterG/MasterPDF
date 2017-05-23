@@ -238,7 +238,7 @@ The tables \ref{tab:CSM1}, \ref{tab:CSM2} shows the results of the two steady st
 The plot \ref{plot:CSM3_plots} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
 
 \subsubsection*{FSI tests}
-Lastly the full FSI problem ran. Here we can see in \ref{fig:fluid_structure} that now both fluid and structure has a mesh. The tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. Vinje 2016 \cite{Vinje2016} reported not being able to compute FSI-2 model due to shortcomings in the linear elasticity solid model. The FSI-3 test has the highest inflow speed giving medium deformations but more rapid oscillations.
+The FSI tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. Vinje 2016 \cite{Vinje2016} reported not being able to compute FSI-2 model due to shortcomings in the linear elasticity solid model. The FSI-3 test has the highest inflow speed giving medium deformations but more rapid oscillations.
 
 
 \begin{table}[h!]
@@ -275,6 +275,19 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift 
 
 \subsubsection*{FSI2}
 
+\begin{table}[]
+\centering
+\caption{FSI2 test case results, $\Delta t = 0.01$, using the harmonic lifting operator}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift \\ \hline
+2474 & 21749 & $-15.26 \pm 13.44$ & $1.34 \pm 82.38$ & $157.02 \pm 14.79 $ & $-1.426 \pm 258.4 $ \\ \hline
+7307 & 63365 & $-14.96 \pm 13.24$ & $1.01 \pm 81.67$ & $159.01 \pm 16.33$ & $1.88 \pm 254.2 $ \\ \hline
+11556 & 99810 &  &  &  &  \\ \hline
+\textbf{ref} & \textbf{ref} & $\textbf{-14.58} \pm \textbf{12.44}$ & $\textbf{1.23} \pm \textbf{80.6}$ & $\textbf{208.83} \pm \textbf{73.75}  $ & $\textbf{0.88} \pm \textbf{234.2} $ \\ \hline
+\end{tabular}
+\end{table}
+
 \begin{figure}[H]
 \includegraphics[scale=0.35,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_d_970.png}
 \caption{Deformation at $t =9.70 $sec. The bar is marked with pink colour and deformed using warp by vector in paraview.}
@@ -283,6 +296,8 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift 
 \includegraphics[scale=0.35,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_u_970.png}
 \caption{Fluid velocity at $ t = 9.70 $sec on the reference mesh}
 \end{figure}
+
+
 
 
 
@@ -371,13 +386,17 @@ ref. &  & $ ?2.69 \pm 2.53$ & $1.48 \pm 34.38 $ & $ 2.22 \pm 149.78$ & $ 457.3 \
 Cells & Dofs & $d_x (A)[\times10?3 ]$ & $d_y (A)[\times10?3 ]$ & Drag & Lift \\ \hline
 2474 & 21249 & $-1.79 \pm 1.80$ & $3.29 \pm 2.64$ & $439.36 \pm 12.04$ & $1.96 \pm 142.31$ \\ \hline
 7307 & 63365 & $-2.48 \pm 2.48$ & $ 1.64 \pm 3.28$ & $449.77 \pm 18.02$ & $3.41 \pm 153.47$ \\ \hline
-11556 & 99810 & $ -2.47 \pm 2.45$ & $ 1.27 \pm 3.28$ & $456.60 \pm 18.73$ & $-1.55 \pm 153.46$ \\ \hline
+11556 & 99810 & $ -2.47 \pm 2.45$ & $ 1.27 \pm 3.28$ & $456.60 \pm 18.73$ & $1.55 \pm 153.46$ \\ \hline
 ref & ref & $\bold{-2.69 \pm  2.56}$ & $\bold{1.48 \pm 34.38}$ & $\bold{457.3 \pm 22.66}$ & $\bold{2.22 \pm 149.78}$ \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection*{Comment on FSI tests}
 The FSI1 test gives a low fluid velocity and gives very low displacements. FSI1 is therefore not a rigid test for FSI. In fact I experienced in the beginning of making the FSI solver, that even with a wrong implementation i got good FSI1 results. However it is a good test for early checks, because if FSI1 is wrong the rest will definitely not work.  \newline
+
+For the FSI2 test case we only have results from the initial Hron and Turek paper \cite{Hron2006a}. As previously stated the results for the FSI3 case differ by in some cases 50\% for Drag and Lift. With this in mind, in the FSI2 case I am off by less then 10\% for displacement in x and y direction and for Lift. While Drag is off by about  50\%. It is reasonable to assume that since there were such differences in the results for different implementations for the FSI3 results, we would expect similar behavior in the FSI2 results.
+
+If we compare the results reported in the FSI3 case in the inital paper by Hron and Turek 2006, to their reported results in 2010 \ref{sec:bigboys} implementation 3, we can see that they do not report the same results same scheme, leading one believe that that they have changed their implementation a bit. 
 
 
 \begin{comment}
