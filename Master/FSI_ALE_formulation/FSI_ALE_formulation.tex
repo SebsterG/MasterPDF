@@ -96,8 +96,6 @@ Assembling all these terms together gives the fluid equations from a reference f
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
-
-
 \section{Interface conditions at the boundary}
 The fluid`s forces on the walls causes deformation in the solid domain and vice versa. The interface is where these energies are transferred and we therefore need conditions on the interface. \newline
 
@@ -152,7 +150,7 @@ where $\epsilon = \frac{1}{2}(\nabla d + (\nabla d)^T)$. $\epsilon$ is the linea
 \end{comment}
 
 \subsection{Biharmonic extension} 
-The last extension is the biharmonic extension. The biharmonic extension provides more freedom than the harmonic and linear elastic in choosing boundary conditions and choice of parameter $\alpha_u > 0$. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations, even with $\alpha_u$ as a constant. In its simplest form it is written as:
+The last extension is the biharmonic extension. The biharmonic extension provides more freedom than the harmonic and linear elastic in choosing boundary conditions and choice of parameter $\alpha_u > 0$ \cite{MM2016,Wick2011a}. This is because the biharmonic extension, extends the deformation in a manner that upholds the integrity of the cells even in large deformations, even with $\alpha_u$ as a constant. In its simplest form it is written as:
 
 \begin{equation}
 - \alpha_u \nabla^4 \bold{d} = 0 \hspace{4mm}  in \hspace{2mm} \hat{\mathcal{F}}\\
@@ -187,7 +185,7 @@ Find $\bold{u} \in \hat{\mathcal{F}} , p \in \hat{\mathcal{F}} \text{  and  } d 
 \nabla \cdot (J \bold{u}  F^{-T})\big) &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{F}}   \\
 \rho_s \frac{\partial \bold{u} }{\partial t} + \nabla \cdot F S_s,&=0 \hspace{8mm} \text{on  } \hat{\mathcal{S}}\\
 \nabla^2 d &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{F}}\\
-\bold{u} - \frac{\partial d}{\partial t}  &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{S}}\\
+\bold{u} - \frac{\partial d}{\partial t}  &= 0 \hspace{8mm} \text{on  } \hat{\mathcal{S}} \label{eq:restriction}\\
 J\sigma_f F^{-T} n_f &= \sigma_s  n_s \hspace{3mm} \text{on  } \hat{\Sigma}
 \end{align}
 \end{comment}

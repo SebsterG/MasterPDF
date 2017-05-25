@@ -4,71 +4,101 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
-\citation{Liu2014}
-\citation{Valkov2015}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Fluid-Structure Interaction Problem}{1}}
+\citation{Selin2014}
+\citation{Oberkampf2010}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Verification and Validation of the Fluid Structure Interaction Implementation.}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\citation{Liu2014}
-\citation{Richter2016}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Mapping between different frames of reference}{3}}
-\newlabel{pic:FSI_mapping}{{1.1}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Mapping of domain from reference to current}}{3}}
-\citation{Wick2011}
-\newlabel{eq:mappings1}{{1.1}{4}}
-\newlabel{eq:mappings2}{{1.2}{4}}
-\newlabel{eq:mappings3}{{1.3}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Governing equations for Fluid-Structure Interaction}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Derivatives in different frameworks}{4}}
-\newlabel{eq:ALE}{{1.6}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Solid equation}{5}}
-\newlabel{eq:solid}{{1.7}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Fluid equations}{5}}
-\citation{Richter2016}
-\newlabel{eq:NS_mapped}{{1.14}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Interface conditions at the boundary}{6}}
-\citation{Wick2011a}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Lifting operators for domain representation and mesh quality preservation}{7}}
-\newlabel{sec:meshmotion}{{1.4}{7}}
-\citation{Wick2011a}
-\citation{Stein2003}
-\citation{MM2016}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Harmonic extension}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Biharmonic extension}{8}}
-\citation{Richter2016}
-\citation{Wick2011}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Discretization of monolithic FSI equations}{9}}
-\newlabel{Discretization}{{1.5}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{Spaces}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{Discretization}{10}}
-\citation{Wick2011}
-\citation{Wick2011}
-\newlabel{eq:condition}{{1.37}{11}}
-\citation{Wick2011}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{13}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{15}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Lagrangian description of solid mechanics}{15}}
-\newlabel{eq:chi}{{A.2}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Deformation gradient}{16}}
-\newlabel{eq:deformation_gradient}{{A.5}{16}}
-\newlabel{eq:J}{{A.6}{16}}
-\citation{Richter2016}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Strain}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Deformation of a line element with length $d\epsilon $ into a line element with length $\lambda d \epsilon $}}{17}}
-\newlabel{eq:StrainTensor}{{A.19}{18}}
+\newlabel{chap:VV}{{1}{1}}
+\citation{Roache2002}
+\citation{Oberkampf2010}
+\citation{Oberkampf2010}
+\citation{Roache2002}
+\citation{Oberkampf2010}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Verification}{2}}
+\newlabel{eq:Error}{{1.2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Method of Manufactured Solution on the implementation of the Solid equation}{3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Method of Manufactured Solution on the implementation of the Solid equation in space with m = 1}}{4}}
+\newlabel{tab:MMS_SOLID_SPACE}{{1.1}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Method of Manufactured Solution on the implementation of the Solid equation in time}}{4}}
+\newlabel{tab:MMS_SOLID_TIME}{{1.2}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}MMS of Fluid equations with prescribed motion}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.3}{\ignorespaces Results for Method of Manufacture Solutions test for fluid equations}}{6}}
+\newlabel{tab:MMS_Flu?id_time}{{1.3}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.4}{\ignorespaces Results of MMS ALE FSI u=w}}{6}}
+\newlabel{tab:MMS_Fluid_space}{{1.4}{6}}
+\citation{Etienne2006}
+\citation{Etienne2012}
+\citation{Selin2014}
+\citation{Macal2005}
+\citation{Selin2014}
+\citation{Selin2014}
+\citation{Selin2014}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Validation}{7}}
+\citation{Turek1996}
+\citation{Hron2006a}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{8}}
+\newlabel{sec:HronTurek}{{1.2.1}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.5}{\ignorespaces Domain parameters}}{9}}
+\newlabel{my-label}{{1.5}{9}}
+\citation{Hron2006a}
+\@writefile{toc}{\contentsline {subsubsection}{CFD test cases}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Picture of entire FSI computing domain with 11556 cells}}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Picture of FSI computing domain with 11556 cells, zoomed in with the solid domain marked in pink. Around the circle we can see a small boundary layer with the width of 2 cells}}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.6}{\ignorespaces Summary of all the parameters in CFD tests}}{11}}
+\newlabel{my-label}{{1.6}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.7}{\ignorespaces Results of CFD1 case run as full FSI, with almost rigid bar}}{11}}
+\newlabel{tab:CFD1}{{1.7}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.8}{\ignorespaces Results of CFD2 case run as full FSI with almost rigid bar}}{12}}
+\newlabel{tab:CFD2}{{1.8}{12}}
+\newlabel{fig:CFD2}{{1.2.1}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces CFD2 steady state case fluid flow with 11556 cells}}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.9}{\ignorespaces Results of unsteady state case CFD 3 with $\Delta t = 0.01$}}{12}}
+\newlabel{CFD3_dt001}{{1.9}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{Discussion of CFD results}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{CSM test cases}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Picture of the coarsest solid mesh used in the MMS test}}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.10}{\ignorespaces Summary table of the parameters used in the CSM tests}}{13}}
+\newlabel{my-label}{{1.10}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.11}{\ignorespaces Results of the steady CSM1 case from coarse to fine mesh.}}{14}}
+\newlabel{tab:CSM1}{{1.11}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.12}{\ignorespaces Results of the steady CSM2 case from coarse to fine mesh.}}{14}}
+\newlabel{tab:CSM2}{{1.12}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.13}{\ignorespaces Results of the unsteady CSM3 case with mesh from coarse to fine.}}{14}}
+\newlabel{tab:CSM3}{{1.13}{14}}
+\citation{Richter2013}
+\citation{Vinje2016}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Displacement in x direction, timeinterval (0,10)}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Displacement in y direction, timeinterval (0,10)}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Displacement in x direction, timeinterval (8,10)}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Displacement in y direction, timeinterval (8,10)}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Plots of the results for CSM3 showing Displacement of point A}}{15}}
+\newlabel{plot:CSM3}{{1.9}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.14}{\ignorespaces FSI Parameters}}{16}}
+\newlabel{my-label}{{1.14}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.15}{\ignorespaces Results of FSI 1 test case}}{16}}
+\newlabel{my-label}{{1.15}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.16}{\ignorespaces FSI2 test case results, $\Delta t = 0.01$, using the harmonic lifting operator}}{17}}
+\newlabel{FSI2_table}{{1.16}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.17}{\ignorespaces FSI-2 with $\Delta t = 0.001$, using harmonic lifting operator}}{17}}
+\newlabel{FSI2_table_0001}{{1.17}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces Deformation at $t =9.70 $sec. The bar is marked with pink colour and deformed using warp by vector in paraview.}}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces Fluid velocity at $ t = 9.70 $sec on the reference mesh}}{18}}
+\newlabel{FSI2_plots}{{1.2.1}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces Displacement x}}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.13}{\ignorespaces Displacement x}}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.14}{\ignorespaces Drag}}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.15}{\ignorespaces Lift}}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces Plots of FSI2 result values for, $\Delta t = 0.001$, with 11556 elements}}{19}}
+\citation{Hron2006a}
 \citation{Turek2010}
 \citation{Turek2010}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Stress}{19}}
-\citation{Turek2010}
+\citation{Hron2006a}
+\@writefile{lot}{\contentsline {table}{\numberline {1.18}{\ignorespaces FSI3 unsteady test case results with $\Delta t = 0.01$, with harmonic lifting operator}}{20}}
+\newlabel{my-label}{{1.18}{20}}
 \bibstyle{plain}
 \bibdata{Master_cites}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Results}{20}}
-\newlabel{sec:bigboys}{{A.2}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Results from different contributions in from the paper Turek et.al 2010 \cite  {Turek2010}}}{20}}
 \bibcite{Billah1991}{1}
 \bibcite{Charlesworth2003}{2}
 \bibcite{Etienne2012}{3}
@@ -76,23 +106,24 @@
 \bibcite{Fefferman2000}{5}
 \bibcite{Fernandez2013}{6}
 \bibcite{Fernandez2015}{7}
-\bibcite{Hron2006a}{8}
-\bibcite{Liu2014}{9}
-\bibcite{FENICS}{10}
-\bibcite{Macal2005}{11}
-\bibcite{MM2016}{12}
-\bibcite{Oberkampf2010}{13}
-\bibcite{Richter2013}{14}
-\bibcite{Richter2016}{15}
-\bibcite{Roache2002}{16}
-\bibcite{Sciences2012}{17}
-\bibcite{Selin2014}{18}
-\bibcite{Stein2003}{19}
-\bibcite{Turek2010}{20}
-\bibcite{Valkov2015}{21}
-\bibcite{VanBrummelen2009}{22}
-\bibcite{Vinje2016}{23}
-\bibcite{White2000}{24}
-\bibcite{White2006}{25}
-\bibcite{Wick2011}{26}
-\bibcite{Wick2011a}{27}
+\bibcite{Holzapfel2000}{8}
+\bibcite{Hron2006a}{9}
+\bibcite{Liu2014}{10}
+\bibcite{FENICS}{11}
+\bibcite{Macal2005}{12}
+\bibcite{MM2016}{13}
+\bibcite{Oberkampf2010}{14}
+\bibcite{Richter2013}{15}
+\bibcite{Richter2016}{16}
+\bibcite{Roache2002}{17}
+\bibcite{Turek1996}{18}
+\bibcite{Sciences2012}{19}
+\bibcite{Selin2014}{20}
+\bibcite{Stein2003}{21}
+\bibcite{Turek2010}{22}
+\bibcite{Valkov2015}{23}
+\bibcite{VanBrummelen2009}{24}
+\bibcite{Vinje2016}{25}
+\bibcite{White2006}{26}
+\bibcite{Wick2011}{27}
+\bibcite{Wick2011a}{28}

@@ -44,6 +44,11 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
 
+\bibitem{Holzapfel2000}
+G~Holzapfel.
+\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
+  2000.
+
 \bibitem{Hron2006a}
 Jaroslav Hron and Stefan Turek.
 \newblock {Proposal for numerical benchmarking of fluid-structure interaction
@@ -93,6 +98,11 @@ Patrick~J. Roache.
 \newblock {Code Verification by the Method of Manufactured Solutions}.
 \newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
 
+\bibitem{Turek1996}
+M.~Sch{\"{a}}fer, S.~Turek, F.~Durst, E.~Krause, and R.~Rannacher.
+\newblock {Benchmark Computations of Laminar Flow Around a Cylinder}.
+\newblock pages 547--566, 1996.
+
 \bibitem{Sciences2012}
 Natural Sciences.
 \newblock {A Newton ' s Method Finite Element Algorithm for Fluid-Structure
@@ -131,11 +141,6 @@ V~Vinje.
 \newblock {Simulating Cerebrospinal Fluid Flow and Spinal Cord Movement
   Associated with Syringomyelia}.
 \newblock 2016.
-
-\bibitem{White2000}
-Frank~M White.
-\newblock {Viscous Fluid Flow Viscous}.
-\newblock {\em New York}, Second:413, 2000.
 
 \bibitem{White2006}
 Frank~M. White.

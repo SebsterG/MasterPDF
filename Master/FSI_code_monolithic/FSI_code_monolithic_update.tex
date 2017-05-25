@@ -16,26 +16,18 @@
 
 
 \chapter{Implementation of Fluid Structure Interaction in FEniCS}
-The following chapter shows the implementation of the FSI code in FEniCS \cite{FENICS}. FEniCS is platform used to solve partial differential equations. Code is written in python and FEniCS makes it easy to run efficient finite element code. \newline
+The discretization described in chapter \ref{Discretization}, is implemented using FEniCS \cite{FENICS}. FEniCS is a platform used to solve partial differential equations. Code is written in python, using FEniCS to easily run efficient finite element code. \newline
 
 The complete code consist of many hundreds of lines of code, and therefore only the most essential parts are covered. The code that has been added is added so that a reader with a minimal skill set in scientific computing and basic knowledge of the finite element method could implement a version of the code.
 
-
-
-\section{Mappings}
-The deformation gradient and the Jacobian is made using python functions. The deformation gradient Python function takes in the deformation vector and returns the deformation gradient. Identity in FEniCS is a function that makes the identity matrix, with the size determined by an input value. The Identity takes the length of the deformation function which for 2D cases is 2. grad is a built in FEniCS function that takes a vectorfunction and take the gradient.
-\begin{python}\caption{Fenics code of deformation gradient and Jacobian}
-def F_(d): """inputs deformation """
-	return (Identity(len(d)) + grad(d))  """Returns the deformation gradient"""
-
-def J_(d):
-	return det(F_(d))
-\end{python}
-
-
 \section{Variational form}
 
-The variational form can be written directly into FEniCS. A big advantage in FEniCS is that one can write all the parts of the variational form and add them together to make the full variational form.
+The variational form can be written directly into FEniCS. A big advantage in FEniCS is that there is a small \say{gap} between mathematical notation and FEniCS syntax. For instance the gradient and divergence, is in FEniCS as written as grad and div respectively. For this reason the basic partis of the code should be self evident.
+
+The code structure has a main script named monolithic.py which from command line takes in arguments specifying the problem to be solved, the version of the variational form and the Newtonsolver. The main script gather the called parts from specific folders. The problem folder contains the specific problem, which contains the necessary boundary conditions, mesh, parameters for fluid an structure, and saves the solutions and other data in a post processing function. The variational form folder contains the fluid and solid variational form, which given in the command line takes a value for $\theta$ and the chosen lifting operator. The Newtonsolver folder contains different versions of the Newtonsolver, which determines which one of the speedups, outlined in chapter \ref{runtime}, to be implemented.
+
+The main script monolithic.py creates the functions, functionspaces and vectorfunction spaces needed. The main script contains the time loop which iterates in time calling the variational form, the newton solver and updating the functions in time. 
+
 The vector functions and functions such as the displacement, velocity, and pressure, are written with a script \say{n} meaning at which time the function is valued. 
 \begin{python}\caption{Deformation, velocity and pressure function described at three different timesteps }
 d_["n"]  """deformation in the current timestep """
@@ -43,17 +35,10 @@ u_["n-1"] """velocity in the last timestep """
 p_["n-2"] """pressure in the second last timestep """
 \end{python}
 
-theta is the value $\theta$ that determines the scheme.
-k is the timestep $\Delta t$\\
-F\_fluid\_linear is the linear part of the fluid variational form, and F\_fluid\_nonlinear is the nonlinear part of the fluid variational form. Each part is assembled later when using Newtons method. 
+We define the linear and nonlinear parts of the fluid and solid variational. All the linear and nonlinear parts are added together to create the full variational form.
 
-Constant is a function in FEniCS that represents a constant value unknown at compile-time. Its value can be changed without the need to re-compilation of C++ code.
-sigma\_f and sigma\_f  is the velocity and pressure parts of the fluid stress tensor.
-grad and div are built-in functions in FEniCS that computes the gradient and divergence and given vector.
-dx\_f denotes the fluid domain. 
-inv\(\) is a built-in function in FEniCS outputs the inverse of the given matrix. 
 psi, phi and gamma are the test functions: $\psi, \phi$ and $\gamma$.
-
+\newpage
 \begin{python}
 J_theta = theta*J_(d_["n"]) + (1 - theta)*J_(d_["n-1"]) 
 
@@ -79,11 +64,7 @@ inner(J_(d_["n-1"])*grad(v_["n-1"])*inv(F_(d_["n-1"]))*v_["n-1"], psi)*dx_f
 
 F_fluid_nonlinear -= rho_f*inner(J_(d_["n"])*\
 grad(v_["n"])*inv(F_(d_["n"]))*((d_["n"]-d_["n-1"])/k), psi)*dx_f
-\end{python}
 
-F\_solid\_linear is the linear part of the variational form, and Fsolidnonlinear is the nonlinear part.
-Piola1 is the first Piola-Kirchhoff stress tensor.
-\begin{python}
 delta = 1E10
 F_solid_linear = rho_s/k*inner(v_["n"] - v_["n-1"], psi)*dx_s +\
 delta*(1/k)*inner(d_["n"] - d_["n-1"], phi)*dx_s -\
@@ -93,16 +74,11 @@ F_solid_nonlinear = inner(Piola1(Constant(theta)*d_["n"] +\
 Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 \end{python}
 
-The weighed delta is talked about in section \ref{Discretization}
 
-\section{Newtons method implementation for solving Fluid structure interaction}
-To solve a non-linear FSI problem, the newtons method has been implemented, ideas and code taken from from \cite{White2006}.
-
-The derivative of the nonlinear variational parts is take with respect to the displacement, velocity and pressure. The displacement, velocity and pressure are made into a mixed function dvp. -F is assembly of the full variational form.
-
-There is also an \say{if} test which only assembles the Jacobian the first and tenth time in this case. This reuses the Jacobian to improve runtime, which is discussed in chapter \ref{runtime}. Lastly the the mpi line is when the code is running in parallel, for 
-
-
+\section{Newtons method implementation for solving Fluid structure interaction in FEniCS}
+To handle the non-linearities in the scheme we use a Newton solver. FEniCS already has a built-in Newtonsolver, however this solver was not able to compute the monolithic FSI problem because of the pressure function, with our choice of solid stress tensor, only being defined in the fluid domain. We had to manipulate the matrix to ensure that the pressure was zero in the solid domain. This gave the need to implement our own Newtonsolver taking ideas from Mikael Mortensens course in CFD \cite{White2006}.
+Following is a print out of the full Newtonsolver, that is called for each time iteration.
+\newpage
 \begin{python}
 def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
                 dvp_, up_sol, dvp_res, rtol, atol, max_it, T, t, **monolithic):
@@ -110,26 +86,25 @@ def newtonsolver(F, J_nonlinear, A_pre, A, b, bcs, \
     residual   = 1  
     rel_res    = residual
     lmbda = 1 """  """
-
     while rel_res > rtol and residual > atol and Iter < max_it:
-        if Iter % 10 == 0:
-            A = assemble(J_nonlinear, tensor=A, form_compiler_parameters = {"quadrature_degree": 4})
+        if Iter % 10 == 0: """Assembles the Jacobian for each tenth round, in this instance. """
+            A = assemble(J_nonlinear, tensor=A, form_compiler_parameters = {"quadrature_degree": 4}) """ Assembles the Jacobian with reduction of the quadrature """
             A.axpy(1.0, A_pre, True)
-            A.ident_zeros()
+            A.ident_zeros()  """ Sets values of zero to 1 to ensure zero pressure in the solid domain """
 
-        b = assemble(-F, tensor=b)
+        b = assemble(-F, tensor=b) """ assembling the residual  """
 
         [bc.apply(A, b, dvp_["n"].vector()) for bc in bcs] """ Applies boundary conditions to the mixed function dvp """
         up_sol.solve(A, dvp_res.vector(), b) """ Solves the matrix equation A * dvp = b """
-        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())   """   """
-        [bc.apply(dvp_["n"].vector()) for bc in bcs]
+        dvp_["n"].vector().axpy(lmbda, dvp_res.vector())   """ A fast   """
+        [bc.apply(dvp_["n"].vector()) for bc in bcs] 
         rel_res = norm(dvp_res, 'l2')
-        residual = b.norm('l2')
+        residual = b.norm('l2')                     
         if isnan(rel_res) or isnan(residual):
             print "type rel_res: ",type(rel_res)
             t = T*T
 
-        if MPI.rank(mpi_comm_world()) == 0:
+        if MPI.rank(mpi_comm_world()) == 0:   """ Prints only out the numeber 0 process when running code in paralell  """
             print "Newton iteration %d: r (atol) = %.3e (tol = %.3e), r (rel) = %.3e (tol = %.3e) " \
         % (Iter, residual, atol, rel_res, rtol)
         Iter += 1
