@@ -1,14 +1,11 @@
 \chapter{Continuum mechanics in different frames of reference}
-All matter is made up of small building blocks (atoms), and the mathematics of the fundamental laws at this tiny scale is described using quantum mechanics. The characteristic scales at which quantum mechanics operate is in the nanometer range, which is far smaller than most length scales found in nature.
-If we zoom out to the \textit{macroscale}, the scale on which phenomena are large enough to be visible for the human eye, matter like solids and fluids behave statistically uniform, and it is reasonable to assume the matter can be mathematically described, and modeled, as a continuum. The continuum hypothesis states that there exist no space inside the matter and the matter completely fills up the space it occupies. 
-We can use mathematics with basic Newtonian physical laws to model fluids and solids when they are assumed continuous. These Newtonian laws are generally expressed in two frames of reference, Lagrangian or Eulerian, depending on the physical problem. \newline
+Matter is made up of small building blocks called atoms, that are separated by vacuum, and the fundamental laws at this small scale are described using quantum mechanics. The associated characteristic length scale far smaller than most things of interest at a a macroscopic level. Since it has been observed that the characteristic behavior is statistically uniform, it is reasonable to assume the matter can be mathematically described, and modeled, as a continuum. This allows for a mathematical description at the macroscopic level using Newtonian physical laws to model fluids and solids. The Newtonian laws are generally expressed in one out of two frames of reference, Lagrangian or Eulerian, depending on the physical problem. \newline
 
-To exemplify the differences between these frameworks we can imagine a river running down a mountain.	
-In the Eulerian framework we are the observer standing besides the river looking at the flow. We are not interested in each fluid particle but only how the fluid acts as a whole flowing down the river. The Eulerian description of fluid mechanics is advantageous as we can imagine the fluid continuously deforming along the river side. \newline
+To exemplify the differences between these frameworks, one can imagine a river running down a mountain.	
+In the Eulerian framework we observe an object following the flow, standing besides the river. We are not necessarily interested in each fluid particle or the history of it, but only how the fluid acts as a whole flowing down the river. The Eulerian framework is especially advantageous to describe fluid mechanics.\newline
 
-The Lagrangian description is particularly beneficial for describing solid mechanical problems, as one is generally interested in where the solid particles are in relation to each other and the particles initial spatial state.  
-This is best exemplified with a deflecting beam attached to a wall. The more force that is applied to the beam the more the particles move in relation to each other. This relation will we see later on is what is used to model the stress and strain in solid mechanical problems.
-\newline
+A Lagrangian description of solid mechanics is particularly beneficial, as one is generally interested in where the solid particles are in relation to each other and the particles initial spatial state.  
+This is best exemplified with a deflecting beam attached to a wall. The more force applied to the beam the more it will deflect, relative to its historical stress free configuration. As described later this frame of reference is generally beneficial to describe stress and strain for solid mechanical problems.\newline
 
 \begin{figure}[H]
 \label{pic:E_L}
@@ -16,7 +13,7 @@ This is best exemplified with a deflecting beam attached to a wall. The more for
 \caption{Comparison between the Eulerian and the Lagrangian description, the lines represent the grid and the gray represents the matter.}
 \end{figure}
 
-This chapter briefly introduces the fluid and solid equations with their respective boundary conditions. A detailed description of the Lagrangian framework and the stress and strain relations are covered in the appendix A1.
+The goal of this chapter is to briefly introduce convervation of linear momentum for a fluid and a solid, respectively together with the respective boundary conditions. A derivation and a more detailed description of the Lagrangian framework and the stress and strain relations are covered in the appendix A1.
 
 \input{./Solid_equations/Solid_equations}
 \input{./Navier-Stokes/Navier-Stokes}

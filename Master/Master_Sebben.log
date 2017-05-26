@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  25 MAY 2017 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  26 MAY 2017 20:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1187,23 +1187,7 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 \MFPtextlength=\skip83
 \MFPapollonx=\skip84
 )
-(./Master_Sebben.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+(./Master_Sebben.aux)
 \openout1 = `Master_Sebben.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -1220,7 +1204,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count184
 \scratchdimen=\dimen217
@@ -1322,402 +1307,481 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2
 
-]
-(./Verification_Validation/Verification_Validation.tex
+] (./Mesh_motion_results/Mesh_motion_results.tex
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
+LaTeX Warning: Reference `sec:meshmotion' on page 1 undefined on input line 2.
 
+
+Overfull \hbox (18.56306pt too wide) in paragraph at lines 5--5
+ |[]\T1/cmr/bx/n/17.28 Methods for com-par-ing lift-ing op-er-a-tors| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
+LaTeX Warning: Reference `sec:HronTurek' on page 1 undefined on input line 6.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[1
+ [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
-
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 24.
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-
- []
-
-(./Verification_Validation/MMS_FSI/MMS_FSI.tex
-
-LaTeX Warning: Reference `eq:solid' on page 3 undefined on input line 2.
-
-[3]
-Overfull \hbox (2.78653pt too wide) in paragraph at lines 21--30
- [][] 
- []
-
-[4]
-
-LaTeX Warning: Reference `eq:NS_mapped' on page 5 undefined on input line 52.
-
-
-LaTeX Warning: Reference `eq:restriction' on page 5 undefined on input line 54.
-
-
-
-LaTeX Warning: Reference `' on page 5 undefined on input line 54.
-
-[5] [6])
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
-
- []
-
-[7] (./Verification_Validation/Hron_Turek/Hron_Turek.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
-
- []
-
-
-<./Verification_Validation/Hron_Turek/Domain_drawing.png, id=69, 756.8275pt x 2
-50.9375pt>
-File: ./Verification_Validation/Hron_Turek/Domain_drawing.png Graphic file (typ
-e png)
- <use ./Verification_Validation/Hron_Turek/Domain_drawing.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/Domain_drawing.pn
-g used on input line 9.
-(pdftex.def)             Requested size: 302.72563pt x 100.37321pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-Underfull \vbox (badness 2846) has occurred while \output is active []
-
- [9 <./Verification_Validation/Hron_Turek/Domain_drawing.png>]
-<./Verification_Validation/Hron_Turek/FSI_domain_b2.png, id=77, 1268.74pt x 380
-.42125pt>
-File: ./Verification_Validation/Hron_Turek/FSI_domain_b2.png Graphic file (type
- png)
- <use ./Verification_Validation/Hron_Turek/FSI_domain_b2.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI_domain_b2.png
- used on input line 54.
-(pdftex.def)             Requested size: 461.96342pt x 79.32805pt.
-
-Overfull \hbox (71.96342pt too wide) in paragraph at lines 54--55
- [][] 
- []
-
-
-<./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png, id=79, 1268.74pt 
-x 380.42125pt>
-File: ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png Graphic file 
-(type png)
-
-<use ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI_domain_b2_zoo
-m.png used on input line 59.
-(pdftex.def)             Requested size: 459.28214pt x 137.71196pt.
-
-Overfull \hbox (69.28214pt too wide) in paragraph at lines 59--60
- [][] 
- []
-
-[10] [11 <./Verification_Validation/Hron_Turek/FSI_domain_b2.png (PNG copy)> <.
-/Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png (PNG copy)>]
-<./Verification_Validation/Hron_Turek/CFD2.png, id=89, 919.435pt x 380.42125pt>
-File: ./Verification_Validation/Hron_Turek/CFD2.png Graphic file (type png)
-<use ./Verification_Validation/Hron_Turek/CFD2.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/CFD2.png used on 
-input line 113.
-(pdftex.def)             Requested size: 402.21867pt x 158.38435pt.
-
-Overfull \hbox (12.21867pt too wide) in paragraph at lines 113--114
-[][] 
- []
-
-[12 <./Verification_Validation/Hron_Turek/CFD2.png (PNG copy)>]
-<./Verification_Validation/Hron_Turek/structure.png, id=95, 919.435pt x 380.421
-25pt>
-File: ./Verification_Validation/Hron_Turek/structure.png Graphic file (type png
-)
- <use ./Verification_Validation/Hron_Turek/structure.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/structure.png use
-d on input line 144.
-(pdftex.def)             Requested size: 408.50156pt x 33.7204pt.
-
-Overfull \hbox (18.50156pt too wide) in paragraph at lines 144--145
-[][] 
- []
-
-[13 <./Verification_Validation/Hron_Turek/structure.png (PNG copy)>]
-<./Verification_Validation//Hron_Turek/dis_x.png, id=101, 578.16pt x 433.62pt>
-File: ./Verification_Validation//Hron_Turek/dis_x.png Graphic file (type png)
-
-<use ./Verification_Validation//Hron_Turek/dis_x.png>
-Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x.png used o
-n input line 220.
-(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
-
-Underfull \hbox (badness 1454) in paragraph at lines 221--221
-[]\T1/cmr/m/n/12 Figure 1.5: Dis-place-ment in x di-rec-tion,
- []
-
-
-<./Verification_Validation//Hron_Turek/dis_y.png, id=104, 578.16pt x 433.62pt>
-File: ./Verification_Validation//Hron_Turek/dis_y.png Graphic file (type png)
-
-<use ./Verification_Validation//Hron_Turek/dis_y.png>
-Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_y.png used o
-n input line 226.
-(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
-
-Underfull \hbox (badness 1454) in paragraph at lines 227--227
-[]\T1/cmr/m/n/12 Figure 1.6: Dis-place-ment in y di-rec-tion,
- []
-
-
-<./Verification_Validation//Hron_Turek/dis_x_short.png, id=106, 578.16pt x 433.
-62pt>
-File: ./Verification_Validation//Hron_Turek/dis_x_short.png Graphic file (type 
-png)
- <use ./Verification_Validation//Hron_Turek/dis_x_short.png>
-Package pdftex.def Info: ./Verification_Validation//Hron_Turek/dis_x_short.png 
-used on input line 232.
-(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
-
-Underfull \hbox (badness 1454) in paragraph at lines 233--233
-[]\T1/cmr/m/n/12 Figure 1.7: Dis-place-ment in x di-rec-tion,
- []
-
-
-<./Verification_Validation/Hron_Turek/dis_y_short.png, id=108, 578.16pt x 433.6
-2pt>
-File: ./Verification_Validation/Hron_Turek/dis_y_short.png Graphic file (type p
-ng)
- <use ./Verification_Validation/Hron_Turek/dis_y_short.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/dis_y_short.png u
-sed on input line 238.
-(pdftex.def)             Requested size: 210.60071pt x 156.07254pt.
-
-Underfull \hbox (badness 1454) in paragraph at lines 239--239
-[]\T1/cmr/m/n/12 Figure 1.8: Dis-place-ment in y di-rec-tion,
- []
-
-
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 218--242
- [][][] 
- []
-
-
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 218--242
- [][] 
- []
+LaTeX Warning: Reference `fig:fluid_structure' on page 2 undefined on input lin
+e 20.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [2]
 
- [15 <./Verification_Validation//Hron_Turek/dis_x.png> <./Verification_Validati
-on//Hron_Turek/dis_y.png> <./Verification_Validation//Hron_Turek/dis_x_short.pn
-g> <./Verification_Validation/Hron_Turek/dis_y_short.png>]
-Overfull \hbox (49.82661pt too wide) in paragraph at lines 293--301
- [][] 
- []
+LaTeX Warning: Reference `fig:CSM1_pictures' on page 3 undefined on input line 
+23.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `tab:comparing lifting' on page 3 undefined on input l
+ine 23.
 
- [16]
-Overfull \hbox (39.04634pt too wide) in paragraph at lines 307--315
- [][] 
- []
+<./Mesh_motion_results/CSM1.png, id=42, 586.8324pt x 442.2924pt>
+File: ./Mesh_motion_results/CSM1.png Graphic file (type png)
 
+<use ./Mesh_motion_results/CSM1.png>
+Package pdftex.def Info: ./Mesh_motion_results/CSM1.png used on input line 27.
+(pdftex.def)             Requested size: 352.10216pt x 265.37749pt.
 
-<./Verification_Validation/Hron_Turek/FSI2_d_970.png, id=128, 1268.74pt x 380.4
-2125pt>
-File: ./Verification_Validation/Hron_Turek/FSI2_d_970.png Graphic file (type pn
-g)
- <use ./Verification_Validation/Hron_Turek/FSI2_d_970.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_d_970.png us
-ed on input line 320.
-(pdftex.def)             Requested size: 444.06566pt x 133.14941pt.
-
-Overfull \hbox (54.06566pt too wide) in paragraph at lines 320--321
-[][] 
- []
-
-
-<./Verification_Validation/Hron_Turek/FSI2_u_970.png, id=130, 1268.74pt x 380.4
-2125pt>
-File: ./Verification_Validation/Hron_Turek/FSI2_u_970.png Graphic file (type pn
-g)
- <use ./Verification_Validation/Hron_Turek/FSI2_u_970.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_u_970.png us
-ed on input line 324.
-(pdftex.def)             Requested size: 444.06566pt x 133.14941pt.
-
-Overfull \hbox (54.06566pt too wide) in paragraph at lines 324--325
-[][] 
- []
-
-[17 <./Verification_Validation/Hron_Turek/FSI2_d_970.png (PNG copy)>]
-<./Verification_Validation/Hron_Turek/FSI2_dis_x.png, id=136, 578.16pt x 433.62
+<./Mesh_motion_results/CSM1_laplace_rectangle.png, id=45, 919.435pt x 380.42125
 pt>
-File: ./Verification_Validation/Hron_Turek/FSI2_dis_x.png Graphic file (type pn
-g)
- <use ./Verification_Validation/Hron_Turek/FSI2_dis_x.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_dis_x.png us
-ed on input line 332.
-(pdftex.def)             Requested size: 210.60071pt x 157.94908pt.
+File: ./Mesh_motion_results/CSM1_laplace_rectangle.png Graphic file (type png)
+ <use ./Mesh_motion_results/CSM1_laplace_rectangle.png>
+Package pdftex.def Info: ./Mesh_motion_results/CSM1_laplace_rectangle.png used 
+on input line 34.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-<./Verification_Validation/Hron_Turek/FSI2_dis_y.png, id=137, 578.16pt x 433.62
-pt>
-File: ./Verification_Validation/Hron_Turek/FSI2_dis_y.png Graphic file (type pn
-g)
- <use ./Verification_Validation/Hron_Turek/FSI2_dis_y.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_dis_y.png us
-ed on input line 338.
-(pdftex.def)             Requested size: 210.60071pt x 157.94908pt.
+<./Mesh_motion_results/CSM1_constant_rectangle.png, id=46, 919.435pt x 380.4212
+5pt>
+File: ./Mesh_motion_results/CSM1_constant_rectangle.png Graphic file (type png)
 
-<./Verification_Validation/Hron_Turek/FSI2_drag.png, id=138, 578.16pt x 433.62p
-t>
-File: ./Verification_Validation/Hron_Turek/FSI2_drag.png Graphic file (type png
-)
- <use ./Verification_Validation/Hron_Turek/FSI2_drag.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_drag.png use
-d on input line 344.
-(pdftex.def)             Requested size: 210.60071pt x 157.94908pt.
+ <use ./Mesh_motion_results/CSM1_constant_rectangle.png>
+Package pdftex.def Info: ./Mesh_motion_results/CSM1_constant_rectangle.png used
+ on input line 40.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-<./Verification_Validation/Hron_Turek/FSI2_lift.png, id=139, 578.16pt x 433.62p
-t>
-File: ./Verification_Validation/Hron_Turek/FSI2_lift.png Graphic file (type png
-)
- <use ./Verification_Validation/Hron_Turek/FSI2_lift.png>
-Package pdftex.def Info: ./Verification_Validation/Hron_Turek/FSI2_lift.png use
-d on input line 350.
-(pdftex.def)             Requested size: 210.60071pt x 157.94908pt.
+<./Mesh_motion_results/CSM1_bibc1_rectangle.png, id=47, 919.435pt x 380.42125pt
+>
+File: ./Mesh_motion_results/CSM1_bibc1_rectangle.png Graphic file (type png)
+ <use ./Mesh_motion_results/CSM1_bibc1_rectangle.png>
+Package pdftex.def Info: ./Mesh_motion_results/CSM1_bibc1_rectangle.png used on
+ input line 46.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 330--354
+<./Mesh_motion_results/CSM1_bibc2_rectangle.png, id=48, 919.435pt x 380.42125pt
+>
+File: ./Mesh_motion_results/CSM1_bibc2_rectangle.png Graphic file (type png)
+ <use ./Mesh_motion_results/CSM1_bibc2_rectangle.png>
+Package pdftex.def Info: ./Mesh_motion_results/CSM1_bibc2_rectangle.png used on
+ input line 52.
+(pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 32--56
 [][][]
  []
 
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 330--354
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 32--56
 [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./Verification_Validation/Hron_Turek/FSI2_u_970.png (PNG copy)>]
+ [3 <./Mesh_motion_results/CSM1.png>]
 
-LaTeX Warning: Reference `' on page 19 undefined on input line 357.
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 71.
 
 
-Overfull \hbox (30.59639pt too wide) in paragraph at lines 424--432
+LaTeX Warning: Reference `fig:FSI2_motion-1' on page 4 undefined on input line 
+77.
+
+<./Mesh_motion_results/FSI2_dt001_dis_x.png, id=57, 586.8324pt x 442.2924pt>
+File: ./Mesh_motion_results/FSI2_dt001_dis_x.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI2_dt001_dis_x.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_dis_x.png used on inp
+ut line 82.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 82--84
  [][] 
+ []
+
+<./Mesh_motion_results/FSI2_dt001_dis_y.png, id=58, 586.8324pt x 442.2924pt>
+File: ./Mesh_motion_results/FSI2_dt001_dis_y.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI2_dt001_dis_y.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_dis_y.png used on inp
+ut line 87.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 87--89
+ [][] 
+ []
+
+<./Mesh_motion_results/FSI2_dt001_drag.png, id=59, 586.8324pt x 442.2924pt>
+File: ./Mesh_motion_results/FSI2_dt001_drag.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI2_dt001_drag.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_drag.png used on inpu
+t line 92.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 92--94
+ [][] 
+ []
+
+<./Mesh_motion_results/FSI2_dt001_lift.png, id=60, 586.8324pt x 442.2924pt>
+File: ./Mesh_motion_results/FSI2_dt001_lift.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI2_dt001_lift.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_lift.png used on inpu
+t line 97.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 97--99
+ [][] 
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 80--100
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 80--100
+[][] 
+ []
+
+[4 <./Mesh_motion_results/CSM1_laplace_rectangle.png> <./Mesh_motion_results/CS
+M1_constant_rectangle.png> <./Mesh_motion_results/CSM1_bibc1_rectangle.png> <./
+Mesh_motion_results/CSM1_bibc2_rectangle.png>]
+
+LaTeX Warning: Reference `FSI31' on page 5 undefined on input line 104.
+
+
+LaTeX Warning: Reference `FSI32' on page 5 undefined on input line 104.
+
+
+LaTeX Warning: Reference `FSI33' on page 5 undefined on input line 104.
+
+
+LaTeX Warning: Reference `FSI34' on page 5 undefined on input line 104.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 106.
+
+<./Mesh_motion_results/FSI3_dt0001_dis_x.png, id=72, 2055.68pt x 1122.1925pt>
+File: ./Mesh_motion_results/FSI3_dt0001_dis_x.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI3_dt0001_dis_x.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_dis_x.png used on in
+put line 109.
+(pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 112.
+
+<./Mesh_motion_results/FSI3_dt0001_dis_y.png, id=74, 2055.68pt x 1122.1925pt>
+File: ./Mesh_motion_results/FSI3_dt0001_dis_y.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI3_dt0001_dis_y.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_dis_y.png used on in
+put line 115.
+(pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 118.
+
+<./Mesh_motion_results/FSI3_dt0001_Drag.png, id=75, 2055.68pt x 1122.1925pt>
+File: ./Mesh_motion_results/FSI3_dt0001_Drag.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI3_dt0001_Drag.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_Drag.png used on inp
+ut line 121.
+(pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 124.
+
+<./Mesh_motion_results/FSI3_dt0001_Lift.png, id=76, 2055.68pt x 1122.1925pt>
+File: ./Mesh_motion_results/FSI3_dt0001_Lift.png Graphic file (type png)
+
+<use ./Mesh_motion_results/FSI3_dt0001_Lift.png>
+Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_Lift.png used on inp
+ut line 127.
+(pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./Mesh_motion_results/FSI2_dt001_dis_x.png> <./Mesh_motion_results/FSI2_dt
+001_dis_y.png> <./Mesh_motion_results/FSI2_dt001_drag.png> <./Mesh_motion_resul
+ts/FSI2_dt001_lift.png>] [6 <./Mesh_motion_results/FSI3_dt0001_dis_x.png> <./Me
+sh_motion_results/FSI3_dt0001_dis_y.png>] [7 <./Mesh_motion_results/FSI3_dt0001
+_Drag.png> <./Mesh_motion_results/FSI3_dt0001_Lift.png>]
+(./Temporal_stability/Temporal_stability.tex
+Overfull \hbox (12.3872pt too wide) in paragraph at lines 1--1
+ |[]\T1/cmr/bx/n/17.28 Investigating Nu-mer-i-cal sta-bil-ity for Fluid-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./Verification_Validation/Hron_Turek/FSI2_dis_x.png> <./Verification_Vali
-dation/Hron_Turek/FSI2_dis_y.png> <./Verification_Validation/Hron_Turek/FSI2_dr
-ag.png> <./Verification_Validation/Hron_Turek/FSI2_lift.png>]
+ [8]
+<./Temporal_stability/FSI2_001_051_big.png, id=98, 586.8324pt x 433.62pt>
+File: ./Temporal_stability/FSI2_001_051_big.png Graphic file (type png)
 
-LaTeX Warning: Reference `sec:bigboys' on page 20 undefined on input line 435.
+<use ./Temporal_stability/FSI2_001_051_big.png>
+Package pdftex.def Info: ./Temporal_stability/FSI2_001_051_big.png used on inpu
+t line 10.
+(pdftex.def)             Requested size: 234.72879pt x 173.44492pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 10--11
+ [][] 
+ []
+
+<./Temporal_stability/FSI2_001_050_big.png, id=99, 586.8324pt x 442.2924pt>
+File: ./Temporal_stability/FSI2_001_050_big.png Graphic file (type png)
+
+<use ./Temporal_stability/FSI2_001_050_big.png>
+Package pdftex.def Info: ./Temporal_stability/FSI2_001_050_big.png used on inpu
+t line 16.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 16--17
+ [][] 
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
+<./Temporal_stability/FSI2_001_051_small.png, id=100, 586.8324pt x 442.2924pt>
+File: ./Temporal_stability/FSI2_001_051_small.png Graphic file (type png)
+
+<use ./Temporal_stability/FSI2_001_051_small.png>
+Package pdftex.def Info: ./Temporal_stability/FSI2_001_051_small.png used on in
+put line 22.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 22--23
+ [][] 
+ []
+
+
+<./Temporal_stability/FSI2_001_050_small.png, id=101, 586.8324pt x 442.2924pt>
+File: ./Temporal_stability/FSI2_001_050_small.png Graphic file (type png)
+
+<use ./Temporal_stability/FSI2_001_050_small.png>
+Package pdftex.def Info: ./Temporal_stability/FSI2_001_050_small.png used on in
+put line 28.
+(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 8--32
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 8--32
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+
+LaTeX Warning: Reference `fig:FSI2drag_plots' on page 10 undefined on input lin
+e 35.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[20]
+<./Temporal_stability/FSI3_0001_050_big.png, id=106, 578.16pt x 433.62pt>
+File: ./Temporal_stability/FSI3_0001_050_big.png Graphic file (type png)
 
-LaTeX Warning: Reference `sec:bigboys' on page 21 undefined on input line 442.
+<use ./Temporal_stability/FSI3_0001_050_big.png>
+Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_big.png used on inp
+ut line 40.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-)) (./Master_Sebben.bbl [21] [22
+<./Temporal_stability/FSI3_0001_050_small.png, id=107, 578.16pt x 433.62pt>
+File: ./Temporal_stability/FSI3_0001_050_small.png Graphic file (type png)
 
-] [23] [24]) [25] (./Master_Sebben.aux)
+<use ./Temporal_stability/FSI3_0001_050_small.png>
+Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_small.png used on i
+nput line 42.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (96.51984pt too wide) in paragraph at lines 39--44
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:FSI2_long' on page 10 undefined on input line 49.
+
+
+
+LaTeX Warning: Reference `fig:FSI2_short' on page 10 undefined on input line 49
+.
+
+[10 <./Temporal_stability/FSI2_001_051_big.png> <./Temporal_stability/FSI2_001_
+050_big.png> <./Temporal_stability/FSI2_001_051_small.png> <./Temporal_stabilit
+y/FSI2_001_050_small.png>]
+File: ./Temporal_stability/FSI3_0001_050_big.png Graphic file (type png)
+ <use ./Temporal_stability/FSI3_0001_050_big.png>
+Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_big.png used on inp
+ut line 53.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+File: ./Temporal_stability/FSI3_0001_050_small.png Graphic file (type png)
+
+<use ./Temporal_stability/FSI3_0001_050_small.png>
+Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_small.png used on i
+nput line 58.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./Temporal_stability/FSI3_0001_050_big.png> <./Temporal_stability/FSI3_00
+01_050_small.png>]
+
+LaTeX Warning: Reference `fig:FSI3_long' on page 12 undefined on input line 62.
+
+
+
+LaTeX Warning: Reference `fig:FSI3_short' on page 12 undefined on input line 62
+.
+
+<./Temporal_stability/CSM3_implicit.png, id=123, 578.16pt x 433.62pt>
+File: ./Temporal_stability/CSM3_implicit.png Graphic file (type png)
+
+<use ./Temporal_stability/CSM3_implicit.png>
+Package pdftex.def Info: ./Temporal_stability/CSM3_implicit.png used on input l
+ine 68.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+<./Temporal_stability/CSM3_implicit_y.png, id=124, 578.16pt x 433.62pt>
+File: ./Temporal_stability/CSM3_implicit_y.png Graphic file (type png)
+
+<use ./Temporal_stability/CSM3_implicit_y.png>
+Package pdftex.def Info: ./Temporal_stability/CSM3_implicit_y.png used on input
+ line 74.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+<./Temporal_stability/CSM3_Crank.png, id=125, 578.16pt x 433.62pt>
+File: ./Temporal_stability/CSM3_Crank.png Graphic file (type png)
+
+<use ./Temporal_stability/CSM3_Crank.png>
+Package pdftex.def Info: ./Temporal_stability/CSM3_Crank.png used on input line
+ 80.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+<./Temporal_stability/CSM3_Crank_y.png, id=126, 578.16pt x 433.62pt>
+File: ./Temporal_stability/CSM3_Crank_y.png Graphic file (type png)
+
+<use ./Temporal_stability/CSM3_Crank_y.png>
+Package pdftex.def Info: ./Temporal_stability/CSM3_Crank_y.png used on input li
+ne 86.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 66--90
+[][][]
+ []
+
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 66--90
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+
+LaTeX Warning: Reference `fig:CSM3_dis_plots' on page 13 undefined on input lin
+e 91.
+
+
+LaTeX Warning: Citation `Wick2011' on page 13 undefined on input line 95.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./Temporal_stability/CSM3_implicit.png> <./Temporal_stability/CSM3_implic
+it_y.png> <./Temporal_stability/CSM3_Crank.png> <./Temporal_stability/CSM3_Cran
+k_y.png>])) (./Master_Sebben.bbl [14] [15
+
+] [16]) [17] (./Master_Sebben.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 27572 strings out of 493089
- 553231 string characters out of 6134842
- 617606 words of memory out of 5000000
- 30533 multiletter control sequences out of 15000+600000
- 40436 words of font info for 69 fonts, out of 8000000 for 9000
+ 27571 strings out of 493089
+ 553699 string characters out of 6134842
+ 611211 words of memory out of 5000000
+ 30537 multiletter control sequences out of 15000+600000
+ 36528 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,101p,10452b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,13n,101p,10452b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (29 pages, 1062558 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
+m/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sf
+bx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm
+1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti12
+00.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Master_Sebben.pdf (21 pages, 2566778 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 206 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

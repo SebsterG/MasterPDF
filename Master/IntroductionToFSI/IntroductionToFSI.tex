@@ -1,9 +1,8 @@
 \chapter{Introduction to Fluid-Structure Interaction}
 The interaction between fluids and structures can be observed all around us in nature.
-From a flag waving in the wind to a large windmill at sea, when we breath in air and our lungs expand, are all examples of fluids and structures interacting. 
-Both fluids and structures exert mutual force on each other. For instance, a flag waving in the wind is mainly air (fluid) exerting force on the flag (structure), making the flag flutter. An example of structure exerting force and starting an interaction, is when we breathe air into our lungs. When we breath our diaphram contracts and moves downward, increasing the space in our chest cavity making the lungs expand. As the lungs expand air is sucked through the mouth and nose, filling up the lungs. 
+Flags waving in the wind, windmills, and inhalation of air into the lungs. It is rather intuitive that the fluids and structures must exert mutual force at the interface(introdusere interface så tidlig?) and that the fluid and structure both can have dominant and passive properties. In the example of a flag waving in the wind, it is the forces from the flowing air that are dominant, whereas in the example of inhalation, the structure (diaphragm) is dominating. 
 
-Accurately modeling Fluid-Structure Interaction can help prevent disasters and is exemplified by the collapse of the Tacoma Narrows Bridge in 1940 \cite{Billah1991}. The bridge collapsed only two months after being opened. The collapse was due to strong winds (64 km/h) interacting with the structure, making the bridge flutter and ultimately collapse. No human lives were lost in the collapse, but a Cocker Spaniel named Tubby left behind in a car was not that lucky and lost its life in the bridge collapse. If we could build a model that could simulate the interaction between the bridge and the air, we could have known how high wind speeds the bridge could handle before collapsing. \newline
+Understanding and modeling fluid-structure interaction (FSI) can greatly assist in design of structures such as windmill and aircraft wings. A famous example of design flaw is the collapse of the Tacoma Narrows Bridge in 1940 \cite{Billah1991},only two months after being opened. The bridge was literally shaken apart due to strong winds (64 km/h) interacting with the structure, making it resonate. No human lives were lost in the collapse, but a Cocker Spaniel named Tubby left behind in a car was not that lucky and lost its life in the bridge collapse. \newline
 
 \begin{figure}
 \centering
@@ -21,14 +20,12 @@ Accurately modeling Fluid-Structure Interaction can help prevent disasters and i
 \end{minipage}
 \end{figure}
 
-Modeling FSI is used when constructing for instance windmills. The blades on windmills are normally considered stiff relative to the flowing air, hence giving a big difference in density between fluid and structure $\frac{\rho_f}{\rho_s} << 1$. The structure will in the case of a windmill only give rise to small deformations.
-However, modeling FSI in hemodynamics(dynamics of blood flow) deems more challenging. In the latter example the densities in fluid and structure and blood flow usually induces large deformations in the veins and arteries. Modeling FSI with large deformations is challenging because it gives the need hyper elastic structure models, and energy stable schemes.
-In both the examples of windmills and blood flow, the fluid flow tends to transitions towards turbulence. Hence giving the need for a solver to handle high fluid velocities. \newline
+FSI has matured and is now routinely used to model and design the motion and wakes of windmills.
+Since there is a big difference in density between fluid and structure $\frac{\rho_f}{\rho_s} << 1$, the structural deformations will be small and the FSI problem \say{easy}. However, modeling arterial FSI deems more challenging as the density of the fluid (blood) and the structure (artery) is similar, resulting in large deformations of the arteries. Large deformations are challenging to model and require hyperelastic structure models, and energy stable numerical schemes.\newline
 
-One field of study within fluid dynamics is called Computational Fluid Dynamics, where computers and numerical analyses are used to solve fluid problems.
-I would argue that a similar name is used for FSI, namely \textit{Computational Fluid Structure Interaction} (CFSI). However in the literature FSI is used to describe CFSI and the name FSI will be used in this thesis. Also, even though FSI is Fluid-\textit{Structure} Interaction, the word solid will also be used to describe a structure. \newline
+A scientific branch of fluid mechanics is Computational Fluid Dynamics, where computers and numerical algorithms are used to solve fluid problems. Similarly, a name used for solving FSI porblems is simply \say{FSI}. However, it should be emphasized that it is actually textit{Computational Fluid Structure Interaction} (CFSI) that will be adressed in this thesis. The same name applies to the word \say{Structure} where the actual problem to be solved belongs to the scientific branch of solid mechanics. \newline
 
-The main goal of this master thesis is to build a framework to solve FSI problems, investigating different approaches and schemes. The framework will be verified using the \textit{Method of Manufactured Solutions}, and validated using a classic, well known benchmark, known to test the robustness of a FSI solver.
+The goal of this master thesis is to develop a computational framework to solve FSI problems arising in biomechincs, namely large deformations. The effects of different numerical schemes and approches will be investigated to maintain acceptable accuracy. The framework will be verified using the \textit{Method of Manufactured Solutions}, and validated using a classic, well-known benchmark, known to be especially challenging. 
 
 
 

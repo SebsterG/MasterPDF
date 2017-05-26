@@ -1,10 +1,5 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Verification and Validation of the Fluid Structure Interaction Implementation.}{1}
-\contentsline {section}{\numberline {1.1}Verification}{2}
-\contentsline {subsection}{\numberline {1.1.1}Method of Manufactured Solution on the implementation of the Solid equation}{3}
-\contentsline {subsection}{\numberline {1.1.2}MMS of Fluid equations with prescribed motion}{5}
-\contentsline {section}{\numberline {1.2}Validation}{7}
-\contentsline {subsection}{\numberline {1.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{8}
-\contentsline {subsubsection}{CFD test cases}{10}
-\contentsline {subsubsection}{Discussion of CFD results}{13}
-\contentsline {subsubsection}{CSM test cases}{13}
+\contentsline {chapter}{\numberline {1}Comparing the effects of different lifting operators and Investigating Numerical Stability in Fluid-Structure Interaction problems}{1}
+\contentsline {section}{\numberline {1.1}Methods for comparing lifting operators}{2}
+\contentsline {subsubsection}{FSI2 with different Lifting operator}{4}
+\contentsline {section}{\numberline {1.2}Investigating Numerical stability for Fluid-Structure Interaction Problems}{9}

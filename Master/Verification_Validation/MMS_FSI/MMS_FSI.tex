@@ -1,7 +1,7 @@
 \subsection{Method of Manufactured Solution on the implementation of the Solid equation}
 The MMS test is constructed to verify the implementation of the solid equation \eqref{eq:solid}, with the restriction $\bold{u}=\frac{\partial d}{\partial t}$.
 
-Solutions $\hat{\bold{d}}$ and $\hat{\bold{u}}$ are manufactured with sine and cosine such that the derivatives does not become zero and we have temporal and spatial dependencies.
+Solutions $\hat{\bold{d}}$ and $\hat{\bold{u}}$ are manufactured with sine and cosine such that the derivatives are guaranteed and we have temporal and spatial dependencies.
 The solutions are also manufactured to uphold the restriction $\bold{u}=\frac{\partial d}{\partial t}$.
 \begin{align*}
 \hat{\bold{d_e}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
@@ -12,8 +12,11 @@ The manufactured solutions are used to produce a sourceterm $f_s$ :
 \rho_s \frac{\partial \hat{\bold{u_e}}}{\partial t} - \nabla \cdot ( P(\hat{\bold{d_e}}) ) = f_s 
 \end{equation}
 
-The equations are solved for $\bold{d}$ and $\bold{u}$ on a unit square domain. The number N denotes the number of spatial points in x and y direction. The functions u and d will be computed to match the source term $f_s$. 
+The equations are solved for $\bold{d}$ and $\bold{u}$ on a unit square domain, and the number N denotes the number of spatial points in x and y direction. The functions u and d will be computed to match the source term $f_s$. 
 The computations were simulated for 10 time steps and the error was calculated for each time step and then the mean of all the errors were used as a measure of the error.
+
+In table \ref{tab:MMS_SOLID_SPACE} we set m = 1, and vary the number of spatial points from 4 to 64 keeping $\Delta t = 10^{-7}$. The error $E_u$ and $E_d$ decreases for increasing values of N.The order of convergence $k_u$ and $k_d$ converges toward the expected value of 2.
+
 \begin{table}[H]
 \centering
 \caption{Method of Manufactured Solution on the implementation of the Solid equation in space with m = 1}
@@ -29,7 +32,7 @@ The computations were simulated for 10 time steps and the error was calculated f
 \end{tabular}
 \end{table}
 
-In table \ref{tab:MMS_SOLID_SPACE} we set m = 1, and vary the number of spatial points from 4 to 64 keeping $\Delta t = 10^{-7}$. The error $E_u$ and $E_d$ gets smaller for increasing values of N.The order of convergence $k_u$ and $k_d$ converges toward the expected value of 2.
+In table \ref{tab:MMS_SOLID_TIME} we check the temporal convergence. The number of spatial points has been fixed to 64, with varying $\Delta t $ from $0.1$ halving each step to $0.0065$. The error $E_u$ and $E_d$ gets smaller for decreasing values of $\Delta t$. The scheme tested is temporal first order accurate, by setting a value $\theta = 1$ expecting a temporal order of convergence of 1. In table \ref{tab:MMS_SOLID_TIME} convergence $k_u$ and $k_d$ tends towards 1.
 
 \begin{table}[H]
 \centering
@@ -46,12 +49,12 @@ N & $\bold{\Delta t}$ & $E_u [\times10^{-6}]$ & $\bold{k_u}$ & $E_u [\times10^{-
 \end{tabular}
 \end{table}
 
-In table \ref{tab:MMS_SOLID_TIME} we check the temporal convergence. The number of spatial points has been fixed to 64, with varying $\Delta t $ from $0.1$ halving each step to $0.0065$. The error $E_u$ and $E_d$ gets smaller for decreasing values of $\Delta t$. The scheme tested is temporal first order accurate, by setting a value $\theta = 1$ expecting a order of convergence in temporal direction of 1. In table \ref{tab:MMS_SOLID_TIME} convergence $k_u$ and $k_d$ tends towards 1.
+The MMS test of the solid equation has a clear trend toward 2 in spatial direction, and 1 in temporal direction. The temporal convergence rate k is not exactly 1, and could be because of the number of spatial points $N=64$ is not high enough. With this in mind the trends shows convergence towards the theoretical convergence, which concludes that the solid equation has been implemented correctly.
 
 \subsection{MMS of Fluid equations with prescribed motion}
 In this section we verify the fluid equations \eqref{eq:NS_mapped} in the ALE framework computed from a reference domain, with a prescribed motion.
 
-The functions $\hat{\bold{u}}$, $\hat{\bold{d}}$ and $\hat{p}$ are manufactured to uphold the restriction \eqref{eq:restriction} and incompressible fluid \eqref{}, and are made with sine and cosine function to uphold the criteria of MMS. The fluid and domain velocity are set to be equal: $\hat{\bold{u}} = \bold{w}$. 
+The functions $\hat{\bold{u}}$, $\hat{\bold{d}}$ and $\hat{p}$ are manufactured to uphold the restriction \eqref{eq:restriction} and incompressible fluid \eqref{}, and are made with sine and cosine function to uphold the criteria of MMS. The fluid and domain velocity are set equal: $\hat{\bold{u}} = \bold{w}$. 
 \begin{align*}
 \hat{\bold{d}} =& ( cos(y)sin(t) , cos(x)sin(t) )\\
 \hat{\bold{u}} = \hat{\bold{w}}=& ( cos(y)cos(t), cos(x)cos(t) ) \\
@@ -68,6 +71,8 @@ $$ \rho_f J \frac{\partial \bold{u}}{\partial t} + (\nabla \bold{u})F^{-1}(\bold
 
 The computations are performed on a unit square domain and the computations were simulated with 10 timesteps and the error was calculated for each time step and then the mean of all the errors was taken and used as a measure of the error.
 
+In table \ref{tab:MMS_Flu?id_time} we check the temporal convergence keeping the spatial points constant with $N=64$, by varying $\Delta t$ by half, from 0.1 to 0.0125. The errors for fluid velocity and pressure $E_u$ and $E_p$ decrease with decreasing time steps. The compute convergence $k_u$ and $k_p$ tends toward a value of 1.
+
 \begin{table}[H]
 \centering
 \caption{Results for Method of Manufacture Solutions test for fluid equations}
@@ -82,7 +87,7 @@ The computations are performed on a unit square domain and the computations were
 \end{tabular}
 \end{table}
 
-In table \ref{tab:MMS_Flu?id_time} we check the temporal convergence keeping the spatial points constant with $N=64$. Decreasing $\Delta t$ by half, from 0.1 to 0.0125. The errors for fluid velocity and pressure $E_u$ and $E_p$ decrease with decreasing time steps. The compute convergence $k_u$ and $k_p$ tends toward a value of 1.
+In table \ref{tab:MMS_Fluid_space} we check the spatial convergence keeping the time step constant as $\Delta t=10^{-6}$. Increasing spatial points N from 2 to 16. The error $E_u and E_p$ decreases with increasing spatial points. Computed convergence $k_u$ tends toward 3 and $k_p$ tends towards 2, which is expected when computing with P2-P2-P1 elements.
 
 \begin{table}[H]
 \centering
@@ -98,12 +103,9 @@ In table \ref{tab:MMS_Flu?id_time} we check the temporal convergence keeping the
 \end{tabular}
 \end{table}
 
-In table \ref{tab:MMS_Fluid_space} we check the spatial convergence keeping the time step constant as $\Delta t=10^{-6}$. Increasing spatial points N from 2 to 16. The error $E_u and E_p$ decreases with increasing spatial points. Computed convergence $k_u$ tends toward 3 and $k_p$ tends towards 2.
-
-\subsubsection*{Discussion of the MMS tests}
-The MMS test of the solid equation has a clear trend toward 2 in spatial direction, and 1 in temporal direction. The temporal convergence rate k is not exactly 1, and could be because of the number of spatial points $N=64$ is not high enough. With this in mind the trends shows convergence towards the theoretical convergence, which concludes that the solid equation has been implemented correctly.
-
 The MMS test of the fluid equations computed from the reference domain shows trends in the spatial convergence toward 3 in the fluid velocity and 2 in pressure, which is expected. For the temporal convergence of the fluid equation the trend is towards 1 but is not exactly 1. The reason could be that the number of spatial points are not high enough, and also that the fluid equations have been computed on a reference domain. Nonetheless the convergence rates are sufficient and giving the conclusion that the fluid equations are implemented correctly.
 
-It should be noted that a more rigorous MMS test of the FSI problem would be to test the entire FSI problem, and not splitting the test into parts. To do a full MMS of the entire FSI problem, one needs to take into account the condition of continuity of velocity on the interface \cite{Etienne2006}, the stresses need to equal on the interface and the flow needs to be divergence free. Manufacturing such a solution is very difficult \cite{Etienne2012}. The author has yet to find a paper that manufactures a solution fulfilling all the condition in a rigorous manner. For this reason the MMS was split into parts, and for the intended use the author finds the results from MMS tests sufficient .
+\subsubsection*{Discussion of the MMS tests}
+
+It should be noted that a more rigorous MMS test of the FSI problem would be to test the entire FSI problem, and not splitting the test into parts. To do a full MMS of the entire FSI problem, one needs to take into account the condition of continuity of velocity on the interface \cite{Etienne2006}, the stresses need to equal on the interface and the flow needs to be divergence free. Manufacturing such a solution is very difficult \cite{Etienne2012}. The author has yet to find a paper that manufactures a solution fulfilling all the condition in a rigorous manner. For this reason the MMS was split into parts, and for the intended use the author finds the results from MMS tests sufficient.
 
