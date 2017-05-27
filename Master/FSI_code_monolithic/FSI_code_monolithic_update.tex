@@ -22,7 +22,7 @@ The complete code consist of many hundreds of lines of code, and therefore only 
 
 \section{Variational form}
 
-The variational form can be written directly into FEniCS. A big advantage in FEniCS is that there is a small \say{gap} between mathematical notation and FEniCS syntax. For instance the gradient and divergence, is in FEniCS as written as grad and div respectively. For this reason the basic partis of the code should be self evident.
+The variational form can be written directly into FEniCS. A big advantage in FEniCS is that there is a small \say{gap} between mathematical notation and FEniCS syntax. For instance the gradient and divergence, is in FEniCS as written as grad and div respectively. For this reason the basic parts of the code should be self evident.
 
 The code structure has a main script named monolithic.py which from command line takes in arguments specifying the problem to be solved, the version of the variational form and the Newtonsolver. The main script gather the called parts from specific folders. The problem folder contains the specific problem, which contains the necessary boundary conditions, mesh, parameters for fluid an structure, and saves the solutions and other data in a post processing function. The variational form folder contains the fluid and solid variational form, which given in the command line takes a value for $\theta$ and the chosen lifting operator. The Newtonsolver folder contains different versions of the Newtonsolver, which determines which one of the speedups, outlined in chapter \ref{runtime}, to be implemented.
 
@@ -76,7 +76,7 @@ Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 
 
 \section{Newtons method implementation for solving Fluid structure interaction in FEniCS}
-To handle the non-linearities in the scheme we use a Newton solver. FEniCS already has a built-in Newtonsolver, however this solver was not able to compute the monolithic FSI problem because of the pressure function, with our choice of solid stress tensor, only being defined in the fluid domain. We had to manipulate the matrix to ensure that the pressure was zero in the solid domain. This gave the need to implement our own Newtonsolver taking ideas from Mikael Mortensens course in CFD \cite{White2006}.
+To handle the non-linearities in the scheme we use a Newton solver. FEniCS already has a built-in Newtonsolver, however this solver was not able to compute the monolithic FSI problem because of the pressure function, with our choice of solid stress tensor, only being defined in the fluid domain. We had to manipulate the matrix to ensure that the pressure was zero in the solid domain. This gave the need to implement our own Newtonsolver taking ideas from Mikael Mortensens course in CFD named MEK4300 at the University of Oslo \cite{White2006}.
 Following is a print out of the full Newtonsolver, that is called for each time iteration.
 \newpage
 \begin{python}

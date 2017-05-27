@@ -1,13 +1,13 @@
-\section{Discretization of monolithic FSI equations}\label{Discretization}
-The temporal discretization is performed using finite difference schemes and the spatial discretization is treated with the finite element method, following the ideas and notations of \cite{Wick2011}.
+\section{Discretization of monolithic Fluid-Structure Interaction equations}\label{Discretization}
+The temporal discretization is performed using a finite difference scheme and the spatial discretization is treated with the finite element method, following the ideas and notations of \cite{Wick2011}.
 
-I first introduce the scheme in weak form using, for simplicity, the harmonic mesh motion. The test functions used in the weak formulation are $\phi, \psi$ and $\gamma$ which are continuous across the entire domain.
+The scheme is first introduced in a weak form and using, for simplicity, the harmonic lifting operator. 
 
 \textbf{The full monolithic FSI weak formulations reads}:\\
 In the domain $\Omega \in \mathbb{R}^D (D=1,2,3)$ and time interval [0,T],
-find $\bold{u} \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}^D$ , $ p \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}$ and $\bold{d} \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}^D$
+find $\bold{u} \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}^D$ , $ p \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}$ and $\bold{d} \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}^D$. Let $\phi, \psi$ and $\gamma$ be the test functions used in the weak formulation, which are continuous across the entire domain.
 \begin{align}
-   (J \rho_f \partial_t \bold{u} , \phi ) - (J (\nabla \bold{u})F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}} =& 0 \label{eq:firsweak} \\
+   (J \rho_f \partial_t \bold{u} , \phi ) + (J (\nabla \bold{u})F^{-1}(\bold{u} - \partial_t d) , \phi )_{\mathcal{\hat{F}}} =& 0 \label{eq:firsweak} \\
    ( J \sigma_{f} F^{-T} , \nabla \phi )_{\mathcal{\hat{F}}} =& 0\\
    (\rho_s \partial_t \bold{u} , \phi)_{\mathcal{\hat{S}}}   + \big(P, \nabla \phi \big)_{\mathcal{\hat{S}}} =& 0\\
    ( \alpha_u \nabla \bold{u}, \nabla \psi)_{\mathcal{\hat{F}}} + (\nabla \cdot (J F^{-1} \bold{u}),\gamma )_{\mathcal{\hat{F}}} =& 0\\
@@ -15,7 +15,7 @@ find $\bold{u} \in \Omega \times \mathbb{R}^+ \rightarrow \mathbb{R}^D$ , $ p \i
     \big( J \sigma_{f,p} F^{-T}, \nabla \phi  \big) =& 0 \label{eq:weak} 	 		
 \end{align}
 
-Introducing the \textit{One step-$\theta$ scheme} from \cite{Wick2011}, which has the advantage of easily being changed from a backward (implicit), forward(explicit), or a Crank-Nicholson (implicit) scheme, by changing the value of $\theta$. The Crank-Nicholson scheme is of second order, but suffers from instabilities in this monolithic scheme for certain time step values \cite{Wick2011}. A remedy for these instabilities is to chose a Crank-Nicholson scheme that is shifted towards the implicit side. How this is performed will become evident once the scheme is defined.
+Introducing the \textit{$\theta$-scheme} from \cite{Wick2011}, which has the advantage of easily being changed from a backward (implicit), forward(explicit), or a Crank-Nicholson (implicit) scheme, by changing the value of $\theta$. The Crank-Nicholson scheme is of second order, but suffers from instabilities in this monolithic scheme for certain time step values \cite{Wick2011}. A remedy for these instabilities is to chose a Crank-Nicholson scheme that is shifted towards the implicit side. How this is performed will become evident once the scheme is defined.
 
 The variational form is defined by dividing the equations \eqref{eq:firsweak} - \eqref{eq:weak}  into four categories. The four divided categories consists of: a time group $A_T$ (with time derivatives), implicit $A_I$ (terms always kept implicit), pressure $A_P$ and the rest $A_E$ (stress terms and convection):
 

@@ -24,7 +24,7 @@ Let w(\textbf{X},t) be the domain velocity which is the partial time derivative 
 \end{equation}
 
 \subsection{Deformation gradient}
-The deformation gradient describes the rate at which a bode undergoes deformation.
+The deformation gradient describes the rate at which a body undergoes deformation.
 Let $d(\textbf{X},t)$ be a differentiable deformation field in a given body, the deformation gradient is then:  
 \begin{equation}
 \label{eq:deformation_gradient}
@@ -56,8 +56,7 @@ which holds for an arbitrary line element in different configurations. This will
 \caption{Deformation of a line element with length $d\epsilon$ into a line element with length $\lambda d \epsilon$}
 \end{figure}
 
-
-Strain is the relative change of location between two particles. Strain, strain rate and deformation is used to describe the relative motion of particles in a continuum. This is the fundamental quality that causes stress \cite{Richter2016}.
+Strain is the relative change of location between two particles. Strain, strain rate and deformation is used to describe the relative motion of particles in a continuum. This is the fundamental quality that causes stress \cite{Richter2010}.
 
 Observing two neighboring points \textbf{X} and \textbf{Y}. Let \textbf{Y} be described by adding and subtracting the point \textbf{X} and rewriting \textbf{Y} from the point \textbf{X} plus a distance $d\textbf{X}$   :
 \begin{equation}
@@ -72,8 +71,7 @@ d\epsilon =& |\textbf{Y} - \textbf{X}| \\
 \end{align}
 where $d\epsilon$ is the distance between the two points and $\textbf{a}_0$ is a unit vector 
 
-We see now that $d\textbf{X}$ is the distance between the two points times the unit vector or direction from $\textbf{X}$ to $\textbf{Y}$.
-\newline
+We see now that $d\textbf{X}$ is the distance between the two points times the unit vector. \newline
 
 A certain motion transform the points $\textbf{Y}$ and $\textbf{X}$ into the displaced positions $\textbf{x} = \chi^s(\textbf{X},t)$ and $\textbf{y} = \chi^s(\textbf{Y},t)$. Using Taylor?s expansion \textbf{y} can be expressed in terms of the deformation gradient:
 
@@ -101,23 +99,19 @@ Looking at the square of $\lambda$:
 &= \textbf{a}_0 F^TF\textbf{a}_0 = \textbf{a}_0 C \textbf{a}_0
 \end{align}
 
-We have not introduced the important right Cauchy-Green tensor:
+Introducing the right Cauchy-Green tensor:
  \begin{equation}
  C = F^TF
 \end{equation}
 Since $\textbf{a}_0 $ is just a unit vector, we see that C measures the squared length of change under deformation. We see that in order to determine the stretch one needs only the direction of $\textbf{a}_0$ and the tensor C.
 C is also symmetric and positive definite $C = C^T$.  I also introduce the Green-Lagrangian strain tensor E:
 \begin{equation}\label{eq:StrainTensor}
-E = \frac{1}{2}(F^TF -I) 
+E = \frac{1}{2}(C - I) 
 \end{equation}
 which is also symmetric since C and I are symmetric. The Green-Lagrangian strain tensor E has the advantage of having no contributions when there is no deformations. Where the Cauchy-Green tensor gives the identity matrix for zero deformation.
 		
 \subsection{Stress}
 While strain, deformation and strain rate only describe the relative motion of particles in a given volume, stress give us the internal forces between neighboring particles. Stress is responsible for deformation and is therefore crucial in continuum mechanics. The unit of stress is force per area.
-
-
-that completely define the state of stress at a point inside a material in the deformed state, placement, or configuration. The tensor relates a unit-length direction vector n to the stress vector T(n) across an imaginary surface perpendicular to n:
-
 
 Introducing the Cauchy stress tensor $\sigma_s$, which define the state of stress inside a material. The version of Cauchy stress tensor is defined by the material model used. 
 If we use this tensor on an area, taking the stress tensor times the normal vector $\sigma_s \bold{n}$ we get the forces acting on that area.

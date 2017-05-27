@@ -82,16 +82,21 @@ William~L. Oberkampf and Christopher~J. Roy.
 \newblock {\em {Verification and Validation in Scientific Computing}}.
 \newblock Cambridge University Press, Cambridge, 2010.
 
+\bibitem{oberkampf2008verification}
+William~L Oberkampf and Timothy~G Trucano.
+\newblock Verification and validation benchmarks.
+\newblock {\em Nuclear engineering and Design}, 238(3):716--743, 2008.
+
+\bibitem{Richter2010}
+T~Richter.
+\newblock {Numerical Methods for Fluid-Structure Interaction Problems}.
+\newblock {\em Course of lectures}, 2010(August 2010), 2010.
+
 \bibitem{Richter2013}
 T~Richter and T~Wick.
 \newblock {On time discretizations of Fluid-structure interactions}.
 \newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
   377--400, 2013.
-
-\bibitem{Richter2016}
-Thomas Richter.
-\newblock {Fluid Structure Interactions}.
-\newblock 2016.
 
 \bibitem{Roache2002}
 Patrick~J. Roache.
@@ -108,11 +113,6 @@ Natural Sciences.
 \newblock {A Newton ' s Method Finite Element Algorithm for Fluid-Structure
   Interaction}.
 \newblock (October), 2012.
-
-\bibitem{Selin2014}
-Noelle Selin.
-\newblock {Verification and Validation}.
-\newblock (February), 2014.
 
 \bibitem{Stein2003}
 K.~Stein, T.~Tezduyar, and R.~Benney.
@@ -136,11 +136,10 @@ E.~H. van Brummelen.
   Fluid-Structure Interaction}.
 \newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
 
-\bibitem{Vinje2016}
-V~Vinje.
-\newblock {Simulating Cerebrospinal Fluid Flow and Spinal Cord Movement
-  Associated with Syringomyelia}.
-\newblock 2016.
+\bibitem{White2000}
+Frank~M White.
+\newblock {Viscous Fluid Flow Viscous}.
+\newblock {\em New York}, Second:413, 2000.
 
 \bibitem{White2006}
 Frank~M. White.

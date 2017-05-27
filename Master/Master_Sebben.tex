@@ -72,12 +72,13 @@ showstringspaces=false
 \usepackage{float} % these are so we can use H
 \restylefloat{table} % so we can use H to position
 
-\usepackage[MEK,60,LongTitle]{masterfrontpage}
+\usepackage[MEK,60,ExtraLongTitle]{masterfrontpage}
 
 
 
-\title{Monolithic solver for Computational Fluid-Structure Interaction}
-\subtitle{}
+%\title{A Monolithic Computational Framework for Fluid-Structure Interaction}
+\title{Development of a Verified and Validated Computational Framework for Fluid-Structure Interaction: Investigating Lifting Operators and Numerical stability.}
+%\subtitle{}
 \author{Sebastian Gjertsen}
 
 
@@ -88,6 +89,8 @@ showstringspaces=false
 
 % Romertall på alt før selve rapporten starter.
 \pagenumbering{roman}
+\input{./Acknowledgments/Acknowledgements}	
+\input{./Abstract/Abstract}	
 
 \tableofcontents
 
@@ -95,23 +98,23 @@ showstringspaces=false
 
 \pagenumbering{arabic} % Arabisk (vanlige tall) sidenummerering. Starter på side 1 igjen.
 
-%\input{./IntroductionToFSI/IntroductionToFSI}	
+\input{./IntroductionToFSI/IntroductionToFSI}	
 
-%\input{./Continuum_mechanics/Continuum_mechanics}
+\input{./Continuum_mechanics/Continuum_mechanics}
 
-%\input{./FSI_ALE_formulation/FSI_ALE_formulation}
+\input{./FSI_ALE_formulation/FSI_ALE_formulation}
 %!TEX encoding = UTF-8 Unicode\input{./FSI_code_monolithic/FSI_code_monolithic_update}
 %\newpage
 %\input{./Partitioned_ALE_RN/Partitioned_ALE_RN}
 
-%\input{./Verification_Validation/Verification_Validation}
+\input{./Verification_Validation/Verification_Validation}
 \input{./Mesh_motion_results/Mesh_motion_results}
-%\input{./Speedup/Speedup}
-%\input{./Conclusions/Conclusions}
+\input{./Speedup/Speedup}
+\input{./Conclusions/Conclusions}
 
-%\begin{appendices}
-%\input{./Appendix/Appendix}
-%\end{appendices}
+\begin{appendices}
+\input{./Appendix/Appendix}
+\end{appendices}
 %\newpage
 %\input{./Benchmark_hron/Benchmark}
 
