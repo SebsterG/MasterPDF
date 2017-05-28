@@ -1,11 +1,11 @@
-\chapter{CPU time reduction techniques}\label{runtime}
+\chapter{CPU Time Reduction Techniques}\label{runtime}
 Computing FSI accurately is difficult not only because of the lack of stable partitioned schemes. It is also difficult because of the increase in runtime when modeling both fluid and structure, especially with monolithic schemes. When accuracy is needed in CFSI the number of cells can quickly become large. The matrices can become so large that the amount of computing time is not feasible.
 
 In the Newton solver we have to assemble the Jacobian of the matrix, assemble the residual and solve for each iteration, until convergence is met. Working on this thesis the issue of runtime was certainly a problem, the wall clock time being days and weeks for a simulation to finish. 
 
-This chapter describes the runtime reduction techniques made to the Newton solver. The point of this chapter is not to rigorously experiment with time improvement techniques, but merely to show what helped make simulation times bearable. Hopefully, helping others when employing a Newton solver. In fact, the ideas covered here are not new and has been implemented in Gabriel Balaban?s master thesis in 2012 \cite{Sciences2012}.
+This chapter describes the runtime reduction techniques made to the Newton solver. The point of this chapter is not to rigorously experiment with time improvement techniques, but merely to show what helped make simulation times bearable. Hopefully, helping others when employing a Newton solver. In fact, the ideas covered here are not new and has been implemented in Gabriel Balaban`s master thesis in 2012 \cite{Sciences2012}.
 
-\section{Newton runtime profile}
+\section{Newton Runtime Profile}
 In table \ref{no_opt} shows the runtime of the  FSI1 problem with no optimization. Listing the amount of time spent on Jacobian Assembly, residual assembly, and solve call. 
 In table \ref{no_opt} it shows that the majority of time spent is in the assembly of the Jacobian. Therefore the effort will be spent on reducing the time spent on assembling the Jacobian. The next sections introduces two ways of improving time spent on assembling greatly. The first is reusing of the Jacobian and the second is employing a function in FENiCS called quadrature reduce. I will compare the timesaving techniques to table \ref{no_opt}.
 
@@ -42,7 +42,7 @@ Fulltime & \textbf{16.8 (-74 \%)} & - & - \\ \hline
 \end{table}
 
 
-\section{Quadrature reduce}
+\section{Quadrature Reduce}
 Assembling of the Jacobian matrix with non-linear terms, induces a high number of quadrature points, leading to a dense matrix. When the accuracy of the Jacobian can be reduced, we can reduce the number of quadrature degree. This improves the runtime but reduces the accuracy leading to more iterations per time step. Reducing the quadrature degree can lead to numerical divergence of the system in some cases, but is of great help in many other cases.\newline
 
 Table \ref{tab:quadreduce} shows that reducing the quadrature degree gives a 92 \% decrease in time spent assembling the Jacobian even with the same number of calls. The full time spent went down by 87 \%.
@@ -61,7 +61,7 @@ Fulltime & \textbf{8.2 (-87\%)} & - & - \\ \hline
 \end{table}
 
 
-\section{Summary of runtime improvement techniques}
+\section{Summary of Runtime Improvement Techniques}
 Finally using both the reuse of Jacobian and the reduction of the quadrature. As we can see in table \ref{both_tech} the total runtime went down 89\%. In my work on this thesis these two techniques were used as often as possible. Both techniques worked with great success in the FSI2 and FSI3 case.
 
 \begin{table}[H]

@@ -15,12 +15,12 @@
 \end{comment}
 
 
-\chapter{Implementation of Fluid Structure Interaction in FEniCS}
+\chapter{Implementation of Fluid-Structure Interaction in FEniCS}
 The discretization described in chapter \ref{Discretization}, is implemented using FEniCS \cite{FENICS}. FEniCS is a platform used to solve partial differential equations. Code is written in python, using FEniCS to easily run efficient finite element code. \newline
 
 The complete code consist of many hundreds of lines of code, and therefore only the most essential parts are covered. The code that has been added is added so that a reader with a minimal skill set in scientific computing and basic knowledge of the finite element method could implement a version of the code.
 
-\section{Variational form}
+\section{Variational Formulation}
 
 The variational form can be written directly into FEniCS. A big advantage in FEniCS is that there is a small \say{gap} between mathematical notation and FEniCS syntax. For instance the gradient and divergence, is in FEniCS as written as grad and div respectively. For this reason the basic parts of the code should be self evident.
 
@@ -75,7 +75,7 @@ Constant(1 - theta)*d_["n-1"], lamda_s, mu_s), grad(psi))*dx_s
 \end{python}
 
 
-\section{Newtons method implementation for solving Fluid structure interaction in FEniCS}
+\section{Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}
 To handle the non-linearities in the scheme we use a Newton solver. FEniCS already has a built-in Newtonsolver, however this solver was not able to compute the monolithic FSI problem because of the pressure function, with our choice of solid stress tensor, only being defined in the fluid domain. We had to manipulate the matrix to ensure that the pressure was zero in the solid domain. This gave the need to implement our own Newtonsolver taking ideas from Mikael Mortensens course in CFD named MEK4300 at the University of Oslo \cite{White2006}.
 Following is a print out of the full Newtonsolver, that is called for each time iteration.
 \newpage

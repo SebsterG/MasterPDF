@@ -8,7 +8,8 @@ The authors provides a computational domain, and boundary conditions, splitting 
 \includegraphics[scale=0.4]{./Verification_Validation/Hron_Turek/Domain_drawing.png}
 \end{center}
 
-The computational domain consists of a circle with an elastic bar behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 off center from bottom to top. This shift in the domain is done to induce oscillations to an otherwise symmetric flow.
+The computational domain consists of a rigid circle with an elastic bar attached behind the circle. The circle is positioned at (0.2, 0.2) making it 0.05 off center vertically. This shift in the domain is done to induce oscillations, for some flow conditions, to an otherwise symmetric flow.
+
 \begin{table}[H]
 \centering
 \caption{Domain parameters}
@@ -20,7 +21,7 @@ L & H & l & h & A \\ \hline
 \end{tabular}
 \end{table}
 
-The mesh shown in figures \ref{fig:fullmesh} and \ref{fig:partmesh} were made using Gmsh, with 11556 Cells, which is the mesh with the smallest node spacing. Table \ref{meshes} shows the number of cells and dofs used in each mesh. Elements are the computational cells in the mesh and dofs are the \textit{degrees of freedom}, often called the number of unknowns.
+The mesh shown in figures \ref{fig:fullmesh} and \ref{fig:partmesh} were created using Gmsh, with 11556 Cells, which is the mesh with the smallest node spacing. Table \ref{meshes} shows the number of cells and dofs used in each mesh. Elements are the computational cells in the mesh and dofs are the \textit{degrees of freedom}, often called the number of unknowns.
 
 \begin{table}[H]
 \centering
@@ -37,14 +38,14 @@ Mesh level & Elements & Dofs \\ \hline
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.40,trim={20mm 34mm 20mm 30mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2.png}
-\caption{Picture of entire FSI computing domain with 11556 cells}
+\includegraphics[scale=0.35,trim={20mm 34mm 20mm 30mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2.png}
+\caption{Picture of entire FSI computational domain with 11556 cells}
 \label{fig:fullmesh}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.362,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png}
-\caption{Picture of FSI computing domain with 11556 cells, zoomed in with the solid domain marked in pink. Around the circle we can see a small boundary layer with the width of 2 cells}
+\includegraphics[scale=0.32,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI_domain_b2_zoom.png}
+\caption{Picture of FSI computational domain with 11556 cells, zoomed in with the solid domain marked in pink. Around the circle we can see a small boundary layer with the width of 2 cells}
 \label{fig:partmesh}
 \end{figure}
 
@@ -52,19 +53,19 @@ Mesh level & Elements & Dofs \\ \hline
 
 \subsubsection*{Boundary conditions}
 A parabolic profile has been prescribed to the inlet velocity that increases from $t=[0,2]$ and is kept constant after $t = 2$.
-The fluid velocity on upper and lower walls are set to zero, normally called a \say{no slip} condition.
+The fluid velocity on upper and lower walls are set to zero, normally called a \say{no slip} condition. The pressure is set to zero on the outlet.
 
 \begin{align*}
 u(0,y) &= 1.5u_0 \frac{y(H-y)}{(\frac{H}{2})^2}  \\
 u(0,y,t) &= u(0,y)\frac{1-cos(\frac{\pi}{2}t)}{2} \text{  for  } t<2.0 \\
-u(0,y,t) &= u(0,y) \text{  for  } t \leq 2.0
+u(0,y,t) &= u(0,y) \text{  for  } t \geq 2.0
 \end{align*}
 
 \subsubsection*{Quantities for comparison}
 When the fluid moves around the circle and bar it exerts a frictional force. These forces are split into drag and lift and calculated as follows:
 $$ (F_d, F_L) = \int_S \sigma_f n dS $$ 
 where S is the part of the circle and bar in contact with the fluid. \\
-We set a point $A = (0.2,0.6)$ on the right side of the bar. Where this point is in the spatial direction gives a value for how much the bar has deflected. \\
+We define a point $A = (0.2,0.6)$ on the right side of the bar. Where this point is in the spatial direction gives a measure for how much the bar has deflected. \\
 For some given inflow conditions, unsteady solutions appear. For the unsteady solutions the values, meaning drag and lift, and displacement in x and y directions, are represented by the mean and amplitude values:
 \begin{align}
 mean =& \frac{1}{2} (max + min) \\
@@ -74,9 +75,10 @@ amplitude =& \frac{1}{2} (max - min)\\
 In each test the values denoted as \textbf{ref} are the values taken from the original benchmark proposal paper \cite{Hron2006a}. 
 
 \subsubsection{CFD test cases}
-The CFD tests can be simulated in two ways. The first way assumes the bar to be rigid object, meaning that the computational domain consists of the fluid domain only, and a no slip condition has been set on the interface. The other way, which is implemented in this thesis, is by computing the problem as a full FSI problem by setting $\rho_s=10^{6}$ and $\mu_s=10^{12}$, such that the bar is almost completely rigid, only giving rise to very small deformation (in the $10^{-9}-10^{-10}$ range).
+The CFD tests can be simulated with two approaches. The first way assumes the bar to be rigid object, meaning that the computational domain consists of the fluid domain only, and a no slip condition has been set on the interface. The other way, which is implemented in this thesis, is by computing the problem with the entire FSI scheme, but setting by setting $\rho_s=10^{6}$ and $\mu_s=10^{12}$, such that the bar is almost completely rigid, only giving rise to very small deformation (in the $10^{-9}-10^{-10}$ range).
 
-The CFD tests cases, CFD1 and CFD2 are simulated with Reynolds numbers 20 and 100 converging to steady solutions, \ref{tab:cfd_para}. The CFD3 test case has a Reynolds number 200 which will induce oscillations behind the circle and bar, giving fluctuations in the fluid velocity, hence giving unsteady solutions.
+
+The CFD tests cases, CFD1 and CFD2, are simulated with Reynolds numbers 20 and 100 converging to steady solutions, \ref{tab:cfd_para}. The CFD3 benchmark has a Reynolds number 200 at which point the asymmetry in the geometry will cause vortex shedding behind the circle and bar, and thus create an unsteady solution.
 
 \vspace{1cm}
 
@@ -100,13 +102,13 @@ Re = $\frac{Ud}{\nu_f}$ & 20 & 100 & 200 \\ \hline
 \caption{CFD2 steady state case fluid flow with 11556 cells}
 \end{figure}
 
-Notice in figure \ref{fig:CFD2}, which shows the fluid flow of the CFD2 case, that since the circle and bar are positioned non symmetric in the y direction there is more fluid flowing closer to the upper boundary. This non symmetry is what induces oscillations when the fluid inlet velocity is higher. The CFD2 case has an inlet velocity just below the point of inducing oscillations.
+Notice in figure \ref{fig:CFD2}, which shows the fluid flow of the CFD2 case, that since the circle and bar are positioned non symmetric in the y direction there is more fluid flowing closer to the upper boundary. The CFD2 case has an inlet velocity just below the point of inducing oscillations.
 
 Table \ref{tab:CFD1} shows the results for the CFD1 testcase, showing convergence towards the referential values in Drag and Lift for increasing elements and dofs.
 
 \begin{table}[H]
 \centering
-\caption{Results of CFD1 case run as full FSI, with almost rigid bar}
+\caption{Results of CFD1 case simulated as full FSI, with almost rigid bar}
 \label{tab:CFD1}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -134,7 +136,7 @@ Table \ref{tab:CFD2} shows the results for CFD2 tending towards the referential 
 \end{tabular}
 \end{table}
 
-Table \ref{CFD3_dt001} shows the results for the CFD3 testcase with $\Delta t = 0.01$, the results show clear convergence toward the \textbf{ref} value for increased number of cells and dofs.
+Table \ref{CFD3_dt001} shows the results for the CFD3 benchmark, the results show clear convergence toward the \textbf{ref} value for increased number of cells and dofs.
 
 \begin{table}[H]
 \centering
@@ -153,8 +155,8 @@ Table \ref{CFD3_dt001} shows the results for the CFD3 testcase with $\Delta t = 
 The solutions to the CFD1-3 test cases gives satisfactory results compared to the referential values given in the benchmark paper.
 
 \subsubsection{Computational Structural Mechanical test cases}
-The CSM tests are calculated using only the bar as computing domain. A body force $f_s$ is set a gravitational force $g$, which has been kept fixed throughout the CSM tests, changing only the material parameters of the solid. The tests CSM1 and CSM2 gives rise to steady state solutions. The difference between them is a more slender bar. 
-The CSM 3 gives unsteady solutions, and since there is no friction the bar should, if energy is preserved hence a correct solution, bounce down and back up infinitely. 
+The CSM tests are calculated using only the bar as computational domain. A body force $f_s$ is set a gravitational force $g$, which has been kept fixed throughout the CSM tests, changing only the material parameters of the solid. The tests CSM1 and CSM2 gives rise to steady state solutions. The difference between them is a more slender bar. 
+The CSM 3 gives unsteady solutions, and since there is no friction the bar should, if energy is preserved hence a correct solution, move down and back up infinitely. 
 
 \begin{center}
 \begin{figure}[H]
@@ -172,9 +174,6 @@ The CSM 3 gives unsteady solutions, and since there is no friction the bar shoul
 \begin{tabular}{|l|l|l|l|}
 \hline
 Parameters & CSM1 & CSM2 & CSM3 \\ \hline
-$\rho_f[10^3 \frac{kg}{m^3}]$ & 1 & 1 & 1 \\ \hline
-$\nu_f [10^{-3} \frac{m^2}{s}]$ & 1 & 1 & 1 \\ \hline
-$u_0$ & 0 & 0 & 0 \\ \hline
 $\rho_s[10^3 \frac{kg}{m^3}]$ & 1 & 1 & 1 \\ \hline
 $\nu_s$ & 0.4 & 0.4 & 0.4 \\ \hline
 $\mu_s[10^6 \frac{m^2}{s}]$ & 0.5 & 2.0 & 0.5 \\ \hline
@@ -182,7 +181,12 @@ $g $ & 2 & 2 & 2 \\ \hline
 \end{tabular}
 \end{table}
 
-The tables \ref{tab:CSM1} ,\ref{tab:CSM2} and \ref{tab:CSM2} shows the results of the CSM1, CSM2 and CSM3 cases respectively. All three show a clear tendency towards the referential values when increasing the number of elements, and gives satisfactory results.
+
+The tables \ref{tab:CSM1} ,\ref{tab:CSM2} and \ref{tab:CSM3} shows the results of the CSM1, CSM2 and CSM3 cases respectively. All three show a clear tendency towards the referential values when increasing the number of elements. 
+
+The figure \ref{plot:CSM3} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
+
+The results are within 1\% error margin, and we therefore consider the results as satisfactory.
 
 \begin{table}[H]
 \centering
@@ -229,7 +233,6 @@ elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ \\ \hline
 \end{tabular}
 \end{table}
 
-The figure \ref{plot:CSM3} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
 
 \begin{figure}[H]  
 \centering
@@ -263,13 +266,13 @@ The figure \ref{plot:CSM3} is of displacement at the point A in x and y directio
 
 
 \subsubsection*{FSI tests}
-The FSI tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI-2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. The FSI-3 test has the highest inflow speed giving medium deformations but more rapid oscillations. The parameters for FSI1-3 are shown in table
+The FSI tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. FSI2 was computed using the harmonic lifting operator with variable $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$ . The FSI3 test has the highest inflow speed giving medium deformations but more rapid oscillations. The parameters for FSI3 are shown in table \ref{FSI_para}. FSI3 was computed using the biharmonic lifting operator with a constant  $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$
 
 
 \begin{table}[h!]
 \centering
 \caption{FSI Parameters}
-\label{my-label}
+\label{FSI_para}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Parameters & FSI1 & FSI2 & FSI3 \\ \hline
@@ -299,15 +302,15 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ & Drag & Lift 
 
 \begin{figure}[H]
 \includegraphics[scale=0.35,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_u_970.png}
-\caption{FSI2 test case Fluid velocity at $ t = 9.70 $sec on the reference mesh}
+\caption{FSI2 test case Fluid velocity at $ t = 9.70 \hspace{1mm} $s shown on the reference mesh, the bar has in reality moved but is not shown here.}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.35,trim={0mm 0mm 0mm 0mm},clip]{./Verification_Validation/Hron_Turek/FSI2_d_970.png}
-\caption{FSI2 test case deformation at $t =9.70 $sec. The bar is marked with pink colour and deformed using warp by vector in paraview.}
+\caption{FSI2 test case deformation at $t =9.70 \hspace{1mm}$s. The bar is marked with pink colour and deformed using \textit{warp by vector} in Paraview.}
 \end{figure}
 
-The tables \ref{FSI2_table} and \ref{FSI2_table_0001} shows results for the FSI2 test case. The displacements in both results for both of the $\Delta t =0.01$ and $\Delta t = 0.001$ show convergence towards the \textbf{ref} values. The lift converges more slowly towards the ref value, while the drag values are off by about a value of 45 in both cases.
+The tables \ref{FSI2_table} and \ref{FSI2_table_0001} shows results for the FSI2 test case. First observing the third and fourth column, we can observe that the displacement of the bar appear to converge towards the reference values. However, for the for drag and lift neither is converging for $\Delta t = 0.01$. For a finer time step, the lift is greatly improved, see Table \ref{FSI2_table_0001} , however the drag is off be $\approx 30 \%$.
 
 \begin{table}[H]
 \centering
@@ -325,7 +328,7 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift
 
 \begin{table}[H]
 \centering
-\caption{FSI-2 with $\Delta t = 0.001$, using harmonic lifting operator}
+\caption{FSI2 with $\Delta t = 0.001$, using harmonic lifting operator}
 \label{FSI2_table_0001}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -342,31 +345,33 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift \\ \hline
   \begin{minipage}[b]{0.6\linewidth}
     \centering
     \includegraphics[width=0.9\linewidth]{./Verification_Validation/Hron_Turek/FSI2_dis_x.png} 
-    \caption{Displacement x} 
+    \caption{Displacement x vs time} 
     \vspace{4ex}
   \end{minipage}%%
   \begin{minipage}[b]{0.6\linewidth}
     \centering
     \includegraphics[width=0.9\linewidth]{./Verification_Validation/Hron_Turek/FSI2_dis_y.png} 
-    \caption{Displacement x} 
+    \caption{Displacement y vs time} 
     \vspace{4ex}
   \end{minipage} 
   \begin{minipage}[b]{0.6\linewidth}
     \centering
     \includegraphics[width=0.9\linewidth]{./Verification_Validation/Hron_Turek/FSI2_drag.png} 
-    \caption{Drag} 
+    \caption{Drag vs time} 
     \vspace{4ex}
   \end{minipage}%% 
   \begin{minipage}[b]{0.6\linewidth}
     \centering
     \includegraphics[width=0.9\linewidth]{./Verification_Validation/Hron_Turek/FSI2_lift.png} 
-    \caption{Lift} 
+    \caption{Lift vs time} 
     \vspace{4ex}
   \end{minipage} 
   \caption{Plots of FSI2 result values for, $\Delta t = 0.001$, with 11556 elements}
 \end{figure}
 
-In tables \ref{tab:FSI3_001} and \ref{tab:FSI3_0001} shows that results for FSI3 with $\Delta t = 0.01$ and $\Delta t = 0.001$, respectively. Both tables show convergence for displacements in both directions and for drag. In the results for lift the values are more scattered and not showing a clear trend but still within 50 \% of the referential values.
+
+
+In tables \ref{tab:FSI3_001} and \ref{tab:FSI3_0001} shows that results for FSI3 with $\Delta t = 0.01$ and $\Delta t = 0.001$, respectively. Both tables show convergence for displacements in both directions and for drag. In the results for lift the values are more scattered and not showing a clear trend and is about 50 \% off the referential values.
 
 \begin{table}[H]
 \centering
@@ -375,9 +380,9 @@ In tables \ref{tab:FSI3_001} and \ref{tab:FSI3_0001} shows that results for FSI3
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 Cells & Dofs & $d_x (A)[\times10^{-3} ]$ & $d_y (A)[\times10^{-3} ]$ & Drag & Lift \\ \hline
-2474 & 21249 & $-1.79 \pm 1.80$ & $3.29 \pm 2.64$ & $439.36 \pm 12.04$ & $1.96 \pm 142.31$ \\ \hline
-7307 & 63365 & $-2.48 \pm 2.48$ & $ 1.64 \pm 3.28$ & $449.77 \pm 18.02$ & $3.41 \pm 153.47$ \\ \hline
-11556 & 99810 & $ -2.47 \pm 2.45$ & $ 1.27 \pm 3.28$ & $456.60 \pm 18.73$ & $1.55 \pm 153.46$ \\ \hline
+2474 & 21249 & $-1.79 \pm 1.80$ & $3.29 \pm 26.41$ & $439.36 \pm 12.04$ & $1.96 \pm 142.31$ \\ \hline
+7307 & 63365 & $-2.48 \pm 2.48$ & $ 1.64 \pm 32.82$ & $449.77 \pm 18.02$ & $3.41 \pm 153.47$ \\ \hline
+11556 & 99810 & $ -2.47 \pm 2.45$ & $ 1.27 \pm 32.81$ & $456.60 \pm 18.73$ & $1.55 \pm 153.46$ \\ \hline
 ref & ref & $\bold{-2.69 \pm  2.56}$ & $\bold{1.48 \pm 34.38}$ & $\bold{457.3 \pm 22.66}$ & $\bold{2.22 \pm 149.78}$ \\ \hline
 \end{tabular}
 \end{table}
@@ -391,21 +396,21 @@ ref & ref & $\bold{-2.69 \pm  2.56}$ & $\bold{1.48 \pm 34.38}$ & $\bold{457.3 \p
 Cells & Dofs & $d_x (A)[\times10^{-3} ]$ & $d_y (A)[\times10^{-3} ]$ & Drag & Lift \\ \hline
 2474 & 21249 & $ -2.188 \pm 2.11 $ & $ 3.56 \pm 2.90 $ & $ 435.19 \pm 9.77$ & $ -1.57 \pm 151.43 $ \\ \hline
 7307 & 63365 & $ -1.42 \pm 4.70 $ & $ 0.77 \pm 28.50 $ & $ 454.38 \pm 19.75 $ & $1.79 \pm 155.08 $ \\ \hline
-11556 & 99810 & $ -2.23 \pm 6.164 $ & $ 1.72 \pm 4.48 $ & $ 459.12 \pm 22.97 $ & $ 3.12 \pm 171.22 $ \\ \hline
+11556 & 99810 & $ -2.23 \pm 6.164 $ & $ 1.72 \pm 44.48 $ & $ 459.12 \pm 22.97 $ & $ 3.12 \pm 171.22 $ \\ \hline
 \textbf{ref} & \textbf{ref} & $\bold{-2.69} \pm \bold{2.56}$ & $\bold{1.48} \pm \bold{34.38}$ & $\bold{457.3} \pm \bold{22.66}$ & $\bold{2.22} \pm \bold{149.78}$ \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection*{Comment on FSI tests}
- A very important thing to notice about this benchmark \cite{Hron2006a} is that it is a proposal for a benchmark, as it is called \say{Proposal for numerical benchmarking of fluid-structure interaction between an elastic object and laminar incompressible flow}. So the point of the paper is give a specific problem setup which others can contribute result-data. A paper was published in 2010 by J. Hron, Turek, et al, \cite{Turek2010} that compared results of different discretizations and solution approaches. This paper \cite{Turek2010} gives 7 different methods and results for two of the FSI test cases. They state in the numerical results that \say{However, also clear differences between the different approaches with regard to accuracy are visible. Particularly for the drag and lift values, which lead to differences of up to order 50\%, and also for the displacement valueswhich are in the range of 10\% errors.}. With this in mind it is important to know that the referential values used are only those reported from the original paper, which only looked at one implementation. While the paper which compares results, only 2 of the 7 contributions were schemes of monolithic nature, which are the closest one should refer to in this thessis.  In the Appendix \ref{sec:bigboys} is a copy of the results from the paper comparing schemes, showing different results for different discretization, with different time steps and unknowns. 
+\subsection*{Discussion on FSI tests}
+ A very important thing to notice about this benchmark \cite{Hron2006a} is that it is a proposal for a benchmark, as it is called \say{Proposal for numerical benchmarking of fluid-structure interaction between an elastic object and laminar incompressible flow}. So the point of the paper is give a specific problem setup which others can contribute result-data. A paper was published in 2010 by J. Hron, Turek, et al, \cite{Turek2010} that compared results of different discretizations and solution approaches. The study \cite{Turek2010} gives 7 different methods and results for two of the FSI test cases. They state in the numerical results that \say{However, also clear differences between the different approaches with regard to accuracy are visible. Particularly for the drag and lift values, which lead to differences of up to order 50\%, and also for the displacement valueswhich are in the range of 10\% errors.}. With this in mind it is important to know that the referential values used are only those reported from the original paper, which only looked at one implementation. While the paper which compares results, only 2 of the 7 contributions were schemes of monolithic nature, which are the closest one should refer to in this thessis.  In the Appendix \ref{sec:bigboys} is a copy of the results from the paper comparing schemes, showing different results for different discretization, with different time steps and unknowns. 
 
-The FSI1 test gives a low fluid velocity and gives very low displacements. FSI1 is therefore not a rigid test for FSI. In fact I personally experienced in the beginning of making the FSI solver, that even with a wrong implementation I got good FSI1 results. However it is a good test for early checks, because if FSI1 is wrong the rest will definitely not work.  \newline
+The FSI1 test gives a low fluid velocity and gives very low displacements. FSI1 is therefore not a rigid test for FSI. In fact I personally experienced in the beginning of making the FSI solver, that even that even with an erronous implementation I obtained adequate results. However it is a good test for early checks, because if FSI1 is wrong more complex cases will definitely not provide good results.  \newline
 
 For the FSI2 test case we only have results from the initial Hron and Turek paper \cite{Hron2006a}. As previously stated the results for the FSI3 case differ by in some cases 50\% for Drag and Lift. With this in mind, in the FSI2 case I am off by less then 10\% for displacement in x and y direction and for Lift. While Drag is off by about  50\%. It is reasonable to assume that since there were such differences in the results for different implementations for the FSI3 results, we would expect similar behavior in the FSI2 results.
 
 If we compare the results reported in the FSI3 case in the inital paper by Hron and Turek 2006, to their reported results in 2010 \ref{sec:bigboys} implementation 3, we can see that they do not report the same results same scheme, leading one believe that that they have changed their implementation a bit. 
 
-A note should be added about the construction of the computational meshes. If we look at figures \ref{fig:fullmesh} and \ref{fig:partmesh}. The node spacing on the inlet is small to ensure that the parabolic inlet profile is upheld. There is also smaller node spacing around the circle and around the bar, leading to larger node spacing as we move down stream. In the unsteady CFD and FSI cases there is vortex shedding happening downstream. With large node spacing in this area the vortexes may not be produced to its full extent, hence introducing errors in the unsteady results. 
+A note should be added about the construction of the computational meshes. If we look at figures \ref{fig:fullmesh} and \ref{fig:partmesh}. The node spacing on the inlet is small to ensure that the parabolic inlet profile was adequately represented. There is also smaller node spacing around the circle and around the bar, leading to larger node spacing as we move downstream. In the unsteady CFD and FSI cases there is vortex shedding happening downstream. With large node spacing in this area the vortexes may not be produced to its full extent, hence introducing errors in the unsteady results. 
 
 In hindsight, larger gaps in the number of elements between each mesh should have been larger. The three meshes that are mainly used go from 2474 cells to 7307 cells to 11556 cells. When calculating in 2D to see converging effects in the results of smaller node spacing, one should make meshes with 4 times the number of cells for each new mesh. This might have helped in converging to the referential values. The reason for not being able to run lower values for $\Delta t$ or increased number of cells in the meshes was a lack of computational resources.
 

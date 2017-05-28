@@ -2,12 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Master_Sebben.aux
 The style file: plain.bst
-Database file #1: Master_cites.bib
-Warning--I didn't find a database entry for "2010"
+Database file #1: Master_cites_final.bib
 Warning--empty journal in Charlesworth2003
 Warning--there's a number but no volume in Charlesworth2003
+Warning--there's a number but no series in dirac1981principles
 Warning--there's a number but no volume in Etienne2006
 Warning--there's a number but no volume in Fefferman2000
+Warning--can't use both volume and number fields in Oberkampf2002
+Warning--empty publisher in Oberkampf2002
 Warning--empty journal in Turek1996
 Warning--empty journal in Sciences2012
 Warning--there's a number but no volume in Sciences2012
@@ -15,45 +17,45 @@ Warning--empty journal in Turek2010
 Warning--empty journal in Valkov2015
 Warning--empty year in Valkov2015
 Warning--there's a number but no volume in White2006
-You've used 28 entries,
+You've used 31 entries,
             2118 wiz_defined-function locations,
-            682 strings with 8507 characters,
-and the built_in function-call counts, 8496 in all, are:
-= -- 840
-> -- 371
-< -- 4
-+ -- 148
-- -- 120
-* -- 577
-:= -- 1445
-add.period$ -- 81
-call.type$ -- 28
-change.case$ -- 143
+            703 strings with 8946 characters,
+and the built_in function-call counts, 9336 in all, are:
+= -- 921
+> -- 404
+< -- 6
++ -- 162
+- -- 130
+* -- 635
+:= -- 1585
+add.period$ -- 91
+call.type$ -- 31
+change.case$ -- 155
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 330
-empty$ -- 659
-format.name$ -- 120
-if$ -- 1747
+cite$ -- 45
+duplicate$ -- 365
+empty$ -- 730
+format.name$ -- 130
+if$ -- 1921
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 27
-newline$ -- 140
-num.names$ -- 56
-pop$ -- 135
+int.to.str$ -- 31
+missing$ -- 32
+newline$ -- 155
+num.names$ -- 62
+pop$ -- 152
 preamble$ -- 1
-purify$ -- 116
+purify$ -- 127
 quote$ -- 0
-skip$ -- 243
+skip$ -- 264
 stack$ -- 0
-substring$ -- 499
-swap$ -- 59
-text.length$ -- 4
+substring$ -- 540
+swap$ -- 65
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 11
-while$ -- 89
-width$ -- 30
-write$ -- 296
-(There were 12 warnings)
+type$ -- 118
+warning$ -- 14
+while$ -- 97
+width$ -- 33
+write$ -- 328
+(There were 14 warnings)

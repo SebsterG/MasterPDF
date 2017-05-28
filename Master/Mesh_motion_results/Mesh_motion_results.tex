@@ -1,33 +1,32 @@
-\chapter{Comparing the effects of different lifting operators and Investigating Numerical Stability in Fluid-Structure Interaction problems}\label{sec:mesh_motion}
-The first section is devoted to comparing different lifting operators defined in section \ref{sec:meshmotion}. The choice of lifting operators is crucial when in FSI problems \cite{Stein2003}. When handling large structural deformations one has to be very cautious about the choice of lifting operators. A good lifting operator upholds the integrity of the computational domain, allowing large deformations in the solid, moving into the fluid domain. The computational cost varies the different lifting operators, and it is therefore crucial to chose the right lifting operator for a specific problem. 
+\chapter{Comparing the Effects of Different Lifting Operators and Investigating Numerical Stability in Fluid-Structure Interaction Problems}\label{sec:mesh_motion}
+The first section is devoted to comparing different lifting operators defined in section \ref{sec:meshmotion}. The choice of lifting operators is crucial in FSI problems \cite{Stein2003}. When handling large structural deformations one has to be very cautious about the choice of lifting operators. A good lifting operator upholds the integrity of the computational domain, allowing large deformations in the solid, moving into the fluid domain. The most robust lifting operators are also the most computational expensive. There is therefore a trade-off between computational cost and robustness. In an problem where the deformations are small the simplest lifting operator will suffice, however if the deformations are large one of the more computational costly lifting operators have to be used.
 
-The second section investigates briefly the impact of choosing different value for $\theta$ in the $\theta$-scheme. The effects of choosing a Crank-Nicholson or a backward Euler scheme is known to have effects on the energy preservation in a computational system. Also the effects of shifting the Crank-Nicholson scheme is investigated using the FSI2 and FSI3 benchmarks from the previous chapter.
-\section{Methods for comparing lifting operators}
-The comparisons will be performed using a version of the CSM1 test as defined the previous chapter, with the same computing domain and parameters. The version of CSM1 test case is now computed as a full FSI problem with the fluid initially at rest. A gravitational force is applied to the structure much like the previous CSM test. The only difference is that we now use the full domain from the \ref{sec:HronTurek}. The test is run as time-dependent with a the backward Euler scheme, leading to a steady state solution.
+The second section briefly investigates the impact of choosing different value for $\theta$ in the $\theta$-scheme. The effects of choosing a Crank-Nicholson or a backward Euler scheme is known to have effects on the energy preservation in a computational system. Also the effects of shifting the Crank-Nicholson scheme is investigated using the FSI2 and FSI3 benchmarks from the previous chapter.
+\section{Methods for Comparing Lifting Operators}
+The comparisons will be performed using a version of the CSM1 test as defined the previous chapter, with the same computational domain as the full FSI benchmark and parameters of the CSM1. The version of CSM1 test case is now computed as a full FSI problem with the fluid initially at rest. A gravitational force is applied to the structure like the previous CSM test. The only difference is that we now use the full domain from the \ref{sec:HronTurek}. The test is simulated as time-dependent with a the backward Euler scheme, leading to a steady state solution.
 
 The tests will compare the different operators by investigating how the deformation from the solid domain is lifted into the fluid domain, investigating the mesh after deformation to see how much cells distort and where the cells distort. This is visualized using Paraview with its built in function \textit{warp by vector}, which redistributes nodes based on the displacement values in each nodal point.
 The computing domain is the same as used in the Hron Turek benchmark, from the previous section.
 The Dirichlet boundaries are set to the \say{no slip} condition. The left Neumann boundary is set to \say{do nothing}, and zero pressure. \newline
 
-The different operators will be measured with the minimal value of the Jacobian. The Jacobian is also known as the volume ratio, and if the Jacobian is zero anywhere in the domain it means that the volume is negative, and cells overlap. Which can cause singularity in the matrices during assembly. 
+The different operators will be measured with the minimal value of the Jacobian. The Jacobian is also known as the volume ratio, and if the Jacobian is zero anywhere in the domain it means that the volume is negative, and cells overlap. If cells overlap it can cause singularity in the matrices during assembly. 
 
 When cells overlap it can in the best case cause the computed numerical code to diverge, and in the worst case just give very wrong results. \newline
 
-A plot of the deformation in the domain has been added, to visualize how the different mesh motion techniques work. It is possible to see that if get thin triangles in the computational domain then the lifting operator is not good enough, and we might get singularities in the computing matrix.
-I also looked at how different lifting operators react differently in the FSI2 and FSI3 test cases from the previous section. Here I investigated plots of the lift, drag and displacements too see how the different lifting operators respond to different inflow velocities and solid parameters. Bc1 and bc2 denotes the boundary conditions 1 and 2 used when employing the biharmonic lifting operator.
+A plot of the deformation in the domain has been added, to to visually inspect the result of each lifting operator. It is possible to see that if get thin triangles in the computational domain then the lifting operator is not good enough, and we might get singularities in the computing matrix.
+I also investigated how different lifting operators react differently in the FSI2 and FSI3 test cases from the previous section. To that end, quantitative results of the drag an lift are compared with plotting drag and lift versus time. Bc1 and bc2 denotes the boundary conditions 1 and 2 used when employing the biharmonic lifting operator.
 
 
-\subsubsection*{Different lifting operators with testcase CSM1}
-Figure \ref{fig:fluid_structure} which shows the minimum of the Jacobian of the entire domain. The harmonic operator with a constant $\alpha_u$ parameter, gives overlapping cells
-While the harmonic lifting operator with variable $\alpha_u$ and both the biharmonic techniques, uphold the cells quality.
+\subsubsection*{Results of Investigating Different Lifting Operators}
+Figure \ref{fig:fluid_structure} shows the minimum of the Jacobian of the entire domain. The harmonic operator with a constant $\alpha_u$ parameter, results in overlapping cells, which can be seen from the the plot since it is below zero. In contrast, the harmonic lifting operator with variable $\alpha_u$, and both biharmonic lifting operators preserves the cell quality.
 
 \begin{figure}[H]
   \label{fig:fluid_structure}
   \includegraphics[scale=0.60, trim={0mm 0mm 0mm 0mm},clip]{./Mesh_motion_results/CSM1.png}
-   \caption{plot of the minimum of J in entire domain, using CSM1 test. $\Delta t = 0.05$}
+   \caption{plot of the minimum of J vs time in entire domain, using the CSM1 test. $\Delta t = 0.05$}
 \end{figure}
 
-Figure \ref{fig:CSM1_pictures} shows the meshes of the different lifting operators, for the steady state solutions from the CSM1 test case. The harmonic with a spatial dependent variable $\alpha_u$ and the two biharmonic lifting operators upholds good integrity of the cells. While the harmonic lifting operator with a constant $\alpha_u$ shows degeneration of cells at the tip of the bar. However, the computed numerical code was able to compute with the harmonic constant $\alpha_u$ operator, but as we can see in table \ref{tab:comparing lifting} the displacement values are incorrect.
+Figure \ref{fig:CSM1_pictures} displays how the mesh nodes are distrubuted at the steady state solution in the CSM1 test case. The same as we observed in Figure \ref{fig:fluid_structure}, is here displayed visually, only the harmonic lifting operator with constant $\alpha_u$ is not able to avoid inverted cells. However, the computed numerical code was able to compute with the harmonic constant $\alpha_u$ operator, but as we can see in table \ref{tab:comparing lifting} the displacement values are incorrect.
 
 \begin{figure}[H]  
   \begin{minipage}[b]{0.6\linewidth}
@@ -73,7 +72,7 @@ Hron \& Turek & $\bold{-66.10}$& $\bold{-7.187}$\\ \hline
 \end{tabular}
 \end{table}
 
-\subsubsection{FSI2 with different lifting operator}
+\subsubsection{FSI2 with Different Lifting Operator}
 
 Figure \ref{fig:FSI2_motion-1} shows the harmonic and the two biharmonic mesh motion techniques for the FSI2 case. All three are similar and only a slight change in the period can be noticed.
  
@@ -98,45 +97,46 @@ Figure \ref{fig:FSI2_motion-1} shows the harmonic and the two biharmonic mesh mo
     \includegraphics[scale=0.40]{./Mesh_motion_results/FSI2_dt001_lift.png} 
     \vspace{4ex}
   \end{minipage} 
-\caption {FSI2 with different lifting operators: harmonic with varying $\alpha_u$, biharmonic bc1 and bc2. $\Delta t = 0.01$}
+\caption {FSI2 displacements, drag, and lift, vs time, with different lifting operators: harmonic with varying $\alpha_u$, biharmonic bc1 and bc2. $\Delta t = 0.01$}
 \label{fig:FSI2_motion-1} 
 \end{figure}
 
 Figure \ref{FSI31}, \ref{FSI32}, \ref{FSI33} and \ref{FSI34} shows the displacement in x and y direction, and drag and lift plots respectively. The displacements and Lift plots show only a slight change in the period. While the Drag for the harmonic lifting operator with mesh dependent $\alpha_u$ shows an increasing in the Drag value of about 10.
 
-\begin{figure}[] 
-    \label{FSI31}
+\begin{figure}[H] 
     \centering	
     \includegraphics[trim={3cm 3cm 3cm 3cm},clip,scale=0.20]{./Mesh_motion_results/FSI3_dt0001_dis_x.png} 
-    \caption{Displacement in x direction for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Displacement in x direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \label{FSI31}
 \end{figure}
-\begin{figure}[]
-    \label{FSI32}
+\begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_dis_y.png} 
-    \caption{Displacement in x direction for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Displacement in y direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \label{FSI32}
 \end{figure}
-\begin{figure}[]
-    \label{FSI33}
+\begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_Drag.png} 
-    \caption{Drag results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Drag vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \label{FSI33}
 \end{figure}
-\begin{figure}[]
-    \label{FSI34}
+\begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_Lift.png} 
-    \caption{Lift results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Lift vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \label{FSI34}
 \end{figure}
 
-\subsection*{Discussion of comparing different lifting operators}
-In the FSI2 case all the different lifting operators show similar trend and it is seemingly not important for the results which lifting operator we use. This indicates that with a clever $\alpha_u$, the harmonic technique can be chosen. This is an advantage since the harmonic techniques is the least computationally costly. Whilst when we increase the inflow speed as in the FSI3 case there is a change in the period of the unsteady solution and the drag actually gives higher values, indicating that the biharmonic lifting operator may be a wiser choice.
+\subsection*{Discussion of Comparing Different Lifting Operators}
+In the FSI2 case all the different lifting operators show similar trend and it is seemingly not important for the results which lifting operator we use. This indicates that with a clever $\alpha_u$, the harmonic technique can be chosen. This is an advantage since the harmonic techniques is the least computationally costly. Whilst when we increase the inflow velocity as in the FSI3 case there is a change in the period of the unsteady solution and the drag actually gives higher values, indicating that the biharmonic lifting operator may be a wiser choice.
 
 In the FSI3 case there is an observed change in the drag values and the reason could be that the cells integrity are upheld in a different manner for different lifting operators. For the harmonic lifting operator it is reasonable to assume that for larger deformations the cell height on the interface will be smaller than for the biharmonic, hence giving a different value to the integrals when calculating drag. The lift and displacement differences for different lifting operators are similar. It is reasonable to assume that this is because of the normal force applied to the upper and lower sides of the bar, which is originally an effect of asymmetry in the y-direction of the domain, is what induces motion. The displacements are a secondary effect of the instability of the fluid and hence the effects we see in the values of lift are also seen in the displacements.
 
 In short the lifting of the deformations into the fluid domain gives different cell structures which in turn effects the integral of the stress tensors on the interface. This in turns produces different results for problems with larger mesh deformations combined with high fluid velocities. This gives the conclusion that lifting operators are highly problem specific and for cases with large deformations lifting operators should be chosen with care.
 
-It should also be noted that the biharmonic lifting operators are able to compute in parallel with multiple computer cores, while the harmonic with variable $\alpha_u$ is not able to run in parallel. This concludes that even though the harmonic lifting operator is is less computationally costly, computing on multiple cores is faster with the biharmonic lifting operator.
+A side note is on the computational cost, is that in the current implementation the harmonic lifting operator with a variable $\alpha_u$ can at this point not run in parallel, which all the other implemented lifting operators can.
+This concludes that even though the harmonic lifting operator is is less computationally costly, computing on multiple cores is faster with the biharmonic lifting operator.
 \input{./Temporal_stability/Temporal_stability}
 
 

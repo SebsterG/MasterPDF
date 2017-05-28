@@ -1,9 +1,9 @@
 \section{Fluid and Structure Boundary conditions}
-In order to obtain a unique solution to the fluid and solid equations, we need to specify a computational domain and impose boundary conditions. The fluid flow and the solid moves within the boundaries noted as $ \partial\mathcal{F}$ and $ \partial \mathcal{S}$ respectively. 
+In order to obtain a unique solution to the fluid and solid equations, we need to specify a computational domain and impose boundary conditions. The fluid flow and the solid moves within the boundaries noted as $ \partial\mathcal{F}$ and $ \partial \mathcal{S}$, respectively. 
 
-Dirichlet boundary conditions, often referred to as essential ones, are defined on the boundaries $ \partial \mathcal{F}_D$ and $ \partial \mathcal{S}_D$,
-Dirichlet boundary conditions can be fixed or time varying values, such as zero at the fluid boundary for a "no slip" condition, or a Womersley profile at the inlet of a pipe. For a problem to be well posed we need to prescribe initial conditions.
-The Dirichlet conditions are defined for $\bold{u}$ and $p$ as :
+Dirichlet boundary conditions, often referred to as essential ones, are defined on the boundaries $ \partial \mathcal{F}_D$ and $ \partial \mathcal{S}_D$.
+Dirichlet boundary conditions can be fixed or time varying values, such as zero at the fluid boundary for a "no slip" condition, or a Womersley profile \cite{He1997} at the inlet of a pipe. For a problem to be well posed we need also to prescribe initial conditions.
+The Dirichlet boundary conditions are defined for $\bold{u}$ and $p$ as :
 \begin{align}
 \bold{u} =& u_0 \text{   on   } \partial \mathcal{F}_D  \\
 p =& p_0 \text{   on   } \partial \mathcal{F}_D  \\
@@ -17,4 +17,4 @@ In addition, there are Neumann boundary conditions, often referred to as natural
 P\cdot \bold{n} &= f \text{   on   } \partial \mathcal{S}_N    
 \end{align}
 
-For the sake of completeness, it should be noticed that there exists the Roben boundary conditions, which is the Dirichlet and Neumann conditions combined.
+For the sake of completeness, it should be noticed that there exists the Robin boundary conditions, which are the Dirichlet and Neumann conditions combined.

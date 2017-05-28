@@ -12,6 +12,11 @@ David~J Charlesworth.
   Unstructured Meshes by}.
 \newblock (August), 2003.
 
+\bibitem{dirac1981principles}
+Paul Adrien~Maurice Dirac.
+\newblock {\em The principles of quantum mechanics}.
+\newblock Number~27. Oxford university press, 1981.
+
 \bibitem{Etienne2012}
 S.~{\'{E}}tienne, A.~Garon, and D.~Pelletier.
 \newblock {Some manufactured solutions for verification of fluid-structure
@@ -43,6 +48,12 @@ Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
   incompressible fluid-structure interaction: Stability analysis and numerics}.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   101(3):199--229, 2015.
+
+\bibitem{He1997}
+Xiaoyi He and Li-Shi Luo.
+\newblock Lattice boltzmann model for the incompressible navier--stokes
+  equation.
+\newblock {\em Journal of Statistical Physics}, 88(3):927--944, 1997.
 
 \bibitem{Holzapfel2000}
 G~Holzapfel.
@@ -81,6 +92,12 @@ Selim MM and Koomullil RP.
 William~L. Oberkampf and Christopher~J. Roy.
 \newblock {\em {Verification and Validation in Scientific Computing}}.
 \newblock Cambridge University Press, Cambridge, 2010.
+
+\bibitem{Oberkampf2002}
+William~L. Oberkampf and Timothy~G. Trucano.
+\newblock {\em {Verification and validation in computational fluid dynamics}},
+  volume~38.
+\newblock 2002.
 
 \bibitem{oberkampf2008verification}
 William~L Oberkampf and Timothy~G Trucano.
