@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  28 MAY 2017 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  28 MAY 2017 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1308,12 +1308,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-) [1] [2
-
-] (./Master_Sebben.toc
+[1]) [2] (./Master_Sebben.toc
 Underfull \vbox (badness 2856) has occurred while \output is active []
 
- [3])
+ [3
+
+])
 \tf@toc=\write6
 \openout6 = `Master_Sebben.toc'.
 
@@ -1325,7 +1325,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-<./IntroductionToFSI/tacoma2.jpeg, id=42, 770.88pt x 536.75531pt>
+<./IntroductionToFSI/tacoma2.jpeg, id=41, 770.88pt x 536.75531pt>
 File: ./IntroductionToFSI/tacoma2.jpeg Graphic file (type jpg)
 
 <use ./IntroductionToFSI/tacoma2.jpeg>
@@ -1333,7 +1333,7 @@ Package pdftex.def Info: ./IntroductionToFSI/tacoma2.jpeg used on input line 11
 .
 (pdftex.def)             Requested size: 185.2494pt x 128.9795pt.
 
-<./IntroductionToFSI/tacoma3.jpeg, id=43, 770.88pt x 595.47469pt>
+<./IntroductionToFSI/tacoma3.jpeg, id=42, 770.88pt x 595.47469pt>
 File: ./IntroductionToFSI/tacoma3.jpeg Graphic file (type jpg)
 
 <use ./IntroductionToFSI/tacoma3.jpeg>
@@ -1373,7 +1373,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
 [3
 
-] <./Continuum_mechanics/E_L.png, id=58, 671.50874pt x 293.095pt>
+] <./Continuum_mechanics/E_L.png, id=57, 671.50874pt x 293.095pt>
 File: ./Continuum_mechanics/E_L.png Graphic file (type png)
 
 <use ./Continuum_mechanics/E_L.png>
@@ -1964,181 +1964,159 @@ Overfull \hbox (15.51843pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Investigating Nu-mer-i-cal Sta-bil-ity for Fluid-
  []
 
-[46] [47]
-<./Temporal_stability/FSI2_001_051_big.png, id=282, 586.8324pt x 433.62pt>
+[46]
+<./Temporal_stability/FSI2_001_051_big.png, id=279, 586.8324pt x 433.62pt>
 File: ./Temporal_stability/FSI2_001_051_big.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI2_001_051_big.png>
 Package pdftex.def Info: ./Temporal_stability/FSI2_001_051_big.png used on inpu
-t line 12.
-(pdftex.def)             Requested size: 234.72879pt x 173.44492pt.
+t line 11.
+(pdftex.def)             Requested size: 211.25949pt x 156.10307pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 12--13
+Overfull \hbox (16.25949pt too wide) in paragraph at lines 11--13
  [][] 
  []
 
-<./Temporal_stability/FSI2_001_050_big.png, id=283, 586.8324pt x 442.2924pt>
+<./Temporal_stability/FSI2_001_050_big.png, id=280, 586.8324pt x 442.2924pt>
 File: ./Temporal_stability/FSI2_001_050_big.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI2_001_050_big.png>
 Package pdftex.def Info: ./Temporal_stability/FSI2_001_050_big.png used on inpu
-t line 18.
-(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+t line 16.
+(pdftex.def)             Requested size: 211.25949pt x 159.22514pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 18--19
+Overfull \hbox (16.25949pt too wide) in paragraph at lines 16--18
  [][] 
  []
 
 
-<./Temporal_stability/FSI2_001_051_small.png, id=284, 586.8324pt x 442.2924pt>
+<./Temporal_stability/FSI2_001_051_small.png, id=281, 586.8324pt x 442.2924pt>
 File: ./Temporal_stability/FSI2_001_051_small.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI2_001_051_small.png>
 Package pdftex.def Info: ./Temporal_stability/FSI2_001_051_small.png used on in
-put line 24.
-(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+put line 21.
+(pdftex.def)             Requested size: 211.25949pt x 159.22514pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 24--25
+Overfull \hbox (20.15735pt too wide) in paragraph at lines 21--23
  [][] 
  []
 
 
-<./Temporal_stability/FSI2_001_050_small.png, id=285, 586.8324pt x 442.2924pt>
+<./Temporal_stability/FSI2_001_050_small.png, id=282, 586.8324pt x 442.2924pt>
 File: ./Temporal_stability/FSI2_001_050_small.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI2_001_050_small.png>
 Package pdftex.def Info: ./Temporal_stability/FSI2_001_050_small.png used on in
-put line 30.
-(pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
+put line 26.
+(pdftex.def)             Requested size: 211.25949pt x 159.22514pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 30--31
+Overfull \hbox (16.25949pt too wide) in paragraph at lines 26--28
  [][] 
  []
 
-
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 10--34
-[][][]
- []
-
-
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 10--34
-[][] 
- []
-
-
-Underfull \vbox (badness 6204) has occurred while \output is active []
-
- [48 <./Temporal_stability/FSI2_001_051_big.png> <./Temporal_stability/FSI2_001
-_050_big.png> <./Temporal_stability/FSI2_001_051_small.png> <./Temporal_stabili
-ty/FSI2_001_050_small.png>]
-<./Temporal_stability/FSI3_0001_050_big.png, id=293, 578.16pt x 433.62pt>
+[47 <./Temporal_stability/FSI2_001_051_big.png> <./Temporal_stability/FSI2_001_
+050_big.png> <./Temporal_stability/FSI2_001_051_small.png> <./Temporal_stabilit
+y/FSI2_001_050_small.png>]
+<./Temporal_stability/FSI3_0001_050_big.png, id=290, 578.16pt x 433.62pt>
 File: ./Temporal_stability/FSI3_0001_050_big.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI3_0001_050_big.png>
 Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_big.png used on inp
-ut line 42.
+ut line 37.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<./Temporal_stability/FSI3_0001_050_small.png, id=294, 578.16pt x 433.62pt>
+<./Temporal_stability/FSI3_0001_050_small.png, id=291, 578.16pt x 433.62pt>
 File: ./Temporal_stability/FSI3_0001_050_small.png Graphic file (type png)
 
 <use ./Temporal_stability/FSI3_0001_050_small.png>
 Package pdftex.def Info: ./Temporal_stability/FSI3_0001_050_small.png used on i
-nput line 44.
+nput line 39.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-Overfull \hbox (96.51984pt too wide) in paragraph at lines 41--46
+Overfull \hbox (96.51984pt too wide) in paragraph at lines 36--41
 [][] 
  []
 
-<./Temporal_stability/CSM3_implicit.png, id=295, 578.16pt x 433.62pt>
+<./Temporal_stability/CSM3_implicit.png, id=292, 578.16pt x 433.62pt>
 File: ./Temporal_stability/CSM3_implicit.png Graphic file (type png)
 
 <use ./Temporal_stability/CSM3_implicit.png>
 Package pdftex.def Info: ./Temporal_stability/CSM3_implicit.png used on input l
-ine 57.
+ine 52.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<./Temporal_stability/CSM3_implicit_y.png, id=296, 578.16pt x 433.62pt>
+<./Temporal_stability/CSM3_implicit_y.png, id=293, 578.16pt x 433.62pt>
 File: ./Temporal_stability/CSM3_implicit_y.png Graphic file (type png)
 
 <use ./Temporal_stability/CSM3_implicit_y.png>
 Package pdftex.def Info: ./Temporal_stability/CSM3_implicit_y.png used on input
- line 63.
+ line 58.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<./Temporal_stability/CSM3_Crank.png, id=297, 578.16pt x 433.62pt>
+<./Temporal_stability/CSM3_Crank.png, id=294, 578.16pt x 433.62pt>
 File: ./Temporal_stability/CSM3_Crank.png Graphic file (type png)
 
 <use ./Temporal_stability/CSM3_Crank.png>
 Package pdftex.def Info: ./Temporal_stability/CSM3_Crank.png used on input line
- 69.
+ 64.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-<./Temporal_stability/CSM3_Crank_y.png, id=298, 578.16pt x 433.62pt>
+<./Temporal_stability/CSM3_Crank_y.png, id=295, 578.16pt x 433.62pt>
 File: ./Temporal_stability/CSM3_Crank_y.png Graphic file (type png)
 
 <use ./Temporal_stability/CSM3_Crank_y.png>
 Package pdftex.def Info: ./Temporal_stability/CSM3_Crank_y.png used on input li
-ne 75.
+ne 70.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 55--80
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 50--75
 [][][]
  []
 
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 55--80
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 50--75
 [][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49 <./Temporal_stability/FSI3_0001_050_big.png> <./Temporal_stability/FSI3_00
-01_050_small.png>] [50 <./Temporal_stability/CSM3_implicit.png> <./Temporal_sta
+ [48 <./Temporal_stability/FSI3_0001_050_big.png> <./Temporal_stability/FSI3_00
+01_050_small.png>] [49 <./Temporal_stability/CSM3_implicit.png> <./Temporal_sta
 bility/CSM3_implicit_y.png> <./Temporal_stability/CSM3_Crank.png> <./Temporal_s
-tability/CSM3_Crank_y.png>])) (./Speedup/Speedup.tex [51] [52
+tability/CSM3_Crank_y.png>])) (./Speedup/Speedup.tex [50]
+Chapter 6.
+[51
 
 ]
-Chapter 6.
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-[54]
-Overfull \hbox (1.35394pt too wide) in paragraph at lines 64--64
- |[]\T1/cmr/bx/n/17.28 Summary of Run-time Im-prove-ment Tech-
- []
+[52]) (./Conclusions/Conclusions.tex [53] [54
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55])
-(./Conclusions/Conclusions.tex [56]
+]
 Chapter 7.
-) [57
-
-] [58] [59
+) [55] [56] [57
 
 
-] [60] (./Appendix/Appendix.tex
+] [58] (./Appendix/Appendix.tex
 Appendix A.
-<continuum_mapping.png, id=343, 682.55pt x 341.275pt>
+<continuum_mapping.png, id=337, 682.55pt x 341.275pt>
 File: continuum_mapping.png Graphic file (type png)
 
 <use continuum_mapping.png>
 Package pdftex.def Info: continuum_mapping.png used on input line 5.
 (pdftex.def)             Requested size: 273.01517pt x 136.50757pt.
- [61
+ [59
 
  <./continuum_mapping.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
-<./Solid_equations/Strain.png, id=348, 918.43124pt x 325.215pt>
+<./Solid_equations/Strain.png, id=341, 918.43124pt x 325.215pt>
 File: ./Solid_equations/Strain.png Graphic file (type png)
 
 <use ./Solid_equations/Strain.png>
@@ -2147,21 +2125,21 @@ Package pdftex.def Info: ./Solid_equations/Strain.png used on input line 55.
 
 Underfull \vbox (badness 6592) has occurred while \output is active []
 
- [62]
+ [60]
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-[63 <./Solid_equations/Strain.png>]
+[61 <./Solid_equations/Strain.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
-[64] [65] [66
+[62] [63] [64
 
 ]
 Appendix B.
-<./Appendix/BigBoyResults.png, id=365, 1284.8pt x 803.0pt>
+<./Appendix/BigBoyResults.png, id=359, 1284.8pt x 803.0pt>
 File: ./Appendix/BigBoyResults.png Graphic file (type png)
 
 <use ./Appendix/BigBoyResults.png>
@@ -2170,11 +2148,11 @@ Package pdftex.def Info: ./Appendix/BigBoyResults.png used on input line 142.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67]
+ [65]
 Overfull \vbox (140.0531pt too high) has occurred while \output is active []
 
 
-[68 <./Appendix/BigBoyResults.png>]
+[66 <./Appendix/BigBoyResults.png>]
 (./FSI_code_monolithic/FSI_code_monolithic_update.tex
 Appendix C.
 
@@ -2182,7 +2160,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[69
+[67
 
 ] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
@@ -2191,7 +2169,7 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 Package Listings Warning: Text dropped after begin of listing on input line 32.
 
 
-[70]
+[68]
 Overfull \hbox (16.95813pt too wide) in paragraph at lines 78--78
  |[]\T1/cmr/bx/n/17.28 Newtons Method Im-ple-men-ta-tion for Solv-
  []
@@ -2199,23 +2177,23 @@ Overfull \hbox (16.95813pt too wide) in paragraph at lines 78--78
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
-[72])) (./Master_Sebben.bbl
+ [69]
+[70])) (./Master_Sebben.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
-[74
+ [71]
+[72
 
-] [75] [76]) [77] (./Master_Sebben.aux)
+] [73] [74]) [75] (./Master_Sebben.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28427 strings out of 493089
- 566956 string characters out of 6134842
- 898222 words of memory out of 5000000
- 31295 multiletter control sequences out of 15000+600000
+ 28426 strings out of 493089
+ 566941 string characters out of 6134842
+ 898217 words of memory out of 5000000
+ 31294 multiletter control sequences out of 15000+600000
  35970 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,13n,101p,10452b,1441s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2247,10 +2225,10 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (83 pages, 4048025 bytes).
+Output written on Master_Sebben.pdf (81 pages, 4047869 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
+ 489 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  331 words of extra memory for PDF output out of 10000 (max. 10000000)
 

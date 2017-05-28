@@ -8,8 +8,6 @@ Warning--there's a number but no volume in Charlesworth2003
 Warning--there's a number but no series in dirac1981principles
 Warning--there's a number but no volume in Etienne2006
 Warning--there's a number but no volume in Fefferman2000
-Warning--can't use both volume and number fields in Oberkampf2002
-Warning--empty publisher in Oberkampf2002
 Warning--empty journal in Turek1996
 Warning--empty journal in Sciences2012
 Warning--there's a number but no volume in Sciences2012
@@ -17,45 +15,45 @@ Warning--empty journal in Turek2010
 Warning--empty journal in Valkov2015
 Warning--empty year in Valkov2015
 Warning--there's a number but no volume in White2006
-You've used 31 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            703 strings with 8946 characters,
-and the built_in function-call counts, 9336 in all, are:
-= -- 921
-> -- 404
-< -- 6
-+ -- 162
-- -- 130
-* -- 635
-:= -- 1585
-add.period$ -- 91
-call.type$ -- 31
-change.case$ -- 155
+            696 strings with 8774 characters,
+and the built_in function-call counts, 9068 in all, are:
+= -- 899
+> -- 391
+< -- 5
++ -- 157
+- -- 126
+* -- 615
+:= -- 1541
+add.period$ -- 88
+call.type$ -- 30
+change.case$ -- 151
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 365
-empty$ -- 730
-format.name$ -- 130
-if$ -- 1921
+cite$ -- 42
+duplicate$ -- 353
+empty$ -- 708
+format.name$ -- 126
+if$ -- 1867
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 32
-newline$ -- 155
-num.names$ -- 62
-pop$ -- 152
+int.to.str$ -- 30
+missing$ -- 30
+newline$ -- 150
+num.names$ -- 60
+pop$ -- 144
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 123
 quote$ -- 0
-skip$ -- 264
+skip$ -- 256
 stack$ -- 0
-substring$ -- 540
-swap$ -- 65
-text.length$ -- 6
+substring$ -- 535
+swap$ -- 62
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
-warning$ -- 14
-while$ -- 97
-width$ -- 33
-write$ -- 328
-(There were 14 warnings)
+type$ -- 116
+warning$ -- 12
+while$ -- 95
+width$ -- 32
+write$ -- 318
+(There were 12 warnings)

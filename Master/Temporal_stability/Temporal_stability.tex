@@ -1,37 +1,32 @@
 \section{Investigating Numerical Stability for Fluid-Structure Interaction Problems}
 The following section will give a brief insight in to the effects of choosing different $\theta$ values in the $\theta-$scheme for different time steps. 
 The benchmark tests FSI2 and FSI3, as discussed in the previous section, has been investigated since they are known to be numerical unstable for certain values of $\theta$ and $\Delta t$. Only the effects of Drag are reported as the three other quantities shows similar behavior. 
-The impact of different $\theta$ values on energy stability in the solid mechanical benchmark CSM3 is also investigated.
-\newpage
+The impact of different $\theta$ values on energy stability in the solid mechanical benchmark CSM3 is also investigated. 
 
 Figure \ref{fig:FSI2drag_plots} shows the temporal evolution of drag in a simulation with $\Delta t = 0.01$. In the left panel the results are from simulations with $\theta = 0.5 + \Delta t$, and in the right panel $\theta = 0.5$. Based on the results we can observe that a standard Crank-Nicholson scheme becomes unstable when reaching $\sim$13 s. While the shifted Crank-Nicholson,  $\theta = 0.5 + \Delta t$, is stable throughout the simulation.
 
 \begin{figure}[H] 
-  \begin{minipage}[b]{0.6\linewidth}
+  \begin{minipage}[t][7cm][t]{0.5\linewidth}
     \centering
-    \includegraphics[scale=0.40]{./Temporal_stability/FSI2_001_051_big.png} 
-    \caption{Drag vs time with $\theta = 0.50 + \Delta t $} 
+    \includegraphics[scale=0.36]{./Temporal_stability/FSI2_001_051_big.png} 
     \vspace{4ex}
   \end{minipage}%%
-  \begin{minipage}[b]{0.6\linewidth}
+  \begin{minipage}[t][7cm][t]{0.5\linewidth}
     \centering
-    \includegraphics[scale=0.40]{./Temporal_stability/FSI2_001_050_big.png} 
-    \caption{Drag vs time with $\theta = 0.50 $} 
+    \includegraphics[scale=0.36]{./Temporal_stability/FSI2_001_050_big.png} 
     \vspace{4ex}
   \end{minipage} 
-  \begin{minipage}[b]{0.6\linewidth}
+  \begin{minipage}[t][7cm][t]{0.49\linewidth}
     \centering
-    \includegraphics[scale=0.40]{./Temporal_stability/FSI2_001_051_small.png} 
-    \caption{Drag vs time with $\theta = 0.50 +\Delta t $} 
+    \includegraphics[scale=0.36]{./Temporal_stability/FSI2_001_051_small.png} 
     \vspace{4ex}
   \end{minipage}%% 
-  \begin{minipage}[b]{0.6\linewidth}
+  \begin{minipage}[t][7cm][t]{0.5\linewidth}
     \centering
-    \includegraphics[scale=0.40]{./Temporal_stability/FSI2_001_050_small.png} 
-    \caption{Drag vs time with $\theta = 0.50 $} 
+    \includegraphics[scale=0.36]{./Temporal_stability/FSI2_001_050_small.png} 
     \vspace{4ex}
   \end{minipage} 
-\caption {Drag for FSI2 with $\Delta t = 0.01$ with different values for $\theta$}
+\caption {Drag vs time for FSI2 with $\Delta t = 0.01$ with different values, left panel with $\theta=0.5 + \Delta t$ and right panel with $\theta = 0.5$ }
 \label{fig:FSI2drag_plots} 
 \end{figure}
 

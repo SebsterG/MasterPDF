@@ -27,19 +27,19 @@
 \contentsline {section}{\numberline {5.1}Methods for Comparing Lifting Operators}{40}
 \contentsline {subsubsection}{FSI2 with Different Lifting Operator}{42}
 \contentsline {section}{\numberline {5.2}Investigating Numerical Stability for Fluid-Structure Interaction Problems}{46}
-\contentsline {chapter}{\numberline {6}CPU Time Reduction Techniques}{53}
-\contentsline {section}{\numberline {6.1}Newton Runtime Profile}{53}
-\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{54}
-\contentsline {section}{\numberline {6.3}Quadrature Reduce}{55}
-\contentsline {section}{\numberline {6.4}Summary of Runtime Improvement Techniques}{55}
-\contentsline {chapter}{\numberline {7}Conclusions}{57}
-\contentsline {chapter}{Appendices}{59}
-\contentsline {chapter}{\numberline {A}Appendix}{61}
-\contentsline {section}{\numberline {A.1}Lagrangian Description of Solid Mechanics}{61}
-\contentsline {subsection}{\numberline {A.1.1}Deformation Gradient}{62}
-\contentsline {subsection}{\numberline {A.1.2}Strain}{63}
-\contentsline {subsection}{\numberline {A.1.3}Stress}{65}
-\contentsline {chapter}{\numberline {B}Results from Renowned Scientists}{67}
-\contentsline {chapter}{\numberline {C}Implementation of Fluid-Structure Interaction in FEniCS}{69}
-\contentsline {section}{\numberline {C.1}Variational Formulation}{69}
-\contentsline {section}{\numberline {C.2}Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}{72}
+\contentsline {chapter}{\numberline {6}Compute time reduction techniques}{51}
+\contentsline {section}{\numberline {6.1}Newton runtime profile}{51}
+\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{52}
+\contentsline {section}{\numberline {6.3}Quadrature reduction}{52}
+\contentsline {section}{\numberline {6.4}Summary of runtime improvement techniques}{53}
+\contentsline {chapter}{\numberline {7}Conclusions}{55}
+\contentsline {chapter}{Appendices}{57}
+\contentsline {chapter}{\numberline {A}Appendix}{59}
+\contentsline {section}{\numberline {A.1}Lagrangian Description of Solid Mechanics}{59}
+\contentsline {subsection}{\numberline {A.1.1}Deformation Gradient}{60}
+\contentsline {subsection}{\numberline {A.1.2}Strain}{61}
+\contentsline {subsection}{\numberline {A.1.3}Stress}{63}
+\contentsline {chapter}{\numberline {B}Results from Renowned Scientists}{65}
+\contentsline {chapter}{\numberline {C}Implementation of Fluid-Structure Interaction in FEniCS}{67}
+\contentsline {section}{\numberline {C.1}Variational Formulation}{67}
+\contentsline {section}{\numberline {C.2}Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}{70}

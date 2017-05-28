@@ -4,6 +4,7 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
+\citation{Hron2006a}
 \citation{Billah1991}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction to Fluid-Structure Interaction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -205,79 +206,75 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Lift vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha _u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}}{45}}
 \newlabel{FSI34}{{5.11}{45}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Investigating Numerical Stability for Fluid-Structure Interaction Problems}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Drag vs time with $\theta = 0.50 + \Delta t $}}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Drag vs time with $\theta = 0.50 $}}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Drag vs time with $\theta = 0.50 +\Delta t $}}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Drag vs time with $\theta = 0.50 $}}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Drag for FSI2 with $\Delta t = 0.01$ with different values for $\theta $}}{48}}
-\newlabel{fig:FSI2drag_plots}{{5.16}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces FSI3 drag vs time plot for 10-15 seconds and 14-15 seconds, with $\Delta t = 0.001$ and $\theta =0.5$ showing long term numerical stability}}{49}}
-\newlabel{fig: FSI3_long_short}{{5.17}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Drag vs time for FSI2 with $\Delta t = 0.01$ with different values, left panel with $\theta =0.5 + \Delta t$ and right panel with $\theta = 0.5$ }}{47}}
+\newlabel{fig:FSI2drag_plots}{{5.12}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces FSI3 drag vs time plot for 10-15 seconds and 14-15 seconds, with $\Delta t = 0.001$ and $\theta =0.5$ showing long term numerical stability}}{48}}
+\newlabel{fig: FSI3_long_short}{{5.13}{48}}
 \citation{Wick2011}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces $\theta = 1 $}}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces $\theta = 1 $}}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces $\theta = 0.5 $}}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces $\theta = 0.5 $}}{50}}
-\newlabel{fig:CSM3_dis_plots}{{5.2}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces CSM3 displacements with $\Delta t = 0.01$ with different values for $\theta $}}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces $\theta = 1 $}}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces $\theta = 1 $}}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces $\theta = 0.5 $}}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces $\theta = 0.5 $}}{49}}
+\newlabel{fig:CSM3_dis_plots}{{5.2}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces CSM3 displacements with $\Delta t = 0.01$ with different values for $\theta $}}{49}}
 \citation{Sciences2012}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}CPU Time Reduction Techniques}{53}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Compute time reduction techniques}{51}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{runtime}{{6}{53}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Newton Runtime Profile}{53}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Newton solver timed with no optimizations, $\mathbf  {\Delta t = 0.5}$ }}{54}}
-\newlabel{no_opt}{{6.1}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{54}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Parts of the Newtonsolver timed with reuse of the jacobian run with $\mathbf  {\Delta t = 0.5}$}}{54}}
-\newlabel{jac_reuse}{{6.2}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Quadrature Reduce}{55}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Parts of the Newtonsolver timed with quadrature reduxe run with FSI1 ,$\mathbf  {\Delta t = 0.5}$}}{55}}
-\newlabel{tab:quadreduce}{{6.3}{55}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Summary of Runtime Improvement Techniques}{55}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Newton solver timed with jacobian reuse and quadrature reduce run with $\mathbf  {\Delta t = 0.5}$}}{56}}
-\newlabel{both_tech}{{6.4}{56}}
+\newlabel{runtime}{{6}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Newton runtime profile}{51}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Newton solver timed with no optimizations, $\mathbf  {\Delta t = 0.5}$ }}{52}}
+\newlabel{no_opt}{{6.1}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{52}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Parts of the Newtonsolver timed with reuse of the jacobian run with $\mathbf  {\Delta t = 0.5}$}}{52}}
+\newlabel{jac_reuse}{{6.2}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Quadrature reduction}{52}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Parts of the Newtonsolver timed with quadrature reduxe run with FSI1 ,$\mathbf  {\Delta t = 0.5}$}}{53}}
+\newlabel{tab:quadreduce}{{6.3}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Summary of runtime improvement techniques}{53}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Newton solver timed with jacobian reuse and quadrature reduce run with $\mathbf  {\Delta t = 0.5}$}}{53}}
+\newlabel{both_tech}{{6.4}{53}}
 \citation{Fernandez2013}
 \citation{Fernandez2015}
 \citation{VanBrummelen2009}
 \citation{Fernandez2013}
 \citation{Fernandez2015}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{57}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{55}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{59}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{61}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{57}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{59}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Lagrangian Description of Solid Mechanics}{61}}
-\newlabel{eq:chi}{{A.2}{61}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Deformation Gradient}{62}}
-\newlabel{eq:deformation_gradient}{{A.5}{62}}
-\newlabel{eq:J}{{A.6}{62}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Lagrangian Description of Solid Mechanics}{59}}
+\newlabel{eq:chi}{{A.2}{59}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Deformation Gradient}{60}}
+\newlabel{eq:deformation_gradient}{{A.5}{60}}
+\newlabel{eq:J}{{A.6}{60}}
 \citation{Richter2010}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Strain}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Deformation of a line element with length $d\epsilon $ into a line element with length $\lambda d \epsilon $}}{63}}
-\newlabel{eq:StrainTensor}{{A.19}{64}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Stress}{65}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Strain}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Deformation of a line element with length $d\epsilon $ into a line element with length $\lambda d \epsilon $}}{61}}
+\newlabel{eq:StrainTensor}{{A.19}{62}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Stress}{63}}
 \citation{Turek2010}
 \citation{Turek2010}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Results from Renowned Scientists}{67}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Results from Renowned Scientists}{65}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{sec:bigboys}{{B}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Results from different contributions in from the paper Turek et.al 2010 \cite  {Turek2010}}}{68}}
+\newlabel{sec:bigboys}{{B}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Results from different contributions in from the paper Turek et.al 2010 \cite  {Turek2010}}}{66}}
 \citation{FENICS}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Implementation of Fluid-Structure Interaction in FEniCS}{69}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Implementation of Fluid-Structure Interaction in FEniCS}{67}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {C.1}Variational Formulation}{69}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.1}Variational Formulation}{67}}
 \citation{White2006}
-\@writefile{toc}{\contentsline {section}{\numberline {C.2}Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}{72}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.2}Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}{70}}
 \bibstyle{plain}
 \bibdata{Master_cites_final}
 \bibcite{Billah1991}{1}
@@ -296,18 +293,17 @@
 \bibcite{Macal2005}{14}
 \bibcite{MM2016}{15}
 \bibcite{Oberkampf2010}{16}
-\bibcite{Oberkampf2002}{17}
-\bibcite{oberkampf2008verification}{18}
-\bibcite{Richter2010}{19}
-\bibcite{Richter2013}{20}
-\bibcite{Roache2002}{21}
-\bibcite{Turek1996}{22}
-\bibcite{Sciences2012}{23}
-\bibcite{Stein2003}{24}
-\bibcite{Turek2010}{25}
-\bibcite{Valkov2015}{26}
-\bibcite{VanBrummelen2009}{27}
-\bibcite{White2000}{28}
-\bibcite{White2006}{29}
-\bibcite{Wick2011}{30}
-\bibcite{Wick2011a}{31}
+\bibcite{oberkampf2008verification}{17}
+\bibcite{Richter2010}{18}
+\bibcite{Richter2013}{19}
+\bibcite{Roache2002}{20}
+\bibcite{Turek1996}{21}
+\bibcite{Sciences2012}{22}
+\bibcite{Stein2003}{23}
+\bibcite{Turek2010}{24}
+\bibcite{Valkov2015}{25}
+\bibcite{VanBrummelen2009}{26}
+\bibcite{White2000}{27}
+\bibcite{White2006}{28}
+\bibcite{Wick2011}{29}
+\bibcite{Wick2011a}{30}
