@@ -4,7 +4,7 @@ Computational fluid and solid mechanics are both well know to be time consuming 
 The initial implementation was therefore profiled, and the Newton solver of the monolithic FSI problem was identified to spend the most compute time. The point of this chapter is not to rigorously experiment with multiple speed-up techniques, but merely to describe implementations of the compute time reduction techniques that made simulation times feasible. Retrospectively it was discovered that the same techniques were applied previously\cite{Sciences2012}, but there only briefly addressed. 
 
 \section{Newton runtime profile}
-Table \ref{no_opt} shows compute times for the FSI1 problem for the initial FEniCS implementation. The table contains the amount of time spent on assembly of the Jacobian, assembly of the residual, and a call to solve the linear system of equations. It can be observed that almost 95\% of the resources are spent of assembly of the Jacobian, and efforts to reduce this bottleneck was taken. The next sections introduce two ways of speeding up assembly; the first is reuse of the Jacobian and the second is reduction of quadrature degree. The computational speedup will be compared to table \ref{no_opt}.
+Table \ref{no_opt} shows compute times for the FSI1 problem for the initial FEniCS implementation. The table contains the amount of time spent on assembly of the Jacobian, assembly of the residual, and a call to solve the linear system of equations. It can be observed that almost 95\% of the resources are spent of assembly of the Jacobian, and efforts to reduce this bottleneck was taken. The next sections introduce two ways of speeding up assembly; the first is reuse of the Jacobian and the second is reduction of quadrature degree. The computational speedup will be compared to Table \ref{no_opt}.
 
 \begin{table}[H]
 \centering
@@ -57,7 +57,7 @@ Fulltime & \textbf{8.2 (-87\%)} & - & - \\ \hline
 
 
 \section{Summary of runtime improvement techniques}
-Finally, a combination of Jacobian reuse and reduction of the quadrature is presented in Table \ref{both_tech}, where the total compute time decreased by 89\%. Both techniques were applied to the  FSI2 and FSI3 problems as well.
+Finally, a combination of Jacobian reuse and reduction of the quadrature is presented in Table \ref{both_tech}, where the total compute time decreased by 89\%. Both techniques were applied to the FSI2 and FSI3 problems as well.
 
 \begin{table}[H]
 \centering

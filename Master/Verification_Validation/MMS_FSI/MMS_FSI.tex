@@ -17,11 +17,10 @@ The manufactured solutions are used to produce a sourceterm $f_s$ :
 The equations are solved for $\bold{d}$ and $\bold{u}$ on a unit square domain, and the number N denotes the number of spatial points in x and y direction.
 The computations were simulated for 10 time steps and the error was calculated for each time step and then the mean of all the errors were used as a measure of the error.
 
-In table \ref{tab:MMS_SOLID_SPACE} we set m = 1, and vary the number of spatial points from 4 to 64 keeping $\Delta t = 10^{-7}$. The error $E_u$ and $E_d$ decreases for increasing values of N.The order of convergence $k_u$ and $k_d$ converges toward the expected value of 2.
+In Table \ref{tab:MMS_SOLID_SPACE} we set m = 1, and vary the number of spatial points from 4 to 64 keeping $\Delta t = 10^{-7}$. The error $E_u$ and $E_d$ decreases for increasing values of N.The order of convergence $k_u$ and $k_d$ converges toward the expected value of 2.
 
 \begin{table}[H]
 \centering
-\label{tab:MMS_SOLID_SPACE}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 \textbf{N} & $\Delta t$ & \textbf{m} & $E_u $ & $\bold{k_u}$ & $E_d $ & $\bold{k_d}$ \\ \hline
@@ -32,6 +31,7 @@ In table \ref{tab:MMS_SOLID_SPACE} we set m = 1, and vary the number of spatial 
 \textbf{64} & $1\times10^{-7}$ & \textbf{1} & 0.0000268 & \textbf{2.0000} & $1.4783 \times 10^{-11} $ & \textbf{2.0000} \\ \hline
 \end{tabular}
 \caption{Order of convergence test for the spatial resolution using the method of manufactured solution on the implementation of the Solid equation with m = 1}
+\label{tab:MMS_SOLID_SPACE}
 \end{table}
 
 

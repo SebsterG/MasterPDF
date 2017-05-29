@@ -25,7 +25,6 @@ The mesh shown in figures \ref{fig:fullmesh} and \ref{fig:partmesh} were created
 
 \begin{table}[H]
 \centering
-\label{meshes}
 \begin{tabular}{|l|l|l|}
 \hline
 Mesh level & Elements & Dofs \\ \hline
@@ -34,6 +33,7 @@ Mesh level & Elements & Dofs \\ \hline
 3 & 11556 & 99810 \\ \hline
 \end{tabular}
 \caption{Mesh levels showing number og cells and dofs in each mesh}
+\label{meshes}
 \end{table}
 
 \begin{figure}[H]
@@ -182,9 +182,9 @@ $g $ & 2 & 2 & 2 \\ \hline
 \end{table}
 
 
-The tables \ref{tab:CSM1} ,\ref{tab:CSM2} and \ref{tab:CSM3} shows the results of the CSM1, CSM2 and CSM3 cases respectively. All three show a clear tendency towards the referential values when increasing the number of elements. 
+The Tables \ref{tab:CSM1} ,\ref{tab:CSM2} and \ref{tab:CSM3} shows the results of the CSM1, CSM2 and CSM3 cases respectively. All three show a clear tendency towards the referential values when increasing the number of elements. 
 
-The figure \ref{plot:CSM3} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
+The Figure \ref{plot:CSM3} is of displacement at the point A in x and y direction of the CSM3 test. The CSM3 test was run with Crank-Nicholson, $\theta = 0.5$, and it can be seen that in the y displacement the bar returns to it initial state, that is with zero displacement. This results indicates that the energy in the system has been preserved.
 
 The results are within 1\% error margin, and we therefore consider the results as satisfactory.
 
@@ -266,7 +266,7 @@ elements & dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A)[\times10^{-3}]$ \\ \hline
 
 
 \subsubsection*{FSI tests}
-The FSI tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. FSI2 was computed using the harmonic lifting operator with variable $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$ . The FSI3 test has the highest inflow speed giving medium deformations but more rapid oscillations. The parameters for FSI3 are shown in table \ref{FSI_para}. FSI3 was computed using the biharmonic lifting operator with a constant  $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$
+The FSI tests are run with 2 different inflows conditions. FSI1 gives a steady state solution while the others are unsteady. FSI2 gives the largest deformation is therefore considered the most difficult of the three \cite{Richter2013}, giving deformations of 2.5 times greater than the flag height. FSI2 was computed using the harmonic lifting operator with variable $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$. The FSI3 test has the highest inflow speed giving medium deformations but more rapid oscillations. The parameters for FSI3 are shown in table \ref{FSI_para}. FSI3 was computed using the biharmonic lifting operator with a constant  $\alpha_u$ for $\Delta t = 0.01, \Delta t = 0.001$.
 
 
 \begin{table}[h!]
@@ -314,7 +314,7 @@ The tables \ref{FSI2_table} and \ref{FSI2_table_0001} shows results for the FSI2
 
 \begin{table}[H]
 \centering
-\caption{FSI2 test case results, $\Delta t = 0.01$, using the harmonic lifting operator}
+\caption{FSI2 test case results, $\Delta t = 0.01$, using the harmonic lifting operator.}
 \label{FSI2_table}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -328,7 +328,7 @@ Cells & Dofs & $d_x(A) [\times10^{-3}]$ & $d_y(A) [\times10^{-3}]$ & Drag & Lift
 
 \begin{table}[H]
 \centering
-\caption{FSI2 with $\Delta t = 0.001$, using harmonic lifting operator}
+\caption{FSI2 with $\Delta t = 0.001$, using harmonic lifting operator.}
 \label{FSI2_table_0001}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -368,7 +368,6 @@ Cells & Dofs & $d_x(A) [x10^{-3}]$ & $d_y(A) [x10^{-3}]$ & Drag & Lift \\ \hline
   \end{minipage} 
   \caption{Plots of FSI2 result values for, $\Delta t = 0.001$, with 11556 elements}
 \end{figure}
-
 
 
 In tables \ref{tab:FSI3_001} and \ref{tab:FSI3_0001} shows that results for FSI3 with $\Delta t = 0.01$ and $\Delta t = 0.001$, respectively. Both tables show convergence for displacements in both directions and for drag. In the results for lift the values are more scattered and not showing a clear trend and is about 50 \% off the referential values.

@@ -15,45 +15,45 @@ Warning--empty journal in Turek2010
 Warning--empty journal in Valkov2015
 Warning--empty year in Valkov2015
 Warning--there's a number but no volume in White2006
-You've used 30 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            696 strings with 8774 characters,
-and the built_in function-call counts, 9068 in all, are:
-= -- 899
-> -- 391
+            710 strings with 9416 characters,
+and the built_in function-call counts, 9845 in all, are:
+= -- 977
+> -- 432
 < -- 5
-+ -- 157
-- -- 126
-* -- 615
-:= -- 1541
-add.period$ -- 88
-call.type$ -- 30
-change.case$ -- 151
++ -- 173
+- -- 140
+* -- 682
+:= -- 1671
+add.period$ -- 94
+call.type$ -- 32
+change.case$ -- 164
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 353
-empty$ -- 708
-format.name$ -- 126
-if$ -- 1867
+cite$ -- 44
+duplicate$ -- 375
+empty$ -- 764
+format.name$ -- 140
+if$ -- 2022
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 30
-newline$ -- 150
-num.names$ -- 60
-pop$ -- 144
+int.to.str$ -- 32
+missing$ -- 32
+newline$ -- 160
+num.names$ -- 64
+pop$ -- 153
 preamble$ -- 1
-purify$ -- 123
+purify$ -- 134
 quote$ -- 0
-skip$ -- 256
+skip$ -- 271
 stack$ -- 0
-substring$ -- 535
-swap$ -- 62
+substring$ -- 601
+swap$ -- 64
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 124
 warning$ -- 12
-while$ -- 95
-width$ -- 32
-write$ -- 318
+while$ -- 103
+width$ -- 34
+write$ -- 340
 (There were 12 warnings)

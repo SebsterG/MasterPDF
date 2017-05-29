@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  28 MAY 2017 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  29 MAY 2017 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1341,7 +1341,7 @@ Package pdftex.def Info: ./IntroductionToFSI/tacoma3.jpeg used on input line 16
 .
 (pdftex.def)             Requested size: 167.70012pt x 129.54195pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
 
  []
 
@@ -1349,7 +1349,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
@@ -1389,12 +1389,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-) (./Continuum_mechanics/Boundary_conditions.tex
+) (./Continuum_mechanics/Boundary_conditions.tex [5]
 Overfull \hbox (28.14272pt too wide) in paragraph at lines 1--1
  |[]\T1/cmr/bx/n/17.28 Fluid and Struc-ture Bound-ary con-di-tions| 
  []
 
-[5])) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [6]
+)) (./FSI_ALE_formulation/FSI_ALE_formulation.tex [6]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
@@ -1473,7 +1473,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
-[13] [14]
+[13]
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 132.
+
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 132.
+
+[14]
 
 LaTeX Warning: Command \textbackslash invalid in math mode on input line 170.
 
@@ -1768,7 +1775,7 @@ Overfull \hbox (78.00476pt too wide) in paragraph at lines 345--369
 Underfull \vbox (badness 6380) has occurred while \output is active []
 
  [35 <./Verification_Validation/Hron_Turek/FSI2_d_970.png (PNG copy)>]
-Overfull \hbox (30.59639pt too wide) in paragraph at lines 380--388
+Overfull \hbox (30.59639pt too wide) in paragraph at lines 379--387
  [][] 
  []
 
@@ -1778,12 +1785,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [36 <./Verification_Validation/Hron_Turek/FSI2_dis_x.png> <./Verification_Vali
 dation/Hron_Turek/FSI2_dis_y.png> <./Verification_Validation/Hron_Turek/FSI2_dr
 ag.png> <./Verification_Validation/Hron_Turek/FSI2_lift.png>]
-Overfull \hbox (33.55383pt too wide) in paragraph at lines 394--402
+Overfull \hbox (33.55383pt too wide) in paragraph at lines 393--401
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
@@ -1797,7 +1804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--11
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
@@ -1805,7 +1812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 File: ./Mesh_motion_results/CSM1.png Graphic file (type png)
 
 <use ./Mesh_motion_results/CSM1.png>
-Package pdftex.def Info: ./Mesh_motion_results/CSM1.png used on input line 25.
+Package pdftex.def Info: ./Mesh_motion_results/CSM1.png used on input line 23.
 (pdftex.def)             Requested size: 352.10216pt x 265.37749pt.
 
 <./Mesh_motion_results/CSM1_laplace_rectangle.png, id=232, 919.435pt x 380.4212
@@ -1813,7 +1820,7 @@ Package pdftex.def Info: ./Mesh_motion_results/CSM1.png used on input line 25.
 File: ./Mesh_motion_results/CSM1_laplace_rectangle.png Graphic file (type png)
  <use ./Mesh_motion_results/CSM1_laplace_rectangle.png>
 Package pdftex.def Info: ./Mesh_motion_results/CSM1_laplace_rectangle.png used 
-on input line 34.
+on input line 32.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
 <./Mesh_motion_results/CSM1_constant_rectangle.png, id=233, 919.435pt x 380.421
@@ -1822,7 +1829,7 @@ File: ./Mesh_motion_results/CSM1_constant_rectangle.png Graphic file (type png)
 
  <use ./Mesh_motion_results/CSM1_constant_rectangle.png>
 Package pdftex.def Info: ./Mesh_motion_results/CSM1_constant_rectangle.png used
- on input line 40.
+ on input line 38.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
 <./Mesh_motion_results/CSM1_bibc1_rectangle.png, id=234, 919.435pt x 380.42125p
@@ -1830,7 +1837,7 @@ t>
 File: ./Mesh_motion_results/CSM1_bibc1_rectangle.png Graphic file (type png)
  <use ./Mesh_motion_results/CSM1_bibc1_rectangle.png>
 Package pdftex.def Info: ./Mesh_motion_results/CSM1_bibc1_rectangle.png used on
- input line 46.
+ input line 44.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
 <./Mesh_motion_results/CSM1_bibc2_rectangle.png, id=235, 919.435pt x 380.42125p
@@ -1838,28 +1845,31 @@ t>
 File: ./Mesh_motion_results/CSM1_bibc2_rectangle.png Graphic file (type png)
  <use ./Mesh_motion_results/CSM1_bibc2_rectangle.png>
 Package pdftex.def Info: ./Mesh_motion_results/CSM1_bibc2_rectangle.png used on
- input line 52.
+ input line 50.
 (pdftex.def)             Requested size: 229.85818pt x 95.10507pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 32--56
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 30--54
 [][][]
  []
 
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 32--56
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 30--54
 [][] 
  []
 
-[41 <./Mesh_motion_results/CSM1.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41 <./Mesh_motion_results/CSM1.png>]
 <./Mesh_motion_results/FSI2_dt001_dis_x.png, id=241, 586.8324pt x 442.2924pt>
 File: ./Mesh_motion_results/FSI2_dt001_dis_x.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI2_dt001_dis_x.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_dis_x.png used on inp
-ut line 82.
+ut line 80.
 (pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 82--84
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 80--82
  [][] 
  []
 
@@ -1868,10 +1878,10 @@ File: ./Mesh_motion_results/FSI2_dt001_dis_y.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI2_dt001_dis_y.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_dis_y.png used on inp
-ut line 87.
+ut line 85.
 (pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 87--89
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 85--87
  [][] 
  []
 
@@ -1880,10 +1890,10 @@ File: ./Mesh_motion_results/FSI2_dt001_drag.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI2_dt001_drag.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_drag.png used on inpu
-t line 92.
+t line 90.
 (pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 92--94
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 90--92
  [][] 
  []
 
@@ -1892,20 +1902,20 @@ File: ./Mesh_motion_results/FSI2_dt001_lift.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI2_dt001_lift.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI2_dt001_lift.png used on inpu
-t line 97.
+t line 95.
 (pdftex.def)             Requested size: 234.72879pt x 176.91382pt.
 
-Overfull \hbox (0.72641pt too wide) in paragraph at lines 97--99
+Overfull \hbox (0.72641pt too wide) in paragraph at lines 95--97
  [][] 
  []
 
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 80--100
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 78--98
 [][][]
  []
 
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 80--100
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 78--98
 [][] 
  []
 
@@ -1917,7 +1927,7 @@ File: ./Mesh_motion_results/FSI3_dt0001_dis_x.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI3_dt0001_dis_x.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_dis_x.png used on in
-put line 108.
+put line 106.
 (pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
 
 <./Mesh_motion_results/FSI3_dt0001_dis_y.png, id=254, 2055.68pt x 1122.1925pt>
@@ -1925,7 +1935,7 @@ File: ./Mesh_motion_results/FSI3_dt0001_dis_y.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI3_dt0001_dis_y.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_dis_y.png used on in
-put line 114.
+put line 112.
 (pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1938,7 +1948,7 @@ File: ./Mesh_motion_results/FSI3_dt0001_Drag.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI3_dt0001_Drag.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_Drag.png used on inp
-ut line 120.
+ut line 118.
 (pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
 
 <./Mesh_motion_results/FSI3_dt0001_Lift.png, id=264, 2055.68pt x 1122.1925pt>
@@ -1946,14 +1956,14 @@ File: ./Mesh_motion_results/FSI3_dt0001_Lift.png Graphic file (type png)
 
 <use ./Mesh_motion_results/FSI3_dt0001_Lift.png>
 Package pdftex.def Info: ./Mesh_motion_results/FSI3_dt0001_Lift.png used on inp
-ut line 126.
+ut line 124.
 (pdftex.def)             Requested size: 376.98602pt x 190.29182pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <./Mesh_motion_results/FSI3_dt0001_dis_x.png> <./Mesh_motion_results/FSI3_
 dt0001_dis_y.png>]
-Overfull \hbox (3.84547pt too wide) in paragraph at lines 131--131
+Overfull \hbox (3.84547pt too wide) in paragraph at lines 129--129
 |\T1/cmr/bx/n/14.4 Discussion of Com-par-ing Dif-fer-ent Lift-ing Op-er-a-tors|
  
  []
@@ -2143,13 +2153,13 @@ Appendix B.
 File: ./Appendix/BigBoyResults.png Graphic file (type png)
 
 <use ./Appendix/BigBoyResults.png>
-Package pdftex.def Info: ./Appendix/BigBoyResults.png used on input line 142.
-(pdftex.def)             Requested size: 335.70859pt x 452.55383pt.
+Package pdftex.def Info: ./Appendix/BigBoyResults.png used on input line 141.
+(pdftex.def)             Requested size: 287.7544pt x 387.90892pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65]
-Overfull \vbox (140.0531pt too high) has occurred while \output is active []
+Overfull \vbox (75.40819pt too high) has occurred while \output is active []
 
 
 [66 <./Appendix/BigBoyResults.png>]
@@ -2190,10 +2200,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28426 strings out of 493089
- 566941 string characters out of 6134842
- 898217 words of memory out of 5000000
- 31294 multiletter control sequences out of 15000+600000
+ 28429 strings out of 493089
+ 566981 string characters out of 6134842
+ 898233 words of memory out of 5000000
+ 31297 multiletter control sequences out of 15000+600000
  35970 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,13n,101p,10452b,1441s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2225,7 +2235,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (81 pages, 4047869 bytes).
+Output written on Master_Sebben.pdf (81 pages, 4048586 bytes).
 PDF statistics:
  489 PDF objects out of 1000 (max. 8388607)
  284 compressed objects within 3 object streams

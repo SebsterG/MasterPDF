@@ -9,9 +9,7 @@ The tests will compare the different operators by investigating how the deformat
 The computing domain is the same as used in the Hron Turek benchmark, from the previous section.
 The Dirichlet boundaries are set to the \say{no slip} condition. The left Neumann boundary is set to \say{do nothing}, and zero pressure. \newline
 
-The different operators will be measured with the minimal value of the Jacobian. The Jacobian is also known as the volume ratio, and if the Jacobian is zero anywhere in the domain it means that the volume is negative, and cells overlap. If cells overlap it can cause singularity in the matrices during assembly. 
-
-When cells overlap it can in the best case cause the computed numerical code to diverge, and in the worst case just give very wrong results. \newline
+The different operators will be measured with the minimal value of the Jacobian. The Jacobian is also known as the volume ratio, and if the Jacobian is zero anywhere in the domain it means that the volume is negative, and cells overlap. If cells overlap it can cause singularity in the matrices during assembly. When cells overlap it can in the best case cause the computed numerical code to diverge, and in the worst case just give very wrong results. \newline
 
 A plot of the deformation in the domain has been added, to to visually inspect the result of each lifting operator. It is possible to see that if get thin triangles in the computational domain then the lifting operator is not good enough, and we might get singularities in the computing matrix.
 I also investigated how different lifting operators react differently in the FSI2 and FSI3 test cases from the previous section. To that end, quantitative results of the drag an lift are compared with plotting drag and lift versus time. Bc1 and bc2 denotes the boundary conditions 1 and 2 used when employing the biharmonic lifting operator.
@@ -106,25 +104,25 @@ Figure \ref{FSI31}, \ref{FSI32}, \ref{FSI33} and \ref{FSI34} shows the displacem
 \begin{figure}[H] 
     \centering	
     \includegraphics[trim={3cm 3cm 3cm 3cm},clip,scale=0.20]{./Mesh_motion_results/FSI3_dt0001_dis_x.png} 
-    \caption{Displacement in x direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Displacement in x direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.001$}
     \label{FSI31}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_dis_y.png} 
-    \caption{Displacement in y direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Displacement in y direction vs time for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.001$}
     \label{FSI32}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_Drag.png} 
-    \caption{Drag vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Drag vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.001$}
     \label{FSI33}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[trim={3cm 3cm 3cm 3cm},scale=0.20]{./Mesh_motion_results/FSI3_dt0001_Lift.png} 
-    \caption{Lift vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.01$}
+    \caption{Lift vs time results for FSI3 with different lifting operators: Harmonic varying $\alpha_u$, Biharmonic bc1 and bc2. $\Delta t = 0.001$}
     \label{FSI34}
 \end{figure}
 

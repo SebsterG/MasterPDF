@@ -2,7 +2,7 @@
 When investigating a real world problem with a numerical model, the general approach is to: describe the problem with a mathematical model, discretize and implement the model on a computer, and finally simulate the implemented model to gain insight into the real world problem.
 
 A question then immediately arises, computer models have been known to be incorrect in the past \cite{oberkampf2008verification}, how can we trust the insight gained from numerical simulation? 
-To answer this question we need to adres another question, are the equations implemented correct? If so, is the mathematical description of the problem adequately defined? 
+To answer this question we need to adress another question, are the equations implemented correct? If so, is the mathematical description of the problem adequately defined? 
 Without answering these questions, being confident that your solutions are correct is difficult \cite{oberkampf2008verification}. The process of generating evidence that computed solutions meets certain requirements to fulfill an intended purpose, in the context of scientific computing, is known as Verification and Validation. The goal of this section will hence be to verify and validate the different numerical schemes outlined in the two previous chapters.  \\
 
 The chapter starts with the process of Verification, where the fluid and structure numerical schemes will be verified separately. Then use a well known benchmark to validate the fluid, structure, and FSI models, separately. \newline
@@ -11,7 +11,7 @@ The chapter starts with the process of Verification, where the fluid and structu
 Verification, in the context of scientific computing, is the process of determining wether or not the implementation of numerical algorithms in computer code, is correct \cite{Oberkampf2010}.
 Mapping a mathematical model to a computational model there will always be introduced an error, often referred to as truncation error. Verification helps us identify, quantify, and reduce the errors, assuring that there are no coding mistakes which effects the truncation error. Verification does not address wether or not the computed solutions are in alignment with physics in the real world. It only tells us that our model is computed correctly or not. \newline
 
-In Verification there are multiple classes of test that can be performed, one of which is \textit{order of convergence tests}. Order of convergence are based on the behavior of the error between a known exact solution and a computed solution \cite{Roache2002}. The most rigorous of the order of convergence test is the \textit{Method of Manufactured Solution} (MMS) \cite{Oberkampf2010}. When performing a Ms test, rather than looking for an exact solution, we manufacture one. The idea is to create a solution \textit{a priori}, and use this solution to generate an analytical source term for the governing PDEs and then compute the PDE with the source term to produce a solution. The manufactured solution does not need to have a physically realistic relation, since the solution is only testing the mathematics. \newline
+In Verification there are multiple classes of test that can be performed, one of which is \textit{order of convergence tests}. Order of convergence are based on the behavior of the error between a known exact solution and a computed solution \cite{Roache2002}. The most rigorous of the order of convergence test is the \textit{Method of Manufactured Solution} (MMS) \cite{Oberkampf2010}. When performing a MMS test, rather than looking for an exact solution, we manufacture one. The idea is to create a solution \textit{a priori}, and use this solution to generate an analytical source term for the governing PDEs and then compute the PDE with the source term to produce a solution. The manufactured solution does not need to have a physically realistic relation, since the solution is only testing the mathematics. \newline
 
 When manufacturing a solution in MMS tests there are a number of criteria that needs to be met for a solution to be sufficient. The manufactured solutions should be chosen to be non-trivial and analytic \cite{Oberkampf2010, Roache2002}. The solutions should be manufactured such that all terms of the equation are of the same order of magnitude. For this reason trigonometric and exponential functions can be a smart choice, since they are smooth and infinitely differentiable. In short, a good manufactured solution is one that is complex enough so that it rigorously tests each part of the equations.\newline 
 
@@ -28,7 +28,7 @@ If we let $\bold{u}$ be the numerical solution and $\hat{\bold{u}}$ be the exact
 \begin{equation}
 E = || \bold{u} - \hat{\bold{u}} ||
 \end{equation}
-When we decrease the node spacing ($ \Delta x $) or decrease time step size($\Delta t$), we expect the solution to convergence towards a given solution and hence the error becomes smaller. If we assume uniform node spacing in all spatial directions: 
+When we decrease the node spacing ($ \Delta x $) or decrease time step size ($\Delta t$), we expect the solution to convergence towards a given solution and hence the error becomes smaller. If we assume uniform node spacing in all spatial directions: 
 \begin{equation}
 \label{eq:Error}
  E = C_1 \Delta x^k+ C_2 \Delta t^l 
@@ -36,7 +36,7 @@ When we decrease the node spacing ($ \Delta x $) or decrease time step size($\De
 where $C_1$ and $C_2$ are constants, $ k = m+1 $ and m is the polynomial degree of the spatial elements. The error is hence dependent on the node spacing and the time step.
 In order to compute the convergence k  based on the error, we first have to let the term with $C_2\Delta t^l$ be negligible compared to $C_1\Delta x^2$. 
 Let $E_{n+1}$ and $E_{n}$ be the computed errors of a solution with fine and coarse node spacing respectively.
-Using \eqref{eq:Error} we can find $k$ by:
+Using equation \eqref{eq:Error} we can find $k$ by:
 \begin{align}
 \frac{E_{n+1}}{E_n} = \big( \frac{\Delta x_{n+1}}{\Delta x_n} \big)^k \\
 k = \frac{log( \frac{E_{n+1}}{E_n}) }{ log(\frac{\Delta x_{n+1}}{\Delta x_n})}

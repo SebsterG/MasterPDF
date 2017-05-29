@@ -18,7 +18,7 @@ Paul Adrien~Maurice Dirac.
 \newblock Number~27. Oxford university press, 1981.
 
 \bibitem{Etienne2012}
-S.~{\'{E}}tienne, A.~Garon, and D.~Pelletier.
+Stephane. {\'{E}}tienne, Andre Garon, and Dominique. Pelletier.
 \newblock {Some manufactured solutions for verification of fluid-structure
   interaction codes}.
 \newblock {\em Computers and Structures}, 106-107:56--67, 2012.
@@ -56,7 +56,7 @@ Xiaoyi He and Li-Shi Luo.
 \newblock {\em Journal of Statistical Physics}, 88(3):927--944, 1997.
 
 \bibitem{Holzapfel2000}
-G~Holzapfel.
+Gerhard Holzapfel.
 \newblock {Nonlinear solid mechanics: A continuum approach for engineering},
   2000.
 
@@ -99,12 +99,12 @@ William~L Oberkampf and Timothy~G Trucano.
 \newblock {\em Nuclear engineering and Design}, 238(3):716--743, 2008.
 
 \bibitem{Richter2010}
-T~Richter.
+Thomas Richter.
 \newblock {Numerical Methods for Fluid-Structure Interaction Problems}.
 \newblock {\em Course of lectures}, 2010(August 2010), 2010.
 
 \bibitem{Richter2013}
-T~Richter and T~Wick.
+Thomas Richter and Thomas Wick.
 \newblock {On time discretizations of Fluid-structure interactions}.
 \newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
   377--400, 2013.
@@ -115,7 +115,8 @@ Patrick~J. Roache.
 \newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
 
 \bibitem{Turek1996}
-M.~Sch{\"{a}}fer, S.~Turek, F.~Durst, E.~Krause, and R.~Rannacher.
+Michael. Sch{\"{a}}fer, Stefan. Turek, Franz. Durst, E.~Krause, and Rolf.
+  Rannacher.
 \newblock {Benchmark Computations of Laminar Flow Around a Cylinder}.
 \newblock pages 547--566, 1996.
 
@@ -126,15 +127,29 @@ Natural Sciences.
 \newblock (October), 2012.
 
 \bibitem{Stein2003}
-K.~Stein, T.~Tezduyar, and R.~Benney.
+K.~Stein, Tayfun. Tezduyar, and R.~Benney.
 \newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
   Displacements}.
 \newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
 
 \bibitem{Turek2010}
-S~Turek, J~Hron, M~Razzaq, H~Wobker, and M~Sch.
+Stefan Turek, Jaroslav Hron, M~Razzaq, H~Wobker, and M~Sch.
 \newblock {Fluid Structure Interaction II}.
 \newblock 73, 2010.
+
+\bibitem{valen2011direct}
+Kristian Valen-Sendstad, Kent-Andr{\'e} Mardal, Mikael Mortensen, Bj{\o}rn
+  Anders~Pettersson Reif, and Hans~Petter Langtangen.
+\newblock Direct numerical simulation of transitional flow in a
+  patient-specific intracranial aneurysm.
+\newblock {\em Journal of biomechanics}, 44(16):2826--2832, 2011.
+
+\bibitem{valen2014mind}
+Kristian Valen-Sendstad and DA~Steinman.
+\newblock Mind the gap: impact of computational fluid dynamics solution
+  strategy on prediction of intracranial aneurysm hemodynamics and rupture
+  status indicators.
+\newblock {\em American Journal of Neuroradiology}, 35(3):536--543, 2014.
 
 \bibitem{Valkov2015}
 Boris Valkov, Chris~H Rycroft, and Ken Kamrin.
@@ -142,7 +157,7 @@ Boris Valkov, Chris~H Rycroft, and Ken Kamrin.
   solid – solid contact problems}.
 
 \bibitem{VanBrummelen2009}
-E.~H. van Brummelen.
+Harald. van Brummelen.
 \newblock {Added Mass Effects of Compressible and Incompressible Flows in
   Fluid-Structure Interaction}.
 \newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
