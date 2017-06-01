@@ -1,0 +1,188 @@
+\begin{thebibliography}{10}
+
+\bibitem{Billah1991}
+K.~Yusuf Billah.
+\newblock {Resonance, Tacoma Narrows bridge failure, and undergraduate physics
+  textbooks}.
+\newblock {\em American Journal of Physics}, 59(2):118, 1991.
+
+\bibitem{Charlesworth2003}
+David~J Charlesworth.
+\newblock {Solution of the Incompressible Navier- Stokes Equations on
+  Unstructured Meshes by}.
+\newblock (August), 2003.
+
+\bibitem{dirac1981principles}
+Paul Adrien~Maurice Dirac.
+\newblock {\em The principles of quantum mechanics}.
+\newblock Number~27. Oxford university press, 1981.
+
+\bibitem{Etienne2012}
+Stephane. {\'{E}}tienne, Andre Garon, and Dominique. Pelletier.
+\newblock {Some manufactured solutions for verification of fluid-structure
+  interaction codes}.
+\newblock {\em Computers and Structures}, 106-107:56--67, 2012.
+
+\bibitem{Etienne2006}
+St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
+  2006.
+
+\bibitem{Fefferman2000}
+Charles~L. Fefferman.
+\newblock {Existence and smoothness of the Navier-Stokes equation}.
+\newblock {\em The millennium prize problems}, (1):1--5, 2000.
+
+\bibitem{Fernandez2013}
+Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
+\newblock {Explicit robin-neumann schemes for the coupling of incompressible
+  fluids with thin-walled structures}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  267:566--593, 2013.
+
+\bibitem{Fernandez2015}
+Miguel~A. Fern{\'{a}}ndez, Jimmy Mullaert, and Marina Vidrascu.
+\newblock {Generalized Robin-Neumann explicit coupling schemes for
+  incompressible fluid-structure interaction: Stability analysis and numerics}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  101(3):199--229, 2015.
+
+\bibitem{He1997}
+Xiaoyi He and Li-Shi Luo.
+\newblock Lattice boltzmann model for the incompressible navier--stokes
+  equation.
+\newblock {\em Journal of Statistical Physics}, 88(3):927--944, 1997.
+
+\bibitem{Holzapfel2000}
+Gerhard Holzapfel.
+\newblock {Nonlinear solid mechanics: A continuum approach for engineering},
+  2000.
+
+\bibitem{Hron2006a}
+Jaroslav Hron and Stefan Turek.
+\newblock {Proposal for numerical benchmarking of fluid-structure interaction
+  between an elastic object and laminar incompressible flow}.
+\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
+
+\bibitem{Liu2014}
+Jie Liu, Rajeev~K. Jaiman, and Pardha~S. Gurugubelli.
+\newblock {A stable second-order scheme for fluid-structure interaction with
+  strong added-mass effects}.
+\newblock {\em Journal of Computational Physics}, 270:687--710, 2014.
+
+\bibitem{FENICS}
+Anders Logg, Harish Narayanan, Marie Rognes, Johannes Ring, Kristian~B.
+  {\O}lgaard, and Garth~N. Wells.
+\newblock {FEniCS Project}, 2011.
+
+\bibitem{Macal2005}
+Cm~Macal.
+\newblock {Proceedings of the 2005 Winter Simulation Conference ME Kuhl, NM
+  Steiger, FB Armstrong, and JA Joines, eds.}
+\newblock {\em Simulation}, pages 1643--1649, 2005.
+
+\bibitem{MM2016}
+Selim MM and Koomullil RP.
+\newblock {Mesh Deformation Approaches – A Survey}.
+\newblock {\em Journal of Physical Mathematics}, 7(2), 2016.
+
+\bibitem{Oberkampf2010}
+William~L. Oberkampf and Christopher~J. Roy.
+\newblock {\em {Verification and Validation in Scientific Computing}}.
+\newblock Cambridge University Press, Cambridge, 2010.
+
+\bibitem{oberkampf2008verification}
+William~L Oberkampf and Timothy~G Trucano.
+\newblock Verification and validation benchmarks.
+\newblock {\em Nuclear engineering and Design}, 238(3):716--743, 2008.
+
+\bibitem{Richter2010}
+Thomas Richter.
+\newblock {Numerical Methods for Fluid-Structure Interaction Problems}.
+\newblock {\em Course of lectures}, 2010(August 2010), 2010.
+
+\bibitem{Richter2013}
+Thomas Richter and Thomas Wick.
+\newblock {On time discretizations of Fluid-structure interactions}.
+\newblock {\em Multiple Shooting and Time Domain Decomposition MEthods}, pages
+  377--400, 2013.
+
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+
+\bibitem{Turek1996}
+Michael. Sch{\"{a}}fer, Stefan. Turek, Franz. Durst, E.~Krause, and Rolf.
+  Rannacher.
+\newblock {Benchmark Computations of Laminar Flow Around a Cylinder}.
+\newblock pages 547--566, 1996.
+
+\bibitem{Sciences2012}
+Natural Sciences.
+\newblock {A Newton ' s Method Finite Element Algorithm for Fluid-Structure
+  Interaction}.
+\newblock (October), 2012.
+
+\bibitem{Stein2003}
+K.~Stein, Tayfun. Tezduyar, and R.~Benney.
+\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
+  Displacements}.
+\newblock {\em Journal of Applied Mechanics}, 70(1):58, 2003.
+
+\bibitem{Turek2010}
+Stefan Turek, Jaroslav Hron, M~Razzaq, H~Wobker, and M~Sch.
+\newblock {Fluid Structure Interaction II}.
+\newblock 73, 2010.
+
+\bibitem{valen2011direct}
+Kristian Valen-Sendstad, Kent-Andr{\'e} Mardal, Mikael Mortensen, Bj{\o}rn
+  Anders~Pettersson Reif, and Hans~Petter Langtangen.
+\newblock Direct numerical simulation of transitional flow in a
+  patient-specific intracranial aneurysm.
+\newblock {\em Journal of biomechanics}, 44(16):2826--2832, 2011.
+
+\bibitem{valen2014mind}
+Kristian Valen-Sendstad and DA~Steinman.
+\newblock Mind the gap: impact of computational fluid dynamics solution
+  strategy on prediction of intracranial aneurysm hemodynamics and rupture
+  status indicators.
+\newblock {\em American Journal of Neuroradiology}, 35(3):536--543, 2014.
+
+\bibitem{Valkov2015}
+Boris Valkov, Chris~H Rycroft, and Ken Kamrin.
+\newblock {Eulerian method for fluid – structure interaction and submerged
+  solid – solid contact problems}.
+
+\bibitem{VanBrummelen2009}
+Harald. van Brummelen.
+\newblock {Added Mass Effects of Compressible and Incompressible Flows in
+  Fluid-Structure Interaction}.
+\newblock {\em Journal of Applied Mechanics}, 76(2):021206, 2009.
+
+\bibitem{White2000}
+Frank~M White.
+\newblock {Viscous Fluid Flow Viscous}.
+\newblock {\em New York}, Second:413, 2000.
+
+\bibitem{White2006}
+Frank~M. White.
+\newblock {Chapter 3 - Solutions of the Newtonian viscous-flow equa- tions}.
+\newblock {\em Viscous Fluid Flow}, (5), 2006.
+
+\bibitem{Wick2011}
+Thomas Wick.
+\newblock {Adaptive Finite Element Simulation of Fluid-Structure Interaction
+  with Application to Heart-Valve Dynamics}.
+\newblock {\em Institute of Applied Mathematics, University of Heidelber}, page
+  157, 2011.
+
+\bibitem{Wick2011a}
+Thomas Wick.
+\newblock {Fluid-structure interactions using different mesh motion
+  techniques}.
+\newblock {\em Computers and Structures}, 89(13-14):1456--1467, 2011.
+
+\end{thebibliography}

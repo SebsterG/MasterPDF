@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  29 MAY 2017 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  29 MAY 2017 12:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Master_Sebben.tex
-(./Master_Sebben.tex
+**Master_Sebastian_Gjertsen.tex
+(./Master_Sebastian_Gjertsen.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
@@ -1187,7 +1187,7 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 \MFPtextlength=\skip83
 \MFPapollonx=\skip84
 )
-(./Master_Sebben.aux
+(./Master_Sebastian_Gjertsen.aux
 
 LaTeX Warning: Label `my-label' multiply defined.
 
@@ -1195,7 +1195,7 @@ LaTeX Warning: Label `my-label' multiply defined.
 LaTeX Warning: Label `my-label' multiply defined.
 
 )
-\openout1 = `Master_Sebben.aux'.
+\openout1 = `Master_Sebastian_Gjertsen.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
@@ -1308,14 +1308,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-[1]) [2] (./Master_Sebben.toc
+[1]) [2] (./Master_Sebastian_Gjertsen.toc
 Underfull \vbox (badness 2856) has occurred while \output is active []
 
  [3
 
 ])
 \tf@toc=\write6
-\openout6 = `Master_Sebben.toc'.
+\openout6 = `Master_Sebastian_Gjertsen.toc'.
 
 
 [4] (./IntroductionToFSI/IntroductionToFSI.tex
@@ -2188,25 +2188,25 @@ Overfull \hbox (16.95813pt too wide) in paragraph at lines 78--78
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69]
-[70])) (./Master_Sebben.bbl
+[70])) (./Master_Sebastian_Gjertsen.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71]
 [72
 
-] [73] [74]) [75] (./Master_Sebben.aux)
+] [73] [74]) [75] (./Master_Sebastian_Gjertsen.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  28429 strings out of 493089
- 566981 string characters out of 6134842
- 898233 words of memory out of 5000000
+ 567137 string characters out of 6134842
+ 898257 words of memory out of 5000000
  31297 multiletter control sequences out of 15000+600000
  35970 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,13n,101p,10452b,1441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,13n,101p,10464b,1441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texm
@@ -2235,7 +2235,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Master_Sebben.pdf (81 pages, 4048570 bytes).
+Output written on Master_Sebastian_Gjertsen.pdf (81 pages, 4048570 bytes).
 PDF statistics:
  489 PDF objects out of 1000 (max. 8388607)
  284 compressed objects within 3 object streams

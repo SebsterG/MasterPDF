@@ -1,0 +1,45 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction to Fluid-Structure Interaction}{1}
+\contentsline {chapter}{\numberline {2}Continuum Mechanics in Different Frames of Reference}{3}
+\contentsline {section}{\numberline {2.1}Conservation of Mass and Momentum for Solid}{4}
+\contentsline {section}{\numberline {2.2}Conservation of Mass and Momentum for Fluid}{5}
+\contentsline {section}{\numberline {2.3}Fluid and Structure Boundary conditions}{6}
+\contentsline {chapter}{\numberline {3}Fluid-Structure Interaction Problem Formulation}{7}
+\contentsline {section}{\numberline {3.1}Mapping Between Different Frames of Reference}{9}
+\contentsline {section}{\numberline {3.2}Governing Equations for Fluid-Structure Interaction}{10}
+\contentsline {subsection}{\numberline {3.2.1}Derivatives in Different Frameworks}{10}
+\contentsline {subsection}{\numberline {3.2.2}Solid Equation}{11}
+\contentsline {subsection}{\numberline {3.2.3}Fluid Equations}{11}
+\contentsline {section}{\numberline {3.3}Interface Conditions at the Boundary}{12}
+\contentsline {section}{\numberline {3.4}Methods for Domain Representation and Mesh Quality Preservation}{13}
+\contentsline {subsection}{\numberline {3.4.1}Harmonic Lifting Operator}{14}
+\contentsline {subsection}{\numberline {3.4.2}Biharmonic Lifting Operator}{14}
+\contentsline {section}{\numberline {3.5}Discretization of Monolithic Fluid-Structure Interaction Equations}{15}
+\contentsline {chapter}{\numberline {4}Verification and Validation of the Fluid-Structure Interaction Implementation}{19}
+\contentsline {section}{\numberline {4.1}Verification}{20}
+\contentsline {subsection}{\numberline {4.1.1}Method of Manufactured Solution on the Implementation of the Solid Equation}{22}
+\contentsline {subsection}{\numberline {4.1.2}Method of Manufactured Solutions on Fluid Equations with Prescribed Motion}{23}
+\contentsline {section}{\numberline {4.2}Validation}{25}
+\contentsline {subsection}{\numberline {4.2.1}Fluid-Structure Interaction between an elastic object and laminar incompressible flow}{26}
+\contentsline {subsubsection}{CFD test cases}{29}
+\contentsline {subsubsection}{Computational Structural Mechanical test cases}{31}
+\contentsline {chapter}{\numberline {5}Comparing the Effects of Different Lifting Operators and Investigating Numerical Stability in Fluid-Structure Interaction Problems}{39}
+\contentsline {section}{\numberline {5.1}Methods for Comparing Lifting Operators}{40}
+\contentsline {subsubsection}{FSI2 with Different Lifting Operator}{42}
+\contentsline {section}{\numberline {5.2}Investigating Numerical Stability for Fluid-Structure Interaction Problems}{46}
+\contentsline {chapter}{\numberline {6}Compute time reduction techniques}{51}
+\contentsline {section}{\numberline {6.1}Newton runtime profile}{51}
+\contentsline {section}{\numberline {6.2}Reusing the Jacobian}{52}
+\contentsline {section}{\numberline {6.3}Quadrature reduction}{52}
+\contentsline {section}{\numberline {6.4}Summary of runtime improvement techniques}{53}
+\contentsline {chapter}{\numberline {7}Conclusions}{55}
+\contentsline {chapter}{Appendices}{57}
+\contentsline {chapter}{\numberline {A}Appendix}{59}
+\contentsline {section}{\numberline {A.1}Lagrangian Description of Solid Mechanics}{59}
+\contentsline {subsection}{\numberline {A.1.1}Deformation Gradient}{60}
+\contentsline {subsection}{\numberline {A.1.2}Strain}{61}
+\contentsline {subsection}{\numberline {A.1.3}Stress}{63}
+\contentsline {chapter}{\numberline {B}Results from Renowned Scientists}{65}
+\contentsline {chapter}{\numberline {C}Implementation of Fluid-Structure Interaction in FEniCS}{67}
+\contentsline {section}{\numberline {C.1}Variational Formulation}{67}
+\contentsline {section}{\numberline {C.2}Newtons Method Implementation for Solving Fluid-Structure Interaction in FEniCS}{70}

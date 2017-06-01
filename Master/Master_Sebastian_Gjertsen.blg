@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Master_Sebastian_Gjertsen.aux
+The style file: plain.bst
+Database file #1: Master_cites_final.bib
+Warning--empty journal in Charlesworth2003
+Warning--there's a number but no volume in Charlesworth2003
+Warning--there's a number but no series in dirac1981principles
+Warning--there's a number but no volume in Etienne2006
+Warning--there's a number but no volume in Fefferman2000
+Warning--empty journal in Turek1996
+Warning--empty journal in Sciences2012
+Warning--there's a number but no volume in Sciences2012
+Warning--empty journal in Turek2010
+Warning--empty journal in Valkov2015
+Warning--empty year in Valkov2015
+Warning--there's a number but no volume in White2006
+You've used 32 entries,
+            2118 wiz_defined-function locations,
+            710 strings with 9440 characters,
+and the built_in function-call counts, 9845 in all, are:
+= -- 977
+> -- 432
+< -- 5
++ -- 173
+- -- 140
+* -- 682
+:= -- 1671
+add.period$ -- 94
+call.type$ -- 32
+change.case$ -- 164
+chr.to.int$ -- 0
+cite$ -- 44
+duplicate$ -- 375
+empty$ -- 764
+format.name$ -- 140
+if$ -- 2022
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 32
+newline$ -- 160
+num.names$ -- 64
+pop$ -- 153
+preamble$ -- 1
+purify$ -- 134
+quote$ -- 0
+skip$ -- 271
+stack$ -- 0
+substring$ -- 601
+swap$ -- 64
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 124
+warning$ -- 12
+while$ -- 103
+width$ -- 34
+write$ -- 340
+(There were 12 warnings)

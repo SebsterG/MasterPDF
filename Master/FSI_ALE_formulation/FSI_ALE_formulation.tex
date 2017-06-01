@@ -8,7 +8,7 @@ The ALE method entails formulating the fluid equations in a type of Eulerian fra
 
 Dealing with the movement of the domain is performed in two ways. One way is to move the domain itself in relation to the structural displacements, and use this new domain to calculate the equations for every iteration. This requires a specific function to move the mesh between each timestep. This process can be time consuming as problems get large. The structural deformation history can also give rise to problems as the points on the domain have changed location. \newline
 
-The second approach to ALE, which will be used in this thesis, is to calculate from \textbf{reference domain}.
+The second approach to ALE, which will be used in this thesis, is to calculate from reference domain.
 When solving equations from a reference domain we solve the equations on an initial, stress free domain, and use a series of mappings to account for the movements of the current time domain. It is the displacements in the domain that determines the value of the mappings between frames of reference. The solid equation is already stated in a Lagrangian formulation and does not need any mappings. It is the fluid velocities and fluid pressure that needs to be mapped from the reference domain into the time domain in which they are stated.
 Since the reference frame method does not need a function to move the mesh between each time iteration, it can be less time consuming. The interface is also located in the same position, making the interface easy to track. With the domain always remaining the same variational coupling of forces is easier when computing from a reference domain.\newline
 
@@ -94,7 +94,7 @@ Assembling all these terms together gives strong form the fluid equations from a
 
 \begin{align}
 \label{eq:NS_mapped}
-\rho_f J \big( \frac{\partial \bold{u}}{\partial t} dx + (\nabla \bold{u})F^{-1}(\bold{u}-\frac{\partial \bold{d}}{\partial t}) \big) &= \nabla \cdot( J F^{-1} \hat{\sigma_f} ) + J \rho_f f \\
+\rho_f J \big( \frac{\partial \bold{u}}{\partial t} dx + (\nabla \bold{u})F^{-1}(\bold{u}-\frac{\partial \bold{d}}{\partial t}) \big) &= \nabla \cdot( J F^{-1} \hat{\sigma_f} ) + J \rho_f f  \\
 \nabla \cdot (J F^{-1} \bold{u} ) &= 0
 \end{align} 
 
